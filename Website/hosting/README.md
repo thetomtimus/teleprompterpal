@@ -1,6 +1,8 @@
-# Cloudflare Pages hosting
+# Historical Cloudflare Pages hosting
 
-**Live October 17, 2026**, after the owner requested publication through Cloudflare. This publishes the privacy/support website only. The iPhone app and TestFlight package are unchanged.
+**Superseded by Vercel on October 17, 2026.** Current deployment instructions are in [the marketing README](../../Marketing/README.md). The Cloudflare Pages project below remains available for rollback.
+
+**Original publication October 17, 2026**, after the owner requested publication through Cloudflare. This publishes the privacy/support website only. The iPhone app and TestFlight package are unchanged.
 
 | Setting | Verified state |
 | --- | --- |

@@ -43,13 +43,21 @@ The camera/editing previews and crop demonstration are clearly labeled illustrat
 
 ## Vercel deployment
 
-The Vercel project builds `Marketing/` from the repository's `main` branch. Enable access to source files outside the root directory so the build can read `Website/` and its original icon in `Scripts/`. Use Node 24.x, `npm ci`, `npm run build`, and output directory `dist/`. No Vercel adapter or runtime functions are needed for this static site.
+Live at https://teleprompterpal.com/ on the Second Wind Vercel Pro team, project `teleprompterpal`. The launch was a direct deployment of the verified static build because the team's GitHub integration is not connected. Pushing to GitHub does not automatically deploy this project. No Vercel adapter or runtime functions are needed.
+
+For a later authorized update, run `npm ci` and `npm run build` in `Marketing/`. The build also prepares `.vercel/static-release/` with runtime assets and static Vercel configuration. With the Vercel CLI signed in to the intended team, deploy that directory:
+
+```sh
+vercel deploy .vercel/static-release --prod --project teleprompterpal --scope thetomtimus-gmailcoms-projects --yes
+```
+
+If GitHub integration is connected later, use root directory `Marketing`, Node 24.x, `npm ci`, `npm run build`, and output directory `dist`. Enable access to source files outside the root directory for `Website/` and `Scripts/`.
 
 `vercel.json` preserves the privacy/support aliases and supplies response headers. Browser scripts are emitted as separate same-origin assets for the Content Security Policy. The native apps and source documentation are never part of the public build output.
 
 `scripts/prepare-deployment.mjs` builds and checks the authoritative legal pages, includes `/privacy/`, `/support/`, their assets and a custom 404, and adds `robots.txt` and `sitemap.xml`. Development and Vercel previews remain noindex; production declares the apex canonical URL and allows indexing.
 
-Target domain: https://teleprompterpal.com/. Vercel serves the website; Cloudflare remains the DNS provider. Preserve all mail and verification records when changing the apex web record. The previous Cloudflare Pages deployment is retained for rollback.
+Production domain: https://teleprompterpal.com/. The www hostname redirects to the apex. Vercel serves the website; Cloudflare remains the DNS provider. Preserve all mail and verification records when changing the apex web record. The previous Cloudflare Pages deployment is retained for rollback.
 
 The approved CTA and QR still request private-beta access by email. No App Store or public TestFlight link is configured. The approved hero voice-tracking description is launch positioning for planned functionality; the current iPhone beta still uses manual scrolling controls.
 

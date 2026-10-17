@@ -1,14 +1,14 @@
 # teleprompterpal.com privacy and support pages
 
-Published October 17, 2026 on **Cloudflare Pages**, under **Second Wind, LLC, United States**:
+Published October 17, 2026 under **Second Wind, LLC, United States**. These pages now ship with the Astro marketing site on **Vercel**; Cloudflare provides DNS:
 
 - [Privacy policy](https://teleprompterpal.com/privacy/), effective October 17, 2026.
 - [Support](https://teleprompterpal.com/support/).
-- [Site directory](https://teleprompterpal.com/).
+- [Marketing homepage](https://teleprompterpal.com/).
 
-The owner confirmed that **contact@teleprompterpal.com** sends and receives email. The deployment preserved all eight existing Google mail/verification records and added only the apex web CNAME. No mailbox or nameserver was changed. See the [publication results](../docs/validation/2026-10-17-cloudflare-publication-results.md).
+The owner confirmed that **contact@teleprompterpal.com** sends and receives email. The Vercel migration preserved all eight existing Google mail/verification records, changed the apex web CNAME and added a www redirect hostname. No mailbox or nameserver was changed. See the [publication results](../docs/validation/2026-10-17-cloudflare-publication-results.md).
 
-The site uses plain HTML/CSS, native disclosure controls, system fonts and the project's original SVG icon. It has no scripts, forms, analytics tags or application cookies. Pages Web Analytics is disabled. Cloudflare still processes delivery/security request data and may use essential security cookies; the policy links to its practices without inventing a fixed retention period.
+These policy and support pages use plain HTML/CSS, native disclosure controls, system fonts and the project's original SVG icon. They contain no scripts, forms, analytics tags or application cookies. The Astro homepage uses local browser scripts for its demos and self-hosted fonts. Vercel processes delivery/security request data; the policy identifies the providers without inventing a fixed retention period.
 
 ## Edit and check
 
@@ -29,16 +29,12 @@ python3 Website/check.py Website/release --release
 
 The default build produces `Website/dist/`, an explicitly unpublished/noindex **local review copy**. This does not describe the publication state of the live site. The release build produces `Website/release/`, the nine-file publishable bundle. Neither command uploads anything. Release generation checks the configured email/hosting verification flags and effective date; it does not itself verify a provider or certify legal compliance.
 
-For local review, serve `Website/dist/` on loopback. A basic file server does not implement Cloudflare's headers, redirects or HTTPS. After an authorized deployment, run the read-only live checker:
+For local review, serve `Website/dist/` on loopback. A basic file server does not implement production response headers, redirects or HTTPS.
 
-```sh
-python3 Website/check_live.py teleprompterpal.com --evidence /tmp/teleprompterpal-live-check.json
-```
+## Production updates
 
-This checks public content against the current release bytes, TLS, status codes, redirects, MIME, security/cache headers and ordinary cookie/script injection. Conditional security challenges are outside that check. Cloudflare supplies `no-store` on missing routes and may raise static-asset max-age; the HTML remains revalidated and untransformed.
+Build and deploy through [the Astro marketing site](../Marketing/README.md). Its build includes these authoritative privacy/support sources, assets, aliases and 404 page. Uploading `Website/release/` alone would replace the marketing homepage, so do not use the old Cloudflare upload workflow for current releases.
 
-## Updates and scope
+`check_live.py` is the historical checker for the original Cloudflare legal-only release. It expects the old directory homepage and headers and is not the acceptance checker for the combined Vercel site. Current launch evidence is retained in `docs/validation/vercel-launch-2026-10-17/`: all 20 public build files match exactly and seven URL/HTTPS/www redirects pass.
 
-Use the existing **teleprompterpal-legal** Direct Upload project for future authorized content changes. Upload only the checked release directory or its ZIP. Follow [the hosting handoff](hosting/README.md), retain the uploaded hashes and verify the actual public URLs afterward. Git automatic deployment is not configured.
-
-The current installed app and local distribution package remain **0.6.5/build 25**. A later app update can add links to these now-live pages. This website publication did not update the phone, register an App Store app, upload to TestFlight or invite testers. Purchases remain disabled, recording has no app-imposed duration/file-size cap and physical camera checks remain deferred.
+The previous Cloudflare Pages deployment is retained for rollback. These hosting changes do not publish or modify an iPhone or Mac app release, App Store listing or TestFlight distribution.

@@ -36,4 +36,13 @@ if (/<script\b(?![^>]*\bsrc=)[^>]*>[\s\S]*?\S[\s\S]*?<\/script>/i.test(html)) {
 if (!html.includes('rel="canonical" href="https://teleprompterpal.com/"')) {
   throw new Error('The homepage must declare its production canonical URL.');
 }
+
+// The launch uses direct static deployment while GitHub integration is absent.
+// Keep a clean, reproducible CLI input separate from source and credentials.
+const staging = resolve(root, '.vercel/static-release');
+await rm(staging, { recursive: true, force: true });
+await cp(output, staging, { recursive: true });
+const config = JSON.parse(await readFile(resolve(root, 'vercel.json'), 'utf8'));
+Object.assign(config, { framework: null, buildCommand: '', installCommand: '', outputDirectory: '.' });
+await writeFile(resolve(staging, 'vercel.json'), JSON.stringify(config, null, 2) + '\n');
 console.log('Deployment includes marketing, privacy, support, 404, robots, and sitemap.');
