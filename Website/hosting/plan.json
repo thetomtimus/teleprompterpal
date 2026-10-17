@@ -1,17 +1,14 @@
 {
   "provider": "Vercel",
   "status": "live_verified",
-  "mode": "Direct deployment of verified static assets",
+  "mode": "GitHub integration, static Astro builds",
   "plan": "Pro",
   "team_id": "team_byxtjir7oqNhbVoMPaZlQ1Y5",
   "team_slug": "thetomtimus-gmailcoms-projects",
   "project_name": "teleprompterpal",
   "project_id": "prj_DcgFu7mzvKY7RbptUt1l1znFeFzd",
-  "production_branch": null,
-  "git_auto_deploy": false,
-  "deployment_id": "dpl_DYYFEyGKACnYrDhARnxMaqkK19Aq",
-  "deployment_url": "https://teleprompterpal-6901ivak4-thetomtimus-gmailcoms-projects.vercel.app",
-  "deployed_source_commit": "aba8fe2503ceec42e4bd3973a316fc0505638173",
+  "production_branch": "main",
+  "git_auto_deploy": true,
   "custom_domain": "teleprompterpal.com",
   "custom_domain_connected": true,
   "www_redirect": "https://teleprompterpal.com/",
@@ -60,5 +57,15 @@
     "release_manifest": "docs/validation/cloudflare-publish-2026-10-17/release-manifest-v2.json",
     "mail_dns_preserved": true,
     "plan": "Free"
+  },
+  "github_repository": "thetomtimus/teleprompterpal",
+  "root_directory": "Marketing",
+  "source_files_outside_root_directory": true,
+  "auto_assign_custom_domains": true,
+  "deployment_history_url": "https://vercel.com/thetomtimus-gmailcoms-projects/teleprompterpal/deployments",
+  "initial_vercel_launch": {
+    "deployment_id": "dpl_DYYFEyGKACnYrDhARnxMaqkK19Aq",
+    "deployment_url": "https://teleprompterpal-6901ivak4-thetomtimus-gmailcoms-projects.vercel.app",
+    "deployed_source_commit": "aba8fe2503ceec42e4bd3973a316fc0505638173"
   }
 }

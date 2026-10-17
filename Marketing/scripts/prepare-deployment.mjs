@@ -37,7 +37,7 @@ if (!html.includes('rel="canonical" href="https://teleprompterpal.com/"')) {
   throw new Error('The homepage must declare its production canonical URL.');
 }
 
-// The launch uses direct static deployment while GitHub integration is absent.
+// Keep a direct-deployment fallback alongside Git auto-deploy.
 // Keep a clean, reproducible CLI input separate from source and credentials.
 const staging = resolve(root, '.vercel/static-release');
 await rm(staging, { recursive: true, force: true });

@@ -43,15 +43,17 @@ The camera/editing previews and crop demonstration are clearly labeled illustrat
 
 ## Vercel deployment
 
-Live at https://teleprompterpal.com/ on the Second Wind Vercel Pro team, project `teleprompterpal`. The launch was a direct deployment of the verified static build because the team's GitHub integration is not connected. Pushing to GitHub does not automatically deploy this project. No Vercel adapter or runtime functions are needed.
+Live at https://teleprompterpal.com/ on the Second Wind Vercel Pro team, project `teleprompterpal`. The project is connected to `thetomtimus/teleprompterpal` on GitHub. Every push to `main` triggers a production build and automatically updates the website when the build succeeds. Other branches produce preview deployments. No Vercel adapter or runtime functions are needed.
 
-For a later authorized update, run `npm ci` and `npm run build` in `Marketing/`. The build also prepares `.vercel/static-release/` with runtime assets and static Vercel configuration. With the Vercel CLI signed in to the intended team, deploy that directory:
+For normal updates, run `npm ci` and `npm run build` in `Marketing/` to check the change, then commit and push to `main`. Vercel runs the build again and publishes the result. Failed builds leave the previous working deployment live.
+
+The build also prepares `.vercel/static-release/` with runtime assets and static Vercel configuration for an explicitly requested manual fallback. With the CLI signed in to the intended team:
 
 ```sh
 vercel deploy .vercel/static-release --prod --project teleprompterpal --scope thetomtimus-gmailcoms-projects --yes
 ```
 
-If GitHub integration is connected later, use root directory `Marketing`, Node 24.x, `npm ci`, `npm run build`, and output directory `dist`. Enable access to source files outside the root directory for `Website/` and `Scripts/`.
+Verified Vercel build settings: root directory `Marketing`, Node 24.x, install command `npm ci`, build command `npm run build`, output directory `dist`, and production branch `main`. Access to source files outside the root directory is enabled for `Website/` and `Scripts/`. Production custom-domain assignment is enabled.
 
 `vercel.json` preserves the privacy/support aliases and supplies response headers. Browser scripts are emitted as separate same-origin assets for the Content Security Policy. The native apps and source documentation are never part of the public build output.
 
