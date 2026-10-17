@@ -1417,7 +1417,7 @@ class Milestone6ValidatorContractTests(unittest.TestCase):
 
     def testM6NativeCompileRepairUsesParserSafeOptionalAndExplicitReturn(self) -> None:
         source = VALIDATOR.read(
-            "Packages/TeleprompterCore/Sources/TeleprompterCore/Scrolling/ReadingPositionMapper.swift"
+            "Packages/TeleprompterCore/Sources/PromptingCore/Scrolling/ReadingPositionMapper.swift"
         )
         self.assertIn(
             "let minimumDistance = bestCandidates.map { distance($0.offset, fallbackOffset) }.min()",

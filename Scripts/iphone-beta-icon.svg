@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Teleprompter beta app icon</title>
+  <desc>Original geometric artwork: white prompt lines in a violet frame, with a red recording button on charcoal. Created for this project on October 16, 2026.</desc>
+  <rect width="1024" height="1024" fill="#1c2123"/>
+  <rect x="169" y="153" width="686" height="672" rx="131" fill="#7656ed"/>
+  <rect x="199" y="183" width="626" height="612" rx="101" fill="#28292e"/>
+  <rect x="281" y="301" width="462" height="38" rx="19" fill="#ffffff"/>
+  <rect x="281" y="401" width="462" height="38" rx="19" fill="#ffffff"/>
+  <rect x="281" y="501" width="348" height="38" rx="19" fill="#ffffff"/>
+  <rect x="281" y="601" width="218" height="38" rx="19" fill="#ffffff"/>
+  <circle cx="722" cy="746" r="144" fill="#1c2123"/>
+  <circle cx="722" cy="746" r="121" fill="#ffffff"/>
+  <circle cx="722" cy="746" r="101" fill="#e33437"/>
+</svg>

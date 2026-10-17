@@ -1,0 +1,6 @@
+Use case: photorealistic-natural
+Asset type: original portrait photograph for an iPhone teleprompter onboarding demonstration, not a screen mockup.
+Primary request: A friendly adult female content creator, approximately 30, with shoulder-length dark curly hair, wearing a simple warm gray tailored jacket over a charcoal shirt and a small black lavalier microphone. She looks straight into the lens with a relaxed natural smile, mid-conversation, one hand just entering the lower frame.
+Scene/backdrop: restrained dark charcoal studio with subtle purple rim illumination on one side and soft flattering neutral key light. Uncluttered, no props.
+Composition/framing: vertical 2:3 portrait, centered head and torso, generous headroom in upper quarter for overlay text, both shoulders entirely inside frame, face near upper-middle. Photorealistic skin texture and natural proportions. Suitable for cropping into a tall phone preview.
+Constraints: completely original fictional adult, no likeness to any supplied reference person. No text, no logos, no frame, no phone, no UI, no watermark. Opaque background.

@@ -949,7 +949,7 @@ class Milestone5ValidatorContractTests(unittest.TestCase):
             "PrivatePresenterApp/App/AppEffect.swift",
             "PrivatePresenterApp/Services/SnapshotStore.swift",
             "PrivatePresenterApp/Accessibility/PresenterAccessibility.swift",
-            "Packages/TeleprompterCore/Sources/TeleprompterCore/Models/ScriptDocument.swift",
+            "Packages/TeleprompterCore/Sources/PromptingCore/Models/ScriptDocument.swift",
         ):
             source = VALIDATOR.read(path)
             with self.subTest(kind="os-boundary", path=path):
@@ -994,7 +994,7 @@ class Milestone5ValidatorContractTests(unittest.TestCase):
     ) -> None:
         for path in (
             "PrivatePresenterApp/App/AppEffect.swift",
-            "Packages/TeleprompterCore/Sources/TeleprompterCore/Models/ScriptDocument.swift",
+            "Packages/TeleprompterCore/Sources/PromptingCore/Models/ScriptDocument.swift",
             "PrivatePresenterApp/Services/SnapshotStore.swift",
             "PrivatePresenterApp/Accessibility/PresenterAccessibility.swift",
         ):
@@ -1049,19 +1049,18 @@ class Milestone5ValidatorContractTests(unittest.TestCase):
             "PersistedSnapshot.swift"
         )
         document = (
-            "Packages/TeleprompterCore/Sources/TeleprompterCore/Models/"
+            "Packages/TeleprompterCore/Sources/PromptingCore/Models/"
             "ScriptDocument.swift"
         )
         cases = (
             (
                 "project.yml",
-                VALIDATOR.read("project.yml") + "\n# package: FutureDependency\n",
+                VALIDATOR.read("project.yml").replace("- sdk: Carbon.framework", "- sdk: Network.framework"),
                 "dependency:project-yml-changed",
             ),
             (
                 "Packages/TeleprompterCore/Package.swift",
-                VALIDATOR.read("Packages/TeleprompterCore/Package.swift")
-                + "\n// dependency mutation\n",
+                VALIDATOR.read("Packages/TeleprompterCore/Package.swift").replace('dependencies: ["PromptingCore"]', 'dependencies: ["NetworkClient"]'),
                 "dependency:package-swift-changed",
             ),
             (
@@ -1236,7 +1235,7 @@ class Milestone5ValidatorContractTests(unittest.TestCase):
         )
         replacements = {
             "HANDOFF.md": VALIDATOR.read("HANDOFF.md") + "\nmutation\n",
-            "project.yml": VALIDATOR.read("project.yml") + "\n# package: FutureDependency\n",
+            "project.yml": VALIDATOR.read("project.yml").replace("- sdk: Carbon.framework", "- sdk: Network.framework"),
             snapshot: VALIDATOR.read(snapshot).replace(
                 "currentSchemaVersion = 1", "currentSchemaVersion = 2"
             ),

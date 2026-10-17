@@ -5,10 +5,29 @@ build/
 xcuserdata/
 .swiftpm/
 .build/
+__pycache__/
 /PrivatePresenter.xcodeproj/
+/iPhonePrototype/TeleprompterPrototype.xcodeproj/
 
 # OMX runtime
 .omx/
 
 # OS
 .DS_Store
+
+# Local owner-supplied reference media
+/.impeccable/references/private/
+
+# Local design review captures and generated evidence
+/.impeccable/review/
+/.impeccable/history/
+/.impeccable/hook.cache.json
+
+# Distribution output and signing credentials
+*.xcarchive/
+*.xcresult/
+*.dSYM/
+*.ipa
+*.mobileprovision
+*.p12
+*.p8

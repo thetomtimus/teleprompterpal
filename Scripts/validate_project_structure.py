@@ -14,6 +14,7 @@ import subprocess
 import sys
 import tarfile
 from functools import lru_cache
+from iphone_structure import PORTABLE_MOVES, mac_project_compatible, core_package_compatible, validate_phone_boundary
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -2099,6 +2100,18 @@ def approved_metadata_repair_bytes(path: str, baseline: bytes) -> bytes:
     return baseline.replace(old, new, 1) if baseline.count(old) == 1 else baseline
 
 
+def phone_migration_active() -> bool:
+    return (ROOT / "iPhoneApp/TeleprompterPhoneApp.swift").is_file()
+
+
+def migrated_source_compatible(path: str, expected: str) -> bool:
+    if path == "project.yml":
+        return mac_project_compatible(read(path), expected)
+    if path == "Packages/TeleprompterCore/Package.swift":
+        return core_package_compatible(read(path))
+    return read(path) == expected
+
+
 def validate_plists() -> None:
     info_path = ROOT / "PrivatePresenterApp/Info.plist"
     entitlement_path = ROOT / "PrivatePresenterApp/Resources/PrivatePresenter.entitlements"
@@ -2336,8 +2349,9 @@ def validate_m2_source() -> list[str]:
         "Packages/TeleprompterCore/Sources/TeleprompterCore/Persistence/PersistedSnapshot.swift"
     ):
         violations.append("schema:persisted-snapshot-version")
+    document_path = "Packages/TeleprompterCore/Sources/TeleprompterCore/Models/ScriptDocument.swift"
     if "static let currentSchemaVersion = 1" not in read(
-        "Packages/TeleprompterCore/Sources/TeleprompterCore/Models/ScriptDocument.swift"
+        PORTABLE_MOVES[document_path] if phone_migration_active() else document_path
     ):
         violations.append("schema:script-document-version")
 
@@ -2382,6 +2396,10 @@ def validate_m3_source() -> list[str]:
         for path in root.rglob("*.swift")
     ]
     production_sources = {path: read(path) for path in production_paths}
+    if phone_migration_active():
+        for old, new in PORTABLE_MOVES.items():
+            if new in production_sources:
+                production_sources[old] = production_sources[new]
     for path, text in production_sources.items():
         for pattern in M3_PROHIBITED_PATTERNS:
             if (
@@ -2509,13 +2527,14 @@ def validate_m3_source() -> list[str]:
         violations.append("dependency:project-baseline-unavailable")
     elif approved_metadata_repair_bytes(
         "project.yml", project_baseline.stdout.encode("utf-8")
-    ).decode("utf-8") != read("project.yml"):
+    ).decode("utf-8") != read("project.yml") and not (phone_migration_active() and mac_project_compatible(
+        read("project.yml"), approved_metadata_repair_bytes("project.yml", project_baseline.stdout.encode("utf-8")).decode("utf-8"))):
         violations.append("dependency:project-yml-changed")
     package_path = "Packages/TeleprompterCore/Package.swift"
     package_baseline = git("show", f"{M3_BASELINE}:{package_path}")
     if package_baseline.returncode != 0:
         violations.append("dependency:package-baseline-unavailable")
-    elif package_baseline.stdout != read(package_path):
+    elif package_baseline.stdout != read(package_path) and not (phone_migration_active() and core_package_compatible(read(package_path))):
         violations.append("dependency:package-swift-changed")
 
     project = read("project.yml")
@@ -2553,6 +2572,10 @@ def validate_m4_source() -> list[str]:
         for path in root.rglob("*.swift")
     ]
     production_sources = {path: read(path) for path in production_paths}
+    if phone_migration_active():
+        for old, new in PORTABLE_MOVES.items():
+            if new in production_sources:
+                production_sources[old] = production_sources[new]
     for path, text in production_sources.items():
         for pattern in M4_PROHIBITED_PATTERNS:
             if pattern in text:
@@ -2749,7 +2772,7 @@ def validate_m4_source() -> list[str]:
         expected = approved_metadata_repair_bytes(
             path, baseline.stdout.encode("utf-8")
         ).decode("utf-8")
-        if baseline.returncode != 0 or expected != read(path):
+        if baseline.returncode != 0 or not (migrated_source_compatible(path, expected) if phone_migration_active() else expected == read(path)):
             violations.append(label)
     entitlements = read("PrivatePresenterApp/Resources/PrivatePresenter.entitlements")
     if any(
@@ -2853,6 +2876,10 @@ def validate_m5_source() -> list[str]:
         for path in root.rglob("*.swift")
     ]
     production_sources = {path: read(path) for path in production_paths}
+    if phone_migration_active():
+        for old, new in PORTABLE_MOVES.items():
+            if new in production_sources:
+                production_sources[old] = production_sources[new]
     app_sources = {
         path: source
         for path, source in production_sources.items()
@@ -3155,7 +3182,7 @@ def validate_m5_source() -> list[str]:
     for path, label in protected_dependency_sources:
         baseline_returncode, baseline_bytes = committed_bytes(M5_BASELINE, path)
         expected = approved_metadata_repair_bytes(path, baseline_bytes).decode("utf-8")
-        if baseline_returncode != 0 or expected != read(path):
+        if baseline_returncode != 0 or not (migrated_source_compatible(path, expected) if phone_migration_active() else expected == read(path)):
             violations.append(label)
 
     entitlements = read("PrivatePresenterApp/Resources/PrivatePresenter.entitlements")
@@ -3668,7 +3695,15 @@ def validate_m6_source() -> list[str]:
                 violations.append(f"immutable:metadata-baseline:{path}")
                 continue
             expected_bytes = approved_metadata_repair_bytes(path, baseline_bytes)
-        if baseline_returncode != 0 or current != expected_bytes:
+        if phone_migration_active() and path in ("project.yml", "Packages/TeleprompterCore/Package.swift"):
+            if baseline_returncode != 0 or not migrated_source_compatible(path, expected_bytes.decode("utf-8")):
+                violations.append(f"immutable:source-creep:{path}")
+        elif phone_migration_active() and path in PORTABLE_MOVES:
+            moved = ROOT / PORTABLE_MOVES[path]
+            alias = b"import PromptingCore\n\npublic typealias ScriptDocument = PromptingCore.ScriptDocument\n"
+            if not moved.is_file() or moved.read_bytes() != expected_bytes or current != alias:
+                violations.append(f"immutable:source-creep:{path}")
+        elif baseline_returncode != 0 or current != expected_bytes:
             violations.append(f"immutable:source-creep:{path}")
 
     for label, path, marker in M6_PREDECESSOR_PENDING_CLAIMS:
@@ -3701,6 +3736,10 @@ def validate_m6_source() -> list[str]:
         for path in root.rglob("*.swift")
     ]
     production_sources = {path: read(path) for path in production_paths}
+    if phone_migration_active():
+        for old, new in PORTABLE_MOVES.items():
+            if new in production_sources:
+                production_sources[old] = production_sources[new]
     joined_sources = "\n".join(production_sources.values())
 
     visual_tests_path = "PrivatePresenterAppTests/OverlayVisualSnapshotTests.swift"
@@ -4022,14 +4061,19 @@ def main() -> None:
     ]
     if missing_phase_b_tests:
         fail("missing required Phase B named tests: " + ", ".join(missing_phase_b_tests))
-    core_imports = [
-        line.strip()
-        for path in (ROOT / "Packages/TeleprompterCore/Sources").rglob("*.swift")
-        for line in path.read_text(encoding="utf-8").splitlines()
-        if line.strip().startswith("import ") and line.strip() != "import Foundation"
-    ]
-    if core_imports:
-        fail("TeleprompterCore must import Foundation only: " + ", ".join(sorted(set(core_imports))))
+    if phone_migration_active():
+        phone_violations = validate_phone_boundary(ROOT, read)
+        if phone_violations:
+            fail("iPhone dependency validation failed: " + ", ".join(phone_violations))
+    else:
+        core_imports = [
+            line.strip()
+            for path in (ROOT / "Packages/TeleprompterCore/Sources").rglob("*.swift")
+            for line in path.read_text(encoding="utf-8").splitlines()
+            if line.strip().startswith("import ") and line.strip() != "import Foundation"
+        ]
+        if core_imports:
+            fail("TeleprompterCore must import Foundation only: " + ", ".join(sorted(set(core_imports))))
     app_sources = "\n".join(
         path.read_text(encoding="utf-8")
         for path in (ROOT / "PrivatePresenterApp").rglob("*.swift")

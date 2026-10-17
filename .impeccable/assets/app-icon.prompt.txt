@@ -1,0 +1,96 @@
+Origin: AI-generated using built-in ImageGen on October 17, 2026, guided by the owner-provided IMG_2135.jpeg style reference. The owner approved the circular lavender glass emblem and circular center, then selected it as the app icon.
+Packaging: resized the approved opaque square PNG to 1024 x 1024 using macOS sips; preserved the artwork and color.
+Approved source SHA-256: 986943c3950f14bba331d241102cc3ff0611f27a2f4dbd62f6900325de6c72cf
+
+Initial generation:
+Generated using built-in ImageGen.
+
+Use case: precise-object-edit
+Asset type: premium app icon, square high-resolution raster.
+Input image: reference/edit target IMG_2135.jpeg.
+Primary request: Re-create the attached icon with one clear geometric change: replace the lavender D-shaped outer silhouette of the central emblem with a perfectly round CIRCLE. The outer edge of the purple emblem must be circular all the way around, with no flat left side or letter-like shape. Keep the beautiful overlapping curved glass aperture blades and small dark softly pointed star-shaped negative-space opening in the center. Redistribute the curved blades gracefully within the new circular silhouette.
+Style: closely match the reference's softly sculpted, luminous translucent lavender glass, smooth folded petal surfaces, fine bright rim highlights, subtle depth and polished premium app-icon rendering.
+Color palette: same violet, lilac, pale lavender and near-white mauve highlights, deep violet shadowing and a restrained purple halo.
+Composition: single centered circular emblem, about two-thirds of tile width, on the same very dark charcoal rounded-square tile with gently beveled edges and subtle top-edge lighting. Straight-on view, balanced generous inset, crisp readable silhouette. Square 1024 by 1024 output.
+Preserve: reference's black/charcoal background, rounded tile, lighting, material character, lavender color balance and central aperture motif. No text, no letters, no watermark, no extra symbols. Only one icon, no presentation layout.
+
+Final circular-center edit:
+Generated using built-in ImageGen.
+
+Use case: precise-object-edit
+Asset type: premium app icon.
+Edit target: attached circular lavender glass app icon.
+Primary request: Change ONLY the central dark star-shaped opening into a perfectly round circular hole. The inner edge must be one smooth true circle, without any star points, lobes, scallops or polygon corners. Keep the circular hole centered, roughly the same visual area as the current dark star (about one-third of the outer lavender circle diameter). Gently adjust the inner tips of the overlapping glass blades so they meet the smooth circular opening naturally. Preserve the separate flowing, overlapping glass blade surfaces around the circular opening.
+Invariants: preserve the outer circular silhouette, overall emblem size and position, luminous translucent lavender/purple/pale lilac glass palette, precise soft glow, polished dimensional surface, curved blade seams, dark charcoal rounded-square tile, tile edge lighting, square composition and all other design details. The result is a lavender circular glass aperture/ring with a dark round center.
+No text, no letters, no added objects, no watermark. Match the reference closely except for changing the inner opening from a star to a circle.
+
+
+Full-bleed background correction, requested October 17, 2026:
+Generated using built-in ImageGen.
+
+Use case: precise-object-edit
+Asset type: production iOS app-icon artwork, opaque square image for the operating system to mask.
+Edit target: the attached circular lavender glass emblem with a dark circular center on a beveled charcoal tile.
+Primary request: REMOVE the entire depicted rounded-square tile, its perimeter, beveled lip, inset border, drop shadow, bright top-edge highlights, rounded corners, and surrounding black margin. Replace all background areas with one continuous, flat near-black charcoal field (#101013) extending edge-to-edge to all four image edges and all four square corners. There must be absolutely no drawn app-icon container or rounded rectangle anywhere in the artwork. This is raw square icon artwork, not a mockup of an icon. The OS will add its own corner mask and surface treatment later.
+Preserve the existing luminous circular lavender glass emblem itself as closely as possible: same circle size and placement, overlapping flowing curved glass blades, smooth circular dark hole, purple/lilac/soft lavender colors, glass highlights, dimensional shading, and subtle local violet halo around the emblem. Keep its appearance and proportions intact. The opening should be dark with the same smooth round silhouette.
+Composition: a single lavender circular glass ring floating on a completely uninterrupted flat dark square canvas; all corners are filled with that same dark color. Do not increase or crop the emblem. Square, straight-on image.
+Avoid: tile silhouette, square outline, bevel, frame, rim around the canvas, inset panel, border glow, edge shadow, vignette, rounded-square container, black margin outside a container, screenshot, phone, checkerboard, transparency, text, watermark, additional objects.
+
+Packaging: removed the depicted tile and bevel through built-in ImageGen, leaving an uninterrupted dark square field. iOS owns the only corner mask and outer edge. Resized to opaque RGB 1024 x 1024 with macOS sips.
+Corrected source SHA-256: cfca5db48f9ba39d8754e5b01e258db337f92364223f953e90a0235c07af4358
+
+
+Circle enlargement requested October 17, 2026:
+Generated using built-in ImageGen.
+Measured result: approximately 16.5% larger outer diameter than the full-bleed build-28 source (891px versus 765px on 1254px canvases). The prompt targeted 15%; the measured result is the reference for this version.
+
+Use case: precise-object-edit
+Asset type: production iOS app icon, opaque square artwork.
+Edit target: the attached full-bleed charcoal image with the circular lavender glass ring and circular dark center.
+Primary request: Make the entire purple circular emblem 15 percent larger in DIAMETER (scale factor 1.15), scaling its dark circular opening, glass blades, rim highlights and soft local glow together. Preserve the exact existing artwork's shape, materials, blade arrangement and colors. The current outer purple circle occupies about 61 percent of the square canvas width; the enlarged outer purple circle should occupy about 70 percent of the square canvas width. This is a precise proportional enlargement of the existing emblem, not a redesign. Keep its center at the same position, horizontally centered and slightly above the vertical midpoint as in the reference. Maintain clear space all around, no clipping. Do not shrink the circular opening relative to the ring.
+Background: the same uninterrupted flat near-black charcoal, extending through every edge and all four square corners. Keep the background fill unchanged.
+Preserve: lavender/lilac/purple translucent glass, flowing overlapping curved surfaces, perfectly round outer silhouette and round dark opening, luminous highlights, subtle violet halo and square composition.
+Avoid: any depicted tile, border, bevel, frame, rounded rectangle, edge highlight on the canvas, inset panel, icon mockup, phone, text or watermark. iOS alone supplies the outer mask and edge. The only requested visual change is the 15 percent proportional enlargement of the purple circle.
+
+Measurement: bright-purple outer bounds measured across five intensity thresholds; horizontal diameter increase spans 16.47-16.78%, summarized as about 16.5%. Canvas coverage increases from about 61% to 71% in width. The center and glass ring are enlarged together; the background remains full-bleed with no tile or border.
+Packaging: opaque RGB 1024 x 1024, resized with macOS sips.
+Enlarged source SHA-256: 538aad66025805ccafd88c480718c647612ede76ada9943eca01b5452f585ad2
+
+
+Owner-selected 51-percent canvas-width version, October 17, 2026:
+The owner clarified that 51% means outer circle diameter divided by icon width, rather than an increase.
+Created using built-in ImageGen. Final size calibration: ImageMagick uniform resize from 1254 to 1272 pixels and center crop to 1254 pixels. Measured outer diameter 641 / 1254 pixels = 51.12% of canvas width, excluding faint glow.
+
+Use case: precise-object-edit
+Asset type: production iOS app icon, opaque square artwork.
+Edit target: attached full-bleed charcoal icon with a large circular lavender glass emblem and circular dark opening.
+Primary request: Reduce the existing purple circular emblem so its OUTER DIAMETER is exactly 51 percent of the entire square canvas width, measured at the bright outer rim, excluding the faint halo. The circle must occupy 51% of the width, leaving 24.5% dark margin on each side. This is NOT a 51% increase or decrease: 51% is the final diameter divided by canvas width. For example, a 1024px canvas would have a 522px circle, or this 1254px canvas would have a 640px circle.
+Preserve the existing emblem itself closely: proportional scaling only of the lavender ring, its circular dark opening, flowing overlapping glass blade arrangement, translucent glass material, exact purple/lilac/lavender palette, polished highlights and restrained local violet halo. Keep the same center position as the reference, horizontally centered and slightly above the vertical midpoint. Scale the center opening together with the entire emblem so all internal proportions remain unchanged. Do not redesign or add detail.
+Background: keep the uninterrupted flat near-black charcoal field through every edge and all four square corners. The smaller emblem should have generous dark breathing room all around.
+Avoid: any depicted rounded-square tile, border, bevel, frame, inset panel, outline around the image, edge shadow, phone, mockup, text, labels, guides, measurement markings or watermark. iOS alone supplies its outer mask and edge treatment.
+
+Packaging: opaque RGB 1024 x 1024 with macOS sips. Full-bleed dark field with no depicted tile or bevel.
+Selected source SHA-256: f4cc7cd10b24f1802cd76b959f54677a996059c7666002cadd97f6f3cda79b09
+
+
+Restore selected by owner, October 17, 2026:
+The owner rejected the 51%-width trial after viewing it on the phone and selected the immediately previous larger circle: approximately 71% of icon width (approximately 16.5% larger diameter than build 28). Restored directly from the saved unmasked master circular-lavender-app-icon-larger-16-5-percent.png, without generating new artwork. Resized to opaque RGB 1024 x 1024 using macOS sips.
+Restored master SHA-256: 538aad66025805ccafd88c480718c647612ede76ada9943eca01b5452f585ad2
+
+
+66%-width comparison requested October 17, 2026:
+The owner will select either the retained 71%-width version or this 66%-width trial as final. The saved 71%-width master is retained unchanged.
+Final artwork reuses the existing built-in ImageGen master, precisely resized with ImageMagick to preserve the selected design. The preview from the following new ImageGen prompt was not selected.
+Measured final diameter: 827 / 1254 pixels = 65.95% of canvas width. Uniform scale factor relative to the saved 71%-width artwork: 0.9288888889.
+
+ImageGen comparison-preview prompt:
+Use case: precise-object-edit
+Asset type: production iOS app icon, opaque square artwork.
+Edit target: the attached lavender glass ring on a full-bleed charcoal square, currently occupying about 71% of canvas width.
+Primary request: Create the comparison size where the purple circle's OUTER DIAMETER is exactly 66% of the square image width, excluding the faint glow. Reduce the current entire emblem uniformly by about 7% in diameter, keeping its existing center position. At a 1254px canvas, the bright-rim outer diameter should be about 828px; the dark left and right margins should each be about 17% of canvas width.
+This is solely a proportional bitmap-like resize of the EXISTING emblem. Preserve its shape, flowing overlapping curved glass blades, perfectly circular dark opening and all internal proportions, lavender/purple/lilac color balance, translucent shading, reflections, small surface details and subtle glow as closely as possible. Scale the circular opening and halo along with the ring. Do not redesign or redraw a different ring. Keep the same center, horizontally centered and slightly above the vertical midpoint.
+Background: unchanged flat near-black charcoal extending to all four square edges and all four square corners; no change to its color or texture. The entire square is filled.
+Avoid: any added rounded-square tile, bevel, frame, inset border, container, outline at the canvas edges, text, measurement marks, phone mockup, new objects or watermark. iOS alone supplies the outer mask and edge treatment. Only the scale of the purple emblem should change.
+
+Packaged as opaque RGB 1024 x 1024 using macOS sips.
+66%-width master SHA-256: f7824aae70445c89dee5490d1bf21074dc4663daf83aa61284e74147663fec84

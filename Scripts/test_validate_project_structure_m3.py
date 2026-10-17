@@ -243,7 +243,7 @@ class Milestone3ValidatorContractTests(unittest.TestCase):
         source = VALIDATOR.read(path) + (
             "\n// NSStatusItem URLSession addGlobalMonitorForEvents CGEventTap AXIsProcessTrusted\n"
         )
-        project = VALIDATOR.read("project.yml") + "\n# package: FutureDependency\n"
+        project = VALIDATOR.read("project.yml").replace("- sdk: Carbon.framework", "- sdk: Network.framework")
         violations = self.violations_with({path: source, "project.yml": project})
         for marker in (
             "NSStatusItem", "URLSession", "addGlobalMonitorForEvents",

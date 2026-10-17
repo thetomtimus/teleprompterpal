@@ -358,23 +358,22 @@ final class CoreStateModelTests: XCTestCase {
             .deletingLastPathComponent()
             .deletingLastPathComponent()
             .deletingLastPathComponent()
-        let sourcesURL = packageURL.appendingPathComponent("Sources/TeleprompterCore")
-        let enumerator = try XCTUnwrap(
-            FileManager.default.enumerator(at: sourcesURL, includingPropertiesForKeys: nil)
-        )
-        let swiftFiles = enumerator.compactMap { $0 as? URL }.filter { $0.pathExtension == "swift" }
-
-        XCTAssertFalse(swiftFiles.isEmpty)
-        for file in swiftFiles {
-            let importLines = try String(contentsOf: file, encoding: .utf8)
-                .split(separator: "\n")
-                .map(String.init)
-                .filter { $0.hasPrefix("import ") }
-            XCTAssertEqual(
-                importLines,
-                ["import Foundation"],
-                "Unexpected imports in \(file.lastPathComponent)"
-            )
+        // PromptingCore is Foundation-only; the desktop layer may depend on that portable module.
+        for (target, allowed) in [
+            ("PromptingCore", Set(["import Foundation"])),
+            ("TeleprompterCore", Set(["import Foundation", "import PromptingCore"])),
+        ] {
+            let sourcesURL = packageURL.appendingPathComponent("Sources/" + target)
+            let enumerator = try XCTUnwrap(
+                FileManager.default.enumerator(at: sourcesURL, includingPropertiesForKeys: nil))
+            let swiftFiles = enumerator.compactMap { $0 as? URL }.filter { $0.pathExtension == "swift" }
+            XCTAssertFalse(swiftFiles.isEmpty)
+            for file in swiftFiles {
+                let imports = try String(contentsOf: file, encoding: .utf8)
+                    .split(separator: "\n").map(String.init).filter { $0.hasPrefix("import ") }
+                XCTAssertFalse(imports.isEmpty)
+                XCTAssertTrue(Set(imports).isSubset(of: allowed), "Unexpected imports in \(target)/\(file.lastPathComponent)")
+            }
         }
     }
 

@@ -6,23 +6,26 @@ options:
 configs:
   Debug: debug
   Release: release
-configFiles:
-  Debug: Config/Debug.xcconfig
-  Release: Config/Release.xcconfig
 packages:
   TeleprompterCore:
     path: Packages/TeleprompterCore
+  PhoneLibrary:
+    path: Packages/PhoneLibrary
+  PrototypeSupport:
+    path: iPhonePrototype/Support
 settings:
   base:
     SWIFT_VERSION: "6.0"
     SWIFT_STRICT_CONCURRENCY: complete
-    MACOSX_DEPLOYMENT_TARGET: "14.0"
     CLANG_ENABLE_MODULES: YES
 targets:
   PrivatePresenter:
     type: application
     platform: macOS
     deploymentTarget: "14.0"
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
     sources:
       - path: PrivatePresenterApp
     info:
@@ -52,6 +55,9 @@ targets:
     type: bundle.unit-test
     platform: macOS
     deploymentTarget: "14.0"
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
     sources:
       - path: PrivatePresenterAppTests
     dependencies:
@@ -67,6 +73,9 @@ targets:
     type: bundle.ui-testing
     platform: macOS
     deploymentTarget: "14.0"
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
     sources:
       - path: PrivatePresenterUITests
     dependencies:
@@ -74,6 +83,86 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.privatepresenter.teleprompter.uitests
+  TeleprompterPhone:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: iPhoneApp
+      - path: iPhonePrototype/App
+        excludes: [PrototypeEntry.swift, Info.plist]
+    info:
+      path: iPhoneApp/Info.plist
+      properties:
+        CFBundleDisplayName: teleprompterpal.com
+        CFBundleShortVersionString: 0.6.12
+        CFBundleVersion: "32"
+        ITSAppUsesNonExemptEncryption: false
+        CADisableMinimumFrameDurationOnPhone: true
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        NSCameraUsageDescription: Record a video while reading your script.
+        NSMicrophoneUsageDescription: Include your voice in a recorded take.
+        NSPhotoLibraryAddUsageDescription: Save a video you choose to your Photos library.
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: Plain Text Script
+            LSHandlerRank: Alternate
+            LSItemContentTypes: [public.plain-text]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.secondwind.teleprompter.prototype
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        SWIFT_TREAT_WARNINGS_AS_ERRORS: YES
+        CODE_SIGN_STYLE: Automatic
+    dependencies:
+      - package: TeleprompterCore
+        product: PromptingCore
+      - package: PhoneLibrary
+      - package: PrototypeSupport
+  TeleprompterPhoneTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: iPhoneAppTests
+        excludes: [Resources]
+      - path: iPhoneAppTests/Resources
+        buildPhase: resources
+    dependencies:
+      - target: TeleprompterPhone
+      - package: PhoneLibrary
+      - package: TeleprompterCore
+        product: PromptingCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.secondwind.teleprompter.phone.tests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        SWIFT_TREAT_WARNINGS_AS_ERRORS: YES
+        # Xcode 27 StoreKitTest's public C header itself refers to deprecated SKPaymentTransactionState.
+        # Keep Swift/app warnings strict; allow that SDK header warning in the test target only.
+        OTHER_SWIFT_FLAGS: "$(inherited) -Xcc -Wno-error=deprecated-declarations"
+  TeleprompterPhoneUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: iPhoneUITests
+      - path: iPhoneAppTests/Resources
+        buildPhase: resources
+    dependencies:
+      - target: TeleprompterPhone
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.secondwind.teleprompter.phone.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+        SWIFT_TREAT_WARNINGS_AS_ERRORS: YES
+        OTHER_SWIFT_FLAGS: "$(inherited) -Xcc -Wno-error=deprecated-declarations"
 schemes:
   PrivatePresenter:
     shared: true
@@ -86,3 +175,32 @@ schemes:
       targets:
         - PrivatePresenterAppTests
         - PrivatePresenterUITests
+  TeleprompterPhone:
+    shared: true
+    build:
+      targets:
+        TeleprompterPhone: all
+    test:
+      targets:
+        - name: TeleprompterPhoneTests
+          skippedTests: [SubscriptionStoreKitTests]
+        - name: TeleprompterPhoneUITests
+          skippedTests: [P5BSubscriptionFlowTests, P5CSubscriptionPolicyFlowTests, P5DLocalEventFlowTests]
+  TeleprompterPhone-P5:
+    shared: true
+    build:
+      targets:
+        TeleprompterPhone: all
+    run:
+      config: Debug
+      storeKitConfiguration: iPhoneAppTests/Resources/TeleprompterLocal.storekit
+      commandLineArguments:
+        "--p5-local-paywall": true
+      environmentVariables:
+        TELEPROMPTER_LOCAL_STOREKIT_TEST: "1"
+    test:
+      environmentVariables:
+        TELEPROMPTER_LOCAL_STOREKIT_TEST: "1"
+      targets:
+        - TeleprompterPhoneTests
+        - TeleprompterPhoneUITests

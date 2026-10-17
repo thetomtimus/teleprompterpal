@@ -1,0 +1,93 @@
+name: TeleprompterPrototype
+options:
+  minimumXcodeGenVersion: 2.45.4
+  deploymentTarget:
+    iOS: "18.0"
+packages:
+  TeleprompterCore:
+    path: ../Packages/TeleprompterCore
+  PrototypeSupport:
+    path: Support
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: YES
+    CODE_SIGN_STYLE: Automatic
+targets:
+  TeleprompterPrototype:
+    type: application
+    platform: iOS
+    sources: [App]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Prompt Prototype
+        CFBundleShortVersionString: 0.1.0
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSCameraUsageDescription: Record a video while reading your script.
+        NSMicrophoneUsageDescription: Include your voice in a recorded take.
+        NSPhotoLibraryAddUsageDescription: Save a video you choose to your Photos library.
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.secondwind.teleprompter.prototype
+        TARGETED_DEVICE_FAMILY: "1"
+    dependencies:
+      - package: TeleprompterCore
+        product: PromptingCore
+      - package: PrototypeSupport
+  TeleprompterPrototypeTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]
+    dependencies:
+      - target: TeleprompterPrototype
+      - package: PrototypeSupport
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.secondwind.teleprompter.prototype.tests
+        GENERATE_INFOPLIST_FILE: YES
+  TeleprompterPrototypeUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: TeleprompterPrototype
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.secondwind.teleprompter.prototype.uitests
+        GENERATE_INFOPLIST_FILE: YES
+  TeleprompterPhysicalUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [PhysicalTests]
+    dependencies:
+      - target: TeleprompterPrototype
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.secondwind.teleprompter.prototype.physicaltests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  TeleprompterPhysical:
+    shared: true
+    build:
+      targets:
+        TeleprompterPrototype: all
+    test:
+      targets:
+        - TeleprompterPhysicalUITests
+  TeleprompterPrototype:
+    shared: true
+    build:
+      targets:
+        TeleprompterPrototype: all
+    test:
+      targets:
+        - TeleprompterPrototypeTests
+        - TeleprompterPrototypeUITests

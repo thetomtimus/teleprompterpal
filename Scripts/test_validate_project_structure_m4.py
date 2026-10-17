@@ -169,7 +169,7 @@ class Milestone4ValidatorContractTests(unittest.TestCase):
             "schema:persisted-snapshot-version",
             self.violations_with({snapshot: VALIDATOR.read(snapshot).replace("currentSchemaVersion = 1", "currentSchemaVersion = 2")}),
         )
-        project = VALIDATOR.read("project.yml") + "\n# package: FutureDependency\n"
+        project = VALIDATOR.read("project.yml").replace("- sdk: Carbon.framework", "- sdk: Network.framework")
         self.assertIn("dependency:project-yml-changed", self.violations_with({"project.yml": project}))
         entitlements = "PrivatePresenterApp/Resources/PrivatePresenter.entitlements"
         self.assertIn(

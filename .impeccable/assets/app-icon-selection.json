@@ -1,0 +1,16 @@
+{
+  "status": "approved-final",
+  "approvedDate": "2026-10-17",
+  "ownerDecision": "This is it, let's finalize it. This is the keeper. Keep it.",
+  "canvasWidthCoveragePercent": 66,
+  "measuredMasterCanvasWidthCoveragePercent": 65.94896331738437,
+  "masterPath": ".impeccable/assets/app-icon-master.png",
+  "masterSHA256": "f7824aae70445c89dee5490d1bf21074dc4663daf83aa61284e74147663fec84",
+  "packagedAssetPath": "iPhoneApp/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+  "packagedAssetSHA256": "133643bbf498fd23c8b09a6317a4831827edf3fd908dd09d6d9dad6b4f6f125a",
+  "promptHistoryPath": ".impeccable/assets/app-icon.prompt.txt",
+  "installedVersion": "0.6.12",
+  "installedBuild": "32",
+  "preserveApprovedArtworkAndSize": true,
+  "selectionSupersedesComparisonStagePendingFlags": true
+}

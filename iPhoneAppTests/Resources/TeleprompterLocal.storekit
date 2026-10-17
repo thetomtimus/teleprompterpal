@@ -1,0 +1,75 @@
+{
+  "identifier" : "1B9D472A",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_applicationInternalID" : "",
+    "_developerTeamID" : "",
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "5EA34CB1",
+      "localizations" : [],
+      "name" : "LOCAL TEST ONLY — provisional Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "59CB36D1",
+          "introductoryOffer" : {
+            "internalID" : "439CAE71",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Local test subscription. No production benefits or recording limit.",
+              "displayName" : "TEST Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "local.teleprompter.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "TEST Pro Monthly",
+          "subscriptionGroupID" : "5EA34CB1",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "C4318E2B",
+          "introductoryOffer" : {
+            "internalID" : "8A12403C",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
+          "localizations" : [
+            {
+              "description" : "Local test subscription. No production benefits or recording limit.",
+              "displayName" : "TEST Pro Annual",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "local.teleprompter.pro.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "TEST Pro Annual",
+          "subscriptionGroupID" : "5EA34CB1",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : { "major" : 4, "minor" : 0 }
+}

@@ -1,14 +1,12 @@
 import Foundation
+import PromptingCore
 
 public enum OverlayVisibility: Equatable, Sendable {
     case hidden
     case visible
 }
 
-public enum PlaybackPhase: Equatable, Sendable {
-    case paused
-    case playing
-}
+public typealias PlaybackPhase = PromptingCore.PlaybackPhase
 
 public enum OverlayChromeState: Equatable, Sendable {
     case shown
