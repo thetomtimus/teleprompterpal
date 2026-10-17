@@ -1,0 +1,15 @@
+---
+import QRCode from 'qrcode';
+import { site } from '../data/site';
+interface Props { floating?: boolean; }
+const { floating = false } = Astro.props;
+const qr = await QRCode.toString(site.accessUrl, { type: 'svg', errorCorrectionLevel: 'M', margin: 3, width: 168, color: { dark: '#0f0f0f', light: '#ffffff' } });
+---
+<aside class:list={['qr-code', { 'qr-floating': floating }]} aria-label="Scan to request iPhone beta access">
+  <span class="qr-caption">scan for early access</span>
+  <span class="qr-arrow" aria-hidden="true">↓</span>
+  <a class="qr-link" href={site.accessUrl} aria-label="Request beta access by email, same destination as QR code">
+    <span class="qr-art" role="img" aria-label="QR code opening a beta-access email request" set:html={qr} />
+  </a>
+  <span class="qr-note">Opens your email app</span>
+</aside>

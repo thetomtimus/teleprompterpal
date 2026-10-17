@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T10:59:23.279344Z",
+  "title": "Design System: Teleprompter Pal Marketing",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Bright Violet",
+        "canonical": "#8f67ff",
+        "tonalRamp": [
+          "oklch(15.00% 0.21554 291.08)",
+          "oklch(26.43% 0.21554 291.08)",
+          "oklch(37.86% 0.21554 291.08)",
+          "oklch(49.29% 0.21554 291.08)",
+          "oklch(60.71% 0.21554 291.08)",
+          "oklch(72.14% 0.21554 291.08)",
+          "oklch(83.57% 0.21554 291.08)",
+          "oklch(95.00% 0.21554 291.08)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "primary-deep": {
+        "role": "primary",
+        "displayName": "Deep Violet",
+        "canonical": "#6136d9",
+        "tonalRamp": [
+          "oklch(15.00% 0.22941 286.62)",
+          "oklch(26.43% 0.22941 286.62)",
+          "oklch(37.86% 0.22941 286.62)",
+          "oklch(49.29% 0.22941 286.62)",
+          "oklch(60.71% 0.22941 286.62)",
+          "oklch(72.14% 0.22941 286.62)",
+          "oklch(83.57% 0.22941 286.62)",
+          "oklch(95.00% 0.22941 286.62)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "lavender": {
+        "role": "primary",
+        "displayName": "Soft Lavender",
+        "canonical": "#c3aaff",
+        "tonalRamp": [
+          "oklch(15.00% 0.12091 297.07)",
+          "oklch(26.43% 0.12091 297.07)",
+          "oklch(37.86% 0.12091 297.07)",
+          "oklch(49.29% 0.12091 297.07)",
+          "oklch(60.71% 0.12091 297.07)",
+          "oklch(72.14% 0.12091 297.07)",
+          "oklch(83.57% 0.12091 297.07)",
+          "oklch(95.00% 0.12091 297.07)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Stage Black",
+        "canonical": "#0f0f0f",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Clear White",
+        "canonical": "#fff",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "display": {
+        "role": "neutral",
+        "displayName": "Luminous Lavender White",
+        "canonical": "rgba(246,237,255,.92)",
+        "tonalRamp": [
+          "oklch(15.00% 0.02569 308.16)",
+          "oklch(26.43% 0.02569 308.16)",
+          "oklch(37.86% 0.02569 308.16)",
+          "oklch(49.29% 0.02569 308.16)",
+          "oklch(60.71% 0.02569 308.16)",
+          "oklch(72.14% 0.02569 308.16)",
+          "oklch(83.57% 0.02569 308.16)",
+          "oklch(95.00% 0.02569 308.16)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Soft White",
+        "canonical": "rgba(255,255,255,.75)",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "quiet": {
+        "role": "neutral",
+        "displayName": "Quiet Gray",
+        "canonical": "#a6a3ad",
+        "tonalRamp": [
+          "oklch(15.00% 0.01466 299.70)",
+          "oklch(26.43% 0.01466 299.70)",
+          "oklch(37.86% 0.01466 299.70)",
+          "oklch(49.29% 0.01466 299.70)",
+          "oklch(60.71% 0.01466 299.70)",
+          "oklch(72.14% 0.01466 299.70)",
+          "oklch(83.57% 0.01466 299.70)",
+          "oklch(95.00% 0.01466 299.70)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline White",
+        "canonical": "rgba(255,255,255,.12)",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "rehearsal-panel": {
+        "role": "neutral",
+        "displayName": "Rehearsal Ink",
+        "canonical": "#17161d",
+        "tonalRamp": [
+          "oklch(15.00% 0.01386 291.68)",
+          "oklch(26.43% 0.01386 291.68)",
+          "oklch(37.86% 0.01386 291.68)",
+          "oklch(49.29% 0.01386 291.68)",
+          "oklch(60.71% 0.01386 291.68)",
+          "oklch(72.14% 0.01386 291.68)",
+          "oklch(83.57% 0.01386 291.68)",
+          "oklch(95.00% 0.01386 291.68)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "format-idle": {
+        "role": "neutral",
+        "displayName": "Format Ink",
+        "canonical": "#27232f",
+        "tonalRamp": [
+          "oklch(15.00% 0.02272 300.10)",
+          "oklch(26.43% 0.02272 300.10)",
+          "oklch(37.86% 0.02272 300.10)",
+          "oklch(49.29% 0.02272 300.10)",
+          "oklch(60.71% 0.02272 300.10)",
+          "oklch(72.14% 0.02272 300.10)",
+          "oklch(83.57% 0.02272 300.10)",
+          "oklch(95.00% 0.02272 300.10)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      },
+      "format-selected": {
+        "role": "neutral",
+        "displayName": "Selected Violet Ink",
+        "canonical": "#6241ab",
+        "tonalRamp": [
+          "oklch(15.00% 0.16193 293.54)",
+          "oklch(26.43% 0.16193 293.54)",
+          "oklch(37.86% 0.16193 293.54)",
+          "oklch(49.29% 0.16193 293.54)",
+          "oklch(60.71% 0.16193 293.54)",
+          "oklch(72.14% 0.16193 293.54)",
+          "oklch(83.57% 0.16193 293.54)",
+          "oklch(95.00% 0.16193 293.54)"
+        ],
+        "rampPurpose": "Synthesized opaque preview ramp; not an implemented token scale. The canonical value preserves source alpha."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Desktop Display",
+        "purpose": "Base 130px hero at widths above 1399px. See breakpoint overrides, not a universal desktop size."
+      },
+      "display-mobile": {
+        "displayName": "Mobile Display",
+        "purpose": "56px/56px at 767px and below; 374px correction is 49px/51px."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Base 48px section headings with local and responsive overrides."
+      },
+      "headline-mobile": {
+        "displayName": "Mobile Headline",
+        "purpose": "32px section headings."
+      },
+      "hero-body": {
+        "displayName": "Hero Supporting Copy",
+        "purpose": "Base 28px/42px supporting line, capped at 800px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default Figtree copy, 18px/1.5 in the base layout."
+      },
+      "feature-body": {
+        "displayName": "Feature Copy",
+        "purpose": "Base 20px/30px explanatory paragraphs."
+      },
+      "nav": {
+        "displayName": "Navigation",
+        "purpose": "Quiet desktop link typography."
+      },
+      "button": {
+        "displayName": "Primary Action Label",
+        "purpose": "Base 24px pill label."
+      },
+      "button-compact": {
+        "displayName": "Compact Action Label",
+        "purpose": "Base 16px header pill label."
+      },
+      "qr-caption": {
+        "displayName": "Handwritten QR Caption",
+        "purpose": "Caveat annotation only; not a second body face."
+      }
+    },
+    "shadows": [
+      {
+        "name": "primary",
+        "value": "0 10px 20px rgba(0,0,0,.1),inset -3px -3px 2px -4px rgba(255,255,255,.89),inset 3px 2px 2px -3px #fff",
+        "purpose": "Primary pill lift and fine light edges; --shadow-primary."
+      },
+      {
+        "name": "display",
+        "value": "0 0 10px rgba(175,89,255,.85),0 0 3px rgba(255,255,255,.85),0 10px 32px rgba(34,0,255,.42),0 10px 32px rgba(0,0,0,.2)",
+        "purpose": "Hero text-shadow; --shadow-display."
+      },
+      {
+        "name": "compact",
+        "value": "0 10px 20px rgba(0,0,0,.17),inset -3px -2px 1px -3px rgba(255,255,255,.89),inset 3px 2px 1px -3px rgba(255,255,255,.77)",
+        "purpose": "Compact header action."
+      },
+      {
+        "name": "phone",
+        "value": "0 28px 55px -16px rgba(0,0,0,.7),inset 0 0 0 1px #77727c",
+        "purpose": "Hero phone frame."
+      },
+      {
+        "name": "native-figure",
+        "value": "0 30px 60px -20px #0009",
+        "purpose": "Feature screenshot lift."
+      },
+      {
+        "name": "rehearsal",
+        "value": "0 28px 80px -35px rgba(0,0,0,.6)",
+        "purpose": "Browser rehearsal enclosure."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Primary control transform transition."
+      },
+      {
+        "name": "control-transition",
+        "value": "0.2s",
+        "purpose": "Button, navigation, caret, and QR hover states."
+      },
+      {
+        "name": "qr-visibility",
+        "value": "0.25s",
+        "purpose": "Floating QR opacity and visibility when the closing section enters view."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Disable CSS transitions, animations, hover transforms, and smooth scroll; reading starts only after Play."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-nav",
+        "value": "1600px",
+        "query": "(min-width:1600px)"
+      },
+      {
+        "name": "display-adaptive",
+        "value": "1399px",
+        "query": "(max-width:1399px)"
+      },
+      {
+        "name": "tablet",
+        "value": "1199px",
+        "query": "(max-width:1199px)"
+      },
+      {
+        "name": "compact-layout",
+        "value": "959px",
+        "query": "(max-width:959px)"
+      },
+      {
+        "name": "mobile",
+        "value": "767px",
+        "query": "(max-width:767px)"
+      },
+      {
+        "name": "small-phone",
+        "value": "374px",
+        "query": "(max-width:374px)"
+      }
+    ],
+    "responsiveOverrides": {
+      "heroType": [
+        {
+          "query": "base",
+          "fontSize": "130px",
+          "lineHeight": "1",
+          "letterSpacing": "-3px"
+        },
+        {
+          "query": "(max-width:1399px)",
+          "fontSize": "clamp(90px,8.65vw,130px)"
+        },
+        {
+          "query": "(max-width:959px)",
+          "fontSize": "clamp(66px,8.6vw,90px)",
+          "letterSpacing": "-2px"
+        },
+        {
+          "query": "(max-width:767px)",
+          "fontSize": "56px",
+          "lineHeight": "56px",
+          "letterSpacing": "-1.5px"
+        },
+        {
+          "query": "(max-width:374px)",
+          "fontSize": "49px",
+          "lineHeight": "51px"
+        }
+      ],
+      "container": [
+        {
+          "query": "base",
+          "width": "min(1140px,calc(100% - 80px))"
+        },
+        {
+          "query": "(max-width:959px)",
+          "width": "calc(100% - 64px)"
+        },
+        {
+          "query": "(max-width:767px)",
+          "width": "calc(100% - 48px)"
+        },
+        {
+          "query": "(max-width:374px)",
+          "width": "calc(100% - 36px)"
+        }
+      ]
+    },
+    "gradients": [
+      {
+        "name": "primary",
+        "value": "linear-gradient(90deg,#8f67ff 0%,#6136d9 100%)",
+        "purpose": "Primary pill background; --gradient-primary."
+      },
+      {
+        "name": "compact",
+        "value": "linear-gradient(90deg,rgba(68,49,235,.06),rgba(143,102,255,.1))",
+        "purpose": "Compact header pill."
+      },
+      {
+        "name": "rehearsal-display",
+        "value": "linear-gradient(130deg,#282135,#18161f)",
+        "purpose": "Reader side of the rehearsal enclosure."
+      }
+    ],
+    "scope": {
+      "root": "Marketing/",
+      "authority": "Owner-pinned Detail reference, measured October 17, 2026, implemented in src/styles/global.css.",
+      "nativeApp": "Preserve the parent native system and approved app icon.",
+      "evidence": "docs/detail-reference.md; .impeccable/surfaces/home.md; .impeccable/review/finish-review.md",
+      "ramps": "Synthesized tonal ramps exist for panel display only; they are not source CSS tokens.",
+      "finishReview": {
+        "verdict": "ship",
+        "path": ".impeccable/review/finish-review.md",
+        "scope": "The one material hero correction is resolved; this is the reviewer’s verdict on that correction, not a new whole-surface review."
+      },
+      "captures": [
+        {
+          "path": ".impeccable/review/desktop.jpg",
+          "width": 1440,
+          "height": 6339,
+          "type": "full-page"
+        },
+        {
+          "path": ".impeccable/review/mobile.jpg",
+          "width": 390,
+          "height": 7548,
+          "type": "full-page"
+        },
+        {
+          "path": ".impeccable/review/user-1502.jpg",
+          "width": 1502,
+          "height": 6339,
+          "type": "full-page"
+        },
+        {
+          "path": ".impeccable/review/hero.jpg",
+          "width": 1502,
+          "height": 708,
+          "type": "first-viewport"
+        }
+      ],
+      "shippingAssets": {
+        "manifest": "docs/asset-provenance.json",
+        "rasterCount": 6,
+        "provenanceScannerMissing": 0,
+        "source": "Completed implementation handoff; not rerun in documentation pass."
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Access Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The large early-access action; its violet background, light edges, and minimum height are the canonical pill treatment.",
+      "html": "<a class=\"ds-primary\" href=\"mailto:contact@teleprompterpal.com?subject=Teleprompter%20Pal%20beta%20access\">Get early access<svg width=\"20\" height=\"20\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:var(--radius-control,80px);font-family:var(--font-sans,Figtree,sans-serif);font-weight:700;white-space:nowrap;text-decoration:none;color:var(--color-text,#fff);cursor:pointer;transition:filter .2s,transform .2s var(--ease-out,cubic-bezier(.16,1,.3,1)),box-shadow .2s;min-height:68px;padding:21px 32px 22px;font-size:24px;line-height:24px;background:var(--gradient-primary,linear-gradient(90deg,#8f67ff 0%,#6136d9 100%));box-shadow:var(--shadow-primary,0 10px 20px rgba(0,0,0,.1),inset -3px -3px 2px -4px rgba(255,255,255,.89),inset 3px 2px 2px -3px #fff)}.ds-primary:hover{filter:brightness(1.13);transform:translateY(-2px)}.ds-primary:active{transform:translateY(1px) scale(.98)}.ds-primary:focus-visible{outline:3px solid var(--color-lavender,#c3aaff);outline-offset:6px}.ds-primary:disabled{opacity:.45;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}.ds-primary:hover,.ds-primary:active{transform:none}}"
+    },
+    {
+      "name": "Compact Access Action",
+      "kind": "button",
+      "refersTo": "button-compact",
+      "description": "The quieter desktop header pill with translucent violet fill and smaller type.",
+      "html": "<a class=\"ds-compact\" href=\"mailto:contact@teleprompterpal.com?subject=Teleprompter%20Pal%20beta%20access\">Get early access<svg width=\"16\" height=\"16\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z\"/></svg></a>",
+      "css": ".ds-compact{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:var(--radius-control,80px);font-family:var(--font-sans,Figtree,sans-serif);font-weight:700;white-space:nowrap;text-decoration:none;color:var(--color-text,#fff);cursor:pointer;transition:filter .2s,transform .2s var(--ease-out,cubic-bezier(.16,1,.3,1)),box-shadow .2s;min-height:40px;padding:12px 16px;font-size:16px;line-height:16px;gap:8px;background:linear-gradient(90deg,rgba(68,49,235,.06),rgba(143,102,255,.1));box-shadow:0 10px 20px rgba(0,0,0,.17),inset -3px -2px 1px -3px rgba(255,255,255,.89),inset 3px 2px 1px -3px rgba(255,255,255,.77)}.ds-compact:hover{filter:brightness(1.13);transform:translateY(-2px)}.ds-compact:active{transform:translateY(1px) scale(.98)}.ds-compact:focus-visible{outline:3px solid var(--color-lavender,#c3aaff);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-compact{transition:none}.ds-compact:hover,.ds-compact:active{transform:none}}"
+    },
+    {
+      "name": "Quiet Demo Action",
+      "kind": "button",
+      "refersTo": "demo-action",
+      "description": "The low-weight secondary action beside the primary hero pill.",
+      "html": "<a class=\"ds-demo-action\" href=\"#demo\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z\"/></svg>Try the prompter</a>",
+      "css": ".ds-demo-action{display:inline-flex;align-items:center;gap:10px;font:500 18px/1.5 var(--font-sans,Figtree,sans-serif);min-height:44px;color:var(--color-text,#fff);text-decoration:none}.ds-demo-action:hover{color:var(--color-lavender,#c3aaff)}.ds-demo-action:focus-visible{outline:3px solid var(--color-lavender,#c3aaff);outline-offset:6px}"
+    },
+    {
+      "name": "Desktop Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Quiet text navigation whose state change is a lavender color shift.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Marketing navigation\"><a href=\"#how-it-works\">How it works</a><a href=\"#features\">Features</a><a href=\"#questions\">Questions</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:36px}.ds-nav a{font:400 16px/19.2px var(--font-sans,Figtree,sans-serif);color:var(--color-text,#fff);white-space:nowrap;text-decoration:none;transition:color .2s}.ds-nav a:hover{color:var(--color-lavender,#c3aaff)}.ds-nav a:focus-visible{outline:3px solid var(--color-lavender,#c3aaff);outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-nav a{transition:none}}"
+    },
+    {
+      "name": "Rehearsal Range Input",
+      "kind": "input",
+      "description": "Native, keyboard-adjustable violet range with a clear numeric label.",
+      "html": "<div class=\"ds-range-group\"><label class=\"ds-range-label\" for=\"ds-pace\">Scrolling pace <output for=\"ds-pace\">30</output></label><input class=\"ds-range\" type=\"range\" id=\"ds-pace\" min=\"10\" max=\"90\" value=\"30\" step=\"5\" /></div>",
+      "css": ".ds-range-group{max-width:360px;font-family:var(--font-sans,Figtree,sans-serif)}.ds-range-label{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--color-muted,rgba(255,255,255,.75));margin-bottom:5px}.ds-range-label output{color:var(--color-display,rgba(246,237,255,.92));font-variant-numeric:tabular-nums}.ds-range{width:100%;height:24px;accent-color:var(--color-accent,#8f67ff);cursor:pointer;margin:0 0 18px}.ds-range:focus-visible{outline:3px solid var(--color-lavender,#c3aaff);outline-offset:2px}"
+    },
+    {
+      "name": "Rehearsal Panel",
+      "kind": "card",
+      "refersTo": "rehearsal-panel",
+      "description": "The dark two-part enclosure and typography of the interactive rehearsal. This excerpt shows its visual shell, not the running demo.",
+      "html": "<section class=\"ds-rehearsal\"><div class=\"ds-display\"><span class=\"ds-demo-label\"><i></i>Rehearsal <small>Interactive demo</small></span><p class=\"ds-script\">You don’t need to memorize every word.</p><p class=\"ds-script\">You just need a little room to be yourself.</p></div><div class=\"ds-controls\"><h3>Your pace.<br>Your voice.</h3><p>Keep your place without learning every line by heart.</p><span class=\"ds-note\">Browser demo. Your camera stays off.</span></div></section>",
+      "css": ".ds-rehearsal{display:grid;grid-template-columns:1.3fr 1fr;border-radius:var(--radius-panel,24px);background:#17161d;overflow:hidden;box-shadow:0 28px 80px -35px rgba(0,0,0,.6);font-family:var(--font-sans,Figtree,sans-serif);color:var(--color-text,#fff)}.ds-display{padding:28px;background:linear-gradient(130deg,#282135,#18161f)}.ds-demo-label{display:flex;align-items:center;gap:8px;font-size:12px;color:#e9dff7;font-weight:600}.ds-demo-label i{width:6px;height:6px;border-radius:50%;background:var(--color-lavender,#c3aaff)}.ds-demo-label small{margin-left:auto;color:#bfb5ce;font-size:12px;font-weight:400}.ds-script{font-size:32px;line-height:1.45;letter-spacing:-.6px;font-weight:600;color:#e7ddef;margin:24px 0}.ds-controls{padding:42px;display:flex;flex-direction:column;gap:28px}.ds-controls h3{font-size:32px;line-height:1.15;letter-spacing:-.7px;margin:0}.ds-controls p{font-size:17px;line-height:1.5;color:var(--color-muted,rgba(255,255,255,.75));margin:0}.ds-note{font-size:12px;color:var(--color-quiet,#a6a3ad);line-height:1.5}"
+    },
+    {
+      "name": "Aspect Ratio Chips",
+      "kind": "chip",
+      "refersTo": "format-chip",
+      "description": "Selected and idle format buttons from the illustrative crop preview.",
+      "html": "<div class=\"ds-formats\" role=\"group\" aria-label=\"Preview video aspect ratio\"><button type=\"button\" aria-pressed=\"true\">9:16</button><button type=\"button\" aria-pressed=\"false\">1:1</button><button type=\"button\" aria-pressed=\"false\">16:9</button><button type=\"button\" aria-pressed=\"false\">4:5</button></div>",
+      "css": ".ds-formats{display:flex;gap:8px}.ds-formats button{border:0;background:#27232f;color:var(--color-muted,rgba(255,255,255,.75));padding:10px 15px;border-radius:30px;font:400 14px/1.5 var(--font-sans,Figtree,sans-serif);min-height:44px;cursor:pointer}.ds-formats button[aria-pressed=true]{background:#6241ab;color:#fff}.ds-formats button:hover{background:#4c376c}.ds-formats button:focus-visible{outline:3px solid var(--color-lavender,#c3aaff);outline-offset:6px}"
+    },
+    {
+      "name": "FAQ Disclosure",
+      "kind": "custom",
+      "refersTo": "faq-disclosure",
+      "description": "A native disclosure with a hairline divider, lavender open state, and rotating caret.",
+      "html": "<details class=\"ds-faq\"><summary>Do I need an account?<svg width=\"20\" height=\"20\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z\"/></svg></summary><p>No account is required. Your scripts and recordings are stored locally.</p></details>",
+      "css": ".ds-faq{border-bottom:1px solid var(--color-rule,rgba(255,255,255,.12));font-family:var(--font-sans,Figtree,sans-serif);color:var(--color-text,#fff);max-width:640px}.ds-faq summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;list-style:none;cursor:pointer;font-size:18px;line-height:1.4;font-weight:500}.ds-faq summary::-webkit-details-marker{display:none}.ds-faq summary svg{color:var(--color-quiet,#a6a3ad);transition:transform .2s}.ds-faq[open] summary{color:var(--color-lavender,#c3aaff)}.ds-faq[open] summary svg{transform:rotate(180deg)}.ds-faq summary:focus-visible{outline:3px solid var(--color-lavender,#c3aaff);outline-offset:6px}.ds-faq p{padding:0 28px 24px 0;margin:0;font-size:16px;line-height:1.65;color:var(--color-muted,rgba(255,255,255,.75))}@media(prefers-reduced-motion:reduce){.ds-faq summary svg{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Rehearsal Stage",
+    "overview": "The Rehearsal Stage places luminous words and recognizable iPhone screens on a near-black canvas. The owner selected Detail’s measured visual language: Figtree, lavender-white display type, violet gradient pills, broad section spacing, and device-led compositions. The result is direct, spacious, and lightly theatrical, with the approved lavender ring icon retaining the app’s identity.\n\nDepth comes from a restrained combination of dark tonal panels, device shadows, and violet light. The handwritten QR annotation adds one informal voice beside precise sans-serif type. Controls feel rounded and tactile; supporting labels stay quiet so the words, product imagery, and actions carry the hierarchy.\n\nThis specification belongs only to the Astro marketing site in Marketing/. It does not replace the native iPhone app’s design tokens or the parent project’s design documentation. Preserve the approved app icon and the actual native UI shown in screenshots.",
+    "keyCharacteristics": [
+      "Near-black canvas with lavender-white display type and violet accents.",
+      "Large Figtree headings, quiet explanatory copy, and open vertical rhythm.",
+      "Rounded gradient actions, dark demonstration panels, and phone silhouettes.",
+      "Caveat reserved for the QR annotation; native system type reserved for illustrative app chrome."
+    ],
+    "rules": [
+      {
+        "name": "The Violet Action Rule",
+        "body": "Use the violet gradient for prominent actions and lavender for quiet links, focus, and selected details. Keep dark surfaces dominant.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Use Figtree for marketing, Caveat for the QR annotation, and the system stack for illustrative app UI. Preserve typography inside actual screenshots.",
+        "section": "typography"
+      },
+      {
+        "name": "The Local Light Rule",
+        "body": "Concentrate glow on the display heading and device stage. Keep reading panels and supporting text clear rather than adding a glow to every surface.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the approved lavender ring app icon and the native screenshots’ original UI.",
+      "Do use the code’s responsive typography and container overrides when extending the marketing site.",
+      "Do keep keyboard focus visible and preserve the reduced-motion treatment.",
+      "Do label actual app screenshots and illustrative previews honestly.",
+      "Do keep the CTA and QR code bound to the same destination in src/data/site.ts."
+    ],
+    "donts": [
+      "Don’t apply this marketing specification to the parent native app or replace its tokens.",
+      "Don’t replace the owner’s pinned Detail direction with another visual world.",
+      "Don’t use Caveat for navigation, long copy, or primary actions.",
+      "Don’t crop away the meaningful app content when adapting device compositions.",
+      "Don’t present the illustrative camera, editing, browser rehearsal, or format preview as an actual app screenshot."
+    ]
+  }
+}
