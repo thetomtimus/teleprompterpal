@@ -1,7 +1,7 @@
 export const site = {
   name: 'Teleprompter Pal',
   domain: 'teleprompterpal.com',
-  description: 'Your words. Your pace. Prepare your script, read to camera, and make a video that sounds like you. A teleprompter for iPhone.',
+  description: 'Teleprompter Pal is a studio-grade teleprompter app that scrolls with your voice. Speak naturally, pause when you need to, and let your script keep pace. No expensive hardware required.',
   supportEmail: 'contact@teleprompterpal.com',
   // Replace this once a public App Store or TestFlight link is available.
   // The header, hero, footer, and both QR codes all use this single value.
