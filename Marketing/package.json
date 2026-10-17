@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev --host 127.0.0.1",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/prepare-deployment.mjs",
     "preview": "astro preview --host 127.0.0.1"
   },
   "dependencies": {

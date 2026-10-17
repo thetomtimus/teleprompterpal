@@ -7,6 +7,6 @@
   "effective_date": "2026-10-17",
   "support_email": "contact@teleprompterpal.com",
   "support_email_verified": true,
-  "hosting_disclosure": "Cloudflare Pages hosts these web pages. Cloudflare processes connection and request data to deliver content, keep its network reliable and protect against abuse. This can include IP addresses, traffic details and browser or device information. Cloudflare retains data according to service purposes and applicable legal obligations. We do not run separate visitor analytics or export website request logs. Cloudflare’s security features may use essential cookies; see the linked documentation for feature-specific details.",
+  "hosting_disclosure": "Vercel hosts these web pages. Vercel processes connection and request data to deliver the site, maintain reliability and protect against abuse. This can include IP addresses, traffic details and browser or device information. Data is retained according to service purposes and applicable legal obligations. We do not enable separate visitor analytics or export website request logs. Hosting security features may use essential cookies. Cloudflare provides DNS for the domain.",
   "hosting_verified": true
 }
