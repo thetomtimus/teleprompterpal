@@ -1,0 +1,9 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<a href={site.accessUrl} class:list={['button', 'button-primary', { 'button-compact': compact }]} aria-label="Request Teleprompter Pal beta access by email">
+  {site.accessLabel}<Icon name="arrowRight" size={compact ? 16 : 20} />
+</a>

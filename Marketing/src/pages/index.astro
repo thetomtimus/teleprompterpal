@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import AccessButton from '../components/AccessButton.astro';
+import QRCode from '../components/QRCode.astro';
+import PhonePreview from '../components/PhonePreview.astro';
+import { site, demoScript } from '../data/site';
+const faqs = [
+  { q: 'Can I try Teleprompter Pal yet?', a: 'Teleprompter Pal is currently in private beta. Use Get early access to send us an email. We’ll let you know when there is an available way to try the iPhone app. There is no public App Store download yet.' },
+  { q: 'Do I need an account or an internet connection?', a: 'No account is required. Writing, rehearsing, recording and editing work on your iPhone without an internet connection. Your scripts and recordings are stored locally.' },
+  { q: 'Can I change the scrolling speed and text size?', a: 'Yes. Set a comfortable pace and font size, move or resize the prompt, and switch between rehearsal and the camera preview. You control when the text starts, pauses and restarts.' },
+  { q: 'What happens to my original recording?', a: 'It stays on your iPhone. Trimming and cropping create an edit without replacing your original take. Export a separate MP4, then save it to Photos, save it to Files or use the iPhone share sheet.' },
+  { q: 'Which iPhones are supported?', a: 'The app is built for iPhone with iOS 18 or later. You can use portrait or landscape and the front or rear camera. The website demo is illustrative and doesn’t access your camera or microphone.' },
+];
+---
+<Layout>
+  <header class="site-header container">
+    <a href="/" class="wordmark" aria-label="Teleprompter Pal home"><img src="/images/app-icon.webp" alt="" width="38" height="38" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#questions">Questions</a>
+      <a href={site.supportUrl}>Support</a>
+    </nav>
+    <AccessButton compact />
+    <details class="mobile-menu"><summary aria-label="Open navigation"><Icon name="menu" size={24} /></summary><nav aria-label="Mobile navigation"><a href="#how-it-works">How it works</a><a href="#features">Features</a><a href="#questions">Questions</a><a href={site.supportUrl}>Support</a></nav></details>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy container">
+        <h1 id="hero-title">Read. Record. <span>Share.</span></h1>
+        <p class="hero-description">A teleprompter for iPhone. Keep your eyes on the lens.</p>
+        <div class="hero-actions"><AccessButton /><a href="#demo" class="demo-link"><Icon name="play" size={17} /> Try the prompter</a></div>
+        <p class="availability"><Icon name="iphone" size={15} /> {site.accessNote}</p>
+      </div>
+      <div class="hero-stage" aria-label="Teleprompter Pal workflow preview">
+        <div class="stage-glow" aria-hidden="true"></div>
+        <div class="phone-group">
+          <div class="phone-wrap wrap-scripts"><span class="phone-label"><Icon name="text" size={16} /> Your words</span><PhonePreview kind="scripts" /></div>
+          <div class="phone-wrap wrap-camera"><span class="phone-label"><span class="record-dot"></span> Your moment</span><PhonePreview kind="camera" /></div>
+          <div class="phone-wrap wrap-edit"><span class="phone-label"><Icon name="crop" size={16} /> Your best take</span><PhonePreview kind="edit" /></div>
+        </div>
+        <p class="preview-caption">Actual Scripts screen alongside illustrative camera and editing previews.</p>
+      </div>
+    </section>
+
+    <div class="assurance container"><span><Icon name="check" size={18} /> No memorizing</span><span><Icon name="check" size={18} /> No account needed</span><span><Icon name="lock" size={18} /> Yours, on your iPhone</span></div>
+
+    <section class="demo-section container" id="demo" aria-labelledby="demo-title">
+      <div class="section-intro"><h2 id="demo-title">Find your words.<br /><span>Then find your flow.</span></h2><p>A little practice goes a long way. Press play, adjust the pace, and see how it feels to have your next line right there.</p></div>
+      <div class="rehearsal-demo">
+        <div class="demo-display"><div class="demo-topline"><span><span class="demo-status-dot"></span> Rehearsal</span><span>Interactive demo</span></div><div class="reader-viewport" id="reader-viewport" tabindex="0" aria-label="Sample teleprompter script"><div class="reader-guide" aria-hidden="true"></div><div class="reader-track" id="reader-track">{demoScript.map(line=><p>{line}</p>)}</div></div><div class="demo-bottomline"><span>Look here. Speak naturally.</span><Icon name="text" size={20} /></div></div>
+        <div class="demo-controls"><div><h3>Your pace.<br /> Your voice.</h3><p>Keep your place without learning every line by heart.</p></div><div class="demo-inputs"><label for="pace">Scrolling pace <output id="pace-value" for="pace">30</output></label><input type="range" id="pace" min="10" max="90" value="30" step="5" /><label for="text-size">Text size <output id="size-value" for="text-size">32</output></label><input type="range" id="text-size" min="24" max="44" value="32" step="2" /></div><div class="demo-transport"><button class="button button-primary" id="demo-play" type="button" aria-pressed="false"><span class="play-icon"><Icon name="play" size={18} /></span><span class="pause-icon" hidden><Icon name="pause" size={18} /></span><span id="play-label">Play text</span></button><button class="button-restart" id="demo-restart" type="button" aria-label="Restart sample script"><Icon name="restart" size={22} /></button></div><p class="demo-note" id="demo-status" role="status">Browser demo. Your camera stays off.</p></div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="workflow container" aria-labelledby="workflow-title">
+      <h2 id="workflow-title" class="workflow-heading">Less thinking about the script.<br /><span>More being yourself.</span></h2>
+      <div class="feature-row">
+        <div class="feature-visual script-visual"><div class="visual-halo" aria-hidden="true"></div><img src="/images/editor.webp" alt="Actual iPhone app script editor with a saved script ready to rehearse or record" width="640" height="1391" /><div class="visual-caption"><Icon name="check" size={16} /> Saved on this iPhone</div></div>
+        <div class="feature-copy"><h2>A place for your ideas.<br /><span>And your next take.</span></h2><p>Write a new script or paste in the words you already have. Keep everything together in your script library, ready when you are.</p><p>Open a script, rehearse it, then go straight to the camera. Your reading position comes with you.</p><a class="text-link" href="#demo">Give it a try <Icon name="arrowRight" size={18} /></a></div>
+      </div>
+      <div class="feature-row feature-reverse">
+        <div class="feature-visual settings-visual"><div class="visual-halo" aria-hidden="true"></div><img src="/images/reader-settings.webp" alt="Actual iPhone reader settings for adjusting the prompt appearance and reading position" width="640" height="1391" /><div class="visual-caption"><Icon name="sliders" size={16} /> Make yourself comfortable</div></div>
+        <div class="feature-copy"><h2>Look at the camera.<br /><span>Stay in the moment.</span></h2><p>Your script sits over the camera preview, so you can keep your eyes close to the lens and your mind on what you want to say.</p><p>Adjust the speed and text size. Move the prompt to a comfortable spot. Pause, reset, and take it again whenever you like.</p><a class="text-link" href="#demo">Find your pace <Icon name="arrowRight" size={18} /></a></div>
+      </div>
+    </section>
+
+    <section class="export-section container" id="features" aria-labelledby="export-title">
+      <div class="export-copy"><h2 id="export-title">Keep the good part.<br /><span>Keep the original, too.</span></h2><p>Trim the start. Find your frame. Export a separate MP4 and send it where it needs to go. Your original take stays safe.</p><div class="export-destinations"><span><Icon name="crop" size={18} /> Trim & crop</span><span><Icon name="share" size={18} /> Photos, Files & Share</span></div></div>
+      <div class="format-demo"><div class="format-preview" id="format-preview" data-format="9:16"><img src="/images/presenter.webp" alt="Illustrative crop preview showing the same presenter in different video formats" width="800" height="1200" loading="lazy" /><div class="format-guide" aria-hidden="true"></div><span class="format-label" id="format-label">9:16</span></div><div class="format-buttons" role="group" aria-label="Preview video aspect ratio"><button type="button" data-ratio="9:16" aria-pressed="true">9:16</button><button type="button" data-ratio="1:1" aria-pressed="false">1:1</button><button type="button" data-ratio="16:9" aria-pressed="false">16:9</button><button type="button" data-ratio="4:5" aria-pressed="false">4:5</button></div><p class="demo-note">Try a format. Illustrative crop preview.</p></div>
+    </section>
+
+    <section class="privacy-note container"><Icon name="lock" size={30} /><div><h3>Your script is your business.</h3><p>No sign-up. No script uploads. Your words and recordings stay on your iPhone.</p></div><a class="text-link" href={site.privacyUrl}>Our privacy policy <Icon name="arrowRight" size={18} /></a></section>
+
+    <section class="faq-section container" id="questions" aria-labelledby="faq-title"><h2 id="faq-title">A few things<br /><span>you might be wondering.</span></h2><div class="faq-list">{faqs.map(({q,a})=><details><summary>{q}<Icon name="caret" size={20} /></summary><p>{a}</p></details>)}</div></section>
+
+    <section class="closing" aria-labelledby="closing-title"><div class="closing-inner container"><img src="/images/app-icon.webp" alt="Teleprompter Pal’s approved lavender circle app icon" width="88" height="88" loading="lazy" /><h2 id="closing-title">You have something to say.<br /><span>Let’s get it on camera.</span></h2><p>Your words. Your pace. A little help from your Pal.</p><AccessButton /><span class="availability">{site.accessNote}</span><QRCode /></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="footer-main"><div><a href="/" class="wordmark"><img src="/images/app-icon.webp" alt="" width="32" height="32" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a><p>Keep your eyes on the lens.<br />Keep your words close.</p></div><nav aria-label="Footer navigation"><div><span>The app</span><a href="#how-it-works">How it works</a><a href="#demo">Try the prompter</a><a href={site.accessUrl}>Get early access</a></div><div><span>Here to help</span><a href={site.supportUrl}>Support</a><a href={`mailto:${site.supportEmail}`}>Contact us</a><a href={site.privacyUrl}>Privacy policy</a></div></nav></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Second Wind, LLC. All rights reserved.</span><span>Made for your next take.</span></div></div></footer>
+  <QRCode floating />
+
+  <script>
+    const track = document.querySelector<HTMLElement>('#reader-track')!;
+    const viewport = document.querySelector<HTMLElement>('#reader-viewport')!;
+    const play = document.querySelector<HTMLButtonElement>('#demo-play')!;
+    const playLabel = document.querySelector<HTMLElement>('#play-label')!;
+    const status = document.querySelector<HTMLElement>('#demo-status')!;
+    const pace = document.querySelector<HTMLInputElement>('#pace')!;
+    const size = document.querySelector<HTMLInputElement>('#text-size')!;
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let playing = false;
+    let offset = 0;
+    let previousTime = 0;
+    let frame = 0;
+
+    function setPlaying(value: boolean) {
+      playing = value;
+      play.setAttribute('aria-pressed', String(value));
+      playLabel.textContent = value ? 'Pause text' : 'Play text';
+      document.querySelector<HTMLElement>('.play-icon')!.hidden = value;
+      document.querySelector<HTMLElement>('.pause-icon')!.hidden = !value;
+      previousTime = 0;
+      cancelAnimationFrame(frame);
+      if (value) frame = requestAnimationFrame(tick);
+    }
+
+    function tick(time: number) {
+      if (!playing) return;
+      if (previousTime) offset += (Math.min(time - previousTime, 80) / 1000) * Number(pace.value) * 0.6;
+      previousTime = time;
+      const end = Math.max(0, track.scrollHeight - viewport.clientHeight + 130);
+      offset = Math.min(offset, end);
+      track.style.transform = `translateY(-${offset}px)`;
+      if (offset >= end) { setPlaying(false); status.textContent = 'Nice take. Restart whenever you’re ready.'; return; }
+      frame = requestAnimationFrame(tick);
+    }
+
+    function restart() {
+      setPlaying(false);
+      offset = 0;
+      track.style.transform = 'translateY(0)';
+      status.textContent = 'Back to the start. Find your own pace.';
+    }
+
+    play.addEventListener('click', () => {
+      if (!playing && offset >= Math.max(0, track.scrollHeight - viewport.clientHeight + 130)) restart();
+      setPlaying(!playing);
+      status.textContent = playing ? 'Reading your sample script. Pause whenever you like.' : 'Paused. Take a breath.';
+    });
+    document.querySelector('#demo-restart')!.addEventListener('click', restart);
+    pace.addEventListener('input', () => { document.querySelector('#pace-value')!.textContent = pace.value; });
+    size.addEventListener('input', () => { document.querySelector('#size-value')!.textContent = size.value; track.style.setProperty('--reader-size', `${size.value}px`); });
+    viewport.addEventListener('keydown', (event) => { if (event.key === ' ') { event.preventDefault(); play.click(); } });
+    document.addEventListener('visibilitychange', () => { if (document.hidden && playing) { setPlaying(false); status.textContent = 'Paused while you were away.'; } });
+    new IntersectionObserver(([entry]) => { if (!entry.isIntersecting && playing) { setPlaying(false); status.textContent = 'Paused. Ready when you are.'; } }, { threshold: 0 }).observe(viewport);
+    if (reducedMotion.matches) status.textContent = 'Text stays still until you press Play. Your camera stays off.';
+
+    document.querySelectorAll<HTMLButtonElement>('[data-ratio]').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('[data-ratio]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      document.querySelector<HTMLElement>('#format-preview')!.dataset.format = button.dataset.ratio;
+      document.querySelector('#format-label')!.textContent = button.dataset.ratio!;
+    }));
+
+    const mobileMenu = document.querySelector<HTMLDetailsElement>('.mobile-menu')!;
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileMenu.open = false; }));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && mobileMenu.open) { mobileMenu.open = false; mobileMenu.querySelector('summary')!.focus(); } });
+    const floatingQr = document.querySelector<HTMLElement>('.qr-floating')!;
+    new IntersectionObserver(([entry]) => { floatingQr.classList.toggle('qr-dismissed', entry.isIntersecting); }, { threshold: 0.1 }).observe(document.querySelector('.closing')!);
+  </script>
+</Layout>

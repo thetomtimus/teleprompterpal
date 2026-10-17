@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+
+# Local browser captures, verification output, and design-tool cache
+.impeccable/review/
+.impeccable/hook.cache.json

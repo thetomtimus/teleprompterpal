@@ -1,0 +1,32 @@
+[
+  {
+    "path": "public/images/presenter.webp",
+    "origin": "Pre-existing original fictional presenter. Source: ../iPhoneApp/Assets.xcassets/OnboardingPresenter.imageset/onboarding-presenter.png; original generation prompt: ../.impeccable/assets/onboarding-presenter.prompt.txt. Resized to 800px WebP quality 86. No new image generation.",
+    "sha256": "b3651c38a31d0d433c7f4fbbc33778c7e4df8322f30d6abfafb710fcc7b05dd0"
+  },
+  {
+    "path": "public/images/app-icon.webp",
+    "origin": "Owner-approved 66-percent lavender glass ring icon. Source: ../.impeccable/assets/app-icon-master.png. Approval: ../.impeccable/assets/app-icon-selection.json, October 17 2026. Resized to 160px lossless WebP. Artwork unchanged.",
+    "sha256": "fa8950f0a519e7bfd57bd70fa79416e04162263248c6d9ddee83864dc44faae6"
+  },
+  {
+    "path": "public/images/scripts.webp",
+    "origin": "Actual iPhone Simulator screenshot of Teleprompter Pal 0.6.1 build 21. Source: ../docs/screenshots/2026-10-16-p6b/screens/18-scripts.png. Resized to 640px WebP quality 92; original UI unchanged.",
+    "sha256": "9bece3595f794ae93078b535be14711fb0dec79a63aad9b4ae7c5eddaa3ae13c"
+  },
+  {
+    "path": "public/images/editor.webp",
+    "origin": "Actual iPhone Simulator screenshot of Teleprompter Pal. Source: ../docs/screenshots/2026-10-16-p6c/large-p6c-script-editor.png. Resized to 640px WebP quality 92; original UI unchanged.",
+    "sha256": "9d5e6490ba17b5fa3f00387a9c2e2a5348f42fb98e857b1d34c7046fc543420e"
+  },
+  {
+    "path": "public/images/reader-settings.webp",
+    "origin": "Actual iPhone Simulator screenshot of Teleprompter Pal. Source: ../docs/screenshots/2026-10-16-p6c/large-p6c-reader-settings.png. Resized to 640px WebP quality 92; original UI unchanged.",
+    "sha256": "287bf63dbdbfcda6ce541846449734c777462c1821f1a478cb1295ac8883ddb1"
+  },
+  {
+    "path": "public/favicon.png",
+    "origin": "Owner-approved 66-percent lavender glass ring icon. Source: ../.impeccable/assets/app-icon-master.png. Approval: ../.impeccable/assets/app-icon-selection.json, October 17 2026. Resized to 64px PNG, artwork unchanged.",
+    "sha256": "5fe6ffd66880856e342a3a1afb7411cabda7fb8877114f0315aa5fb604af612f"
+  }
+]
