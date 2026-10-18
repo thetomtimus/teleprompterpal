@@ -34,6 +34,8 @@ The app is currently in **private beta**. Every early-access CTA and both QR cod
 
 Emails are saved in the existing Second Wind HubSpot account (portal `247519359`) under **Teleprompter Pal Early Access**, form `d09c4c70-dff9-4a17-be08-8edf1c5b4241`. Open [the signup submissions](https://app-na2.hubspot.com/submissions/247519359/form/d09c4c70-dff9-4a17-be08-8edf1c5b4241/submissions) to view or export them. Contacts are matched by email; repeated signups update the same contact. The form has one required Email field, creates a contact for each new email, and has no automated follow-up email or submission-notification recipients. HubSpot’s free tools support this setup, subject to the account’s contact limits (currently 1,000 for free accounts). No paid upgrade was added. The website privacy policy describes signup storage and removal requests.
 
+The production domain `teleprompterpal.com` must stay registered under HubSpot Settings → Tracking & Analytics → Tracking Code → Advanced Tracking → Additional site domains. HubSpot can return a successful API response while quarantining an unregistered domain’s submissions in the form’s Spam tab. Register a replacement production domain before using it; keep bot filtering on.
+
 When an App Store/TestFlight link is available, update the URL and access wording in `src/data/site.ts`, update the access FAQ and QR wording, and rebuild. Do not invent a public installation URL.
 
 ## Interactions
