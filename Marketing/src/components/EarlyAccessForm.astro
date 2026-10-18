@@ -1,0 +1,92 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+<form class="signup-form" data-signup-form data-endpoint={site.signupEndpoint} aria-label="Early access signup" method="post" action={site.signupFallbackUrl}>
+  <fieldset class="signup-fields">
+    <legend class="visually-hidden">Join the early access list</legend>
+    <label for="signup-email">Email address</label>
+    <div class="signup-controls">
+      <input id="signup-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="254" required placeholder="you@example.com" aria-describedby="signup-note signup-status" />
+      <button class="button button-primary" type="submit" disabled><span data-submit-label>Join the list</span><Icon name="arrowRight" size={20} /></button>
+    </div>
+    <p id="signup-note" class="signup-note">By joining, you agree to receive emails about Teleprompter Pal early access. Ask us to remove you anytime. <a href={site.privacyUrl + '#early-access-signups'}>Privacy policy</a></p>
+  </fieldset>
+  <p id="signup-status" class="signup-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+  <noscript><p class="signup-note">JavaScript is off. <a href={site.signupFallbackUrl}>Use our secure signup form</a> to join the list.</p></noscript>
+  <p class="signup-help">Having trouble? <a href={`mailto:${site.supportEmail}`}>Contact us</a>.</p>
+</form>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-signup-form]')!;
+  const email = form.querySelector<HTMLInputElement>('input[name="email"]')!;
+  const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+  const label = form.querySelector<HTMLElement>('[data-submit-label]')!;
+  const fields = form.querySelector<HTMLFieldSetElement>('fieldset')!;
+  const status = form.querySelector<HTMLElement>('[role="status"]')!;
+  button.disabled = false;
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (button.disabled) return;
+    email.value = email.value.trim();
+    if (!form.reportValidity()) return;
+
+    button.disabled = true;
+    label.textContent = 'Joining…';
+    form.setAttribute('aria-busy', 'true');
+    delete form.dataset.state;
+    email.removeAttribute('aria-invalid');
+    status.textContent = 'Saving your email…';
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 15000);
+
+    try {
+      // Send only the email and page context. No tracking cookie, query string,
+      // script content, API key, or browser storage is involved.
+      const response = await fetch(form.dataset.endpoint!, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'omit',
+        referrerPolicy: 'no-referrer',
+        signal: controller.signal,
+        body: JSON.stringify({
+          fields: [{ objectTypeId: '0-1', name: 'email', value: email.value }],
+          submittedAt: String(Date.now()),
+          context: {
+            pageUri: window.location.origin + window.location.pathname,
+            pageName: 'Teleprompter Pal Early Access',
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        if (response.status === 429) throw new Error('Please wait a moment, then try joining again.');
+        if (response.status === 400) {
+          email.setAttribute('aria-invalid', 'true');
+          throw new Error('We couldn’t save that email address. Check it or try another address.');
+        }
+        throw new Error('We couldn’t save your email right now. Please try again or contact us below.');
+      }
+
+      form.dataset.state = 'success';
+      form.reset();
+      fields.hidden = true;
+      status.textContent = 'You’re on the list. We’ll email you when you can try Teleprompter Pal.';
+      status.focus();
+    } catch (error) {
+      form.dataset.state = 'error';
+      status.textContent = error instanceof Error && error.name !== 'AbortError'
+        ? (error instanceof TypeError ? 'We couldn’t reach the signup service. Please try again or contact us below.' : error.message)
+        : 'Saving took too long. Please try again or contact us below.';
+      status.focus();
+    } finally {
+      window.clearTimeout(timeout);
+      form.removeAttribute('aria-busy');
+      button.disabled = false;
+      label.textContent = 'Join the list';
+    }
+  });
+
+  email.addEventListener('input', () => email.removeAttribute('aria-invalid'));
+</script>

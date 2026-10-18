@@ -2,11 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import AccessButton from '../components/AccessButton.astro';
+import EarlyAccessForm from '../components/EarlyAccessForm.astro';
 import QRCode from '../components/QRCode.astro';
 import PhonePreview from '../components/PhonePreview.astro';
 import { site, demoScript } from '../data/site';
 const faqs = [
-  { q: 'Can I try Teleprompter Pal yet?', a: 'Teleprompter Pal is currently in private beta. Use Get early access to send us an email. We’ll let you know when there is an available way to try the iPhone app. There is no public App Store download yet.' },
+  { q: 'Can I try Teleprompter Pal yet?', a: 'Teleprompter Pal is currently in private beta. Join the early access list with your email address and we’ll let you know when you can try the iPhone app. There is no public App Store download yet.' },
   { q: 'Do I need an account or an internet connection?', a: 'No account is required. Writing, rehearsing, recording and editing work on your iPhone without an internet connection. Your scripts and recordings are stored locally.' },
   { q: 'Can I change the scrolling speed and text size?', a: 'Yes. Set a comfortable pace and font size, move or resize the prompt, and switch between rehearsal and the camera preview. You control when the text starts, pauses and restarts.' },
   { q: 'What happens to my original recording?', a: 'It stays on your iPhone. Trimming and cropping create an edit without replacing your original take. Export a separate MP4, then save it to Photos, save it to Files or use the iPhone share sheet.' },
@@ -76,7 +77,7 @@ const faqs = [
 
     <section class="faq-section container" id="questions" aria-labelledby="faq-title"><h2 id="faq-title">Questions about <br /><span>Teleprompter Pal.</span></h2><div class="faq-list">{faqs.map(({q,a})=><details><summary>{q}<Icon name="caret" size={20} /></summary><p>{a}</p></details>)}</div></section>
 
-    <section class="closing" aria-labelledby="closing-title"><div class="closing-inner container"><img src="/images/app-icon.webp" alt="Teleprompter Pal’s approved lavender circle app icon" width="88" height="88" loading="lazy" /><h2 id="closing-title">Get early access <br /><span>to Teleprompter Pal.</span></h2><p>Your words. Your pace. A little help from your Pal.</p><AccessButton /><span class="availability">{site.accessNote}</span><QRCode /></div></section>
+    <section id="early-access" class="closing" aria-labelledby="closing-title"><div class="closing-inner container"><img src="/images/app-icon.webp" alt="Teleprompter Pal’s approved lavender circle app icon" width="88" height="88" loading="lazy" /><h2 id="closing-title">Get early access <br /><span>to Teleprompter Pal.</span></h2><p>Leave your email. We’ll let you know when you can try the iPhone app.</p><EarlyAccessForm /><span class="availability">{site.accessNote}</span><QRCode /></div></section>
   </main>
 
   <footer class="site-footer"><div class="container"><div class="footer-main"><div><a href="/" class="wordmark"><img src="/images/app-icon.webp" alt="" width="32" height="32" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a><p>Keep your eyes on the lens.<br />Keep your words close.</p></div><nav aria-label="Footer navigation"><div><span>The app</span><a href="#how-it-works">How it works</a><a href="#demo">Try the prompter</a><a href={site.accessUrl}>Get early access</a></div><div><span>Here to help</span><a href={site.supportUrl}>Support</a><a href={`mailto:${site.supportEmail}`}>Contact us</a><a href={site.privacyUrl}>Privacy policy</a></div></nav></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Second Wind, LLC. All rights reserved.</span><span>Made for your next take.</span></div></div></footer>

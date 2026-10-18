@@ -258,7 +258,9 @@ The rehearsal panel is the canonical large enclosure. Its left side uses a dark 
 
 ### Inputs / Fields
 
-The site uses native range inputs, not text-entry fields. Ranges are full width, 24px high, and use Bright Violet as `accent-color`. Visible labels pair with tabular numeric outputs. Pace spans 10–90 in steps of 5; text size spans 24–44 in steps of 2. Preserve native keyboard adjustment and the shared visible focus treatment. The current implementation has no error-field design to document.
+The rehearsal uses native range inputs. Ranges are full width, 24px high, and use Bright Violet as `accent-color`. Visible labels pair with tabular numeric outputs. Pace spans 10–90 in steps of 5; text size spans 24–44 in steps of 2. Preserve native keyboard adjustment and the shared visible focus treatment.
+
+The early-access form adds a labeled email field beside the existing violet pill action. The form is capped at 620px; its controls share a 60px minimum height and a 12px gap, then stack at 767px. The email field uses the existing dark surface, Clear White text, a muted border, the `control` radius, Figtree, and the shared Soft Lavender focus outline. Quiet consent and help text sit below. Native email validation runs before the address is saved through the HubSpot public form API. While saving, the button is disabled, its label becomes “Joining…”, and the polite status reads “Saving your email…”. Errors appear in pale pink; a rejected email also receives a matching border and `aria-invalid`. The form remains available for retry. Success hides the fields and focuses a Soft Lavender confirmation in a bordered, rounded panel. Network errors and timeouts also focus the status message.
 
 ### Navigation
 
@@ -274,7 +276,7 @@ The center camera device is wider than its neighbors (294px against 242px in the
 
 The Scripts, editor, and reader-settings imagery are actual iPhone app screenshots. The presenter is an existing fictional image; camera chrome, editing preview, and crop demonstration are illustrative. The browser rehearsal is a controllable website demo. Preserve those disclosures in captions and accessible text.
 
-The handwritten QR caption, arrow, white art tile, and quiet “Opens your email app” note form one annotation. Both QR copies and every early-access action read the same value from `src/data/site.ts`. During private beta that value is an explicit email request, not an install promise.
+The handwritten QR caption, arrow, white art tile, and quiet “Join the early access list” note form one annotation. Both QR copies and every early-access action share `#early-access` from `src/data/site.ts`; QR artwork encodes the absolute site URL with that fragment so scanning opens the email signup. During private beta the destination collects an email for early-access updates.
 
 Movement is brief and state-driven. The default transform easing is `cubic-bezier(.16,1,.3,1)`. Reduced-motion preference disables CSS transitions and animations, removes button/QR hover transforms, and disables smooth scrolling. Rehearsal text moves only after the user presses Play; it pauses when hidden or outside the viewport.
 

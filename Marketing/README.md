@@ -30,7 +30,11 @@ The build runs strict Astro/TypeScript checks, emits a static website to `dist/`
 - `docs/asset-provenance.json`: sources and hashes for the approved icon, fictional presenter and actual app screenshots.
 - `DESIGN.md` and `.impeccable/design.json`: the implemented marketing design system.
 
-The app is currently in **private beta**. The CTA and both QR codes open a beta-access email to `contact@teleprompterpal.com`; they do not send an email automatically or imply a public download. The QR has been independently decoded at its 136px desktop display size. When an App Store/TestFlight link is available, update the URL and access wording in `src/data/site.ts`, update the access FAQ and QR wording, and rebuild. Do not invent a public installation URL.
+The app is currently in **private beta**. Every early-access CTA and both QR codes lead to the homepage’s `#early-access` email signup. `EarlyAccessForm.astro` sends an email address directly to HubSpot’s public Forms API. It shows success only after HubSpot accepts the submission, retains input on failure, and provides a hosted-form fallback for visitors without JavaScript. No API key, tracking script, server function or local email storage is required. The QR encodes the absolute production signup URL.
+
+Emails are saved in the existing Second Wind HubSpot account (portal `247519359`) under **Teleprompter Pal Early Access**, form `d09c4c70-dff9-4a17-be08-8edf1c5b4241`. Open [the signup submissions](https://app-na2.hubspot.com/submissions/247519359/form/d09c4c70-dff9-4a17-be08-8edf1c5b4241/submissions) to view or export them. Contacts are matched by email; repeated signups update the same contact. The form has one required Email field, creates a contact for each new email, and has no automated follow-up email or submission-notification recipients. HubSpot’s free tools support this setup, subject to the account’s contact limits (currently 1,000 for free accounts). No paid upgrade was added. The website privacy policy describes signup storage and removal requests.
+
+When an App Store/TestFlight link is available, update the URL and access wording in `src/data/site.ts`, update the access FAQ and QR wording, and rebuild. Do not invent a public installation URL.
 
 ## Interactions
 
@@ -63,7 +67,7 @@ Production domain: https://teleprompterpal.com/. The www hostname redirects to t
 
 Cloudflare Web Analytics is enabled with manual JS snippet installation. The production post-build step adds its public beacon to the homepage, privacy, support and 404 pages; Vercel previews and the standalone legal review bundle are excluded. The response CSP and the copied legal pages' meta CSP allow only the Cloudflare script and measurement endpoint needed for this service. The website privacy policy discloses the service. View [the bot-filtered report](https://dash.cloudflare.com/b09b147e2f7b97378b35d5eac2c93d0a/web-analytics/overview?siteTag~in=b421b846da344a3089419b126a5dcad1&excludeBots=Yes), with **Exclude bots equals Yes**. Visits are an estimate of traffic, not a count of identified people, and data starts after installation.
 
-The approved CTA and QR still request private-beta access by email. No App Store or public TestFlight link is configured. The approved hero voice-tracking description is launch positioning for planned functionality; the current iPhone beta still uses manual scrolling controls.
+The CTA and QR collect private-beta signup emails through the form. No App Store or public TestFlight link is configured. The approved hero voice-tracking description is launch positioning for planned functionality; the current iPhone beta still uses manual scrolling controls.
 
 ## Validation
 

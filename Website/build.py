@@ -14,7 +14,7 @@ SECTIONS = {
         ("overview", "What this covers"), ("local-library", "Your local library"),
         ("permissions", "Permissions"), ("diagnostics", "Local diagnostics"),
         ("exports-backups", "Exports and backups"), ("support-information", "Support messages"),
-        ("deletion", "Data retention and deletion"), ("website", "These web pages"),
+        ("deletion", "Data retention and deletion"), ("early-access-signups", "Early access signups"), ("website", "These web pages"),
         ("contact", "Privacy questions"), ("changes", "Policy changes")],
     "support": [("start", "Your first recording"), ("recording", "Recording and scrolling"),
         ("edit-export", "Edit, export and save"), ("scripts-data", "Scripts and your library"),
@@ -64,7 +64,7 @@ def build(release=False):
         contact += '<div class="pending-contact"><strong>Email setup in progress</strong><p>This address is being configured. Sending and receiving have not yet been verified; please wait until setup is complete before sending a request.</p></div>'
     hosting = config["hosting_disclosure"] or "The hosting provider and its logging and retention practices will be identified before these pages are published."
     values = {key: escape(str(config[key])) for key in ("app_name", "operator", "country")}
-    values.update(document_date=escape(document_date), contact=contact, hosting_disclosure=escape(hosting))
+    values.update(document_date=escape(document_date), contact=contact, support_email=escape(email), hosting_disclosure=escape(hosting))
     draft = '' if release else '<div class="draft-notice"><strong>Local review draft.</strong> These pages are not published.</div>'
     robots = "index,follow" if release else "noindex,nofollow"
     for page in SECTIONS:

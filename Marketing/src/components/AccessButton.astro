@@ -4,6 +4,6 @@ import Icon from './Icon.astro';
 interface Props { compact?: boolean; }
 const { compact = false } = Astro.props;
 ---
-<a href={site.accessUrl} class:list={['button', 'button-primary', { 'button-compact': compact }]} aria-label="Request Teleprompter Pal beta access by email">
+<a href={site.accessUrl} class:list={['button', 'button-primary', { 'button-compact': compact }]} aria-label="Sign up for Teleprompter Pal early access">
   {site.accessLabel}<Icon name="arrowRight" size={compact ? 16 : 20} />
 </a>

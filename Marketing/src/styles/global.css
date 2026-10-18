@@ -218,6 +218,24 @@ summary::-webkit-details-marker{display:none}
 .closing .button{margin-top:34px}
 .closing .availability{margin-top:18px}
 .closing .qr-code{position:absolute;right:8px;bottom:20px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.signup-form{width:min(620px,100%);margin-top:34px;text-align:left}
+.signup-fields{min-width:0;border:0;padding:0;margin:0}
+.signup-fields label{display:block;font-size:16px;font-weight:600;margin-bottom:10px}
+.signup-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:stretch}
+.signup-controls input{width:100%;min-width:0;min-height:60px;padding:16px 22px;border:1px solid #77717f;border-radius:var(--radius-control);background:var(--color-surface);color:var(--color-text);font-size:18px;caret-color:var(--color-lavender)}
+.signup-controls input::placeholder{color:#b9b4c4;opacity:1}
+.signup-controls input[aria-invalid='true']{border-color:#ffb0c7}
+.closing .signup-controls .button{margin:0;min-height:60px;padding:17px 25px;border:0;font-size:19px;line-height:24px;white-space:nowrap}
+.signup-form .signup-note{font-size:14px;line-height:1.6;color:var(--color-quiet);margin-top:16px}
+.signup-form a{color:var(--color-lavender);text-decoration:underline}
+.signup-form a:hover{color:var(--color-text)}
+.signup-form .signup-status{font-size:17px;line-height:1.6;color:var(--color-muted);margin-top:18px}
+.signup-status:empty{display:none}
+.signup-form[data-state='error'] .signup-status{color:#ffb0c7}
+.signup-form[data-state='success'] .signup-status{margin:0;padding:24px;border:1px solid var(--color-rule);border-radius:16px;color:var(--color-lavender);font-size:22px}
+.signup-form .signup-help{margin-top:16px;font-size:14px;color:var(--color-quiet);text-align:center}
+@media(max-width:767px){.signup-form{margin-top:28px}.signup-controls{grid-template-columns:1fr}.signup-controls .button{margin:0;width:100%;font-size:19px}.signup-form .signup-note{font-size:13px}.signup-form[data-state='success'] .signup-status{font-size:19px}}
 .site-footer{background:#000;padding:80px 0 30px}
 .footer-main{display:flex;justify-content:space-between;gap:60px}
 .footer-main>div>p{font-size:16px;line-height:1.6;color:var(--color-quiet);margin-top:20px}

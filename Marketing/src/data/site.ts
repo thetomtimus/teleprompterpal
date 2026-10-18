@@ -3,13 +3,15 @@ export const site = {
   domain: 'teleprompterpal.com',
   description: 'Teleprompter Pal is a studio-grade teleprompter app that scrolls with your voice. Speak naturally, pause when you need to, and let your script keep pace. No expensive hardware required.',
   supportEmail: 'contact@teleprompterpal.com',
-  // Replace this once a public App Store or TestFlight link is available.
-  // The header, hero, footer, and both QR codes all use this single value.
-  accessUrl: 'mailto:contact@teleprompterpal.com?subject=Teleprompter%20Pal%20beta%20access',
+  // All early-access links lead to the email signup on this page.
+  accessUrl: '#early-access',
   accessLabel: 'Get early access',
   accessNote: 'For iPhone · Currently in private beta',
   privacyUrl: 'https://teleprompterpal.com/privacy/',
   supportUrl: 'https://teleprompterpal.com/support/',
+  // Public form identifiers, not credentials. Submissions are saved in HubSpot.
+  signupEndpoint: 'https://api.hsforms.com/submissions/v3/integration/submit/247519359/d09c4c70-dff9-4a17-be08-8edf1c5b4241',
+  signupFallbackUrl: 'https://share-na2.hsforms.com/10JxMcN_5She-CI7fHFtCQQ43d75r',
 };
 
 export const demoScript = [
