@@ -61,6 +61,8 @@ Verified Vercel build settings: root directory `Marketing`, Node 24.x, install c
 
 Production domain: https://teleprompterpal.com/. The www hostname redirects to the apex. Vercel serves the website; Cloudflare remains the DNS provider. Preserve all mail and verification records when changing the apex web record. The previous Cloudflare Pages deployment is retained for rollback.
 
+Cloudflare Web Analytics is enabled with manual JS snippet installation. The production post-build step adds its public beacon to the homepage, privacy, support and 404 pages; Vercel previews and the standalone legal review bundle are excluded. The response CSP and the copied legal pages' meta CSP allow only the Cloudflare script and measurement endpoint needed for this service. The website privacy policy discloses the service. View [the bot-filtered report](https://dash.cloudflare.com/b09b147e2f7b97378b35d5eac2c93d0a/web-analytics/overview?siteTag~in=b421b846da344a3089419b126a5dcad1&excludeBots=Yes), with **Exclude bots equals Yes**. Visits are an estimate of traffic, not a count of identified people, and data starts after installation.
+
 The approved CTA and QR still request private-beta access by email. No App Store or public TestFlight link is configured. The approved hero voice-tracking description is launch positioning for planned functionality; the current iPhone beta still uses manual scrolling controls.
 
 ## Validation

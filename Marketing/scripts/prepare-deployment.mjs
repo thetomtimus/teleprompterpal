@@ -37,6 +37,22 @@ if (!html.includes('rel="canonical" href="https://teleprompterpal.com/"')) {
   throw new Error('The homepage must declare its production canonical URL.');
 }
 
+// Install the public Cloudflare beacon on every production page. Previews and
+// the standalone legal-page review bundle do not send visitor measurements.
+if (!preview) {
+  const beacon = '<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token":"f7d3f127b85d4b23a0b7ed63cb31b62c"}\'></script>';
+  const analyticsPolicy = "script-src https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com";
+  for (const page of ['index.html', 'privacy/index.html', 'support/index.html', '404.html']) {
+    const path = resolve(output, page);
+    let content = await readFile(path, 'utf8');
+    // Copied legal pages also enforce a meta CSP, in addition to Vercel headers.
+    content = content.replace(/(<meta http-equiv="Content-Security-Policy" content=")([^"]+)(")/,
+      (_, start, policy, end) => `${start}${policy}; ${analyticsPolicy}${end}`);
+    content = content.replace('</body>', `${beacon}</body>`);
+    await writeFile(path, content);
+  }
+}
+
 // Keep a direct-deployment fallback alongside Git auto-deploy.
 // Keep a clean, reproducible CLI input separate from source and credentials.
 const staging = resolve(root, '.vercel/static-release');

@@ -2,13 +2,13 @@
 
 Published October 17, 2026 under **Second Wind, LLC, United States**. These pages now ship with the Astro marketing site on **Vercel**; Cloudflare provides DNS:
 
-- [Privacy policy](https://teleprompterpal.com/privacy/), effective October 17, 2026.
+- [Privacy policy](https://teleprompterpal.com/privacy/), effective October 19, 2026.
 - [Support](https://teleprompterpal.com/support/).
 - [Marketing homepage](https://teleprompterpal.com/).
 
 The owner confirmed that **contact@teleprompterpal.com** sends and receives email. The Vercel migration preserved all eight existing Google mail/verification records, changed the apex web CNAME and added a www redirect hostname. No mailbox or nameserver was changed. See the [publication results](../docs/validation/2026-10-17-cloudflare-publication-results.md).
 
-These policy and support pages use plain HTML/CSS, native disclosure controls, system fonts and the project's original SVG icon. They contain no scripts, forms, analytics tags or application cookies. The Astro homepage uses local browser scripts for its demos and self-hosted fonts. Vercel processes delivery/security request data; the policy identifies the providers without inventing a fixed retention period.
+These policy and support pages use plain HTML/CSS, native disclosure controls, system fonts and the project's original SVG icon. The standalone review bundle has no scripts, forms, analytics tags or application cookies. The combined production marketing build adds the cookie-free Cloudflare Web Analytics beacon to the public pages; the privacy policy discloses this service. The Astro homepage also uses local browser scripts for its demos and self-hosted fonts. Vercel processes delivery/security request data; the policy identifies the providers without inventing a fixed retention period.
 
 ## Edit and check
 
