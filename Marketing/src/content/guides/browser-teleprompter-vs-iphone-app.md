@@ -10,6 +10,20 @@ takeaways:
   - "Consider an iPhone app when you want reading, recording and retakes on the phone."
   - "Compare setups with the same recorded paragraph before changing tools."
 topics: ["recording-setup", "iphone-workflow"]
+coverImage:
+  src: "/images/guides/browser-iphone-cover-800.webp"
+  alt: "Creator recording toward a phone on a tripod, with a laptop holding the script beside the camera."
+  width: 1200
+  height: 676
+  caption: "AI-generated editorial illustration of a two-device filming setup, not a Teleprompter Pal screenshot."
+  sources:
+    - { src: "/images/guides/browser-iphone-cover-480.webp", width: 480 }
+    - { src: "/images/guides/browser-iphone-cover-800.webp", width: 800 }
+    - { src: "/images/guides/browser-iphone-cover-1200.webp", width: 1200 }
+thumbnail:
+  src: "/images/guides/browser-iphone-thumbnail.webp"
+  width: 640
+  height: 361
 shareImage:
   src: "/images/guides/browser-teleprompter-vs-iphone-app.png"
   alt: "Browser teleprompter or iPhone app: compare where the script sits and where the camera records."

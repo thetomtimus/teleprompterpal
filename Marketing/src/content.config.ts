@@ -20,6 +20,12 @@ const guides = defineCollection({
     relatedGuides: z.array(z.string()).max(3).default([]),
     relatedResources: z.array(z.object({ title: z.string(), description: z.string(), href: z.string().startsWith('/') })).max(3).default([]),
     shareImage: z.object({ src: z.string().startsWith('/images/'), alt: z.string(), width: z.number().int().positive(), height: z.number().int().positive() }).optional(),
+    coverImage: z.object({
+      src: z.string().startsWith('/images/'), alt: z.string(),
+      width: z.number().int().positive(), height: z.number().int().positive(), caption: z.string(),
+      sources: z.array(z.object({ src: z.string().startsWith('/images/'), width: z.number().int().positive() })).default([]),
+    }).optional(),
+    thumbnail: z.object({ src: z.string().startsWith('/images/'), width: z.number().int().positive(), height: z.number().int().positive() }).optional(),
     draft: z.boolean().default(true),
   }),
 });

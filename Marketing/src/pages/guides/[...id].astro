@@ -33,6 +33,8 @@ const related = explicitRelated.length ? explicitRelated : available
   .filter(item => item.id !== guide.id && item.data.topics.some(topic => guide.data.topics.includes(topic)))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 const shareImage = guide.data.shareImage;
+const coverImage = guide.data.coverImage;
+const articleImage = coverImage ?? shareImage;
 ---
 <Layout title={guide.data.title} description={guide.data.description} type="article" published={published} modified={modified} image={shareImage?.src} imageAlt={shareImage?.alt} imageWidth={shareImage?.width} imageHeight={shareImage?.height}>
   <SiteHeader />
@@ -45,7 +47,7 @@ const shareImage = guide.data.shareImage;
     </nav>
     <article class="guide-article" itemscope itemtype="https://schema.org/Article">
       <link itemprop="mainEntityOfPage" href={canonical} />
-      {shareImage && <link itemprop="image" href={`https://teleprompterpal.com${shareImage.src}`} />}
+      {articleImage && <link itemprop="image" href={`https://teleprompterpal.com${articleImage.src}`} />}
       <meta itemprop="description" content={guide.data.description} />
       <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Teleprompter Pal" /><link itemprop="url" href="https://teleprompterpal.com/" /></div>
       {modified && <meta itemprop="dateModified" content={modified} />}
@@ -61,10 +63,14 @@ const shareImage = guide.data.shareImage;
       </header>
       <div class="guide-reading-layout">
       <div class="guide-reading-column">
-      {sections.length >= 3 && <nav class="guide-contents-mobile" aria-label="Article sections"><details><summary>On this page <Icon name="caret" size={18} /></summary><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></details></nav>}
       <div itemprop="articleBody">
         {guide.data.intro && <p class="guide-opening">{guide.data.intro}</p>}
+        {coverImage && <figure class="guide-cover">
+          <img src={coverImage.src} srcset={coverImage.sources.length ? coverImage.sources.map(source => `${source.src} ${source.width}w`).join(', ') : undefined} sizes="(max-width: 374px) calc(100vw - 36px), (max-width: 767px) calc(100vw - 48px), (max-width: 1099px) min(740px, calc(100vw - 80px)), 744px" width={coverImage.width} height={coverImage.height} alt={coverImage.alt} loading="eager" decoding="async" />
+          <figcaption>{coverImage.caption}</figcaption>
+        </figure>}
         {guide.data.takeaways.length > 0 && <section class="guide-takeaways" aria-labelledby="takeaways-heading"><h2 id="takeaways-heading">The short answer</h2><ul>{guide.data.takeaways.map(takeaway => <li>{takeaway}</li>)}</ul></section>}
+        {sections.length >= 3 && <nav class="guide-contents-mobile" aria-label="Article sections"><details><summary>On this page <Icon name="caret" size={18} /></summary><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></details></nav>}
         <div class="guide-prose"><Content /></div>
       </div>
       {(related.length > 0 || guide.data.relatedResources.length > 0) && <section class="guide-related" aria-labelledby="related-heading"><h2 id="related-heading">For your next recording</h2><ul>

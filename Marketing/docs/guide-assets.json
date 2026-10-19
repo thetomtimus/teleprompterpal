@@ -3,7 +3,7 @@
   "assets": [
     {
       "file": "public/images/guides/browser-teleprompter-vs-iphone-app.png",
-      "role": "Representative article social image; also referenced by Article microdata",
+      "role": "Article social preview; Article-image fallback when no cover is configured",
       "dimensions": [
         1200,
         630
@@ -46,6 +46,58 @@
       "prompt": "Use case: illustration-story\nAsset type: wide original editorial illustration for an educational article, Browser teleprompter or iPhone app? Start with the camera.\nPrimary request: a precise, beautifully crafted two-scene comparison of where a person reads a video script and where the camera records. Landscape 3:2 or 16:9 composition, equal left and right scenes with generous negative breathing space, no written labels.\nLeft scene: three-quarter front view of an open laptop with a very simple dark screen containing a few soft lavender horizontal script lines, plus a separate upright smartphone mounted on a small tabletop tripod immediately next to it. The smartphone front camera lens is visible at the top. Laptop and phone visibly form a two-device recording setup.\nRight scene: just one upright smartphone mounted on a matching tabletop tripod. The phone screen shows a few simple lavender script lines at the very top close to its front lens, and an abstract muted gray head-and-shoulders camera-preview silhouette below. This is an explanatory illustration, NOT an actual branded app screenshot. No app interface controls, no feature names.\nStyle/medium: refined editorial 3D still-life illustration with softly tactile matte graphite devices, architectural precision, restrained soft lilac accents and natural materials. Clear physical form, believable stands and screens. Quiet and useful, not a neon tech illustration.\nScene/backdrop: seamless near-black charcoal background (#18181c), two low charcoal tabletop planes, very subtle light falloff. Objects are clearly separated from the background with soft light from the upper left.\nComposition: devices fully visible with comfortable margins, roughly same scale between the two setups, left scene takes 52 percent width; right scene 48 percent. No dividing line necessary.\nConstraints: no text, no logos, no watermarks, no real app UI, no numbers, no arrows, no glowing halos, no people or hands, no tiny extra objects, no duplicate phone in right scene. Accurate laptop and smartphone anatomy. Do not imply voice control or automatic editing.",
       "embedded_provenance": false,
       "provenance_sidecar": "public/images/guides/recording-setups-480.webp.json"
+    },
+    {
+      "file": "public/images/guides/browser-iphone-cover-1200.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        1200,
+        676
+      ],
+      "bytes": 28408,
+      "origin": "Original AI-generated editorial artwork produced with built-in image_gen on 2026-10-19; cwebp quality82 optimized export. Anonymous fictional creator, not a real person photograph or product screenshot.",
+      "prompt": "Use case: illustration-story\nAsset type: original landscape editorial cover for the Teleprompter Pal article \"Browser teleprompter or iPhone app? Start with the camera\", also used as its guide-list thumbnail.\nPrimary request: a creator at a compact recording desk choosing how to keep a script near the camera. One anonymous adult creator, seen in three-quarter side view, seated naturally and speaking toward an upright unbranded smartphone on a simple tabletop tripod. An open laptop immediately beside the phone holds abstract horizontal script lines. The phone faces the speaker; the viewer sees its graphite back or side, not a fabricated app interface. The person, laptop and phone form one visually clear composition, readable even as a small thumbnail.\nStyle/medium: refined tactile editorial 3D illustration, matte graphite devices, sculpted but natural human anatomy, simple charcoal clothing, soft architectural forms and believable recording setup. Match a near-black Figtree-and-lavender website with restrained pale lilac details, soft neutral skin tones and gentle natural studio light. This is illustrative art, not a documentary photograph or product screenshot.\nScene/backdrop: quiet charcoal recording nook with a plain near-black wall, charcoal desk and soft shadows; no decorative neon or glowing halos.\nComposition: wide 16:9 landscape, central subject within the middle 65 percent; comfortable crop margins, with the person's face, phone on tripod and open laptop all recognizable. One person, one phone and one laptop only, no clutter.\nConstraints: no words, letters, numbers, logos, brand marks, charts, arrows, UI controls, watermarks or border. No headset, mic or extra filming equipment. Do not depict or imply voice-following software, automatic editing, an actual Teleprompter Pal app screen, or a real named person. Opaque dark background.",
+      "embedded_provenance": false,
+      "provenance_sidecar": "public/images/guides/browser-iphone-cover-1200.webp.json"
+    },
+    {
+      "file": "public/images/guides/browser-iphone-cover-800.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        800,
+        451
+      ],
+      "bytes": 15836,
+      "origin": "Original AI-generated editorial artwork produced with built-in image_gen on 2026-10-19; cwebp quality82 optimized export. Anonymous fictional creator, not a real person photograph or product screenshot.",
+      "prompt": "Use case: illustration-story\nAsset type: original landscape editorial cover for the Teleprompter Pal article \"Browser teleprompter or iPhone app? Start with the camera\", also used as its guide-list thumbnail.\nPrimary request: a creator at a compact recording desk choosing how to keep a script near the camera. One anonymous adult creator, seen in three-quarter side view, seated naturally and speaking toward an upright unbranded smartphone on a simple tabletop tripod. An open laptop immediately beside the phone holds abstract horizontal script lines. The phone faces the speaker; the viewer sees its graphite back or side, not a fabricated app interface. The person, laptop and phone form one visually clear composition, readable even as a small thumbnail.\nStyle/medium: refined tactile editorial 3D illustration, matte graphite devices, sculpted but natural human anatomy, simple charcoal clothing, soft architectural forms and believable recording setup. Match a near-black Figtree-and-lavender website with restrained pale lilac details, soft neutral skin tones and gentle natural studio light. This is illustrative art, not a documentary photograph or product screenshot.\nScene/backdrop: quiet charcoal recording nook with a plain near-black wall, charcoal desk and soft shadows; no decorative neon or glowing halos.\nComposition: wide 16:9 landscape, central subject within the middle 65 percent; comfortable crop margins, with the person's face, phone on tripod and open laptop all recognizable. One person, one phone and one laptop only, no clutter.\nConstraints: no words, letters, numbers, logos, brand marks, charts, arrows, UI controls, watermarks or border. No headset, mic or extra filming equipment. Do not depict or imply voice-following software, automatic editing, an actual Teleprompter Pal app screen, or a real named person. Opaque dark background.",
+      "embedded_provenance": false,
+      "provenance_sidecar": "public/images/guides/browser-iphone-cover-800.webp.json"
+    },
+    {
+      "file": "public/images/guides/browser-iphone-cover-480.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        480,
+        271
+      ],
+      "bytes": 7778,
+      "origin": "Original AI-generated editorial artwork produced with built-in image_gen on 2026-10-19; cwebp quality82 optimized export. Anonymous fictional creator, not a real person photograph or product screenshot.",
+      "prompt": "Use case: illustration-story\nAsset type: original landscape editorial cover for the Teleprompter Pal article \"Browser teleprompter or iPhone app? Start with the camera\", also used as its guide-list thumbnail.\nPrimary request: a creator at a compact recording desk choosing how to keep a script near the camera. One anonymous adult creator, seen in three-quarter side view, seated naturally and speaking toward an upright unbranded smartphone on a simple tabletop tripod. An open laptop immediately beside the phone holds abstract horizontal script lines. The phone faces the speaker; the viewer sees its graphite back or side, not a fabricated app interface. The person, laptop and phone form one visually clear composition, readable even as a small thumbnail.\nStyle/medium: refined tactile editorial 3D illustration, matte graphite devices, sculpted but natural human anatomy, simple charcoal clothing, soft architectural forms and believable recording setup. Match a near-black Figtree-and-lavender website with restrained pale lilac details, soft neutral skin tones and gentle natural studio light. This is illustrative art, not a documentary photograph or product screenshot.\nScene/backdrop: quiet charcoal recording nook with a plain near-black wall, charcoal desk and soft shadows; no decorative neon or glowing halos.\nComposition: wide 16:9 landscape, central subject within the middle 65 percent; comfortable crop margins, with the person's face, phone on tripod and open laptop all recognizable. One person, one phone and one laptop only, no clutter.\nConstraints: no words, letters, numbers, logos, brand marks, charts, arrows, UI controls, watermarks or border. No headset, mic or extra filming equipment. Do not depict or imply voice-following software, automatic editing, an actual Teleprompter Pal app screen, or a real named person. Opaque dark background.",
+      "embedded_provenance": false,
+      "provenance_sidecar": "public/images/guides/browser-iphone-cover-480.webp.json"
+    },
+    {
+      "file": "public/images/guides/browser-iphone-thumbnail.webp",
+      "role": "Guide-list thumbnail",
+      "dimensions": [
+        640,
+        361
+      ],
+      "bytes": 11376,
+      "origin": "Original AI-generated editorial artwork produced with built-in image_gen on 2026-10-19; cwebp quality82 optimized export. Anonymous fictional creator, not a real person photograph or product screenshot.",
+      "prompt": "Use case: illustration-story\nAsset type: original landscape editorial cover for the Teleprompter Pal article \"Browser teleprompter or iPhone app? Start with the camera\", also used as its guide-list thumbnail.\nPrimary request: a creator at a compact recording desk choosing how to keep a script near the camera. One anonymous adult creator, seen in three-quarter side view, seated naturally and speaking toward an upright unbranded smartphone on a simple tabletop tripod. An open laptop immediately beside the phone holds abstract horizontal script lines. The phone faces the speaker; the viewer sees its graphite back or side, not a fabricated app interface. The person, laptop and phone form one visually clear composition, readable even as a small thumbnail.\nStyle/medium: refined tactile editorial 3D illustration, matte graphite devices, sculpted but natural human anatomy, simple charcoal clothing, soft architectural forms and believable recording setup. Match a near-black Figtree-and-lavender website with restrained pale lilac details, soft neutral skin tones and gentle natural studio light. This is illustrative art, not a documentary photograph or product screenshot.\nScene/backdrop: quiet charcoal recording nook with a plain near-black wall, charcoal desk and soft shadows; no decorative neon or glowing halos.\nComposition: wide 16:9 landscape, central subject within the middle 65 percent; comfortable crop margins, with the person's face, phone on tripod and open laptop all recognizable. One person, one phone and one laptop only, no clutter.\nConstraints: no words, letters, numbers, logos, brand marks, charts, arrows, UI controls, watermarks or border. No headset, mic or extra filming equipment. Do not depict or imply voice-following software, automatic editing, an actual Teleprompter Pal app screen, or a real named person. Opaque dark background.",
+      "embedded_provenance": false,
+      "provenance_sidecar": "public/images/guides/browser-iphone-thumbnail.webp.json"
     }
   ],
   "inline_diagram": {
