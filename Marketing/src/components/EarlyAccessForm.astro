@@ -18,6 +18,11 @@ import Icon from './Icon.astro';
 </form>
 
 <script>
+  import { signupPageContext } from '../lib/signup-context';
+
+  let referralStorage: Storage | undefined;
+  try { referralStorage = window.sessionStorage; } catch { /* Storage is optional. */ }
+  const pageContext = signupPageContext(window.location.href, referralStorage);
   const form = document.querySelector<HTMLFormElement>('[data-signup-form]')!;
   const email = form.querySelector<HTMLInputElement>('input[name="email"]')!;
   const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
@@ -42,8 +47,8 @@ import Icon from './Icon.astro';
     const timeout = window.setTimeout(() => controller.abort(), 15000);
 
     try {
-      // Send only the email and page context. No tracking cookie, query string,
-      // script content, API key, or browser storage is involved.
+      // Page context contains only the canonical homepage and allowlisted
+      // campaign labels. Arbitrary URL parameters and user content are excluded.
       const response = await fetch(form.dataset.endpoint!, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,10 +58,7 @@ import Icon from './Icon.astro';
         body: JSON.stringify({
           fields: [{ objectTypeId: '0-1', name: 'email', value: email.value }],
           submittedAt: String(Date.now()),
-          context: {
-            pageUri: window.location.origin + window.location.pathname,
-            pageName: 'Teleprompter Pal Early Access',
-          },
+          context: pageContext,
         }),
       });
 

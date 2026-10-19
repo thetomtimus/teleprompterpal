@@ -1,7 +1,9 @@
 export const site = {
   name: 'Teleprompter Pal',
   domain: 'teleprompterpal.com',
-  description: 'Teleprompter Pal is a studio-grade teleprompter app that scrolls with your voice. Speak naturally, pause when you need to, and let your script keep pace. No expensive hardware required.',
+  title: 'Teleprompter App for iPhone | Teleprompter Pal',
+  description: 'Read your script while recording on iPhone, then trim, crop and export your video with Teleprompter Pal. Join the private beta.',
+  freeReaderUrl: 'https://freeteleprompteronline.com/#script',
   supportEmail: 'contact@teleprompterpal.com',
   // All early-access links lead to the email signup on this page.
   accessUrl: '#early-access',

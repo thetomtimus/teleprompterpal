@@ -2,7 +2,7 @@
 import { site } from '../data/site';
 import '../styles/global.css';
 interface Props { title?: string; description?: string; }
-const { title = 'Best Teleprompter App for iPhone & Mac | Teleprompter Pal', description = site.description } = Astro.props;
+const { title = site.title, description = site.description } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, `https://${site.domain}`);
 const indexable = import.meta.env.PROD && process.env.VERCEL_ENV !== 'preview';
 ---
