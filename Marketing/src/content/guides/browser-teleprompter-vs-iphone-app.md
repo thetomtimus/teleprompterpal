@@ -4,10 +4,23 @@ description: "Choose a browser teleprompter or an iPhone app by checking where y
 date: "2026-10-19"
 headline: "Browser teleprompter or iPhone app? Start with the camera."
 breadcrumb: "Browser or iPhone app"
+intro: "A script on your laptop can be easy to read and still sit in the wrong place for your phone camera. Before choosing a teleprompter, decide which device records your face and which screen holds your words. That arrangement matters more than a long feature list."
+takeaways:
+  - "Start with a browser when its reading area can sit close to the camera you already use."
+  - "Consider an iPhone app when you want reading, recording and retakes on the phone."
+  - "Compare setups with the same recorded paragraph before changing tools."
+topics: ["recording-setup", "iphone-workflow"]
+shareImage:
+  src: "/images/guides/browser-teleprompter-vs-iphone-app.png"
+  alt: "Browser teleprompter or iPhone app: compare where the script sits and where the camera records."
+  width: 1200
+  height: 630
+relatedResources:
+  - title: "Check how long your script will take"
+    href: "/tools/speech-time-calculator/"
+    description: "Estimate the speaking time, then read a sample aloud to check the pace for your recording."
 draft: false
 ---
-
-A script on your laptop can be easy to read and still sit in the wrong place for your phone camera. Before choosing a teleprompter, decide which device records your face and which screen holds your words. That arrangement matters more than a long feature list.
 
 A browser reader is a practical starting point when you already work at a computer. An iPhone app becomes useful when you want to keep the script, camera recording and editing workflow on the phone. Neither choice guarantees natural eye contact. Your screen position and a short recorded test will tell you more.
 
@@ -21,6 +34,22 @@ A browser reader is a practical starting point when you already work at a comput
 | Camera behind reflective teleprompter glass | Reader that fits your display and glass | Are the reflected words readable, correctly oriented and unclipped? |
 
 The choice in the second row is easy to overlook. Using two devices can work, but you need to place them as one filming setup. A readable screen across the desk does not become a camera-facing script just because its text scrolls.
+
+<figure class="guide-setup-figure">
+<div class="guide-setup-scenes">
+<div>
+<h3>Laptop script + iPhone camera</h3>
+<svg viewBox="0 0 320 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="30" width="154" height="100" rx="7"/><path d="M2 139h170M35 59h104M35 76h90M35 93h102"/><rect x="245" y="10" width="62" height="130" rx="13"/><circle cx="276" cy="22" r="4" fill="currentColor" stroke="none"/><path d="M177 72h49" stroke-dasharray="5 6"/><path d="m217 64 9 8-9 8"/></svg>
+<p>Two screens can pull your gaze apart. Bring the reading area closer to the phone lens.</p>
+</div>
+<div>
+<h3>Script + camera on iPhone</h3>
+<svg viewBox="0 0 320 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="117" y="7" width="86" height="136" rx="15"/><circle cx="160" cy="19" r="4" fill="currentColor" stroke="none"/><path d="M132 38h55M132 51h47M132 64h54M132 77h39"/><path d="M222 20h33v36h-33" stroke-dasharray="5 6"/><path d="m230 48-8 8 8 8"/></svg>
+<p>One screen keeps the workflow together. The reading area still needs to stay near the lens.</p>
+</div>
+</div>
+<figcaption>Schematic of where you read and where you record, not an app screenshot. Check either arrangement with a short eye-line test.</figcaption>
+</figure>
 
 ## Try the browser workflow with a real paragraph
 

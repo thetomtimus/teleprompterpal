@@ -101,6 +101,32 @@ The owner approved the first guide on October 19, 2026. Future daily articles re
 
 The index and article paths are generated from that collection. The post-build script discovers generated page routes for the sitemap, excludes the 404, verifies production canonicals and external-script CSP compatibility, and adds the existing analytics beacon. No manual sitemap URL list is required for later articles. Publish the approved article with its relevant inbound/contextual links and check the exact live URLs after Vercel finishes. A sitemap submission or indexing request helps discovery; it is not proof that Google has indexed a page.
 
+### Shared article format
+
+All guides use `src/pages/guides/[...id].astro` and `src/styles/guides.css`. Keep the specific opening answer in optional frontmatter `intro`, and the remaining Markdown body beneath it. `takeaways` accepts up to four short statements; omit it when it would only repeat a short answer. The visible organization byline defaults to the Teleprompter Pal team, linked to the product homepage. Do not invent a named expert or review badge. Preserve `date`; set optional `updated` only for a substantive content revision. The template shows a separate update label when the dates differ.
+
+The template builds native, keyboard-accessible contents navigation from H2 headings when at least three exist. Set `contents: false` when navigation adds no value. Use H3 for subsections, lists for actual steps/options, and `figure`/`figcaption` for helpful visuals. Images need intrinsic width/height and useful alt text; explanatory diagrams must also have readable HTML labels or equivalent prose. The first comparison guide supplies a responsive HTML/SVG schematic, with stacked arrangements on phones. It is explicitly labeled as a schematic, not an app screenshot.
+
+Use `topics` for genuinely shared tasks. `relatedGuides` can name up to three existing published collection IDs; a missing, draft or self destination fails the build. If no explicit selection is supplied, up to three other published guides sharing a topic appear. `relatedResources` adds a small list of existing same-site tools or resources with `title`, `href` (root-relative) and `description`. No empty related-reading heading or unpublished placeholder is emitted. These links complement the required exact existing-page-to-new-article edits; they do not replace them.
+
+An article-specific `shareImage` object takes `src` under `/images/`, meaningful `alt`, `width` and `height`. It supplies both social previews and Article microdata. Prefer a representative 1200×630 raster when useful, with an original source and provenance. The first image's pixels can be reproduced with `scripts/render-browser-comparison-share.py` (Pillow, fonttools and brotli), using the site's licensed Figtree font. That renderer overwrites PNG text metadata. After regenerating, restore its embedded `impeccable:prompt` origin from `docs/guide-assets.json` with this command, run from `Marketing/`:
+
+```sh
+python3 - <<'PY'
+import json
+from pathlib import Path
+from PIL import Image, PngImagePlugin
+
+asset = json.loads(Path('docs/guide-assets.json').read_text())['assets'][0]
+with Image.open(asset['file']) as image:
+    metadata = PngImagePlugin.PngInfo()
+    metadata.add_text('impeccable:prompt', asset['origin'])
+    image.save(asset['file'], optimize=True, pnginfo=metadata)
+PY
+```
+
+The committed PNG already carries its origin. New guides inherit the reading layout and metadata; write their own summary, visual and related destinations for the reader's task. Do not copy the first article's schematic or repeat its section count mechanically.
+
 ## Validation
 
 The current production build passes `astro check` and `astro build` with zero diagnostics. Dependency audit reports zero vulnerabilities. Browser interaction checks, responsive captures and the independent finish review are retained locally in `.impeccable/review/`, which is excluded from Git. The measured reference values and asset provenance are committed under `docs/`.

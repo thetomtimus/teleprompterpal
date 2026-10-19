@@ -1,0 +1,17 @@
+{
+  "checked": "2026-10-19",
+  "assets": [
+    {
+      "file": "public/images/guides/browser-teleprompter-vs-iphone-app.png",
+      "role": "Representative article social image; also referenced by Article microdata",
+      "dimensions": [1200, 630],
+      "origin": "Original schematic rendered from scripts/render-browser-comparison-share.py using the existing licensed public/fonts/figtree-latin.woff2 font. No stock image, generated photo, app screenshot or third-party article image used.",
+      "embedded_provenance": true
+    }
+  ],
+  "inline_diagram": {
+    "source": "src/content/guides/browser-teleprompter-vs-iphone-app.md",
+    "format": "Original inline SVG with readable HTML labels and explanatory figcaption",
+    "disclosure": "Schematic, not an app screenshot"
+  }
+}
