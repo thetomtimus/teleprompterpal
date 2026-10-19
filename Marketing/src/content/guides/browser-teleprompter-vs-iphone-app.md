@@ -80,6 +80,8 @@ The first clean sentence tells you less about a recording workflow than the firs
 
 If that work regularly sends you between a reader, a camera app and an editor, keeping those tasks together on your iPhone may be useful. If you already edit on a computer and the browser reader fits your camera position, staying with that setup may be the easier choice.
 
+If you have settled on recording with the phone, [compare teleprompter apps for iPhone](/guides/best-teleprompter-apps-for-iphone/) by script limits, scrolling controls and the video you can export.
+
 Write down the actual friction. “Finding my place after a retake” is a better reason to change tools than “I need something more professional.”
 
 ## Where Teleprompter Pal fits today

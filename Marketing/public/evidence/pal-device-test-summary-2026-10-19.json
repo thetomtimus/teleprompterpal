@@ -1,0 +1,66 @@
+{
+  "title": "Teleprompter Pal internal iPhone recording and export checks",
+  "test_date": "2026-10-19",
+  "publisher": "Teleprompter Pal team",
+  "ownership_disclosure": "The publisher develops Teleprompter Pal. These checks are internal, not independent review.",
+  "device": "iPhone 17 Pro",
+  "os": "iOS 27.0",
+  "app_version": "0.6.17",
+  "build": "37",
+  "release_scope": "Development-signed builds. No public App Store or TestFlight binary certification.",
+  "capture": {
+    "method": "Opt-in DEBUG physical-device probes with real AVFoundation camera and microphone sessions, isolated script/preferences/take roots. Normal development-signed Release app restored afterward.",
+    "short_take_seconds": 15.168,
+    "sustained_take_seconds": 60.18,
+    "interrupted_take_seconds": 42.222,
+    "interruption": "Switched to Settings during actual capture and returned to the same process. Take finalized; recording did not resume automatically.",
+    "originals": {
+      "width": 1080,
+      "height": 1920,
+      "video_codec": "H.264",
+      "audio_codec": "AAC",
+      "independent_decode": "All three originals decoded, with nonzero audio. Approximately 29.99fps; maximum video timestamp gap35ms.",
+      "sustained_video_samples": 1805
+    }
+  },
+  "edit_export": {
+    "method": "Actual iPhone Mirroring interaction with the normal installed app; no DEBUG probe. Existing original retained; temporary derived outputs used.",
+    "initial_original_seconds": 11.9,
+    "selected_trim_seconds": 7.9,
+    "export": {
+      "width": 1080,
+      "height": 1080,
+      "video_codec": "H.264",
+      "audio_codec": "AAC",
+      "container": "MP4"
+    },
+    "destinations_observed": [
+      "Photos",
+      "Files",
+      "Share Copy"
+    ],
+    "independent_file_check": "Files Get Info: MPEG-4,1080x1080,10.3MB; native playback approximately8s. Photos Info:H.264,1080x1080,10.3MB,00:08.",
+    "restart": "Trim, crop, export and destination history persisted.",
+    "restoration": "Returned original to full-length Original crop and verified it reopened."
+  },
+  "limitations": [
+    "Not the same-script test across competitors.",
+    "No independent or blinded comparative scoring.",
+    "No long-session, all-device, low-storage or thermal reliability claim.",
+    "No measured speech-following accuracy, export audio synchronization or speed-to-finished-video comparison.",
+    "Current scrolling uses a user-set pace, not voice following.",
+    "Private footage, device identifiers, scripts and absolute local paths omitted."
+  ],
+  "source_records": [
+    {
+      "record": "2026-10-19-recording-device-results.md",
+      "sha256": "950c43cb7dc92d126b436d4e237d90e5b54011dcd30e9cabde37244e97e6a4b5",
+      "scope": "Original private/internal validation report; summary above is sanitized for publication."
+    },
+    {
+      "record": "2026-10-19-edit-export-device-results.md",
+      "sha256": "9ea9c17de90f094dda8cf8909dc6c2f39a81d709ef3374303b4ff9198062e616",
+      "scope": "Original private/internal validation report; summary above is sanitized for publication."
+    }
+  ]
+}
