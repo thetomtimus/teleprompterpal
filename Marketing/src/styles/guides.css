@@ -58,6 +58,7 @@
 .guide-prose img{display:block;max-width:100%;height:auto}
 .guide-prose figcaption{font-size:15px;line-height:1.65;color:var(--color-quiet);margin-top:16px}
 .guide-setup-figure{overflow:hidden;border-radius:12px}
+.guide-native-screen img{display:block;width:min(100%,280px);height:auto;margin-inline:auto;border-radius:16px}
 .guide-setup-art{width:100%;background:var(--color-surface);aspect-ratio:1200/676;object-fit:cover;border-radius:12px}
 .guide-setup-scenes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;padding-block:24px}
 .guide-prose .guide-setup-scenes h3{font-size:20px;line-height:1.35;margin:0;color:var(--color-display)}

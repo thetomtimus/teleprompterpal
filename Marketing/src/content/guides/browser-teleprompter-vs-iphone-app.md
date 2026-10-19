@@ -84,6 +84,8 @@ If that work regularly sends you between a reader, a camera app and an editor, k
 
 If you have settled on recording with the phone, [compare teleprompter apps for iPhone](/guides/best-teleprompter-apps-for-iphone/) by script limits, scrolling controls and the video you can export.
 
+For the full phone sequence, [follow the iPhone script-to-recording workflow](/guides/record-video-with-script-iphone/), from rehearsal through trim, crop and MP4 export.
+
 Write down the actual friction. “Finding my place after a retake” is a better reason to change tools than “I need something more professional.”
 
 ## Where Teleprompter Pal fits today

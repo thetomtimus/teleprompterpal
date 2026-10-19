@@ -198,6 +198,61 @@
       "origin": "Original AI-generated editorial illustration created with built-in image_gen on20October2026; fictional presenter and abstract phone display, not a product screenshot or testing evidence. Optimized responsive exports.",
       "provenance_sidecar": "docs/natural-reading-assets/read-teleprompter-naturally-iphone.png.json",
       "prompt_file": "docs/natural-reading-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/iphone-recording-480.webp",
+      "dimensions": [
+        480,
+        270
+      ],
+      "bytes": 15596,
+      "origin": "Original built-in image_gen photographic editorial artwork; fictional adult, not a real user, product screen or test result. Resized as WebP quality 82.",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial cover for an iPhone teleprompter recording workflow guide. Candid realistic photograph, an adult independent creator in a calm home studio, a modern smartphone upright on a small tripod at eye level, person speaking toward its front camera, soft window light, real skin and materials, understated dark charcoal and lavender accents. View from beside and slightly behind the phone so its screen is not visible; show believable camera-to-eye positioning, uncluttered desk. No text, logos, software UI, overlays, illustration or cartoon. This is clearly a conceptual editorial setup, not documentary product evidence.",
+      "source_sha256": "8639ad8976c14d4a3aac52ce0fef22898684dd9897b1743dba16044cc49f6dda"
+    },
+    {
+      "file": "public/images/guides/iphone-recording-800.webp",
+      "dimensions": [
+        800,
+        450
+      ],
+      "bytes": 30018,
+      "origin": "Original built-in image_gen photographic editorial artwork; fictional adult, not a real user, product screen or test result. Resized as WebP quality 82.",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial cover for an iPhone teleprompter recording workflow guide. Candid realistic photograph, an adult independent creator in a calm home studio, a modern smartphone upright on a small tripod at eye level, person speaking toward its front camera, soft window light, real skin and materials, understated dark charcoal and lavender accents. View from beside and slightly behind the phone so its screen is not visible; show believable camera-to-eye positioning, uncluttered desk. No text, logos, software UI, overlays, illustration or cartoon. This is clearly a conceptual editorial setup, not documentary product evidence.",
+      "source_sha256": "8639ad8976c14d4a3aac52ce0fef22898684dd9897b1743dba16044cc49f6dda"
+    },
+    {
+      "file": "public/images/guides/iphone-recording-1200.webp",
+      "dimensions": [
+        1200,
+        675
+      ],
+      "bytes": 50964,
+      "origin": "Original built-in image_gen photographic editorial artwork; fictional adult, not a real user, product screen or test result. Resized as WebP quality 82.",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial cover for an iPhone teleprompter recording workflow guide. Candid realistic photograph, an adult independent creator in a calm home studio, a modern smartphone upright on a small tripod at eye level, person speaking toward its front camera, soft window light, real skin and materials, understated dark charcoal and lavender accents. View from beside and slightly behind the phone so its screen is not visible; show believable camera-to-eye positioning, uncluttered desk. No text, logos, software UI, overlays, illustration or cartoon. This is clearly a conceptual editorial setup, not documentary product evidence.",
+      "source_sha256": "8639ad8976c14d4a3aac52ce0fef22898684dd9897b1743dba16044cc49f6dda"
+    },
+    {
+      "file": "public/images/guides/iphone-recording-thumbnail.webp",
+      "dimensions": [
+        640,
+        360
+      ],
+      "bytes": 22908,
+      "origin": "Original built-in image_gen photographic editorial artwork; fictional adult, not a real user, product screen or test result. Resized as WebP quality 82.",
+      "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial cover for an iPhone teleprompter recording workflow guide. Candid realistic photograph, an adult independent creator in a calm home studio, a modern smartphone upright on a small tripod at eye level, person speaking toward its front camera, soft window light, real skin and materials, understated dark charcoal and lavender accents. View from beside and slightly behind the phone so its screen is not visible; show believable camera-to-eye positioning, uncluttered desk. No text, logos, software UI, overlays, illustration or cartoon. This is clearly a conceptual editorial setup, not documentary product evidence.",
+      "source_sha256": "8639ad8976c14d4a3aac52ce0fef22898684dd9897b1743dba16044cc49f6dda"
+    },
+    {
+      "file": "public/images/guides/record-video-with-script-iphone.png",
+      "dimensions": [
+        1200,
+        630
+      ],
+      "origin": "Original typographic editorial graphic using licensed Figtree; not a product screen or recording test.",
+      "renderer": "prepare-assets.py (Pal) or scripts/render_article_social.py (Free)",
+      "license": "Figtree OFL",
+      "embedded_provenance": true
     }
   ],
   "inline_diagram": {

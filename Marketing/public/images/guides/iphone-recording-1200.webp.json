@@ -1,0 +1,11 @@
+{
+  "file": "public/images/guides/iphone-recording-1200.webp",
+  "dimensions": [
+    1200,
+    675
+  ],
+  "bytes": 50964,
+  "origin": "Original built-in image_gen photographic editorial artwork; fictional adult, not a real user, product screen or test result. Resized as WebP quality 82.",
+  "prompt": "Use case: photorealistic-natural. Asset type: wide 16:9 editorial cover for an iPhone teleprompter recording workflow guide. Candid realistic photograph, an adult independent creator in a calm home studio, a modern smartphone upright on a small tripod at eye level, person speaking toward its front camera, soft window light, real skin and materials, understated dark charcoal and lavender accents. View from beside and slightly behind the phone so its screen is not visible; show believable camera-to-eye positioning, uncluttered desk. No text, logos, software UI, overlays, illustration or cartoon. This is clearly a conceptual editorial setup, not documentary product evidence.",
+  "source_sha256": "8639ad8976c14d4a3aac52ce0fef22898684dd9897b1743dba16044cc49f6dda"
+}
