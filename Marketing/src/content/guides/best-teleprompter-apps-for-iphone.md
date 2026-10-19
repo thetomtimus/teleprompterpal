@@ -43,6 +43,7 @@ draft: false
 <tr><th scope="row">Scripts, captions and social publishing together</th><td><a href="#5-bigvu-a-broader-video-publishing-workflow">5. BIGVU</a></td><td>Free exports are documented as 720p with a watermark.</td></tr>
 </tbody>
 </table>
+
 These suggestions are editorial judgments based on the features and limitations detailed below. If you are still deciding which device should hold the script, compare a [browser teleprompter or iPhone app](/guides/browser-teleprompter-vs-iphone-app/) first.
 
 ## Free limits and prices to check
@@ -79,6 +80,7 @@ Our internal device checks on **19 October 2026** used **Pal 0.6.17 (37), an iPh
 <tr><th scope="row">Trim, square crop and export through the normal app UI</th><td>Exported a 7.90-second, 1080 × 1080 MP4. Photos and Files destinations completed; saved edit state survived an app restart.</td><td>A controlled comparison with competitor exports or a measured audio-sync result.</td></tr>
 </tbody>
 </table>
+
 The capture checks included real camera/audio sessions and independent decoding of the originals. The edit/export check used the ordinary app interface and confirmed the saved file’s dimensions and duration. We have not measured comparative eye contact, speech-tracking accuracy or speed to a finished video. We do not use private camera footage as public review imagery.
 
 **Tradeoff:** these results support a specific recording/editing workflow. They do not justify calling Pal the best overall app. Access is currently through the private beta. [Request early access to Teleprompter Pal](/#early-access).
