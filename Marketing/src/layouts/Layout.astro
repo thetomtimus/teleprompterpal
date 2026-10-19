@@ -1,8 +1,8 @@
 ---
 import { site } from '../data/site';
 import '../styles/global.css';
-interface Props { title?: string; description?: string; }
-const { title = site.title, description = site.description } = Astro.props;
+interface Props { title?: string; description?: string; type?: 'website' | 'article'; published?: string; }
+const { title = site.title, description = site.description, type = 'website', published } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, `https://${site.domain}`);
 const indexable = import.meta.env.PROD && process.env.VERCEL_ENV !== 'preview';
 ---
@@ -15,7 +15,8 @@ const indexable = import.meta.env.PROD && process.env.VERCEL_ENV !== 'preview';
     <meta name="theme-color" content="#0f0f0f" />
     <meta name="robots" content={indexable ? 'index, follow' : 'noindex, nofollow'} />
     <link rel="canonical" href={canonicalUrl} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    {published && <meta property="article:published_time" content={published} />}
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />

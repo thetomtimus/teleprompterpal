@@ -1,0 +1,40 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import '../../styles/guides.css';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  return guides.map(guide => ({ params: { id: guide.id }, props: { guide } }));
+}
+interface Props { guide: CollectionEntry<'guides'>; }
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+const published = guide.data.date.toISOString();
+const dateLabel = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(guide.data.date);
+const minutes = Math.max(1, Math.ceil((guide.body ?? '').split(/\s+/).length / 200));
+const canonical = `https://teleprompterpal.com/guides/${guide.id}/`;
+---
+<Layout title={guide.data.title} description={guide.data.description} type="article" published={published}>
+  <SiteHeader />
+  <main id="main" class="guides-main container">
+    <nav class="guide-breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></span>
+      <span aria-hidden="true">/</span>
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/guides/"><span itemprop="name">Guides</span></a><meta itemprop="position" content="2" /></span>
+      <span aria-hidden="true">/</span><span aria-current="page">{guide.data.breadcrumb ?? guide.data.title}</span>
+    </nav>
+    <article class="guide-article" itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href={canonical} />
+      <meta itemprop="image" content="https://teleprompterpal.com/images/app-icon.webp" />
+      <meta itemprop="description" content={guide.data.description} />
+      <div itemprop="author" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Teleprompter Pal" /><link itemprop="url" href="https://teleprompterpal.com/" /></div>
+      <header class="guide-heading"><h1 itemprop="headline">{guide.data.headline}</h1><p class="guide-meta"><time itemprop="datePublished" datetime={published}>{dateLabel}</time><span aria-hidden="true">·</span><span>{minutes} min read</span></p></header>
+      <div class="guide-prose" itemprop="articleBody"><Content /></div>
+      <nav class="guide-end" aria-label="More guides"><a href="/guides/">Back to all guides</a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>

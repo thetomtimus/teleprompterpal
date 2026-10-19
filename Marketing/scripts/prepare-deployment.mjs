@@ -21,20 +21,37 @@ for (const name of await readdir(resolve(output, 'images'))) {
 }
 
 const preview = process.env.VERCEL_ENV === 'preview';
+async function htmlPages(directory, prefix = '') {
+  const pages = [];
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = `${prefix}${entry.name}`;
+    if (entry.isDirectory()) pages.push(...await htmlPages(resolve(directory, entry.name), `${path}/`));
+    else if (entry.name.endsWith('.html')) pages.push(path);
+  }
+  return pages.sort();
+}
+const pages = await htmlPages(output);
+const routes = pages.filter(page => page === 'index.html' || page.endsWith('/index.html'))
+  .map(page => page.slice(0, -'index.html'.length));
 await writeFile(resolve(output, 'robots.txt'), preview
   ? 'User-agent: *\nDisallow: /\n'
   : 'User-agent: *\nAllow: /\nSitemap: https://teleprompterpal.com/sitemap.xml\n');
 await writeFile(resolve(output, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n'
   + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-  + ['', 'privacy/', 'support/'].map(path => `  <url><loc>https://teleprompterpal.com/${path}</loc></url>`).join('\n')
+  + routes.map(path => `  <url><loc>https://teleprompterpal.com/${path}</loc></url>`).join('\n')
   + '\n</urlset>\n');
 
-const html = await readFile(resolve(output, 'index.html'), 'utf8');
-if (/<script\b(?![^>]*\bsrc=)[^>]*>[\s\S]*?\S[\s\S]*?<\/script>/i.test(html)) {
-  throw new Error('The production CSP requires scripts to be served as separate assets.');
-}
-if (!html.includes('rel="canonical" href="https://teleprompterpal.com/"')) {
-  throw new Error('The homepage must declare its production canonical URL.');
+for (const page of pages) {
+  const html = await readFile(resolve(output, page), 'utf8');
+  if (/<script\b(?![^>]*\bsrc=)[^>]*>[\s\S]*?\S[\s\S]*?<\/script>/i.test(html)) {
+    throw new Error(`The production CSP requires scripts to be separate assets: ${page}`);
+  }
+  if (page === 'index.html' || page.endsWith('/index.html')) {
+    const canonical = `https://teleprompterpal.com/${page.slice(0, -'index.html'.length)}`;
+    if (!html.includes(`rel="canonical" href="${canonical}"`)) {
+      throw new Error(`Missing production canonical: ${page}`);
+    }
+  }
 }
 
 // Install the public Cloudflare beacon on every production page. Previews and
@@ -42,7 +59,7 @@ if (!html.includes('rel="canonical" href="https://teleprompterpal.com/"')) {
 if (!preview) {
   const beacon = '<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token":"f7d3f127b85d4b23a0b7ed63cb31b62c"}\'></script>';
   const analyticsPolicy = "script-src https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com";
-  for (const page of ['index.html', 'privacy/index.html', 'support/index.html', '404.html']) {
+  for (const page of pages) {
     const path = resolve(output, page);
     let content = await readFile(path, 'utf8');
     // Copied legal pages also enforce a meta CSP, in addition to Vercel headers.
@@ -61,4 +78,4 @@ await cp(output, staging, { recursive: true });
 const config = JSON.parse(await readFile(resolve(root, 'vercel.json'), 'utf8'));
 Object.assign(config, { framework: null, buildCommand: '', installCommand: '', outputDirectory: '.' });
 await writeFile(resolve(staging, 'vercel.json'), JSON.stringify(config, null, 2) + '\n');
-console.log('Deployment includes marketing, privacy, support, 404, robots, and sitemap.');
+console.log(`Deployment includes ${routes.length} indexable routes, 404, analytics, robots, and sitemap.`);

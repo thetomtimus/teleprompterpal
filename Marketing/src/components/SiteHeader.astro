@@ -1,0 +1,35 @@
+---
+import { site } from '../data/site';
+import AccessButton from './AccessButton.astro';
+import Icon from './Icon.astro';
+const home = Astro.url.pathname === '/';
+const section = (id: string) => `${home ? '' : '/'}#${id}`;
+const links = [
+  { href: section('how-it-works'), label: 'How it works' },
+  { href: section('features'), label: 'Features' },
+  { href: section('questions'), label: 'Questions' },
+  { href: '/guides/', label: 'Guides' },
+  { href: site.supportUrl, label: 'Support' },
+];
+---
+<header class="site-header container">
+  <a href="/" class="wordmark" aria-label="Teleprompter Pal home"><img src="/images/app-icon.webp" alt="" width="38" height="38" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    {links.map(link => <a href={link.href} aria-current={link.href === '/guides/' && Astro.url.pathname.startsWith('/guides/') ? 'location' : undefined}>{link.label}</a>)}
+  </nav>
+  <AccessButton compact />
+  <details class="mobile-menu">
+    <summary aria-label="Open navigation"><Icon name="menu" size={24} /></summary>
+    <nav aria-label="Mobile navigation">{links.map(link => <a href={link.href}>{link.label}</a>)}</nav>
+  </details>
+</header>
+<script>
+  const mobileMenu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+  mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileMenu.open = false; }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileMenu?.open) {
+      mobileMenu.open = false;
+      mobileMenu.querySelector('summary')?.focus();
+    }
+  });
+</script>

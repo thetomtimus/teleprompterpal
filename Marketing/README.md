@@ -25,6 +25,8 @@ The build runs strict Astro/TypeScript checks, emits a static website to `dist/`
 - `src/data/site.ts`: product name, metadata, support/policy links, and **one shared CTA/QR destination**.
 - `src/pages/index.astro`: page content and the rehearsal/crop interactions.
 - `src/styles/global.css`: measured design primitives and responsive layouts.
+- `src/content/guides/*.md`: approved guide content, validated by `src/content.config.ts`. Drafts default to hidden; only explicit `draft: false` entries appear in public routes and the guide index.
+- `src/pages/guides/`: the guide index and reusable article route. Shared `SiteHeader.astro` and `SiteFooter.astro` expose Guides in desktop/mobile navigation and the footer.
 - `src/components/QRCode.astro`: QR SVG generated at build time. There is no QR service or tracking redirect.
 - `docs/detail-reference.md`: exact observed reference values and intentional adaptations.
 - `docs/asset-provenance.json`: sources and hashes for the approved icon, fictional presenter and actual app screenshots.
@@ -67,9 +69,15 @@ Verified Vercel build settings: root directory `Marketing`, Node 24.x, install c
 
 Production domain: https://teleprompterpal.com/. The www hostname redirects to the apex. Vercel serves the website; Cloudflare remains the DNS provider. Preserve all mail and verification records when changing the apex web record. The previous Cloudflare Pages deployment is retained for rollback.
 
-Cloudflare Web Analytics is enabled with manual JS snippet installation. The production post-build step adds its public beacon to the homepage, privacy, support and 404 pages; Vercel previews and the standalone legal review bundle are excluded. The response CSP and the copied legal pages' meta CSP allow only the Cloudflare script and measurement endpoint needed for this service. The website privacy policy discloses the service. View [the bot-filtered report](https://dash.cloudflare.com/b09b147e2f7b97378b35d5eac2c93d0a/web-analytics/overview?siteTag~in=b421b846da344a3089419b126a5dcad1&excludeBots=Yes), with **Exclude bots equals Yes**. Visits are an estimate of traffic, not a count of identified people, and data starts after installation.
+Cloudflare Web Analytics is enabled with manual JS snippet installation. The production post-build step adds its public beacon to every generated HTML page, including guides, privacy, support and 404; Vercel previews and the standalone legal review bundle are excluded. The response CSP and the copied legal pages' meta CSP allow only the Cloudflare script and measurement endpoint needed for this service. The website privacy policy discloses the service. View [the bot-filtered report](https://dash.cloudflare.com/b09b147e2f7b97378b35d5eac2c93d0a/web-analytics/overview?siteTag~in=b421b846da344a3089419b126a5dcad1&excludeBots=Yes), with **Exclude bots equals Yes**. Visits are an estimate of traffic, not a count of identified people, and data starts after installation.
 
 The CTA and QR collect private-beta signup emails through the form. No App Store or public TestFlight link is configured. The homepage title, H1 and description target the iPhone beta. Scrolling is manual; the FAQ explicitly distinguishes it from speech-following. Mac access is described as planned for later. The FAQ and footer link to the full free browser teleprompter.
+
+## Publishing guides
+
+The owner approved the first guide on October 19, 2026. Future daily articles remain reviewable drafts outside the public source tree until approved. Copy only approved content into `src/content/guides/` with `title`, `headline`, `description`, `date`, optional short `breadcrumb`, and explicit `draft: false`. The page template supplies the H1, so the Markdown body starts with the opening paragraph. Preserve the approved canonical slug and original publication date.
+
+The index and article paths are generated from that collection. The post-build script discovers generated page routes for the sitemap, excludes the 404, verifies production canonicals and external-script CSP compatibility, and adds the existing analytics beacon. No manual sitemap URL list is required for later articles. Publish the approved article with its relevant inbound/contextual links and check the exact live URLs after Vercel finishes. A sitemap submission or indexing request helps discovery; it is not proof that Google has indexed a page.
 
 ## Validation
 
