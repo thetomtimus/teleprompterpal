@@ -3,6 +3,8 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import { site } from '../../data/site';
 import '../../styles/guides.css';
 
 export async function getStaticPaths() {
@@ -34,7 +36,7 @@ const shareImage = guide.data.shareImage;
 ---
 <Layout title={guide.data.title} description={guide.data.description} type="article" published={published} modified={modified} image={shareImage?.src} imageAlt={shareImage?.alt} imageWidth={shareImage?.width} imageHeight={shareImage?.height}>
   <SiteHeader />
-  <main id="main" class="guides-main container">
+  <main id="main" class="guides-main guide-page container">
     <nav class="guide-breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
       <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></span>
       <span aria-hidden="true">/</span>
@@ -49,22 +51,40 @@ const shareImage = guide.data.shareImage;
       {modified && <meta itemprop="dateModified" content={modified} />}
       <header class="guide-heading">
         <h1 itemprop="headline">{guide.data.headline}</h1>
+        <p class="guide-description">{guide.data.description}</p>
         <div class="guide-meta">
           <span>By <a itemprop="author" itemscope itemtype="https://schema.org/Organization" href={guide.data.author.url}><span itemprop="name">{guide.data.author.name}</span><link itemprop="url" href={guide.data.author.url} /></a></span>
           <time itemprop="datePublished" datetime={published}>{formatDate(guide.data.date)}</time>
           {showUpdated && <span>Updated {formatDate(guide.data.updated!)}</span>}
           <span>{minutes} min read</span>
         </div>
-        {guide.data.intro && <p class="guide-lead">{guide.data.intro}</p>}
       </header>
-      {guide.data.takeaways.length > 0 && <section class="guide-takeaways" aria-labelledby="takeaways-heading"><h2 id="takeaways-heading">The short answer</h2><ul>{guide.data.takeaways.map(takeaway => <li>{takeaway}</li>)}</ul></section>}
-      {sections.length >= 3 && <nav class="guide-contents" aria-label="Article sections"><details open><summary>On this page</summary><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></details></nav>}
-      <div class="guide-prose" itemprop="articleBody"><Content /></div>
+      <div class="guide-reading-layout">
+      <div class="guide-reading-column">
+      {sections.length >= 3 && <nav class="guide-contents-mobile" aria-label="Article sections"><details><summary>On this page <Icon name="caret" size={18} /></summary><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></details></nav>}
+      <div itemprop="articleBody">
+        {guide.data.intro && <p class="guide-opening">{guide.data.intro}</p>}
+        {guide.data.takeaways.length > 0 && <section class="guide-takeaways" aria-labelledby="takeaways-heading"><h2 id="takeaways-heading">The short answer</h2><ul>{guide.data.takeaways.map(takeaway => <li>{takeaway}</li>)}</ul></section>}
+        <div class="guide-prose"><Content /></div>
+      </div>
       {(related.length > 0 || guide.data.relatedResources.length > 0) && <section class="guide-related" aria-labelledby="related-heading"><h2 id="related-heading">For your next recording</h2><ul>
         {related.map(item => <li><a href={`/guides/${item.id}/`}>{item.data.title}</a><p>{item.data.description}</p></li>)}
         {guide.data.relatedResources.map(item => <li><a href={item.href}>{item.title}</a><p>{item.description}</p></li>)}
       </ul></section>}
       <nav class="guide-end" aria-label="More guides"><a href="/guides/">Back to all guides</a></nav>
+      </div>
+      <aside class="guide-sidebar" aria-label="Guide navigation and early access">
+        <div class="guide-sidebar-inner">
+          {sections.length >= 3 && <nav class="guide-contents" aria-labelledby="contents-heading"><h2 id="contents-heading">On this page</h2><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></nav>}
+          <section class="guide-sidebar-cta" aria-labelledby="sidebar-cta-heading">
+            <h2 id="sidebar-cta-heading">Recording on iPhone?</h2>
+            <p>Keep your script, recording and retakes together in Teleprompter Pal.</p>
+            <a href={`/${site.accessUrl}`}>Request early access <Icon name="arrowRight" size={18} /></a>
+            <p class="guide-sidebar-note">Private beta. Manual scrolling today.</p>
+          </section>
+        </div>
+      </aside>
+      </div>
     </article>
   </main>
   <SiteFooter />

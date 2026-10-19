@@ -36,19 +36,18 @@ A browser reader is a practical starting point when you already work at a comput
 The choice in the second row is easy to overlook. Using two devices can work, but you need to place them as one filming setup. A readable screen across the desk does not become a camera-facing script just because its text scrolls.
 
 <figure class="guide-setup-figure">
+<img class="guide-setup-art" src="/images/guides/recording-setups-750.webp" srcset="/images/guides/recording-setups-480.webp 480w, /images/guides/recording-setups-750.webp 750w, /images/guides/recording-setups-1200.webp 1200w" sizes="(max-width: 767px) calc(100vw - 48px), 744px" width="1200" height="676" loading="lazy" decoding="async" alt="Illustrated comparison: a laptop holding the script beside a separate phone camera, and one phone with script lines near its front camera." />
 <div class="guide-setup-scenes">
 <div>
 <h3>Laptop script + iPhone camera</h3>
-<svg viewBox="0 0 320 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="30" width="154" height="100" rx="7"/><path d="M2 139h170M35 59h104M35 76h90M35 93h102"/><rect x="245" y="10" width="62" height="130" rx="13"/><circle cx="276" cy="22" r="4" fill="currentColor" stroke="none"/><path d="M177 72h49" stroke-dasharray="5 6"/><path d="m217 64 9 8-9 8"/></svg>
 <p>Two screens can pull your gaze apart. Bring the reading area closer to the phone lens.</p>
 </div>
 <div>
 <h3>Script + camera on iPhone</h3>
-<svg viewBox="0 0 320 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="117" y="7" width="86" height="136" rx="15"/><circle cx="160" cy="19" r="4" fill="currentColor" stroke="none"/><path d="M132 38h55M132 51h47M132 64h54M132 77h39"/><path d="M222 20h33v36h-33" stroke-dasharray="5 6"/><path d="m230 48-8 8 8 8"/></svg>
 <p>One screen keeps the workflow together. The reading area still needs to stay near the lens.</p>
 </div>
 </div>
-<figcaption>Schematic of where you read and where you record, not an app screenshot. Check either arrangement with a short eye-line test.</figcaption>
+<figcaption>AI-generated illustration of the two recording setups, not an app screenshot. Check either arrangement with a short eye-line test.</figcaption>
 </figure>
 
 ## Try the browser workflow with a real paragraph

@@ -4,14 +4,53 @@
     {
       "file": "public/images/guides/browser-teleprompter-vs-iphone-app.png",
       "role": "Representative article social image; also referenced by Article microdata",
-      "dimensions": [1200, 630],
+      "dimensions": [
+        1200,
+        630
+      ],
       "origin": "Original schematic rendered from scripts/render-browser-comparison-share.py using the existing licensed public/fonts/figtree-latin.woff2 font. No stock image, generated photo, app screenshot or third-party article image used.",
       "embedded_provenance": true
+    },
+    {
+      "file": "public/images/guides/recording-setups-1200.webp",
+      "role": "Inline explanatory recording-setup illustration, responsive variant",
+      "dimensions": [
+        1200,
+        676
+      ],
+      "origin": "Original AI-generated editorial illustration produced with the built-in image_gen tool on 2026-10-19; optimized with cwebp quality 82. Not a real device photograph or app screenshot.",
+      "prompt": "Use case: illustration-story\nAsset type: wide original editorial illustration for an educational article, Browser teleprompter or iPhone app? Start with the camera.\nPrimary request: a precise, beautifully crafted two-scene comparison of where a person reads a video script and where the camera records. Landscape 3:2 or 16:9 composition, equal left and right scenes with generous negative breathing space, no written labels.\nLeft scene: three-quarter front view of an open laptop with a very simple dark screen containing a few soft lavender horizontal script lines, plus a separate upright smartphone mounted on a small tabletop tripod immediately next to it. The smartphone front camera lens is visible at the top. Laptop and phone visibly form a two-device recording setup.\nRight scene: just one upright smartphone mounted on a matching tabletop tripod. The phone screen shows a few simple lavender script lines at the very top close to its front lens, and an abstract muted gray head-and-shoulders camera-preview silhouette below. This is an explanatory illustration, NOT an actual branded app screenshot. No app interface controls, no feature names.\nStyle/medium: refined editorial 3D still-life illustration with softly tactile matte graphite devices, architectural precision, restrained soft lilac accents and natural materials. Clear physical form, believable stands and screens. Quiet and useful, not a neon tech illustration.\nScene/backdrop: seamless near-black charcoal background (#18181c), two low charcoal tabletop planes, very subtle light falloff. Objects are clearly separated from the background with soft light from the upper left.\nComposition: devices fully visible with comfortable margins, roughly same scale between the two setups, left scene takes 52 percent width; right scene 48 percent. No dividing line necessary.\nConstraints: no text, no logos, no watermarks, no real app UI, no numbers, no arrows, no glowing halos, no people or hands, no tiny extra objects, no duplicate phone in right scene. Accurate laptop and smartphone anatomy. Do not imply voice control or automatic editing.",
+      "embedded_provenance": false,
+      "provenance_sidecar": "public/images/guides/recording-setups-1200.webp.json"
+    },
+    {
+      "file": "public/images/guides/recording-setups-750.webp",
+      "role": "Inline explanatory recording-setup illustration, responsive variant",
+      "dimensions": [
+        750,
+        423
+      ],
+      "origin": "Original AI-generated editorial illustration produced with the built-in image_gen tool on 2026-10-19; optimized with cwebp quality 82. Not a real device photograph or app screenshot.",
+      "prompt": "Use case: illustration-story\nAsset type: wide original editorial illustration for an educational article, Browser teleprompter or iPhone app? Start with the camera.\nPrimary request: a precise, beautifully crafted two-scene comparison of where a person reads a video script and where the camera records. Landscape 3:2 or 16:9 composition, equal left and right scenes with generous negative breathing space, no written labels.\nLeft scene: three-quarter front view of an open laptop with a very simple dark screen containing a few soft lavender horizontal script lines, plus a separate upright smartphone mounted on a small tabletop tripod immediately next to it. The smartphone front camera lens is visible at the top. Laptop and phone visibly form a two-device recording setup.\nRight scene: just one upright smartphone mounted on a matching tabletop tripod. The phone screen shows a few simple lavender script lines at the very top close to its front lens, and an abstract muted gray head-and-shoulders camera-preview silhouette below. This is an explanatory illustration, NOT an actual branded app screenshot. No app interface controls, no feature names.\nStyle/medium: refined editorial 3D still-life illustration with softly tactile matte graphite devices, architectural precision, restrained soft lilac accents and natural materials. Clear physical form, believable stands and screens. Quiet and useful, not a neon tech illustration.\nScene/backdrop: seamless near-black charcoal background (#18181c), two low charcoal tabletop planes, very subtle light falloff. Objects are clearly separated from the background with soft light from the upper left.\nComposition: devices fully visible with comfortable margins, roughly same scale between the two setups, left scene takes 52 percent width; right scene 48 percent. No dividing line necessary.\nConstraints: no text, no logos, no watermarks, no real app UI, no numbers, no arrows, no glowing halos, no people or hands, no tiny extra objects, no duplicate phone in right scene. Accurate laptop and smartphone anatomy. Do not imply voice control or automatic editing.",
+      "embedded_provenance": false,
+      "provenance_sidecar": "public/images/guides/recording-setups-750.webp.json"
+    },
+    {
+      "file": "public/images/guides/recording-setups-480.webp",
+      "role": "Inline explanatory recording-setup illustration, responsive variant",
+      "dimensions": [
+        480,
+        271
+      ],
+      "origin": "Original AI-generated editorial illustration produced with the built-in image_gen tool on 2026-10-19; optimized with cwebp quality 82. Not a real device photograph or app screenshot.",
+      "prompt": "Use case: illustration-story\nAsset type: wide original editorial illustration for an educational article, Browser teleprompter or iPhone app? Start with the camera.\nPrimary request: a precise, beautifully crafted two-scene comparison of where a person reads a video script and where the camera records. Landscape 3:2 or 16:9 composition, equal left and right scenes with generous negative breathing space, no written labels.\nLeft scene: three-quarter front view of an open laptop with a very simple dark screen containing a few soft lavender horizontal script lines, plus a separate upright smartphone mounted on a small tabletop tripod immediately next to it. The smartphone front camera lens is visible at the top. Laptop and phone visibly form a two-device recording setup.\nRight scene: just one upright smartphone mounted on a matching tabletop tripod. The phone screen shows a few simple lavender script lines at the very top close to its front lens, and an abstract muted gray head-and-shoulders camera-preview silhouette below. This is an explanatory illustration, NOT an actual branded app screenshot. No app interface controls, no feature names.\nStyle/medium: refined editorial 3D still-life illustration with softly tactile matte graphite devices, architectural precision, restrained soft lilac accents and natural materials. Clear physical form, believable stands and screens. Quiet and useful, not a neon tech illustration.\nScene/backdrop: seamless near-black charcoal background (#18181c), two low charcoal tabletop planes, very subtle light falloff. Objects are clearly separated from the background with soft light from the upper left.\nComposition: devices fully visible with comfortable margins, roughly same scale between the two setups, left scene takes 52 percent width; right scene 48 percent. No dividing line necessary.\nConstraints: no text, no logos, no watermarks, no real app UI, no numbers, no arrows, no glowing halos, no people or hands, no tiny extra objects, no duplicate phone in right scene. Accurate laptop and smartphone anatomy. Do not imply voice control or automatic editing.",
+      "embedded_provenance": false,
+      "provenance_sidecar": "public/images/guides/recording-setups-480.webp.json"
     }
   ],
   "inline_diagram": {
     "source": "src/content/guides/browser-teleprompter-vs-iphone-app.md",
-    "format": "Original inline SVG with readable HTML labels and explanatory figcaption",
-    "disclosure": "Schematic, not an app screenshot"
+    "format": "Original AI-generated editorial illustration with readable HTML labels and explanatory figcaption",
+    "disclosure": "AI-generated illustration, not an app screenshot"
   }
 }
