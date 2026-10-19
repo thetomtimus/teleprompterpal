@@ -1,0 +1,13 @@
+{
+  "file": "natural-reading-cover-480.webp",
+  "width": 480,
+  "height": 270,
+  "bytes": 15428,
+  "sha256": "7cb05e41909a6e7769e32dfcc8ccd84f57c570d0df6bc8cc78a2d244c3b1dae5",
+  "source": "natural-reading-original.png",
+  "method": "Responsive export; social uses centered aspect-ratio crop",
+  "generated": true,
+  "is_product_screenshot": false,
+  "prompt_file": "prompt.json",
+  "generation_tool": "image_gen"
+}

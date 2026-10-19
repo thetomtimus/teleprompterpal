@@ -1,0 +1,68 @@
+{
+  "created": "2026-10-20 Asia/Seoul",
+  "tool": "built-in image_gen",
+  "initial_generation": "exec-e4ee8a89-37ff-47b5-93c0-4fcfd2d985a5.png",
+  "selected_revision": "exec-e0e31d01-8ec9-4e1a-a090-0a094ce29013.png",
+  "revision_reason": "Corrected visible phone to front glass with one front-facing lens; removed impossible rear camera module beside screen.",
+  "fictional_presenter": true,
+  "caption_required": "AI-generated illustration; not app UI or a recording test.",
+  "assets": [
+    {
+      "file": "natural-reading-cover-1200.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 52526,
+      "sha256": "6ca01c222906e3838665680a4cd2ef4f590c076ea78f7a22574104929d51d657",
+      "source": "natural-reading-original.png",
+      "method": "Responsive export; social uses centered aspect-ratio crop",
+      "generated": true,
+      "is_product_screenshot": false
+    },
+    {
+      "file": "natural-reading-cover-800.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 30100,
+      "sha256": "a82a4443de20d4d9e867917d66883c822f948510217b4b70e7f4fb6a29a042d6",
+      "source": "natural-reading-original.png",
+      "method": "Responsive export; social uses centered aspect-ratio crop",
+      "generated": true,
+      "is_product_screenshot": false
+    },
+    {
+      "file": "natural-reading-cover-480.webp",
+      "width": 480,
+      "height": 270,
+      "bytes": 15428,
+      "sha256": "7cb05e41909a6e7769e32dfcc8ccd84f57c570d0df6bc8cc78a2d244c3b1dae5",
+      "source": "natural-reading-original.png",
+      "method": "Responsive export; social uses centered aspect-ratio crop",
+      "generated": true,
+      "is_product_screenshot": false
+    },
+    {
+      "file": "natural-reading-thumbnail.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 22412,
+      "sha256": "c15585a7b8cf8628e51a0a7bf0075756a908ef162086fc92757af2b068f29ee2",
+      "source": "natural-reading-original.png",
+      "method": "Responsive export; social uses centered aspect-ratio crop",
+      "generated": true,
+      "is_product_screenshot": false
+    },
+    {
+      "file": "read-teleprompter-naturally-iphone.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 896944,
+      "sha256": "e9ec16c266fe794966bff796db3b5ad137f55dacdb3a182cd1a0accaec058b0d",
+      "source": "natural-reading-original.png",
+      "method": "Responsive export; social uses centered aspect-ratio crop",
+      "generated": true,
+      "is_product_screenshot": false
+    }
+  ],
+  "prompt_file": "prompt.json",
+  "generation_tool": "image_gen"
+}

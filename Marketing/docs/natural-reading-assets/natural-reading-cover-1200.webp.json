@@ -1,0 +1,13 @@
+{
+  "file": "natural-reading-cover-1200.webp",
+  "width": 1200,
+  "height": 675,
+  "bytes": 52526,
+  "sha256": "6ca01c222906e3838665680a4cd2ef4f590c076ea78f7a22574104929d51d657",
+  "source": "natural-reading-original.png",
+  "method": "Responsive export; social uses centered aspect-ratio crop",
+  "generated": true,
+  "is_product_screenshot": false,
+  "prompt_file": "prompt.json",
+  "generation_tool": "image_gen"
+}

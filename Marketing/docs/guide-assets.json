@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-19",
+  "checked": "2026-10-20",
   "assets": [
     {
       "file": "public/images/guides/browser-teleprompter-vs-iphone-app.png",
@@ -133,6 +133,71 @@
       "origin": "Original programmatic editorial artwork; reproducible with scripts/render-iphone-comparison-assets.py. Uses system Arial. Not a vendor screenshot or test result.",
       "sha256": "dfd3146b26a02d44d413b19337a9233f70a985217b684685b6bb14625842070c",
       "created": "2026-10-19"
+    },
+    {
+      "file": "public/images/guides/natural-reading-cover-1200.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        1200,
+        675
+      ],
+      "bytes": 52526,
+      "sha256": "6ca01c222906e3838665680a4cd2ef4f590c076ea78f7a22574104929d51d657",
+      "origin": "Original AI-generated editorial illustration created with built-in image_gen on20October2026; fictional presenter and abstract phone display, not a product screenshot or testing evidence. Optimized responsive exports.",
+      "provenance_sidecar": "docs/natural-reading-assets/natural-reading-cover-1200.webp.json",
+      "prompt_file": "docs/natural-reading-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/natural-reading-cover-800.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        800,
+        450
+      ],
+      "bytes": 30100,
+      "sha256": "a82a4443de20d4d9e867917d66883c822f948510217b4b70e7f4fb6a29a042d6",
+      "origin": "Original AI-generated editorial illustration created with built-in image_gen on20October2026; fictional presenter and abstract phone display, not a product screenshot or testing evidence. Optimized responsive exports.",
+      "provenance_sidecar": "docs/natural-reading-assets/natural-reading-cover-800.webp.json",
+      "prompt_file": "docs/natural-reading-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/natural-reading-cover-480.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        480,
+        270
+      ],
+      "bytes": 15428,
+      "sha256": "7cb05e41909a6e7769e32dfcc8ccd84f57c570d0df6bc8cc78a2d244c3b1dae5",
+      "origin": "Original AI-generated editorial illustration created with built-in image_gen on20October2026; fictional presenter and abstract phone display, not a product screenshot or testing evidence. Optimized responsive exports.",
+      "provenance_sidecar": "docs/natural-reading-assets/natural-reading-cover-480.webp.json",
+      "prompt_file": "docs/natural-reading-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/natural-reading-thumbnail.webp",
+      "role": "Guide-list thumbnail",
+      "dimensions": [
+        640,
+        360
+      ],
+      "bytes": 22412,
+      "sha256": "c15585a7b8cf8628e51a0a7bf0075756a908ef162086fc92757af2b068f29ee2",
+      "origin": "Original AI-generated editorial illustration created with built-in image_gen on20October2026; fictional presenter and abstract phone display, not a product screenshot or testing evidence. Optimized responsive exports.",
+      "provenance_sidecar": "docs/natural-reading-assets/natural-reading-thumbnail.webp.json",
+      "prompt_file": "docs/natural-reading-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/read-teleprompter-naturally-iphone.png",
+      "role": "Article social preview",
+      "dimensions": [
+        1200,
+        630
+      ],
+      "bytes": 896944,
+      "sha256": "e9ec16c266fe794966bff796db3b5ad137f55dacdb3a182cd1a0accaec058b0d",
+      "origin": "Original AI-generated editorial illustration created with built-in image_gen on20October2026; fictional presenter and abstract phone display, not a product screenshot or testing evidence. Optimized responsive exports.",
+      "provenance_sidecar": "docs/natural-reading-assets/read-teleprompter-naturally-iphone.png.json",
+      "prompt_file": "docs/natural-reading-assets/prompt.json"
     }
   ],
   "inline_diagram": {

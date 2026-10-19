@@ -1,0 +1,13 @@
+{
+  "file": "natural-reading-thumbnail.webp",
+  "width": 640,
+  "height": 360,
+  "bytes": 22412,
+  "sha256": "c15585a7b8cf8628e51a0a7bf0075756a908ef162086fc92757af2b068f29ee2",
+  "source": "natural-reading-original.png",
+  "method": "Responsive export; social uses centered aspect-ratio crop",
+  "generated": true,
+  "is_product_screenshot": false,
+  "prompt_file": "prompt.json",
+  "generation_tool": "image_gen"
+}

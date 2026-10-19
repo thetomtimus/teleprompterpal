@@ -72,6 +72,8 @@ Record a short test with your intended camera. Watch the saved clip at the size 
 
 Keep the same paragraph while you adjust the setup. Changing the wording, camera position and scrolling pace at once makes it hard to know what helped.
 
+For a one-phone recording session, use this [natural-reading practice for iPhone](/guides/read-teleprompter-naturally-iphone/) to work on spoken phrasing, pauses and the saved take.
+
 For a reflective rig, use the [mirror setup guide](https://freeteleprompteronline.com/mirror-teleprompter/) and check the actual reflection. Mirrored text on the source screen can be exactly what the glass needs.
 
 ## Look at what happens after a mistake

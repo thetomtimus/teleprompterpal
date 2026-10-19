@@ -137,4 +137,6 @@ The sample is **83 words and 423 characters**, including spaces. At 140 words pe
 4. Find the take, trim the beginning if available, then save or export it. Play the exported file outside the app.
 5. Note the watermark, dimensions, sound, crop and any paywall. Keep the app version and purchase tier beside the result.
 
+Once an app passes those checks, [practice reading naturally on iPhone](/guides/read-teleprompter-naturally-iphone/) with the same setup. Work on the delivery before recording the full script.
+
 Choose the app that handles your real script and recovery steps. If Pal’s set-speed recording and retake workflow fits, [request early access to Teleprompter Pal](/#early-access). If you need voice following or a production rig, start with the relevant candidate above and complete a short export before committing to a plan.
