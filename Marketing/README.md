@@ -27,6 +27,7 @@ The build runs strict Astro/TypeScript checks, emits a static website to `dist/`
 - `src/styles/global.css`: measured design primitives and responsive layouts.
 - `src/content/guides/*.md`: approved guide content, validated by `src/content.config.ts`. Drafts default to hidden; only explicit `draft: false` entries appear in public routes and the guide index.
 - `src/pages/guides/`: the guide index and reusable article route. Shared `SiteHeader.astro` and `SiteFooter.astro` expose Guides in desktop/mobile navigation and the footer.
+- `src/pages/tools/`: the free-tools directory and speech-time calculator. `src/styles/tools.css` contains their local layouts; `src/lib/speech-time.ts` owns the arithmetic and word counting, and `src/scripts/speech-calculator.ts` connects the native controls.
 - `src/components/QRCode.astro`: QR SVG generated at build time. There is no QR service or tracking redirect.
 - `docs/detail-reference.md`: exact observed reference values and intentional adaptations.
 - `docs/asset-provenance.json`: sources and hashes for the approved icon, fictional presenter and actual app screenshots.
@@ -48,6 +49,27 @@ When an App Store/TestFlight link is available, update the URL and access wordin
 - Desktop floating QR; a second QR remains available in the closing section on mobile. All QR and CTA destinations match.
 
 The camera/editing previews and crop demonstration are clearly labeled illustrative. They use the project's existing fictional presenter. The Scripts/editor/settings images are actual Simulator captures. The website never accesses a camera or microphone.
+
+## Speech time calculator
+
+The routes are `/tools/` and `/tools/speech-time-calculator/`. Shared navigation exposes Tools, and the footer links directly to the calculator. They reuse the existing Figtree, dark surfaces, lavender links and violet actions. Surface-specific layout and behavior are recorded in `.impeccable/surfaces/speech-time-calculator.md`. These pages ship through the Git/Vercel publication workflow documented below.
+
+The calculator starts with an empty script, a pace of 150 words/min and no extra pauses. Its independent one-minute planner initially shows 150 words. Visitors can paste a script or enter a word count, switch between modes without losing their text, try an example and clear the script. Calculations update on input. Speaking time is `words / wordsPerMinute * 60 + pauseSeconds`; the reverse planner uses `floor(max(0, targetSeconds - pauseSeconds) / 60 * wordsPerMinute)`. Durations round to the nearest second; word budgets round down.
+
+Numeric controls accept whole values: pace 40–400 words/min, extra pauses 0–3,600 seconds, manual count 1–1,000,000 words, target minutes 0–180 and target seconds 0–59. The target must be greater than zero. Script input is limited to 300,000 characters. Invalid values show an explanation instead of a plausible result. Word counting handles punctuation, contractions, hyphenated words and numeric separators; these remain approximate planning estimates for text with spaces between words.
+
+The speaking-speed test times a passage whose word count is derived from its text (currently 101 words). Start, finish and reset require no microphone or recording. A measured pace inside 40–400 words/min can be applied to both calculators; results outside that range ask for another attempt. Hiding the tab stops an active test. Script text stays only in page memory: it is never uploaded, saved to browser storage or added to a URL. Reloading or closing the page discards it. The rehearsal link opens the separate browser teleprompter; visitors paste their script there themselves. The iPhone handoff retains the site's private-beta early-access destination.
+
+Native radios, number fields, focus outlines and disclosures preserve keyboard use. Duration and word-budget feedback have separate polite status regions with a 500ms delay, so typing does not announce every intermediate value. With JavaScript disabled, controls remain disabled and the notice, formulas and reference table remain readable. The desktop input/result split stacks below 768px; narrower phone controls also stack below 375px. The existing reduced-motion treatment applies.
+
+Run the calculator and signup-context tests with Node 24, then the complete static build:
+
+```sh
+node --test tests/speech-time.test.ts tests/signup-context.test.ts
+npm run build
+```
+
+The calculator tests cover counting, forward/reverse arithmetic, pauses, invalid values, duration rounding and passage-derived pace. Local browser captures are retained under `.impeccable/review/speech-calculator/`, including empty and populated desktop views, 390px and 320px phones, the tools directory and the shared header at 820px. The existing build discovers both tool routes for the sitemap and checks their production canonical URLs; titles and descriptions are defined on each page.
 
 ## Vercel deployment
 

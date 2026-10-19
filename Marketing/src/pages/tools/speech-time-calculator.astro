@@ -1,0 +1,94 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import AccessButton from '../../components/AccessButton.astro';
+import Icon from '../../components/Icon.astro';
+import { countWords, speedPassage } from '../../lib/speech-time';
+import '../../styles/tools.css';
+const passageWords = countWords(speedPassage);
+---
+<Layout title="Speech Time Calculator: Words to Minutes | Teleprompter Pal" description="Estimate your script’s speaking time, test your speaking speed, or calculate a word count for a time limit. Free, with no signup or script uploads.">
+  <SiteHeader />
+  <main id="main" class="tools-main container">
+    <nav class="tool-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/tools/">Tools</a><span aria-hidden="true">/</span><span aria-current="page">Speech time calculator</span></nav>
+    <header class="tool-intro">
+      <h1>Speech time calculator.</h1>
+      <p>Find out how long your script takes to say. Set your speaking pace, leave room for pauses, and make your words fit the time you have.</p>
+    </header>
+
+    <noscript><p class="tool-notice">Enable JavaScript to use the calculator. The formulas and reference table below are available without it.</p></noscript>
+    <form id="speech-calculator" aria-label="Speech time calculator" novalidate>
+      <fieldset class="calculator-fields" disabled>
+        <legend class="visually-hidden">Script and speaking settings</legend>
+        <div class="calculator-workspace">
+          <div class="script-workspace">
+            <div class="tool-input-switch" role="group" aria-label="Choose input method">
+              <label><input type="radio" name="input-mode" value="script" checked /><span>Paste a script</span></label>
+              <label><input type="radio" name="input-mode" value="count" /><span>Enter word count</span></label>
+            </div>
+            <div id="script-panel">
+              <div class="tool-field-heading"><label for="speech-script">Your script</label><button type="button" id="load-sample" class="tool-text-button">Try an example</button></div>
+              <textarea id="speech-script" rows="9" maxlength="300000" placeholder="Paste or type the words you plan to say…" aria-describedby="script-help" spellcheck="false"></textarea>
+              <div class="script-bottomline"><span id="script-word-count">0 words</span><button type="button" id="clear-script" class="tool-text-button" disabled>Clear script</button></div>
+              <p id="script-help" class="tool-help">Count spoken words only. Remove stage directions and URLs before pasting. Contractions and hyphenated words count as one word.</p>
+            </div>
+            <div id="count-panel" hidden>
+              <label for="manual-words" class="tool-label">Word count</label>
+              <input id="manual-words" type="number" min="1" max="1000000" step="1" inputmode="numeric" placeholder="e.g. 300" aria-describedby="count-help" />
+              <p id="count-help" class="tool-help">Enter 1 to 1,000,000 words. Your pasted script stays here when you switch back.</p>
+            </div>
+            <p class="tool-privacy"><Icon name="lock" size={16} />Your script stays in this browser tab. No uploads or signup.</p>
+          </div>
+          <div class="timing-workspace">
+            <div class="duration-result">
+              <h2>Estimated speaking time</h2>
+              <output id="speech-duration" aria-live="off">—</output>
+              <p id="duration-description">Add a script or word count to see your estimate.</p>
+            </div>
+            <div class="tool-setting">
+              <div class="pace-label"><label for="speaking-pace">Speaking pace</label><div><input id="speaking-pace" type="number" min="40" max="400" step="1" value="150" inputmode="numeric" aria-describedby="pace-help" /><span>words/min</span></div></div>
+              <div class="pace-presets" role="group" aria-label="Speaking pace examples"><button type="button" data-pace="120" aria-pressed="false">120 <span>Measured</span></button><button type="button" data-pace="150" aria-pressed="true">150 <span>Steady</span></button><button type="button" data-pace="180" aria-pressed="false">180 <span>Brisk</span></button></div>
+              <p id="pace-help" class="tool-help">Examples to try, not a rule. Use 40–400 words per minute, or <a href="#speaking-speed-test">measure your own pace</a>.</p>
+            </div>
+            <div class="tool-setting pause-setting"><label for="pause-seconds">Extra pauses</label><div class="unit-input"><input id="pause-seconds" type="number" min="0" max="3600" step="1" value="0" inputmode="numeric" aria-describedby="pause-help" /><span>seconds</span></div><p id="pause-help" class="tool-help">Add time for demonstrations, emphasis or audience reactions beyond your usual delivery.</p></div>
+          </div>
+        </div>
+        <p id="calculator-status" class="visually-hidden" role="status" aria-atomic="true"></p>
+
+        <section class="word-planner tool-section" aria-labelledby="budget-title">
+          <div><h2 id="budget-title">Have a time limit?</h2><p>Work backward from your video or speech length. This uses the speaking pace and extra pauses above.</p></div>
+          <div class="budget-controls">
+            <div class="target-inputs"><div><label for="target-minutes">Minutes</label><input id="target-minutes" type="number" min="0" max="180" step="1" value="1" inputmode="numeric" aria-describedby="budget-description" /></div><div><label for="target-seconds">Seconds</label><input id="target-seconds" type="number" min="0" max="59" step="1" value="0" inputmode="numeric" aria-describedby="budget-description" /></div></div>
+            <div class="budget-result"><p>Aim for up to</p><output id="word-budget" aria-live="off">150 words</output><p id="budget-description">At 150 words/min, with no extra pauses.</p></div>
+          </div>
+          <p id="budget-status" class="visually-hidden" role="status" aria-atomic="true"></p>
+        </section>
+      </fieldset>
+    </form>
+
+    <section id="speaking-speed-test" class="speed-test tool-section" aria-labelledby="speed-test-title">
+      <div class="speed-test-intro"><h2 id="speed-test-title">Find your speaking pace.</h2><p>Read this {passageWords}-word passage aloud as you would on camera. Start the timer just before you begin, then finish after the last word. No microphone or recording needed.</p></div>
+      <div class="speed-test-body"><p class="test-passage">{speedPassage}</p><div class="test-transport"><button type="button" id="start-speed-test" class="button button-primary tool-action" disabled>Start reading <Icon name="play" size={18} /></button><button type="button" id="finish-speed-test" class="button button-primary tool-action" hidden>Finish reading <Icon name="check" size={18} /></button><span id="speed-test-clock" aria-live="off" aria-label="Elapsed time">0:00</span><button type="button" id="reset-speed-test" class="tool-text-button" hidden>Reset</button></div><p id="speed-test-status" class="tool-help" role="status" aria-atomic="true">Read at your own pace. Natural breaths and pauses are part of the test.</p><button type="button" id="use-measured-pace" class="tool-secondary-button" hidden>Use this pace in the calculator</button></div>
+    </section>
+
+    <section class="tool-explainer tool-section" aria-labelledby="formula-title">
+      <div><h2 id="formula-title">How words become minutes.</h2><p>Speaking time is your word count divided by your words per minute, plus any extra pauses. A 300-word script at 150 words per minute takes about 2 minutes. Add a 10-second demonstration and the estimate becomes 2:10.</p><p>A word budget reverses that calculation: subtract extra pauses from your time limit, multiply the remaining minutes by your speaking pace, then round down.</p><p>These are planning estimates for text with spaces between words. Your actual delivery, names, numbers and emphasis can change the result. Rehearse the finished script aloud before recording.</p></div>
+      <div class="reference-table"><table><caption>Words to time at 150 words per minute, before extra pauses</caption><thead><tr><th scope="col">Words</th><th scope="col">Speaking time</th></tr></thead><tbody><tr><th scope="row">75</th><td>30 seconds</td></tr><tr><th scope="row">150</th><td>1 minute</td></tr><tr><th scope="row">300</th><td>2 minutes</td></tr><tr><th scope="row">450</th><td>3 minutes</td></tr><tr><th scope="row">750</th><td>5 minutes</td></tr></tbody></table></div>
+    </section>
+
+    <section class="tool-questions tool-section" aria-labelledby="tool-questions-title"><h2 id="tool-questions-title">Before your next take.</h2><div class="faq-list">
+      <details><summary>How many words fit in a one-minute video?<Icon name="caret" size={18} /></summary><p>At 150 words per minute, a one-minute script has room for about 150 words before extra pauses. If you reserve 10 seconds for a visual or a pause, that leaves 125 words at the same pace. Use your measured pace for a more personal estimate.</p></details>
+      <details><summary>What speaking speed should I choose?<Icon name="caret" size={18} /></summary><p>The 120, 150 and 180 words-per-minute buttons are starting points for comparison. The right pace depends on your delivery and material. Try the speaking-speed test above, then rehearse your actual script. A technical explanation may need more time than the sample passage.</p></details>
+      <details><summary>Does the calculator save or upload my script?<Icon name="caret" size={18} /></summary><p>No. Calculations happen in this browser tab. The tool does not upload your text or save it to browser storage. Copy any changes you want to keep before you close or reload the page. The site uses general website analytics; your script text is not sent with it.</p></details>
+      <details><summary>Can I rehearse with a teleprompter next?<Icon name="caret" size={18} /></summary><p>Yes. Open the <a href="https://freeteleprompteronline.com/#script">free online teleprompter</a> and paste your script there to rehearse with scrolling text. For reading while recording on iPhone, Teleprompter Pal is currently in private beta. You can <a href="/#early-access">join the early-access list</a>.</p></details>
+    </div></section>
+
+    <aside class="tool-next-step"><div><h2>Ready to put it on camera?</h2><p>Read your script while recording on iPhone, then trim, crop and export your take with Teleprompter Pal.</p><p class="tool-help">For iPhone · Currently in private beta</p></div><AccessButton /></aside>
+    <p class="tool-related">Choosing a filming setup? <a href="/guides/browser-teleprompter-vs-iphone-app/">Compare a browser teleprompter with an iPhone app.</a></p>
+  </main>
+  <SiteFooter />
+</Layout>
+<script>
+  import '../../scripts/speech-calculator';
+</script>

@@ -9,13 +9,14 @@ const links = [
   { href: section('features'), label: 'Features' },
   { href: section('questions'), label: 'Questions' },
   { href: '/guides/', label: 'Guides' },
+  { href: '/tools/', label: 'Tools' },
   { href: site.supportUrl, label: 'Support' },
 ];
 ---
 <header class="site-header container">
   <a href="/" class="wordmark" aria-label="Teleprompter Pal home"><img src="/images/app-icon.webp" alt="" width="38" height="38" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a>
   <nav class="desktop-nav" aria-label="Main navigation">
-    {links.map(link => <a href={link.href} aria-current={link.href === '/guides/' && Astro.url.pathname.startsWith('/guides/') ? 'location' : undefined}>{link.label}</a>)}
+    {links.map(link => <a href={link.href} aria-current={['/guides/', '/tools/'].includes(link.href) && Astro.url.pathname.startsWith(link.href) ? 'location' : undefined}>{link.label}</a>)}
   </nav>
   <AccessButton compact />
   <details class="mobile-menu">

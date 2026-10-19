@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import '../../styles/tools.css';
+---
+<Layout title="Free Script & Speaking Tools | Teleprompter Pal" description="Prepare your next talking video with free tools from Teleprompter Pal. Estimate speech time, measure your speaking pace and plan a script for your time limit.">
+  <SiteHeader />
+  <main id="main" class="tools-main tools-index container">
+    <nav class="tool-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Tools</span></nav>
+    <header class="tool-intro"><h1>A little prep.<br />A better take.</h1><p>Free tools to help you plan your words before you press record.</p></header>
+    <article class="tool-directory-item"><div><h2><a href="/tools/speech-time-calculator/">Speech time calculator</a></h2><p>Turn your script into a speaking-time estimate. Test your pace, add pauses, or find a word count for a time limit.</p><a href="/tools/speech-time-calculator/" class="text-link">Time your script <Icon name="arrowRight" size={18} /></a></div><span class="directory-detail">No signup.<br />Your script stays in your browser.</span></article>
+    <div class="tool-directory-note"><h2>Ready to rehearse?</h2><p>Use our <a href="https://freeteleprompteronline.com/#script">free online teleprompter</a> for scrolling text in your browser, or <a href="/guides/browser-teleprompter-vs-iphone-app/">compare browser and iPhone setups</a> before recording.</p></div>
+  </main>
+  <SiteFooter />
+</Layout>
