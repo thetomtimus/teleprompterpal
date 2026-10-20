@@ -19,7 +19,6 @@ coverImage:
   alt: "Illustrated creator looking toward a phone on an eye-level tripod while speaking with a relaxed hand gesture."
   width: 1200
   height: 675
-  caption: "AI-generated illustration of a filming setup. The abstract screen is not a Teleprompter Pal screenshot or evidence of a recording test."
   sources:
     - { src: "/images/guides/natural-reading-cover-480.webp", width: 480 }
     - { src: "/images/guides/natural-reading-cover-800.webp", width: 800 }

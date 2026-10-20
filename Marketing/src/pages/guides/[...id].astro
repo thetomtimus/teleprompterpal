@@ -67,7 +67,7 @@ const articleImage = coverImage ?? shareImage;
         {guide.data.intro && <p class="guide-opening">{guide.data.intro}</p>}
         {coverImage && <figure class="guide-cover">
           <img src={coverImage.src} srcset={coverImage.sources.length ? coverImage.sources.map(source => `${source.src} ${source.width}w`).join(', ') : undefined} sizes="(max-width: 374px) calc(100vw - 36px), (max-width: 767px) calc(100vw - 48px), (max-width: 1099px) min(740px, calc(100vw - 80px)), 744px" width={coverImage.width} height={coverImage.height} alt={coverImage.alt} loading="eager" decoding="async" />
-          <figcaption>{coverImage.caption}</figcaption>
+          {coverImage.caption && <figcaption>{coverImage.caption}</figcaption>}
         </figure>}
         {guide.data.takeaways.length > 0 && <section class="guide-takeaways" aria-labelledby="takeaways-heading"><h2 id="takeaways-heading">The short answer</h2><ul>{guide.data.takeaways.map(takeaway => <li>{takeaway}</li>)}</ul></section>}
         {sections.length >= 3 && <nav class="guide-contents-mobile" aria-label="Article sections"><details><summary>On this page <Icon name="caret" size={18} /></summary><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></details></nav>}

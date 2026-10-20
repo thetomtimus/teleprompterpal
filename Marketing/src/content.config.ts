@@ -22,7 +22,7 @@ const guides = defineCollection({
     shareImage: z.object({ src: z.string().startsWith('/images/'), alt: z.string(), width: z.number().int().positive(), height: z.number().int().positive() }).optional(),
     coverImage: z.object({
       src: z.string().startsWith('/images/'), alt: z.string(),
-      width: z.number().int().positive(), height: z.number().int().positive(), caption: z.string(),
+      width: z.number().int().positive(), height: z.number().int().positive(), caption: z.string().optional(),
       sources: z.array(z.object({ src: z.string().startsWith('/images/'), width: z.number().int().positive() })).default([]),
     }).optional(),
     thumbnail: z.object({ src: z.string().startsWith('/images/'), width: z.number().int().positive(), height: z.number().int().positive() }).optional(),
