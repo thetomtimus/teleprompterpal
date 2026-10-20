@@ -253,6 +253,71 @@
       "renderer": "prepare-assets.py (Pal) or scripts/render_article_social.py (Free)",
       "license": "Figtree OFL",
       "embedded_provenance": true
+    },
+    {
+      "file": "public/images/guides/natural-reading-photo-cover-1200.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        1200,
+        675
+      ],
+      "bytes": 66146,
+      "sha256": "731ac0f43467f30b5f4110b3004af78e3be89aba6429d85f9631dbe17c078138",
+      "origin": "Original built-in image_gen photorealistic editorial image approved on 2026-10-20; fictional presenter, generic teleprompter overlay, not a Teleprompter Pal screenshot or testing evidence.",
+      "provenance_sidecar": "docs/natural-reading-photo-assets/natural-reading-photo-cover-1200.webp.json",
+      "prompt_file": "docs/natural-reading-photo-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/natural-reading-photo-cover-800.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        800,
+        450
+      ],
+      "bytes": 39226,
+      "sha256": "28475aee88972ecbf1f584fed4c8cfbfcd600f435b55293a755323ec54ba7721",
+      "origin": "Original built-in image_gen photorealistic editorial image approved on 2026-10-20; fictional presenter, generic teleprompter overlay, not a Teleprompter Pal screenshot or testing evidence.",
+      "provenance_sidecar": "docs/natural-reading-photo-assets/natural-reading-photo-cover-800.webp.json",
+      "prompt_file": "docs/natural-reading-photo-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/natural-reading-photo-cover-480.webp",
+      "role": "Article cover, responsive variant",
+      "dimensions": [
+        480,
+        270
+      ],
+      "bytes": 19070,
+      "sha256": "01a31255f747ab80272b199f54d730cc72914040f6d8b997d90e45102ec41c83",
+      "origin": "Original built-in image_gen photorealistic editorial image approved on 2026-10-20; fictional presenter, generic teleprompter overlay, not a Teleprompter Pal screenshot or testing evidence.",
+      "provenance_sidecar": "docs/natural-reading-photo-assets/natural-reading-photo-cover-480.webp.json",
+      "prompt_file": "docs/natural-reading-photo-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/natural-reading-photo-thumbnail.webp",
+      "role": "Guide-list thumbnail",
+      "dimensions": [
+        640,
+        360
+      ],
+      "bytes": 28452,
+      "sha256": "7ebc91b039a3ad98a04bd2f66ef68474d02c229694ea3cfe46031ebcbde95f30",
+      "origin": "Original built-in image_gen photorealistic editorial image approved on 2026-10-20; fictional presenter, generic teleprompter overlay, not a Teleprompter Pal screenshot or testing evidence.",
+      "provenance_sidecar": "docs/natural-reading-photo-assets/natural-reading-photo-thumbnail.webp.json",
+      "prompt_file": "docs/natural-reading-photo-assets/prompt.json"
+    },
+    {
+      "file": "public/images/guides/natural-reading-photo-social.png",
+      "role": "Article social preview",
+      "dimensions": [
+        1200,
+        630
+      ],
+      "bytes": 928755,
+      "sha256": "5d6a3d915c52c899b38e13a2748f4bf3a33eb5796be8279a0ec571f37e49018f",
+      "origin": "Original built-in image_gen photorealistic editorial image approved on 2026-10-20; fictional presenter, generic teleprompter overlay, not a Teleprompter Pal screenshot or testing evidence.",
+      "provenance_sidecar": "docs/natural-reading-photo-assets/natural-reading-photo-social.png.json",
+      "prompt_file": "docs/natural-reading-photo-assets/prompt.json"
     }
   ],
   "inline_diagram": {

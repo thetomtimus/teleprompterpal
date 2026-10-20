@@ -1,0 +1,87 @@
+{
+  "created_date": "2026-10-20",
+  "generation_tool": "image_gen",
+  "source": "natural-reading-photo-original.png",
+  "source_dimensions": [
+    1672,
+    941
+  ],
+  "source_sha256": "b023b4b64ae0efe88b6486f364b8d129ba07f3420d1b75e6801d27fbc3d6c944",
+  "fictional_presenter": true,
+  "generic_ui": true,
+  "is_product_screenshot": false,
+  "visible_caption": "Omitted at the owner's request. Image origin and prompt retained in this private source documentation.",
+  "prompt_file": "prompt.json",
+  "assets": [
+    {
+      "file": "natural-reading-photo-cover-1200.webp",
+      "width": 1200,
+      "height": 675,
+      "bytes": 66146,
+      "sha256": "731ac0f43467f30b5f4110b3004af78e3be89aba6429d85f9631dbe17c078138",
+      "source": "natural-reading-photo-original.png",
+      "source_sha256": "b023b4b64ae0efe88b6486f364b8d129ba07f3420d1b75e6801d27fbc3d6c944",
+      "method": "Pillow LANCZOS responsive export; centered crop for social preview",
+      "generated": true,
+      "is_product_screenshot": false,
+      "prompt_file": "prompt.json",
+      "generation_tool": "image_gen"
+    },
+    {
+      "file": "natural-reading-photo-cover-800.webp",
+      "width": 800,
+      "height": 450,
+      "bytes": 39226,
+      "sha256": "28475aee88972ecbf1f584fed4c8cfbfcd600f435b55293a755323ec54ba7721",
+      "source": "natural-reading-photo-original.png",
+      "source_sha256": "b023b4b64ae0efe88b6486f364b8d129ba07f3420d1b75e6801d27fbc3d6c944",
+      "method": "Pillow LANCZOS responsive export; centered crop for social preview",
+      "generated": true,
+      "is_product_screenshot": false,
+      "prompt_file": "prompt.json",
+      "generation_tool": "image_gen"
+    },
+    {
+      "file": "natural-reading-photo-cover-480.webp",
+      "width": 480,
+      "height": 270,
+      "bytes": 19070,
+      "sha256": "01a31255f747ab80272b199f54d730cc72914040f6d8b997d90e45102ec41c83",
+      "source": "natural-reading-photo-original.png",
+      "source_sha256": "b023b4b64ae0efe88b6486f364b8d129ba07f3420d1b75e6801d27fbc3d6c944",
+      "method": "Pillow LANCZOS responsive export; centered crop for social preview",
+      "generated": true,
+      "is_product_screenshot": false,
+      "prompt_file": "prompt.json",
+      "generation_tool": "image_gen"
+    },
+    {
+      "file": "natural-reading-photo-thumbnail.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 28452,
+      "sha256": "7ebc91b039a3ad98a04bd2f66ef68474d02c229694ea3cfe46031ebcbde95f30",
+      "source": "natural-reading-photo-original.png",
+      "source_sha256": "b023b4b64ae0efe88b6486f364b8d129ba07f3420d1b75e6801d27fbc3d6c944",
+      "method": "Pillow LANCZOS responsive export; centered crop for social preview",
+      "generated": true,
+      "is_product_screenshot": false,
+      "prompt_file": "prompt.json",
+      "generation_tool": "image_gen"
+    },
+    {
+      "file": "natural-reading-photo-social.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 928755,
+      "sha256": "5d6a3d915c52c899b38e13a2748f4bf3a33eb5796be8279a0ec571f37e49018f",
+      "source": "natural-reading-photo-original.png",
+      "source_sha256": "b023b4b64ae0efe88b6486f364b8d129ba07f3420d1b75e6801d27fbc3d6c944",
+      "method": "Pillow LANCZOS responsive export; centered crop for social preview",
+      "generated": true,
+      "is_product_screenshot": false,
+      "prompt_file": "prompt.json",
+      "generation_tool": "image_gen"
+    }
+  ]
+}

@@ -15,21 +15,21 @@ author:
 topics: ["iphone-workflow", "natural-delivery"]
 contents: true
 coverImage:
-  src: "/images/guides/natural-reading-cover-800.webp"
-  alt: "Illustrated creator looking toward a phone on an eye-level tripod while speaking with a relaxed hand gesture."
+  src: "/images/guides/natural-reading-photo-cover-800.webp"
+  alt: "Landscape phone on a tripod showing a creator speaking beside teleprompter text."
   width: 1200
   height: 675
   sources:
-    - { src: "/images/guides/natural-reading-cover-480.webp", width: 480 }
-    - { src: "/images/guides/natural-reading-cover-800.webp", width: 800 }
-    - { src: "/images/guides/natural-reading-cover-1200.webp", width: 1200 }
+    - { src: "/images/guides/natural-reading-photo-cover-480.webp", width: 480 }
+    - { src: "/images/guides/natural-reading-photo-cover-800.webp", width: 800 }
+    - { src: "/images/guides/natural-reading-photo-cover-1200.webp", width: 1200 }
 thumbnail:
-  src: "/images/guides/natural-reading-thumbnail.webp"
+  src: "/images/guides/natural-reading-photo-thumbnail.webp"
   width: 640
   height: 360
 shareImage:
-  src: "/images/guides/read-teleprompter-naturally-iphone.png"
-  alt: "A creator practicing a scripted recording with a phone at eye level."
+  src: "/images/guides/natural-reading-photo-social.png"
+  alt: "Landscape phone on a tripod showing a creator speaking beside teleprompter text."
   width: 1200
   height: 630
 relatedGuides: ["browser-teleprompter-vs-iphone-app"]

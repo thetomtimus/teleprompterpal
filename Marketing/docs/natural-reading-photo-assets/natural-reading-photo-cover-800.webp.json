@@ -1,0 +1,14 @@
+{
+  "file": "natural-reading-photo-cover-800.webp",
+  "width": 800,
+  "height": 450,
+  "bytes": 39226,
+  "sha256": "28475aee88972ecbf1f584fed4c8cfbfcd600f435b55293a755323ec54ba7721",
+  "source": "natural-reading-photo-original.png",
+  "source_sha256": "b023b4b64ae0efe88b6486f364b8d129ba07f3420d1b75e6801d27fbc3d6c944",
+  "method": "Pillow LANCZOS responsive export; centered crop for social preview",
+  "generated": true,
+  "is_product_screenshot": false,
+  "prompt_file": "prompt.json",
+  "generation_tool": "image_gen"
+}
