@@ -114,3 +114,32 @@
 @media(prefers-reduced-motion:reduce){.comparison-questions summary::after{transition:none}}
 
 @media(max-width:767px){.comparison-plan-grid{grid-template-columns:1fr;gap:24px}.comparison-plan{padding:24px;border-radius:20px}.comparison-plan h3{font-size:24px}.comparison-plan .comparison-price{font-size:30px}.comparison-feature-note,.comparison-status-detail{font-size:13px}.comparison-plan-options dd{font-size:22px}.comparison-pricing-note{font-size:13px}}
+
+/* Owner-pinned comparison hub structure: intro, linked app grid, closing action. */
+.compare-hub { padding-top: 64px; }
+.compare-hub-intro { max-width: 800px; margin: 0 auto 64px; text-align: center; }
+.compare-hub-intro h1 { color: var(--color-display); font-size: 56px; line-height: 1.06; letter-spacing: -.035em; margin: 0 0 28px; }
+.compare-hub-intro > p { font-size: 20px; line-height: 1.6; color: var(--color-muted); margin: 0; }
+.compare-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; }
+.compare-app-card { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 20px; padding: 28px; color: var(--color-text); text-decoration: none; border: 1px solid var(--color-rule); border-radius: 24px; background: var(--color-surface); transition: border-color .2s ease, background-color .2s ease; }
+.compare-app-card:hover { border-color: var(--color-lavender); background: var(--color-surface-raised); }
+.compare-app-card img { width: 56px; height: 56px; border-radius: 13px; }
+.compare-app-card h2 { font-size: 22px; line-height: 1.25; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+.compare-card-category { font-size: 14px; line-height: 1.5; color: var(--color-quiet); margin: 8px 0 12px; }
+.compare-card-summary { font-size: 18px; line-height: 1.5; color: var(--color-muted); margin: 0; }
+.compare-hub-close { max-width: 760px; margin: 100px auto 0; text-align: center; }
+.compare-hub-close h2 { font-size: 40px; line-height: 1.1; letter-spacing: -.03em; margin: 0 0 24px; text-wrap: balance; }
+.compare-hub-close > p { color: var(--color-muted); font-size: 20px; line-height: 1.6; margin: 0 0 28px; }
+.compare-hub-close .button { font-size: 20px; }
+.compare-hub-close .compare-hub-method { max-width: 650px; margin: 28px auto 0; font-size: 14px; line-height: 1.6; color: var(--color-quiet); }
+@media (max-width: 767px) {
+  .compare-hub { padding-top: 44px; }
+  .compare-hub-intro { margin-bottom: 40px; }
+  .compare-hub-intro h1 { color: var(--color-display); font-size: 38px; margin-bottom: 24px; }
+  .compare-hub-intro > p { font-size: 18px; }
+  .compare-app-card { padding: 24px; gap: 16px; border-radius: 20px; }
+  .compare-app-card h2 { font-size: 21px; }
+  .compare-hub-close { margin-top: 72px; }
+  .compare-hub-close h2 { font-size: 32px; }
+  .compare-hub-close > p { font-size: 18px; }
+}

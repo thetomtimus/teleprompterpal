@@ -109,6 +109,8 @@ PromptSmart advertises VoiceTrack as following your speech and waiting through p
 
 **Tradeoff:** the $29.99 download does not include every optional service. The listing describes an Extended subscription for features such as file sync and remote control. Check that distinction before budgeting for the workflow. PromptSmart’s wider product range should not be assumed to have the same language support, trial or pricing as this edition. Pro purchase and subscription details.
 
+For the focused recording decision, [compare Teleprompter Pal and PromptSmart Pro](/compare/promptsmart-pro-alternative/), including free recording, reversible edits and VoiceTrack.
+
 A sensible trial task is a paragraph containing a pause and an unscripted sentence. Check whether the app holds the right place when you return. A feature name alone cannot tell you how it handles your accent, room or microphone.
 
 ## 4. Teleprompter Pro: remotes and production setups

@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Record before paying', note: 'The exact PromptSmart Pro edition is a paid download', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'no', detail: '$29.99 upfront' } },
+  { feature: 'Read while recording', note: 'Camera and script together on iPhone', pal: { state: 'yes' }, competitor: { state: 'yes', detail: 'Selfie Mode' } },
+  { feature: 'Set-speed scrolling', note: 'Choose the pace yourself', pal: { state: 'yes' }, competitor: { state: 'yes' } },
+  { feature: 'Adjust text size and reading area', note: 'Bring the words closer to the camera', pal: { state: 'yes' }, competitor: { state: 'yes' } },
+  { feature: 'Trim and crop inside the app', note: 'Refine the recorded take before export', pal: { state: 'yes', detail: 'Free editing' }, competitor: { state: 'unknown', detail: 'Not verified' } },
+  { feature: 'Recover the original after editing', note: 'Confirmed in our Teleprompter Pal device check', pal: { state: 'yes' }, competitor: { state: 'unknown', detail: 'Not verified' } },
+  { feature: 'Save a video copy to your phone', note: 'Delivery access differs between the offers', pal: { state: 'yes', detail: 'Pro' }, competitor: { state: 'yes', detail: 'Photos documented' } },
+  { feature: 'No account for the core workflow', note: 'PromptSmart accounts are for optional Extended services', pal: { state: 'yes' }, competitor: { state: 'yes' } },
+  { feature: 'Voice-following scrolling', note: 'PromptSmart Pro documents English-only VoiceTrack', pal: { state: 'no', detail: 'Set speed only' }, competitor: { state: 'yes', detail: 'VoiceTrack' } },
+  { feature: 'Import PDF and DOCX scripts', note: 'Teleprompter Pal currently imports plain-text files', pal: { state: 'no' }, competitor: { state: 'yes', detail: 'Readable PDF text required' } },
+  { feature: 'Remote script control', note: 'PromptSmart documents paid remote-control options', pal: { state: 'no' }, competitor: { state: 'yes', detail: 'Extra purchase or plan' } },
+  { feature: 'Released for iPhone', note: 'Teleprompter Pal: iOS 18+; PromptSmart Pro: iOS 16+', pal: { state: 'yes' }, competitor: { state: 'yes' } },
+];
+---
+<Layout title="Teleprompter Pal vs PromptSmart Pro | iPhone Comparison" description="Compare Teleprompter Pal and PromptSmart Pro: free recording, trim/crop, VoiceTrack, export and US pricing. Choose a workflow before paying." type="article" published="2026-10-21" modified="2026-10-21">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/promptsmart-pro-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-21" />
+      <meta itemprop="dateModified" content="2026-10-21" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs PromptSmart Pro</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/promptsmart-pro-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs PromptSmart Pro</h1>
+        <p class="comparison-deck" itemprop="description">Looking for a PromptSmart Pro alternative for iPhone? <strong>Choose Teleprompter Pal to record and edit before you pay.</strong> Keep your script, retakes and reversible trim/crop edits together. Upgrade to Pro when you need an MP4.</p>
+        <p class="comparison-intro-note">Teleprompter Pal has free recording and editing. PromptSmart Pro costs $29.99 upfront and adds VoiceTrack speech-following. Teleprompter Pal Pro export is {offer.yearly}/year.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-21">21 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#promptsmart-fit">When PromptSmart Pro fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for a free iPhone recording workflow with saved, reversible edits. PromptSmart Pro suits readers who need speech-following or remote prompting.</p>
+        <p class="table-help" id="table-help">Scroll sideways on smaller screens. A dash means we haven’t verified the feature. <a href="#evidence">Sources and test details.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and PromptSmart Pro feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">PromptSmart Pro</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus {...row.pal} /></td><td><ComparisonStatus {...row.competitor} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Start recording and editing at $0 with Teleprompter Pal. Export requires a Pro subscription. PromptSmart Pro is a $29.99 paid download with optional extras.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>No app-imposed recording time cap</li><li>Playback, trim, crop and saved edits</li></ul><p class="comparison-plan-note">MP4 export and delivery require Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="promptsmart-plan-title">
+            <h3 id="promptsmart-plan-title">PromptSmart Pro</h3>
+            <div class="comparison-plan-tier"><h4>Pro download</h4><p class="comparison-price">$29.99<span> upfront</span></p><ul><li>VoiceTrack speech-following (English)</li><li>HD Selfie Mode recording</li><li>PDF, DOCX and other script imports</li></ul><p class="comparison-plan-note">One-time app purchase. This Pro edition has no free download. PromptSmart Lite is a separate app.</p></div>
+            <div class="comparison-plan-tier"><h4>Optional Extended extras</h4><ul><li>Remote control</li><li>File sync</li><li>Scroll Assist for script cues</li></ul><p class="comparison-plan-note">Apple’s current US in-app-purchase section lists $3.99 and $34.99. It does not label their billing periods. The description gives different amounts, so confirm the exact term, trial and renewal price in the app.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 21 October 2026. Teleprompter Pal prices are US in-app subscriptions; the annual trial depends on eligibility. PromptSmart Pro’s app price is verified in Apple’s listing. We have not verified its in-app checkout. The offers include different features and billing models. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for recording and retakes</h2>
+          <p>You want to find out whether a script works on camera before buying export access. Teleprompter Pal lets you create or paste the words, rehearse, record several takes, play them back, then trim and crop for free. A take can stay in your library while you decide what to keep.</p>
+          <p>The useful difference is what happens after a stumble. You can repeat a sentence, save the take, shorten its opening and adjust the frame inside Teleprompter Pal. The original remains separate from the saved edit. Pro adds the MP4 and delivery to Photos, Files or Share when you need the finished copy.</p>
+          <p>No Teleprompter Pal account is required for that local workflow. PromptSmart Pro also documents that its core app does not need an Extended account, so account-free use is a shared capability. For the full process, see <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square export. The original stayed available. We then restored its full length and original crop.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>Delivery checks covered Photos, Files and Share Copy, plus reopening the edit after restarting the app. This demonstrates Teleprompter Pal’s workflow. It does not establish a speed, quality or reliability advantage over PromptSmart Pro. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="promptsmart-fit" class="comparison-section">
+          <h2>When PromptSmart Pro is the better fit</h2>
+          <p>VoiceTrack is the reason to consider it. The Pro listing describes English speech-following that waits through pauses and departures from the script. Teleprompter Pal currently uses the pace you set and does not follow speech. We have not measured VoiceTrack’s tracking accuracy.</p>
+          <p>PromptSmart Pro also documents remote prompting, script cues and document imports beyond plain text. Those are useful if another person runs your prompt or your scripts arrive as PDF or Word files. Some connected features require an extra purchase or subscription. <a href="#promptsmart-ios">Edition and feature source.</a></p>
+          <p>Choose Teleprompter Pal when free recording, retakes and saved trim/crop edits are the job you need to finish. Choose for the workflow you will actually use, rather than a count of checkmarks.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try a pause, a retake and a saved edit</h2>
+          <p>Use the same short script, camera and lighting in each app. Read a sentence, pause, add an unscripted sentence, then return to the script. Watch where the prompt resumes. Make another take, shorten the opening and check whether the original is recoverable. Export a sample to your actual destination and play it with sound.</p>
+          <p>That exercise checks the decision this page cannot make for you: whether a set pace or speech-following works better with your voice and room. Use the <a href="/tools/speech-time-calculator/">speech time calculator</a> to keep the sample short, or the <a href="/guides/read-teleprompter-naturally-iphone/">natural-delivery guide</a> to prepare your wording.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison uses saved internal Teleprompter Pal device checks and current official PromptSmart sources. We have not completed the same-script recording/export task in both apps. Unverified items stay neutral.</p>
+          <ul class="comparison-source-list">
+            <li id="pal-tests"><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. Recording, interruption, trim/crop, original retention and delivery checks have the scope shown in the <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a>. They do not certify a public build or long-session reliability.</li>
+            <li><strong>Teleprompter Pal’s current offer.</strong> Free recording and editing; Pro adds MP4 export and Photos, Files or Share delivery. US subscriptions and trial eligibility are shown above.</li>
+            <li id="promptsmart-ios"><strong>PromptSmart Pro — Teleprompter, Apple US listing and lookup.</strong> App ID 894811756, version 4.1.1, checked 21 October 2026. $29.99 app price, iOS 16+, Pro features and English-only VoiceTrack come from that exact edition. PromptSmart+ and Studio are separate products.</li>
+            <li><strong>PromptSmart Help Center.</strong> Checked 21 October 2026. Describes core account requirements, script imports, remote options and saving to Photos. Some guidance is dated; we have not verified current in-app editing, original retention or the checkout terms.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is Teleprompter Pal a free PromptSmart Pro alternative?</summary><p>Teleprompter Pal is free for scripts, rehearsal, recording, playback, trim/crop and saved edits. MP4 export and Photos, Files or Share delivery require Pro. PromptSmart Pro is a paid download; the separate PromptSmart Lite app is outside this comparison.</p></details>
+          <details><summary>Does Teleprompter Pal follow my voice?</summary><p>No. It uses the pace you set. PromptSmart Pro documents English VoiceTrack speech-following. Test pauses, ad-libs and returning to the script before choosing a voice-following workflow.</p></details>
+          <details><summary>Is Teleprompter Pal Pro cheaper?</summary><p>Teleprompter Pal offers free recording and editing, then Pro at $59.99/year, $19.99/month or $9.99/week. PromptSmart Pro is $29.99 upfront with optional extras. Teleprompter Pal’s advantage is trying the recording/editing workflow before paying for export, rather than a lower paid-plan total.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and edit for free with Teleprompter Pal. Pro adds MP4 export and delivery.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/bigvu-alternative/">Teleprompter Pal vs BIGVU <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
