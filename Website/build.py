@@ -14,7 +14,7 @@ SECTIONS = {
         ("overview", "What this covers"), ("local-library", "Your local library"),
         ("permissions", "Permissions"), ("diagnostics", "Local diagnostics"),
         ("exports-backups", "Exports and backups"), ("support-information", "Support messages"),
-        ("deletion", "Data retention and deletion"), ("early-access-signups", "Early access signups"), ("website", "These web pages"),
+        ("deletion", "Data retention and deletion"), ("app-updates-signups", "Product-update signups"), ("website", "These web pages"),
         ("contact", "Privacy questions"), ("changes", "Policy changes")],
     "support": [("start", "Your first recording"), ("recording", "Recording and scrolling"),
         ("edit-export", "Edit, export and save"), ("scripts-data", "Scripts and your library"),
@@ -79,7 +79,7 @@ def build(release=False):
         html = frame(config, page, title, text, draft, robots, '../', clean_urls=release)
         (out / page).mkdir(exist_ok=True)
         (out / page / "index.html").write_text(html)
-    index = '<div class="directory"><h1>Privacy and support</h1><p class="lead">Information for the current iPhone beta of teleprompterpal.com.</p><ul><li><h2><a href="support/index.html">Support</a></h2><p>Recording, scrolling, exports and your library.</p></li><li><h2><a href="privacy/index.html">Privacy policy</a></h2><p>Local content, permissions, diagnostics and your choices.</p></li></ul></div>'
+    index = '<div class="directory"><h1>Privacy and support</h1><p class="lead">Information for Teleprompter Pal on iPhone.</p><ul><li><h2><a href="support/index.html">Support</a></h2><p>Recording, scrolling, exports and your library.</p></li><li><h2><a href="privacy/index.html">Privacy policy</a></h2><p>Local content, permissions, diagnostics and your choices.</p></li></ul></div>'
     if release:
         index = index.replace('support/index.html', '/support/').replace('privacy/index.html', '/privacy/')
     (out / "index.html").write_text(frame(config, '', 'Privacy and support', index, draft, robots, '', clean_urls=release))
@@ -99,7 +99,7 @@ def frame(config, page, title, content, draft, robots, prefix, clean_urls=False,
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(title)} | {escape(config['app_name'])}</title>
-<meta name="description" content="{escape(title)} for the current teleprompterpal.com iPhone beta, operated by Second Wind, LLC.">
+<meta name="description" content="{escape(title)} for Teleprompter Pal on iPhone, operated by Second Wind, LLC.">
 <meta name="robots" content="{robots}"><meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
 {canonical_tag}<link rel="icon" href="{prefix}assets/app-icon.svg" type="image/svg+xml">

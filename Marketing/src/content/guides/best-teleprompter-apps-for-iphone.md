@@ -1,5 +1,6 @@
 ---
 title: "5 Best Teleprompter Apps for iPhone: Free and Paid Compared"
+updated: "2026-10-21"
 headline: "5 best teleprompter apps for iPhone: choose for the way you record."
 breadcrumb: "iPhone app comparison"
 description: "Compare Teleprompter Pal, Teleprompter for Video, PromptSmart Pro, Teleprompter Pro and BIGVU, with dated pricing sources and clearly labeled device-test evidence."
@@ -29,7 +30,7 @@ relatedGuides: ["browser-teleprompter-vs-iphone-app"]
 draft: false
 ---
 
-**Disclosure:** We make Teleprompter Pal and list it first. This is our selection guide, not an independent review. Competitor features below come from official sources checked on **19 October 2026**. Pal has internal iPhone recording and export test results. We have not completed the same hands-on test across the other apps, so the numbering reflects our editorial selection rather than a comparative performance test.
+**Disclosure:** We make Teleprompter Pal and list it first. This is our selection guide, not an independent review. Competitor features below come from official sources checked on **19 October 2026**. Teleprompter Pal has internal iPhone recording and export test results. We have not completed the same hands-on test across the other apps, so the numbering reflects our editorial selection rather than a comparative performance test.
 
 <figure>
 <img src="/images/guides/iphone-app-comparison-800.webp" srcset="/images/guides/iphone-app-comparison-480.webp 480w, /images/guides/iphone-app-comparison-800.webp 800w, /images/guides/iphone-app-comparison-1200.webp 1200w" sizes="(max-width: 767px) calc(100vw - 32px), 704px" width="1200" height="676" loading="lazy" decoding="async" alt="Four recording priorities to compare: short clips, speech following, production controls, and editing or publishing." />
@@ -59,7 +60,7 @@ These suggestions are editorial judgments based on the features and limitations 
 <caption>US pricing and documented limits checked 19 October 2026. Website offers and App Store purchases may differ.</caption>
 <thead><tr><th scope="col">App</th><th scope="col">Free entry point</th><th scope="col">Paid reference</th></tr></thead>
 <tbody>
-<tr><th scope="row">1. Teleprompter Pal</th><td>Private beta; <a href="/#early-access">request early access</a>.</td><td>Pricing is not listed on the current product page.</td></tr>
+<tr><th scope="row">1. Teleprompter Pal</th><td>iPhone app; <a href="/">see product details</a>.</td><td>Pricing is not listed on the current product page.</td></tr>
 <tr><th scope="row">2. Teleprompter for Video</th><td>Scripts up to 750 characters; listing says no watermark.</td><td>Support guide: $34.99/year or $8.99/month. Store lists multiple offers; check the in-app confirmation.</td></tr>
 <tr><th scope="row">3. PromptSmart Pro</th><td>No free download of this Pro edition.</td><td>$29.99 upfront in the US App Store, with optional in-app purchases.</td></tr>
 <tr><th scope="row">4. Teleprompter Pro</th><td>Free download with upgrades; website also links a separate free Teleprompter edition.</td><td>Website: $59.99/year or $159.99 one-time. Confirm which extras need a subscription.</td></tr>
@@ -75,7 +76,7 @@ Sources: [Teleprompter for Video upgrade guide](https://teleprompterforvideo.com
 
 Teleprompter Pal is our iPhone app. Its current tested workflow includes local scripts, camera recording, saved takes, nondestructive trim/crop and MP4 export. Scrolling uses a pace you set; it does not listen and follow your speech. If voice following is essential, evaluate the speech-enabled options below.
 
-Our internal device checks on **19 October 2026** used **Pal 0.6.17 (37), an iPhone 17 Pro and iOS 27.0**. These are checks of our development build, not an independent review or validation of a public App Store binary. Read the [internal device-test record](/evidence/pal-device-test-summary-2026-10-19.json) for the methods and limits.
+Our internal device checks on **19 October 2026** used **Teleprompter Pal 0.6.17 (37), an iPhone 17 Pro and iOS 27.0**. These are checks of our development build, not an independent review or validation of a public App Store binary. Read the [internal device-test record](/evidence/pal-device-test-summary-2026-10-19.json) for the methods and limits.
 
 <table tabindex="0" aria-labelledby="1-teleprompter-pal-recording-and-retakes-on-iphone">
 <thead><tr><th scope="col">Internal check</th><th scope="col">Observed result</th><th scope="col">What that does not establish</th></tr></thead>
@@ -88,7 +89,7 @@ Our internal device checks on **19 October 2026** used **Pal 0.6.17 (37), an iPh
 
 The capture checks included real camera/audio sessions and independent decoding of the originals. The edit/export check used the ordinary app interface and confirmed the saved file’s dimensions and duration. We have not measured comparative eye contact, speech-tracking accuracy or speed to a finished video. We do not use private camera footage as public review imagery.
 
-**Tradeoff:** these results support a specific recording/editing workflow. They do not justify calling Pal the best overall app. Access is currently through the private beta. [Request early access to Teleprompter Pal](/#early-access).
+**Tradeoff:** these results support a specific recording/editing workflow. They do not justify calling Teleprompter Pal the best overall app. [Explore Teleprompter Pal](/).
 
 ## 2. Teleprompter for Video: short scripts and editing
 
@@ -144,4 +145,6 @@ The sample is **83 words and 423 characters**, including spaces. At 140 words pe
 
 Once an app passes those checks, [practice reading naturally on iPhone](/guides/read-teleprompter-naturally-iphone/) with the same setup. Work on the delivery before recording the full script.
 
-Choose the app that handles your real script and recovery steps. If Pal’s set-speed recording and retake workflow fits, [request early access to Teleprompter Pal](/#early-access). If you need voice following or a production rig, start with the relevant candidate above and complete a short export before committing to a plan.
+Choose the app that handles your real script and recovery steps. If Teleprompter Pal’s set-speed recording and retake workflow fits, [explore Teleprompter Pal](/). If you need voice following or a production rig, start with the relevant candidate above and complete a short export before committing to a plan.
+
+*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*

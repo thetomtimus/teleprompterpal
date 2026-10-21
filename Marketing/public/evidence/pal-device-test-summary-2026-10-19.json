@@ -7,7 +7,7 @@
   "os": "iOS 27.0",
   "app_version": "0.6.17",
   "build": "37",
-  "release_scope": "Development-signed builds. No public App Store or TestFlight binary certification.",
+  "release_scope": "Evidence covers the named development-signed builds only.",
   "capture": {
     "method": "Opt-in DEBUG physical-device probes with real AVFoundation camera and microphone sessions, isolated script/preferences/take roots. Normal development-signed Release app restored afterward.",
     "short_take_seconds": 15.168,

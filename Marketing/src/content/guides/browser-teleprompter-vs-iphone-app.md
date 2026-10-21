@@ -2,6 +2,7 @@
 title: "Browser Teleprompter vs iPhone App: Choose for Your Recording Setup"
 description: "Choose a browser teleprompter or an iPhone app by checking where you read, record and edit. Includes a practical setup test before you commit."
 date: "2026-10-19"
+updated: "2026-10-21"
 headline: "Browser teleprompter or iPhone app? Start with the camera."
 breadcrumb: "Browser or iPhone app"
 intro: "A script on your laptop can be easy to read and still sit in the wrong place for your phone camera. Before choosing a teleprompter, decide which device records your face and which screen holds your words. That arrangement matters more than a long feature list."
@@ -90,10 +91,12 @@ Write down the actual friction. “Finding my place after a retake” is a bette
 
 ## Where Teleprompter Pal fits today
 
-Teleprompter Pal is an iPhone app currently in private beta. Its beta workflow includes script storage, camera recording, trim/crop and MP4 export. Scrolling in the current beta uses manual controls. Treat voice following as planned functionality when deciding whether the app meets your needs now.
+Teleprompter Pal is an iPhone app. Its workflow includes script storage, camera recording, trim/crop and MP4 export. Scrolling in Teleprompter Pal uses manual controls. Treat voice following as planned functionality when deciding whether the app meets your needs now.
 
-If you want to try that iPhone workflow, [request early access to Teleprompter Pal](https://teleprompterpal.com/#early-access). If you need a reader immediately, you can use the browser tool without waiting for beta access.
+If you want to try that iPhone workflow, [explore Teleprompter Pal](https://teleprompterpal.com/). If you need a reader immediately, you can use the browser tool without installing an app.
 
 Choose the setup that lets you read from the right place and recover from a mistake with the least fuss. Keep the short test clip: it gives you something concrete to compare when you change the arrangement.
 
 *Teleprompter Pal also makes Free Teleprompter Online. Product availability checked 19 October 2026.*
+
+*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*

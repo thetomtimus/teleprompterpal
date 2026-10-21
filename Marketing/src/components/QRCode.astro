@@ -6,11 +6,11 @@ const { floating = false } = Astro.props;
 const signupUrl = new URL(site.accessUrl, `https://${site.domain}/`).href;
 const qr = await QRCode.toString(signupUrl, { type: 'svg', errorCorrectionLevel: 'M', margin: 3, width: 168, color: { dark: '#0f0f0f', light: '#ffffff' } });
 ---
-<aside class:list={['qr-code', { 'qr-floating': floating }]} aria-label="Scan to sign up for iPhone early access">
-  <span class="qr-caption">scan for early access</span>
+<aside class:list={['qr-code', { 'qr-floating': floating }]} aria-label="Scan to get Teleprompter Pal updates">
+  <span class="qr-caption">scan for app updates</span>
   <span class="qr-arrow" aria-hidden="true">↓</span>
-  <a class="qr-link" href={site.accessUrl} aria-label="Open the early access signup, same destination as QR code">
-    <span class="qr-art" role="img" aria-label="QR code opening the early access signup form" set:html={qr} />
+  <a class="qr-link" href={site.accessUrl} aria-label="Open the Teleprompter Pal updates signup, same destination as QR code">
+    <span class="qr-art" role="img" aria-label="QR code opening the Teleprompter Pal updates signup form" set:html={qr} />
   </a>
-  <span class="qr-note">Join the early access list</span>
+  <span class="qr-note">Get Teleprompter Pal updates</span>
 </aside>

@@ -1,10 +1,11 @@
 ---
 title: "How to Record Video While Reading a Script on iPhone"
+updated: "2026-10-21"
 headline: "Record video while reading a script on iPhone"
 breadcrumb: "Record with a script"
-description: "Follow Teleprompter Pal’s iPhone beta workflow: prepare your script, record near the lens, handle a retake, then trim, crop and export an MP4."
+description: "Follow Teleprompter Pal’s iPhone workflow: prepare your script, record near the lens, handle a retake, then trim, crop and export an MP4."
 date: "2026-10-20"
-intro: "To record yourself reading a script on iPhone, put the words over the camera preview, rehearse at a comfortable pace, then record a short test before your full take. In Teleprompter Pal’s private beta, you can keep the script, recording and trim/crop workflow on the phone, then save a separate MP4."
+intro: "To record yourself reading a script on iPhone, put the words over the camera preview, rehearse at a comfortable pace, then record a short test before your full take. In Teleprompter Pal, you can keep the script, recording and trim/crop workflow on the phone, then save a separate MP4."
 takeaways:
   - "Set your text position and pace before recording. Scrolling uses your chosen speed, not voice following."
   - "Restarting the text and stopping the camera are different actions. Check the recording indicator."
@@ -37,11 +38,11 @@ shareImage:
 draft: false
 ---
 
-Teleprompter Pal is currently in private beta for iPhone with iOS 18 or later. If you want to try this workflow, [join the early-access list](/#early-access). If you need to record at your computer today, use the [browser camera workflow](https://freeteleprompteronline.com/guides/teleprompter-with-camera/). Both products are made by the Teleprompter Pal team.
+Teleprompter Pal supports iPhone with iOS 18 or later. [Explore its script-to-recording workflow](/). If you need to record at your computer today, use the [browser camera workflow](https://freeteleprompteronline.com/guides/teleprompter-with-camera/). Both products are made by the Teleprompter Pal team.
 
 ## Prepare a script you can say aloud
 
-Create or open a script in Pal’s Scripts library. Give the take a recognizable name, such as “Introduction, first pass,” so you can find it after recording. Read the wording aloud once before adjusting the reader. A sentence that is difficult to say will remain difficult at a slower scroll speed.
+Create or open a script in Teleprompter Pal’s Scripts library. Give the take a recognizable name, such as “Introduction, first pass,” so you can find it after recording. Read the wording aloud once before adjusting the reader. A sentence that is difficult to say will remain difficult at a slower scroll speed.
 
 Put a paragraph break where you want a breath or a change of thought. Spell out a number if its written form makes you hesitate. Keep filming directions separate from spoken words so you do not accidentally read them.
 
@@ -62,7 +63,7 @@ Open the camera workflow from your script and allow the camera and microphone pe
 
 Adjust the prompt’s position, size, background and speed until you can read from your normal filming distance. Keep the active lines close to the lens, rather than filling the screen with tiny words. Narrower lines may reduce sideways eye movement, but the right setting depends on your distance and eyesight.
 
-Rehearse with the text controls first. Pal’s current beta uses a speed you set; it does not listen to your voice to follow your place. If you pause to explain something, pause the text or leave a recovery point in the script. Decide portrait or landscape framing before the take, then check it again when planning a crop.
+Rehearse with the text controls first. Teleprompter Pal uses a speed you set; it does not listen to your voice to follow your place. If you pause to explain something, pause the text or leave a recovery point in the script. Decide portrait or landscape framing before the take, then check it again when planning a crop.
 
 ## Record a test and check picture and sound
 
@@ -81,7 +82,7 @@ Change one thing at a time if the test is uncomfortable. Moving the text can hel
 
 When you stumble, leave a pause and return to the beginning of the thought. You can repeat that sentence within the same recording, then remove the unwanted lead-in later. For a completely fresh attempt, stop and save the take before recording again.
 
-The text’s Play/Pause and Restart controls operate the prompt. **Restarting the text does not end an active recording.** In the current beta they are in the lower-left controls menu. Check the red recording timer and use the camera’s stop control when you want to finish the video.
+The text’s Play/Pause and Restart controls operate the prompt. **Restarting the text does not end an active recording.** In Teleprompter Pal they are in the lower-left controls menu. Check the red recording timer and use the camera’s stop control when you want to finish the video.
 
 After an interruption, check the saved recording and the app’s state before continuing. Do not assume that recording resumed. Keep any usable take until you have opened and checked its replacement.
 
@@ -89,7 +90,7 @@ After an interruption, check the saved recording and the app’s state before co
 
 Find the saved take in the Videos library and open its editor. Set the beginning and end around the performance you want to keep. Play the edit before exporting: leave enough time for the first word and a natural finish.
 
-Choose the crop for the destination. A square crop can remove material at the top and bottom of a portrait recording; check your face, gestures and any object you show. Pal’s trim and crop edits preserve the original recording, so you can return to it for another version.
+Choose the crop for the destination. A square crop can remove material at the top and bottom of a portrait recording; check your face, gestures and any object you show. Teleprompter Pal’s trim and crop edits preserve the original recording, so you can return to it for another version.
 
 Export an MP4, then choose Photos, Files or Share Copy. Open the saved copy in the destination and play it with sound. The editor preview is only part of the check; a successfully saved, playable file is the useful result. Sharing to a particular outside app still depends on that destination.
 
@@ -99,8 +100,10 @@ One internal physical-device check trimmed an 11.90-second original to a 7.90-se
 
 Our [sanitized recording and export test summary](/evidence/pal-device-test-summary-2026-10-19.json) records internal checks on an iPhone 17 Pro running iOS 27.0, using development build 0.6.17 (37) on 19 October 2026. Physical camera probes produced 15-second and 60-second originals with audio, plus a finalized interrupted take. Trim, crop and save checks used the normal installed app interface.
 
-The current controls were subsequently checked in the Simulator for build 0.6.18 (38). Those interface checks do not repeat the physical capture/export test. We have not established long-session reliability, all-iPhone compatibility or a public App Store release through these checks. The private test footage is not published.
+The current controls were subsequently checked in the Simulator for build 0.6.18 (38). Those interface checks do not repeat the physical capture/export test. We have not established long-session reliability or all-iPhone compatibility through these checks. The private test footage is not published.
 
 Try a short recording on your own device before a time-sensitive shoot. Scripts and recordings stay on the iPhone in this workflow, with no account required. Keep a saved export of footage you need outside the app.
 
-[Request early access to Teleprompter Pal](/#early-access) to try the iPhone beta. If you are evaluating several options, [compare iPhone teleprompter apps](/guides/best-teleprompter-apps-for-iphone/) by the recording and export tasks you need.
+[Explore Teleprompter Pal](/) for the iPhone recording workflow. If you are evaluating several options, [compare iPhone teleprompter apps](/guides/best-teleprompter-apps-for-iphone/) by the recording and export tasks you need.
+
+*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*

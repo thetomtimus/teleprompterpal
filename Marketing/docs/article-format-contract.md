@@ -1,10 +1,10 @@
 # Teleprompter Pal article-format contract
 
-Approved October 21, 2026 after owner review of desktop and phone previews. Release scope: the shared template and four existing published articles only. Today's portrait/landscape article remains a private draft. This supersedes the October 19 separate-cover geometry for Pal only and applies to future drafts. Source reference: https://openlocalseo.com/blog/how-to-do-local-keyword-research and `/Users/thomas/.codex/skills/daily-search-article/references/article-header-format.md`.
+Approved October 21, 2026 after owner review of desktop and phone previews. Release scope: the shared template and four existing published articles only. Today's portrait/landscape article remains a private draft. This supersedes the October 19 separate-cover geometry for Teleprompter Pal only and applies to future drafts. Source reference: https://openlocalseo.com/blog/how-to-do-local-keyword-research and `/Users/thomas/.codex/skills/daily-search-article/references/article-header-format.md`.
 
 ## Shared renderer and invariant content
 
-Use `src/pages/guides/[...id].astro`, `src/components/ArticleSummarizers.astro`, `src/content.config.ts` and `src/styles/guides.css`. Keep Pal's self-hosted Figtree, near-black canvas, lavender links, violet actions and **Teleprompter Pal team** organization byline. The 36px circular TP initials mark is an honest team identity, not a portrait or reviewer badge. Preserve approved prose, headlines, publication/check dates, canonical slugs, schema, contextual links, related reading and private-beta CTAs. A layout or artwork update alone does not set `updated`.
+Use `src/pages/guides/[...id].astro`, `src/components/ArticleSummarizers.astro`, `src/content.config.ts` and `src/styles/guides.css`. Keep Teleprompter Pal's self-hosted Figtree, near-black canvas, lavender links, violet actions and **Teleprompter Pal team** organization byline. The 36px circular TP initials mark is an honest team identity, not a portrait or reviewer badge. Preserve approved prose, headlines, publication/check dates, canonical slugs, schema, contextual links, related reading and private-beta CTAs. A layout or artwork update alone does not set `updated`.
 
 ## Header and reading layout
 
@@ -27,7 +27,7 @@ A private draft has four disabled buttons and a screen-reader/tooltip explanatio
 
 ## Artwork and exports
 
-New decorative covers/thumbnails are topic-specific **people-free** still lifes or objects. No people, faces, hands, silhouettes, portraits or human reflections unless the owner explicitly requests them. Keep Pal's visual world. Remove visible boilerplate illustration disclaimers from decorative imagery. Retain accurate alt metadata, exact prompts, original files and generated provenance privately, plus meaningful labels for screenshots, charts and explanatory/fictional examples.
+New decorative covers/thumbnails are topic-specific **people-free** still lifes or objects. No people, faces, hands, silhouettes, portraits or human reflections unless the owner explicitly requests them. Keep Teleprompter Pal's visual world. Remove visible boilerplate illustration disclaimers from decorative imagery. Retain accurate alt metadata, exact prompts, original files and generated provenance privately, plus meaningful labels for screenshots, charts and explanatory/fictional examples.
 
 Use new versioned filenames for revised art. Current published-article candidates use `*-objects-v2-*` with 1600/1000/640px responsive desktop exports, a 900x1600 phone export, a matching 640x361 thumbnail and a 1200x630 social image. `coverImage` carries `src`, `alt`, intrinsic dimensions, responsive `sources` and optional `mobileSrc`. The phone export fits the full source into a top-aligned canvas so the equipment survives tall headers; it is not a tighter destructive crop. The thumbnail may use a closer source crop only when every main object remains intact. Verify the browser's `currentSrc`, loading and actual visible object bounds at desktop and phone widths.
 
@@ -40,3 +40,8 @@ Production article and index collection filters continue to exclude `draft: true
 The owner approved the local desktop/mobile previews and publication of this rollout for the four existing articles. Future daily articles remain drafts for individual review. No schedule, account, provider subscription or site enrollment changes are part of this format update. Verify the production candidate's blog, article routes, canonical/schema/dates, source links, CTA anchors, sitemap, new image hashes, private-route exclusion and required Astro build checks. A local build does not prove live publication.
 
 Maker and editorial context (21 October 2026): retain the Teleprompter Pal team byline and point its author URL to https://teleprompterpal.com/about/. The shared guide closing links to the editorial and correction sections. This metadata-only addition does not refresh article publication or modification dates.
+
+
+## Product naming and release wording (owner instruction, 21 October 2026)
+
+Always use the full product name **Teleprompter Pal**, including possessives, headings, metadata, alt text and comparisons. Do not shorten it. Describe Teleprompter Pal as an iPhone app, without private-beta or prerelease positioning. This owner instruction supersedes earlier availability language in this document. Do not invent a price, App Store URL, device-test result or unimplemented feature. Until a real App Store destination is provided, the existing email form is labelled product updates; do not label that form as a download.

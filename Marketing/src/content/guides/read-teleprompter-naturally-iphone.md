@@ -1,5 +1,6 @@
 ---
 title: "How to Read a Teleprompter Naturally on iPhone"
+updated: "2026-10-21"
 headline: "Read your iPhone teleprompter without chasing every word."
 breadcrumb: "Natural delivery on iPhone"
 description: "A practical iPhone recording check for eye line, spoken scripts, pauses and retakes, with a before-and-after script you can adapt."
@@ -97,7 +98,7 @@ Start the scrolling prompt and speak at a comfortable pace. Include the breaths,
 
 A duration estimate can help you plan the script. The [speech-time calculator](/tools/speech-time-calculator/) includes an allowance for pauses, but words per minute is not the same as an app's scroll-speed setting.
 
-With set-speed scrolling, the text continues moving while you stop speaking unless you pause it. Teleprompter Pal's current beta uses manual scrolling controls; it does not listen and wait for your voice. If speech following is a requirement, [compare the iPhone app options](/guides/best-teleprompter-apps-for-iphone/) before choosing.
+With set-speed scrolling, the text continues moving while you stop speaking unless you pause it. Teleprompter Pal uses manual scrolling controls; it does not listen and wait for your voice. If speech following is a requirement, [compare the iPhone app options](/guides/best-teleprompter-apps-for-iphone/) before choosing.
 
 Rehearse the awkward sentence again after changing it. A faster scroll cannot fix wording you struggle to say.
 
@@ -111,7 +112,7 @@ You say, “Save the original before you… before the crop.” Stop speaking. I
 
 Then choose the edit the clip needs. If the clean version is at the end and you no longer need the opening, trimming the start may be enough. If you must keep material both before and after a mistake in the middle, you need a middle cut or separate clips, not just a start/end trim. Apple's Photos instructions describe [trimming a video's beginning and end](https://support.apple.com/guide/iphone/trim-video-length-adjust-speed-and-edit-audio-iph1d1344a2d/ios).
 
-Pal's current editor trims a selected start/end range. Do not plan a recording around an automatic removal of every mistake.
+Teleprompter Pal's current editor trims a selected start/end range. Do not plan a recording around an automatic removal of every mistake.
 
 ## Review the saved clip before the full script
 
@@ -121,4 +122,6 @@ Listen for missing words, clipped starts and background sound. Play an exported 
 
 Keep the version that improved the specific problem. Use that setup for the next section of your script, then check again if you change the phone orientation or filming position.
 
-If you want to keep scripts, recording and basic trim/crop work together on iPhone, [request early access to Teleprompter Pal](/#early-access). It is currently in private beta, with manual scrolling. You can use the practice exercise above with the app you already have.
+If you want to keep scripts, recording and basic trim/crop work together on iPhone, [explore Teleprompter Pal](/). It is an iPhone app with manual scrolling. You can use the practice exercise above with the app you already have.
+
+*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*

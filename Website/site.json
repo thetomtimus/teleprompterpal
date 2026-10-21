@@ -1,10 +1,10 @@
 {
-  "app_name": "teleprompterpal.com",
+  "app_name": "Teleprompter Pal",
   "operator": "Second Wind, LLC",
   "country": "United States",
   "site_url": "https://teleprompterpal.com",
   "draft_updated": "2026-10-19",
-  "effective_date": "2026-10-19",
+  "effective_date": "2026-10-21",
   "support_email": "contact@teleprompterpal.com",
   "support_email_verified": true,
   "hosting_disclosure": "Vercel hosts these web pages. Vercel processes connection and request data to deliver the site, maintain reliability and protect against abuse. This can include IP addresses, traffic details and browser or device information. Data is retained according to service purposes and applicable legal obligations. We do not export website request logs. Hosting security features may use essential cookies. Cloudflare provides DNS and the Web Analytics service described above.",

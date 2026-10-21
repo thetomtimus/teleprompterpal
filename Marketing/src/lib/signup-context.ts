@@ -50,6 +50,6 @@ export function signupPageContext(href: string, storage?: ReferralStorage) {
   }
   return {
     pageUri: page.href,
-    pageName: 'Teleprompter Pal Early Access',
+    pageName: 'Teleprompter Pal Product Updates',
   };
 }
