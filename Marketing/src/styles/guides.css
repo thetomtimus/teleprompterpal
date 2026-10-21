@@ -147,3 +147,5 @@
   .guide-body-shell{padding-top:24px}
 }
 @media print{.guide-hero-art,.guide-summarizers,.guide-sidebar,.guide-contents-mobile{display:none}.guide-hero{padding:0}.guide-shell{max-width:none;padding:0}.guide-reading-layout{display:block}.guide-prose table{overflow:visible}}
+
+.guide-editorial{font-size:14px;line-height:1.7;color:var(--color-muted);border-top:1px solid var(--color-rule);padding-top:20px;margin-top:36px}.guide-editorial a{color:var(--color-lavender);text-decoration:underline;text-underline-offset:.2em}

@@ -92,6 +92,7 @@ const authorInitials = guide.data.author.name.split(/\s+/).map(part => part[0]).
         {related.map(item => <li><a href={`/guides/${item.id}/`}>{item.data.title}</a><p>{item.data.description}</p></li>)}
         {guide.data.relatedResources.map(item => <li><a href={item.href}>{item.title}</a><p>{item.description}</p></li>)}
       </ul></section>}
+      <p class="guide-editorial">Published by the Teleprompter Pal team. Read <a href="/about/#editorial">how our guides are prepared and checked</a>, including illustration and testing limits. <a href="/about/#corrections">Send a correction</a>.</p>
       <nav class="guide-end" aria-label="More guides"><a href="/guides/">Back to all guides</a></nav>
       </div>
       <aside class="guide-sidebar" aria-label="Guide navigation and early access">

@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../data/site';
+import '../styles/about.css';
+---
+<Layout title="About the Maker & Our Guides | Teleprompter Pal" description="Meet Thomas, maker of Teleprompter Pal and Free Teleprompter Online. Learn about the iPhone private beta, our guide process, testing notes and corrections.">
+  <SiteHeader />
+  <main id="main" tabindex="-1" class="about-page container" itemscope itemtype="https://schema.org/AboutPage">
+    <link itemprop="url" href="https://teleprompterpal.com/about/" />
+    <nav class="about-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">About</span></nav>
+    <h1 itemprop="name">About Teleprompter Pal</h1>
+    <p class="about-lead" itemprop="description">An iPhone teleprompter for keeping your script, rehearsal and next take together.</p>
+    <section aria-labelledby="maker"><h2 id="maker">Made by Thomas</h2>
+      <p>I build Teleprompter Pal and <a href="https://freeteleprompteronline.com/about/">Free Teleprompter Online</a>. Both products are made by the same team at Second Wind, LLC. Pal brings the script-to-recording workflow to iPhone; the free browser tool is available for rehearsal without an installation.</p>
+      <p>When a Pal guide recommends our browser reader, it is recommending our own product. Our comparison guides explain which setup fits a task and where each option has limits.</p>
+    </section>
+    <section aria-labelledby="app"><h2 id="app">What you can expect from Pal</h2>
+      <p>Pal is currently in private beta for iPhone running iOS 18 or later. Its workflow is to write or import a script, rehearse with adjustable manual scrolling, record while reading, then trim, crop and export an MP4.</p>
+      <p>Scripts and original recordings stay on your iPhone, and this workflow does not require an account. Manual scrolling is the current reading method. Voice following and a Mac app are not available features.</p>
+      <p>You can <a href="/#early-access">join the early-access list</a> for updates. For a tool you can use in your browser today, <a href={site.freeReaderUrl}>open our free online teleprompter</a>.</p>
+    </section>
+    <section id="editorial" aria-labelledby="editorial-title"><h2 id="editorial-title">Who publishes our guides</h2>
+      <p>The “Teleprompter Pal team” byline identifies this site's publisher. Thomas is responsible for the site and its editorial content. We use AI assistance for research, drafting and illustrations; the byline does not imply an independent expert review.</p>
+      <p>Our product instructions are checked against the current build. Guides link to relevant product documentation and original research where they support a claim. Comparisons reflect the stated source-check date and the available product version; another app's price or features may change.</p>
+      <p>Actual app screenshots, illustrative previews and test results have different roles. A generated scene or an explanatory diagram is not evidence of a real recording. Testing notes describe the browser, device or check where available. We do not treat desktop or synthetic browser tests as physical iPhone camera, microphone or saved-video acceptance.</p>
+      <p>Publication dates show when a guide first appeared. We use an updated date for a substantive change to the advice, rather than a new footer or About link.</p>
+    </section>
+    <section id="corrections" aria-labelledby="contact-title"><h2 id="contact-title">Contact the maker</h2>
+      <p>For a correction, a beta question or a product problem, email <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a> or visit <a href={site.supportUrl}>support</a>. Include the page or app version, your device and what happened. Leave private script text and recordings out unless they are necessary and you choose to share them.</p>
+      <p>Read the <a href={site.privacyUrl}>privacy policy</a> for local app data, support correspondence and the early-access list, or browse the <a href="/guides/">recording guides</a>.</p>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

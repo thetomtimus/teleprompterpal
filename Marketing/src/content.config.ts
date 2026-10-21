@@ -15,7 +15,7 @@ const guides = defineCollection({
     takeaways: z.array(z.string()).max(4).default([]),
     contents: z.boolean().default(true),
     author: z.object({ name: z.string(), url: z.url() })
-      .default({ name: 'Teleprompter Pal team', url: 'https://teleprompterpal.com/' }),
+      .default({ name: 'Teleprompter Pal team', url: 'https://teleprompterpal.com/about/' }),
     topics: z.array(z.string()).default([]),
     relatedGuides: z.array(z.string()).max(3).default([]),
     relatedResources: z.array(z.object({ title: z.string(), description: z.string(), href: z.string().startsWith('/') })).max(3).default([]),

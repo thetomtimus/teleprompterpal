@@ -11,7 +11,7 @@ takeaways:
   - "A set-speed prompt keeps moving during a pause. Rehearse the pause as part of the script."
 author:
   name: "Teleprompter Pal team"
-  url: "https://teleprompterpal.com/"
+  url: "https://teleprompterpal.com/about/"
 topics: ["iphone-workflow", "natural-delivery"]
 contents: true
 coverImage:
