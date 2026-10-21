@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Icon from '../components/Icon.astro';
+import { site } from '../data/site';
+import '../styles/pricing.css';
+
+const freeFeatures = [
+  'Create, edit and import scripts',
+  'Rehearse with the teleprompter',
+  'Adjust text, speed and reader settings',
+  'Record without a time limit',
+  'Play back your original recordings',
+  'Trim and crop your takes',
+  'Keep your scripts and edits on your iPhone',
+];
+const proFeatures = [
+  'Export your edited take as an MP4',
+  'Save finished videos to Photos',
+  'Save finished videos to Files',
+  'Share through the iOS share sheet',
+];
+---
+<Layout title="Pricing | Teleprompter Pal" description="Read, record and edit for free. Compare yearly, monthly and weekly Teleprompter Pal Pro plans for MP4 export, Photos, Files and sharing.">
+  <SiteHeader />
+  <main id="main" class="pricing-page">
+    <section class="pricing-intro" aria-labelledby="pricing-title">
+      <h1 id="pricing-title">Pricing plans</h1>
+      <p>Read, record and edit for free.<br />Go Pro to export and share your finished take.</p>
+    </section>
+
+    <section class="pricing-comparison" aria-label="Compare Free and Pro">
+      <fieldset class="billing-selector">
+        <legend class="pricing-sr-only">Pro billing period</legend>
+        <label><input type="radio" name="billing" value="monthly" /><span>Monthly</span></label>
+        <label><input type="radio" name="billing" value="yearly" checked /><span>Yearly <small>Save 75%*</small></span></label>
+        <label><input type="radio" name="billing" value="weekly" /><span>Weekly</span></label>
+      </fieldset>
+      <div class="pricing-meta"><span>Prices in USD</span><span>For the iPhone app</span></div>
+      <div class="plan-grid">
+        <article class="price-card free-card" aria-labelledby="free-title">
+          <div class="price-card-header">
+            <h2 id="free-title">Free</h2>
+            <div class="plan-price"><strong>$0</strong><span>Free to use<br /><span class="price-caption">No subscription needed</span></span></div>
+          </div>
+          <div class="price-card-features">
+            <p>Your next take starts here.</p>
+            <ul>{freeFeatures.map(feature => <li><Icon name="check" size={22} /><span>{feature}</span></li>)}</ul>
+          </div>
+        </article>
+        <article class="price-card pro-card" aria-labelledby="pro-title">
+          <div class="price-card-header">
+            <h2 id="pro-title">Pro</h2>
+            <svg class="pro-star" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="m16 2 4.25 8.61 9.5 1.38-6.87 6.7 1.62 9.46L16 23.69l-8.5 4.46 1.62-9.46-6.87-6.7 9.5-1.38L16 2Z" fill="currentColor" /></svg>
+            <div class="plan-price" id="pro-price" aria-live="polite" aria-atomic="true"><strong data-plan-price>$5.00</strong><span><span data-plan-unit>per month</span><br /><span class="price-caption" data-plan-billing>$59.99 billed yearly</span></span></div>
+          </div>
+          <div class="price-card-features">
+            <p>Everything in Free, plus:</p>
+            <ul>{proFeatures.map(feature => <li><Icon name="check" size={22} /><span>{feature}</span></li>)}</ul>
+            <div class="pro-trial" aria-live="polite" aria-atomic="true"><strong data-plan-offer>3 days free with yearly</strong><span data-plan-offer-detail>For eligible new subscribers.<br />Then $59.99 per year.</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="pricing-action">
+        <a class="button button-primary" href={`/${site.accessUrl}`}>Get app updates <Icon name="arrowRight" size={22} /></a>
+        <p>Currently in private beta. Subscriptions are purchased in the iPhone app.</p>
+      </div>
+      <div class="pricing-notes">
+        <p>*Yearly saves 75% compared with 12 months at $19.99/month. The $5.00 monthly equivalent is rounded; the yearly charge is $59.99.</p>
+        <p>Prices shown are in USD. Apple displays your local price and confirms trial eligibility before you subscribe. Subscriptions renew automatically until canceled.</p>
+        <noscript><p>Pro is also available at $19.99/month or $9.99/week. The 3-day free trial applies to eligible new yearly subscribers only.</p></noscript>
+      </div>
+    </section>
+
+    <section class="pricing-questions" aria-labelledby="pricing-questions-title">
+      <h2 id="pricing-questions-title">A few things<br />to know.</h2>
+      <div class="pricing-faq-list">
+        <details><summary>What changes when I upgrade to Pro?<Icon name="caret" size={20} /></summary><p>Pro unlocks MP4 export and delivery to Photos, Files and the iOS share sheet. You can write, rehearse, record without a time limit, play back recordings, trim and crop with Free.</p></details>
+        <details><summary>Do all Pro plans include the same features?<Icon name="caret" size={20} /></summary><p>Yes. Yearly, monthly and weekly include the same Pro features. Only the billing period and price change. The 3-day free trial is available on the yearly plan for eligible new subscribers.</p></details>
+        <details><summary>How does the yearly trial work?<Icon name="caret" size={20} /></summary><p>Eligible new subscribers get 3 days free. After that, the subscription renews at $59.99 per year unless canceled. Apple confirms eligibility and the exact charge before you subscribe. Cancel at least 24 hours before the trial ends to avoid the yearly charge.</p></details>
+        <details><summary>How do I manage or cancel a subscription?<Icon name="caret" size={20} /></summary><p>Open Settings on your iPhone, tap your name, then Subscriptions. Select Teleprompter Pal to manage or cancel your plan. You can also restore an existing purchase from the app.</p></details>
+      </div>
+    </section>
+    <div class="pricing-support"><p>Need a hand choosing? <a href={`mailto:${site.supportEmail}`}>Talk to us <Icon name="arrowRight" size={18} /></a></p><a href={site.privacyUrl}>Privacy policy</a></div>
+  </main>
+  <SiteFooter />
+</Layout>
+
+<script>
+  const plans = {
+    yearly: { price: '$5.00', unit: 'per month', billing: '$59.99 billed yearly', offer: '3 days free with yearly', detail: 'For eligible new subscribers.\nThen $59.99 per year.' },
+    monthly: { price: '$19.99', unit: 'per month', billing: '$19.99 billed monthly', offer: 'Pro, month by month', detail: 'Renews at $19.99 per month.\nNo free trial on this plan.' },
+    weekly: { price: '$9.99', unit: 'per week', billing: '$9.99 billed weekly', offer: 'Pro for your next project', detail: 'Renews at $9.99 per week.\nNo free trial on this plan.' },
+  };
+  document.querySelectorAll<HTMLInputElement>('input[name="billing"]').forEach(input => {
+    input.addEventListener('change', () => {
+      if (!input.checked || !(input.value in plans)) return;
+      const plan = plans[input.value as keyof typeof plans];
+      const values = { price: plan.price, unit: plan.unit, billing: plan.billing, offer: plan.offer, 'offer-detail': plan.detail };
+      for (const [key, value] of Object.entries(values)) {
+        const element = document.querySelector(`[data-plan-${key}]`);
+        if (element) element.textContent = value;
+      }
+    });
+  });
+</script>

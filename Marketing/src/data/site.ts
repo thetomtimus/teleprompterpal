@@ -7,7 +7,7 @@ export const site = {
   supportEmail: 'contact@teleprompterpal.com',
   // Retain the existing email-updates anchor; primary actions show current plans.
   accessUrl: '#app-updates',
-  pricingUrl: '/compare/bigvu-alternative/#pricing',
+  pricingUrl: '/pricing/',
   accessLabel: 'See pricing',
   accessNote: 'For iPhone · Free recording and editing',
   privacyUrl: 'https://teleprompterpal.com/privacy/',
