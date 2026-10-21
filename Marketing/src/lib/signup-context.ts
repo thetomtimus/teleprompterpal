@@ -8,6 +8,7 @@ const CAMPAIGNS = new Set([
   'free-guide-podcasts',
   'free-guide-zoom',
   'free-guide-mirror',
+  'free-guide-camera',
 ]);
 
 type Referral = { source: 'free-teleprompter-online'; medium: 'referral'; campaign: string };
@@ -27,7 +28,16 @@ export function signupPageContext(href: string, storage?: ReferralStorage) {
   let referral: Referral | undefined;
   try {
     const params = new URL(href).searchParams;
-    const incoming = {
+    // The published browser-camera guide uses this older, fixed label pair.
+    // Normalize only that exact pair; arbitrary campaign text stays excluded.
+    const legacyCamera = params.get('utm_source') === 'freeteleprompteronline'
+      && params.get('utm_medium') === 'referral'
+      && params.get('utm_campaign') === 'camera_workflow';
+    const incoming = legacyCamera ? {
+      source: 'free-teleprompter-online',
+      medium: 'referral',
+      campaign: 'free-guide-camera',
+    } : {
       source: params.get('utm_source'),
       medium: params.get('utm_medium'),
       campaign: params.get('utm_campaign'),

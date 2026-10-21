@@ -35,3 +35,30 @@ test('malformed or tampered saved values are ignored', () => {
     assert.equal(signupPageContext('https://teleprompterpal.com/', { getItem: () => value, setItem: () => {} }).pageUri, 'https://teleprompterpal.com/');
   }
 });
+
+test('browser-camera guide arrival survives guide and pricing navigation before signup', () => {
+  const storage = memoryStorage();
+  signupPageContext('https://teleprompterpal.com/guides/record-video-with-script-iphone/?utm_source=freeteleprompteronline&utm_medium=referral&utm_campaign=camera_workflow&script=private-script#private-title', storage);
+  signupPageContext('https://teleprompterpal.com/compare/bigvu-alternative/#pricing', storage);
+  assert.deepEqual(signupPageContext('https://teleprompterpal.com/#app-updates', storage), {
+    pageUri: 'https://teleprompterpal.com/?utm_source=free-teleprompter-online&utm_medium=referral&utm_campaign=free-guide-camera',
+    pageName: 'Teleprompter Pal Product Updates',
+  });
+  assert.doesNotMatch(JSON.stringify([...storage.values]), /private|script|title|https/);
+});
+
+test('fresh direct visits stay direct and a new known referral replaces an earlier campaign', () => {
+  const storage = memoryStorage();
+  assert.equal(signupPageContext('https://teleprompterpal.com/', storage).pageUri, 'https://teleprompterpal.com/');
+  signupPageContext('https://teleprompterpal.com/?utm_source=free-teleprompter-online&utm_medium=referral&utm_campaign=free-guide-zoom', storage);
+  signupPageContext('https://teleprompterpal.com/guides/record-video-with-script-iphone/?utm_source=free-teleprompter-online&utm_medium=referral&utm_campaign=free-guide-camera', storage);
+  assert.match(signupPageContext('https://teleprompterpal.com/', storage).pageUri, /utm_campaign=free-guide-camera$/);
+});
+
+test('legacy camera aliases require the exact published source, medium and campaign', () => {
+  for (const href of [
+    'https://teleprompterpal.com/?utm_source=freeteleprompteronline&utm_medium=email&utm_campaign=camera_workflow',
+    'https://teleprompterpal.com/?utm_source=freeteleprompteronline&utm_medium=referral&utm_campaign=private-script',
+    'https://teleprompterpal.com/?utm_source=unknown&utm_medium=referral&utm_campaign=camera_workflow',
+  ]) assert.equal(signupPageContext(href).pageUri, 'https://teleprompterpal.com/');
+});

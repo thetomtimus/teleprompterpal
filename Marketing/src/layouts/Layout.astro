@@ -40,5 +40,14 @@ const indexable = import.meta.env.PROD && process.env.VERCEL_ENV !== 'preview';
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <slot />
+    <script>
+      import { signupPageContext } from '../lib/signup-context';
+
+      // A free-site referral may land on a guide or pricing page before signup.
+      // Save only its known campaign labels in this tab, without a tracking call.
+      let referralStorage: Storage | undefined;
+      try { referralStorage = window.sessionStorage; } catch { /* Optional storage. */ }
+      signupPageContext(window.location.href, referralStorage);
+    </script>
   </body>
 </html>
