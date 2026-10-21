@@ -107,37 +107,9 @@ The natural-delivery guide was approved for publication on October 20, 2026. `/g
 
 ### Shared article format
 
-All guides use `src/pages/guides/[...id].astro` and `src/styles/guides.css`. The owner's editorial reference is `desktop-preview.jpg`, with Pal's dark colors explicitly retained. The 1080px desktop frame aligns the wide headline, descriptive subtitle (`description`) and compact byline/date/read-time row. A 744px reading column sits beside a 272px contents and early-access rail, separated by 64px. The rail sticks while reading, scrolls independently when long, and returns to normal flow on short desktop viewports. Below 1100px it becomes one reading column with a native, initially collapsed contents disclosure; the article's contextual closing CTA remains available.
+The owner approved the October 21 OpenLocalSEO header rollout after reviewing desktop and phone previews. [The current Pal article-format contract](docs/article-format-contract.md) defines the exact sizing/fade, team author row, four native summarizer controls, people-free artwork and private-draft guards. It supersedes the prior separate-cover layout for the four existing articles and future drafts. Today's portrait/landscape draft remains outside production source and is not approved for publication.
 
-Keep the specific opening answer in optional frontmatter `intro`, once, below the header in the reading column. The subtitle describes the task; it must not repeat that opening verbatim. `takeaways` accepts up to four short statements; omit it when it would only repeat a short answer. The visible organization byline defaults to the Teleprompter Pal team, linked to the product homepage. Do not invent a named expert or review badge. Preserve `date`; set optional `updated` only for a substantive content revision. The template shows a separate update label when the dates differ.
-
-The template builds keyboard-accessible contents navigation from H2 headings when at least three exist, with only the viewport-appropriate navigation exposed. Set `contents: false` when navigation adds no value. Use H3 for subsections, lists for actual steps/options, and `figure`/`figcaption` for helpful visuals. Images need intrinsic width/height, responsive sources, useful alt text and appropriate loading behavior. Explanatory diagrams must also have readable HTML labels or equivalent prose. The first comparison guide uses an original AI-generated recording-setup illustration at 480/750/1200px widths, followed by HTML labels that stack on phones. Its caption identifies it as an illustration, not an app screenshot. This explanatory figure remains near the setup discussion, separate from the cover.
-
-The owner requested article covers and matching guide-list thumbnails on 19 October 2026, retaining the **Teleprompter Pal team** byline. New drafts should prepare the original cover and its matching thumbnail for review. `coverImage` takes `src`, `alt`, intrinsic `width`/`height`, a truthful `caption`, and optional `sources` entries with `src` and `width`. The renderer places it immediately after the opening answer and before the takeaways, within the reading column. On narrow screens the collapsed contents follows those takeaways, keeping navigation out of the initial answer/cover sequence. Keep a landscape crop and the actual image ratio so phones do not spend a full screen on decorative art. The cover loads eagerly with asynchronous decoding; responsive sources avoid oversized downloads. It supplies the Article microdata image when present; `shareImage` remains the separate social-preview field.
-
-`thumbnail` takes `src`, `width` and `height`, using a smaller export of the same cover composition. The index shows thumbnail plus date/title/description as one link, with no redundant image keyboard stop. It stacks the thumbnail above the copy on phones and lazy-loads later listing images. Both fields are optional for legacy articles or a documented editorial omission; the renderer emits no empty image module. Keep product screenshots, editorial covers and explanatory body visuals distinct in purpose. The current cover depicts a creator filming beside a laptop; its caption explicitly identifies generated illustration rather than product evidence.
-
-For each future draft, choose a visual that resolves a real question: an actual annotated product screenshot for controls, a precise diagram for a relationship, or an original generated editorial illustration for a physical setup. Never invent product UI, testing evidence or chart data. Omit imagery when it adds nothing and explain the choice in the review receipt. The owner-facing review must identify which visuals were actually created, where they appear and why; a social preview alone is not a visible article image. Keep the desktop rail's early-access offer truthful to the live beta and the current manual scrolling, and retain the contextual closing action in the article.
-
-Use `topics` for genuinely shared tasks. `relatedGuides` can name up to three existing published collection IDs; a missing, draft or self destination fails the build. If no explicit selection is supplied, up to three other published guides sharing a topic appear. `relatedResources` adds a small list of existing same-site tools or resources with `title`, `href` (root-relative) and `description`. No empty related-reading heading or unpublished placeholder is emitted. These links complement the required exact existing-page-to-new-article edits; they do not replace them.
-
-An article-specific `shareImage` object takes `src` under `/images/`, meaningful `alt`, `width` and `height`. It supplies social previews and is the Article microdata image fallback when `coverImage` is absent. Prefer a representative 1200×630 raster when useful, with an original source and provenance. The first image's pixels can be reproduced with `scripts/render-browser-comparison-share.py` (Pillow, fonttools and brotli), using the site's licensed Figtree font. That renderer overwrites PNG text metadata. After regenerating, restore its embedded `impeccable:prompt` origin from `docs/guide-assets.json` with this command, run from `Marketing/`:
-
-```sh
-python3 - <<'PY'
-import json
-from pathlib import Path
-from PIL import Image, PngImagePlugin
-
-asset = json.loads(Path('docs/guide-assets.json').read_text())['assets'][0]
-with Image.open(asset['file']) as image:
-    metadata = PngImagePlugin.PngInfo()
-    metadata.add_text('impeccable:prompt', asset['origin'])
-    image.save(asset['file'], optimize=True, pnginfo=metadata)
-PY
-```
-
-The committed PNG already carries its origin. Generated WebP variants have adjacent `.webp.json` prompt sidecars, with their full prompt and dimensions also recorded in `docs/guide-assets.json`. Preserve those when regenerating or optimizing the image. New guides inherit the editorial layout and metadata; write their own summary, visual and related destinations for the reader's task. Do not copy the first article's illustration or repeat its section count mechanically.
+Retain Figtree, Pal's dark colors, the Teleprompter Pal team byline, existing article prose/dates/URLs/schema and the current private-beta CTAs. Use the shared format and original people-free cover/thumbnail/social bundle for future drafts. Layout approval is not permission to publish later articles. Keep generated prompts and provenance in private source documentation, while retaining meaningful evidence labels for real captures and explanatory diagrams.
 
 ## Validation
 

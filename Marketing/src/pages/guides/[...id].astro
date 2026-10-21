@@ -4,11 +4,13 @@ import Layout from '../../layouts/Layout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import Icon from '../../components/Icon.astro';
+import ArticleSummarizers from '../../components/ArticleSummarizers.astro';
 import { site } from '../../data/site';
 import '../../styles/guides.css';
 
 export async function getStaticPaths() {
-  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  const privatePreview = process.env.VERCEL_ENV === 'preview' && process.env.PAL_PRIVATE_ARTICLE_PREVIEW === '1';
+  const guides = await getCollection('guides', ({ data }) => !data.draft || privatePreview);
   return guides.map(guide => ({ params: { id: guide.id }, props: { guide } }));
 }
 interface Props { guide: CollectionEntry<'guides'>; }
@@ -35,40 +37,53 @@ const related = explicitRelated.length ? explicitRelated : available
 const shareImage = guide.data.shareImage;
 const coverImage = guide.data.coverImage;
 const articleImage = coverImage ?? shareImage;
+const authorInitials = guide.data.author.name.split(/\s+/).map(part => part[0]).slice(0, 2).join('');
 ---
 <Layout title={guide.data.title} description={guide.data.description} type="article" published={published} modified={modified} image={shareImage?.src} imageAlt={shareImage?.alt} imageWidth={shareImage?.width} imageHeight={shareImage?.height}>
   <SiteHeader />
-  <main id="main" class="guides-main guide-page container">
-    <nav class="guide-breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></span>
-      <span aria-hidden="true">/</span>
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/guides/"><span itemprop="name">Guides</span></a><meta itemprop="position" content="2" /></span>
-      <span aria-hidden="true">/</span><span aria-current="page">{guide.data.breadcrumb ?? guide.data.title}</span>
-    </nav>
+  <main id="main" class="guides-main guide-page">
     <article class="guide-article" itemscope itemtype="https://schema.org/Article">
       <link itemprop="mainEntityOfPage" href={canonical} />
       {articleImage && <link itemprop="image" href={`https://teleprompterpal.com${articleImage.src}`} />}
       <meta itemprop="description" content={guide.data.description} />
       <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Teleprompter Pal" /><link itemprop="url" href="https://teleprompterpal.com/" /></div>
       {modified && <meta itemprop="dateModified" content={modified} />}
-      <header class="guide-heading">
-        <h1 itemprop="headline">{guide.data.headline}</h1>
-        <p class="guide-description">{guide.data.description}</p>
-        <div class="guide-meta">
-          <span>By <a itemprop="author" itemscope itemtype="https://schema.org/Organization" href={guide.data.author.url}><span itemprop="name">{guide.data.author.name}</span><link itemprop="url" href={guide.data.author.url} /></a></span>
-          <time itemprop="datePublished" datetime={published}>{formatDate(guide.data.date)}</time>
-          {showUpdated && <span>Updated {formatDate(guide.data.updated!)}</span>}
-          <span>{minutes} min read</span>
+      <header class="guide-hero">
+        {coverImage && <picture class="guide-hero-art" aria-hidden="true">
+          {coverImage.mobileSrc && <source media="(max-width: 639px)" srcset={coverImage.mobileSrc} type="image/webp" />}
+          <img src={coverImage.src} srcset={coverImage.sources.length ? coverImage.sources.map(source => `${source.src} ${source.width}w`).join(', ') : undefined} sizes="100vw" width={coverImage.width} height={coverImage.height} alt={coverImage.alt} loading="eager" decoding="async" fetchpriority="high" />
+        </picture>}
+        <div class="guide-shell guide-hero-shell">
+          <div class="guide-heading">
+            <nav class="guide-breadcrumbs" aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></span>
+      <span aria-hidden="true">/</span>
+      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/guides/"><span itemprop="name">Guides</span></a><meta itemprop="position" content="2" /></span>
+      <span aria-hidden="true">/</span><span aria-current="page">{guide.data.breadcrumb ?? guide.data.title}</span>
+    </nav>
+            <h1 itemprop="headline">{guide.data.headline}</h1>
+            <p class="guide-description">{guide.data.description}</p>
+            <div class="guide-byline">
+              <span class="guide-author-avatar" aria-hidden="true">{authorInitials}</span>
+              <div class="guide-byline-copy">
+                <span class="guide-author-name">By <a itemprop="author" itemscope itemtype="https://schema.org/Organization" href={guide.data.author.url}><span itemprop="name">{guide.data.author.name}</span><link itemprop="url" href={guide.data.author.url} /></a></span>
+                <div class="guide-date-line">
+                  <span><time itemprop="datePublished" datetime={published}>{formatDate(guide.data.date)}</time></span>
+                  {showUpdated && <span>Updated <time datetime={modified}>{formatDate(guide.data.updated!)}</time></span>}
+                  <span>{minutes} min read</span>
+                </div>
+              </div>
+            </div>
+            <ArticleSummarizers canonical={canonical} available={!guide.data.draft} />
+          </div>
+          <hr class="guide-heading-divider" />
         </div>
       </header>
+      <div class="guide-shell guide-body-shell">
       <div class="guide-reading-layout">
       <div class="guide-reading-column">
       <div itemprop="articleBody">
         {guide.data.intro && <p class="guide-opening">{guide.data.intro}</p>}
-        {coverImage && <figure class="guide-cover">
-          <img src={coverImage.src} srcset={coverImage.sources.length ? coverImage.sources.map(source => `${source.src} ${source.width}w`).join(', ') : undefined} sizes="(max-width: 374px) calc(100vw - 36px), (max-width: 767px) calc(100vw - 48px), (max-width: 1099px) min(740px, calc(100vw - 80px)), 744px" width={coverImage.width} height={coverImage.height} alt={coverImage.alt} loading="eager" decoding="async" />
-          {coverImage.caption && <figcaption>{coverImage.caption}</figcaption>}
-        </figure>}
         {guide.data.takeaways.length > 0 && <section class="guide-takeaways" aria-labelledby="takeaways-heading"><h2 id="takeaways-heading">The short answer</h2><ul>{guide.data.takeaways.map(takeaway => <li>{takeaway}</li>)}</ul></section>}
         {sections.length >= 3 && <nav class="guide-contents-mobile" aria-label="Article sections"><details><summary>On this page <Icon name="caret" size={18} /></summary><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></details></nav>}
         <div class="guide-prose"><Content /></div>
@@ -90,6 +105,7 @@ const articleImage = coverImage ?? shareImage;
           </section>
         </div>
       </aside>
+      </div>
       </div>
     </article>
   </main>

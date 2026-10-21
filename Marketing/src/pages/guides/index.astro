@@ -6,7 +6,8 @@ import SiteFooter from '../../components/SiteFooter.astro';
 import Icon from '../../components/Icon.astro';
 import '../../styles/guides.css';
 
-const guides = (await getCollection('guides', ({ data }) => !data.draft))
+const privatePreview = process.env.VERCEL_ENV === 'preview' && process.env.PAL_PRIVATE_ARTICLE_PREVIEW === '1';
+const guides = (await getCollection('guides', ({ data }) => !data.draft || privatePreview))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const formatDate = (date: Date) => new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(date);
 ---

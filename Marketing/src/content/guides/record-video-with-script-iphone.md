@@ -16,22 +16,22 @@ relatedResources:
     href: "/tools/speech-time-calculator/"
     description: "Plan a short first take, then adjust the estimate with a timed rehearsal."
 coverImage:
-  src: "/images/guides/iphone-recording-1200.webp"
-  alt: "Creator speaking toward a phone mounted at eye level on a tripod."
-  width: 1200
-  height: 675
-  caption: "AI-generated editorial image of a filming setup, not a real user or Teleprompter Pal screenshot."
+  src: "/images/guides/script-recording-objects-v2-cover-1000.webp"
+  alt: "Upright phone on a tripod beside a clapperboard and a closed notebook."
+  width: 1600
+  height: 901
+  mobileSrc: "/images/guides/script-recording-objects-v2-cover-mobile.webp"
   sources:
-    - { src: "/images/guides/iphone-recording-480.webp", width: 480 }
-    - { src: "/images/guides/iphone-recording-800.webp", width: 800 }
-    - { src: "/images/guides/iphone-recording-1200.webp", width: 1200 }
+    - { src: "/images/guides/script-recording-objects-v2-cover-640.webp", width: 640 }
+    - { src: "/images/guides/script-recording-objects-v2-cover-1000.webp", width: 1000 }
+    - { src: "/images/guides/script-recording-objects-v2-cover-1600.webp", width: 1600 }
 thumbnail:
-  src: "/images/guides/iphone-recording-thumbnail.webp"
+  src: "/images/guides/script-recording-objects-v2-thumbnail.webp"
   width: 640
-  height: 360
+  height: 361
 shareImage:
-  src: "/images/guides/record-video-with-script-iphone.png"
-  alt: "Record with a script on iPhone: prepare, record, trim, crop and export. Private beta."
+  src: "/images/guides/script-recording-objects-v2-social.png"
+  alt: "Upright phone on a tripod beside a clapperboard and a closed notebook."
   width: 1200
   height: 630
 draft: false

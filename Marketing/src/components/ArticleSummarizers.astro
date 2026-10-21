@@ -1,0 +1,23 @@
+---
+interface Props { canonical: string; available: boolean; }
+const { canonical, available } = Astro.props;
+const prompt = encodeURIComponent(`Summarize the article at ${canonical}. Highlight its main takeaways and practical actions. Cite the article URL as the source.`);
+const providers = [
+  { name: 'ChatGPT', prefix: 'https://chat.openai.com/?q=', mark: 'openai.svg', monochrome: true },
+  { name: 'Perplexity', prefix: 'https://www.perplexity.ai/search/new?q=', mark: 'perplexity.svg', monochrome: true },
+  { name: 'Claude', prefix: 'https://claude.ai/new?q=', mark: 'anthropic.svg', monochrome: false },
+  { name: 'Grok', prefix: 'https://grok.com/?q=', mark: 'grok.png', monochrome: false },
+];
+---
+<div class="guide-summarizers" role="group" aria-label="Summarize this article">
+  <span class="guide-summarizers-label">Summarize</span>
+  {!available && <span id="guide-summary-availability" class="guide-sr-only">Summaries use the public article URL and are available after publication. Private drafts are not sent to external providers.</span>}
+  {providers.map(provider => available
+    ? <a class="guide-summary-link" href={`${provider.prefix}${prompt}`} target="_blank" rel="noopener noreferrer nofollow" aria-label={`Summarize with ${provider.name}`}>
+        <img src={`/brand/providers/${provider.mark}`} width="16" height="16" alt="" class:list={{ 'guide-provider-monochrome': provider.monochrome }} /><span>{provider.name}</span>
+      </a>
+    : <button class="guide-summary-link" type="button" disabled aria-label={`Summarize with ${provider.name}`} aria-describedby="guide-summary-availability" title="Available after publication. Private drafts are not shared.">
+        <img src={`/brand/providers/${provider.mark}`} width="16" height="16" alt="" class:list={{ 'guide-provider-monochrome': provider.monochrome }} /><span>{provider.name}</span>
+      </button>
+  )}
+</div>

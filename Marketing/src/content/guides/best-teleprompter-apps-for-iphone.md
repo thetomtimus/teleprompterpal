@@ -7,22 +7,22 @@ date: "2026-10-20"
 intro: "If you record short scripts, start by checking what the free export actually includes. If you pause or go off script, look at speech following. If you work with a separate camera or a production team, remote controls and publishing tools may matter more. The best iPhone teleprompter app depends on which of those jobs you need it to do."
 topics: ["iphone-workflow", "app-selection"]
 coverImage:
-  src: "/images/guides/iphone-app-comparison-800.webp"
-  alt: "Four recording priorities to compare: short clips, speech following, production controls, and editing or publishing."
-  width: 1200
-  height: 676
-  caption: "Choose the recording task before the feature list. This original diagram is a decision aid, not an app screenshot or test result."
+  src: "/images/guides/iphone-apps-objects-v2-cover-1000.webp"
+  alt: "Two phones, a clip-on microphone and a small remote arranged for a recording-workflow comparison."
+  width: 1600
+  height: 901
+  mobileSrc: "/images/guides/iphone-apps-objects-v2-cover-mobile.webp"
   sources:
-    - { src: "/images/guides/iphone-app-comparison-480.webp", width: 480 }
-    - { src: "/images/guides/iphone-app-comparison-800.webp", width: 800 }
-    - { src: "/images/guides/iphone-app-comparison-1200.webp", width: 1200 }
+    - { src: "/images/guides/iphone-apps-objects-v2-cover-640.webp", width: 640 }
+    - { src: "/images/guides/iphone-apps-objects-v2-cover-1000.webp", width: 1000 }
+    - { src: "/images/guides/iphone-apps-objects-v2-cover-1600.webp", width: 1600 }
 thumbnail:
-  src: "/images/guides/iphone-app-comparison-thumbnail.webp"
+  src: "/images/guides/iphone-apps-objects-v2-thumbnail.webp"
   width: 640
   height: 361
 shareImage:
-  src: "/images/guides/best-teleprompter-apps-for-iphone.png"
-  alt: "Best teleprompter apps for iPhone: compare the recording task, free limits and evidence."
+  src: "/images/guides/iphone-apps-objects-v2-social.png"
+  alt: "Two phones, a clip-on microphone and a small remote arranged for a recording-workflow comparison."
   width: 1200
   height: 630
 relatedGuides: ["browser-teleprompter-vs-iphone-app"]
@@ -30,6 +30,11 @@ draft: false
 ---
 
 **Disclosure:** We make Teleprompter Pal and list it first. This is our selection guide, not an independent review. Competitor features below come from official sources checked on **19 October 2026**. Pal has internal iPhone recording and export test results. We have not completed the same hands-on test across the other apps, so the numbering reflects our editorial selection rather than a comparative performance test.
+
+<figure>
+<img src="/images/guides/iphone-app-comparison-800.webp" srcset="/images/guides/iphone-app-comparison-480.webp 480w, /images/guides/iphone-app-comparison-800.webp 800w, /images/guides/iphone-app-comparison-1200.webp 1200w" sizes="(max-width: 767px) calc(100vw - 32px), 704px" width="1200" height="676" loading="lazy" decoding="async" alt="Four recording priorities to compare: short clips, speech following, production controls, and editing or publishing." />
+<figcaption>Choose the recording task before the feature list.</figcaption>
+</figure>
 
 ## Which iPhone teleprompter app should you try?
 

@@ -1,0 +1,55 @@
+{
+  "id": "iphone-apps-objects-v2",
+  "prompt": "Original photorealistic editorial still life for Teleprompter Pal's dark charcoal website, landscape 16:9. Neutral soft studio daylight with subtle restrained lavender accents, believable matte black equipment, rich real materials, no neon or CGI plastic. Extremely important crop-safe art direction: keep EVERY primary object and its full silhouette together in a compact cluster entirely within the middle 26% of the image width and between 8% and 38% of image height. Zoom out to achieve this. Leave expansive uninterrupted charcoal tabletop and dark neutral room negative space to left, right and below; no significant objects at the edges or lower half. The compact cluster must survive a narrow centered phone crop and a shallow top-aligned desktop crop. No text, logos, brand marks, watermarks, app-specific UI or claims. Absolutely no people, faces, hands, silhouettes, portraits, head-shaped figures, human screen previews, or human reflections. This is a topic still life, not a screenshot or test.\nTopic: comparing iPhone teleprompter apps by recording needs. Two small unbranded black smartphones, a compact clip-on microphone and one tiny physical remote together on a charcoal tabletop, neat central comparison still life. Screens blank or only soft script lines, no copied product interfaces. All equipment belongs to the compact upper-center group; retain whole devices.",
+  "original": "original.png",
+  "tool": "image_gen",
+  "created": "2026-10-21",
+  "people_free": true,
+  "alt": "Two phones, a clip-on microphone and a small remote arranged for a recording-workflow comparison.",
+  "source_sha256": "6995e552ef2d9d78c6b38b8a7b9a3052a1b6684cdb6b9b49424307a49ba34fac",
+  "responsive_method": "LANCZOS exports. Phone uses full source at the top of a 900x1600 canvas; thumbnail is a closer central crop. No creative repainting.",
+  "exports": [
+    {
+      "file": "iphone-apps-objects-v2-cover-1600.webp",
+      "width": 1600,
+      "height": 901,
+      "bytes": 27086,
+      "sha256": "59fa50105c6a38a5bbc285f57ba574f9715142e1ef17f99830a38839e1b04d13"
+    },
+    {
+      "file": "iphone-apps-objects-v2-cover-1000.webp",
+      "width": 1000,
+      "height": 563,
+      "bytes": 12248,
+      "sha256": "1e634d55edf5d1ae6726745449845a470d695649ea17f5d46fd8fe2123c130f4"
+    },
+    {
+      "file": "iphone-apps-objects-v2-cover-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 6276,
+      "sha256": "2ef09ce61250f29ae7fe258045b996df3594e8697aa91286f6cfb4a2e20addf8"
+    },
+    {
+      "file": "iphone-apps-objects-v2-thumbnail.webp",
+      "width": 640,
+      "height": 361,
+      "bytes": 7372,
+      "sha256": "243427324f66a9658acb7c804bc7f4cc972104180a3eb6935e08d5d28102f568"
+    },
+    {
+      "file": "iphone-apps-objects-v2-social.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 671836,
+      "sha256": "b0d8234cea998bda13c7fcf67ee6c5212311db2e6cdcab4f598b807884fc9c0d"
+    },
+    {
+      "file": "iphone-apps-objects-v2-cover-mobile.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 11944,
+      "sha256": "1197adc2c0174b752fc82db19638c5920e4e6d6a45bc03b2c10dee2deb83539a"
+    }
+  ]
+}

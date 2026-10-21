@@ -11,22 +11,22 @@ takeaways:
   - "Compare setups with the same recorded paragraph before changing tools."
 topics: ["recording-setup", "iphone-workflow"]
 coverImage:
-  src: "/images/guides/browser-iphone-cover-800.webp"
-  alt: "Creator recording toward a phone on a tripod, with a laptop holding the script beside the camera."
-  width: 1200
-  height: 676
-  caption: "AI-generated editorial illustration of a two-device filming setup, not a Teleprompter Pal screenshot."
+  src: "/images/guides/browser-iphone-objects-v2-cover-1000.webp"
+  alt: "Laptop and tripod-mounted phone with abstract script lines, arranged together on a dark desk."
+  width: 1600
+  height: 901
+  mobileSrc: "/images/guides/browser-iphone-objects-v2-cover-mobile.webp"
   sources:
-    - { src: "/images/guides/browser-iphone-cover-480.webp", width: 480 }
-    - { src: "/images/guides/browser-iphone-cover-800.webp", width: 800 }
-    - { src: "/images/guides/browser-iphone-cover-1200.webp", width: 1200 }
+    - { src: "/images/guides/browser-iphone-objects-v2-cover-640.webp", width: 640 }
+    - { src: "/images/guides/browser-iphone-objects-v2-cover-1000.webp", width: 1000 }
+    - { src: "/images/guides/browser-iphone-objects-v2-cover-1600.webp", width: 1600 }
 thumbnail:
-  src: "/images/guides/browser-iphone-thumbnail.webp"
+  src: "/images/guides/browser-iphone-objects-v2-thumbnail.webp"
   width: 640
   height: 361
 shareImage:
-  src: "/images/guides/browser-teleprompter-vs-iphone-app.png"
-  alt: "Browser teleprompter or iPhone app: compare where the script sits and where the camera records."
+  src: "/images/guides/browser-iphone-objects-v2-social.png"
+  alt: "Laptop and tripod-mounted phone with abstract script lines, arranged together on a dark desk."
   width: 1200
   height: 630
 relatedResources:
@@ -61,7 +61,7 @@ The choice in the second row is easy to overlook. Using two devices can work, bu
 <p>One screen keeps the workflow together. The reading area still needs to stay near the lens.</p>
 </div>
 </div>
-<figcaption>AI-generated illustration of the two recording setups, not an app screenshot. Check either arrangement with a short eye-line test.</figcaption>
+<figcaption>Check either arrangement with a short eye-line test.</figcaption>
 </figure>
 
 ## Try the browser workflow with a real paragraph

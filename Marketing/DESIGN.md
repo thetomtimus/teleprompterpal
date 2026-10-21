@@ -214,6 +214,10 @@ At 767px the header becomes 80px tall and navigation moves to a native disclosur
 
 The desktop QR floats at the lower right. Its art is 136px in the base layout, 112px at 1399px, and the floating treatment disappears at 1199px. The closing QR remains available and moves into normal document flow at that breakpoint. The floating QR fades when the closing section enters view. At 1600px the desktop navigation gap expands from its base 36px to 48px; intermediate breakpoints tighten it to 24px and 20px.
 
+### Articles
+
+The October 21 owner-approved article rollout uses the separate [article-format contract](docs/article-format-contract.md). It retains Figtree, the Pal palette and the Teleprompter Pal team identity. Article shells are 1120px including insets, with a 704px reading measure and optional 304px rail separated by 48px. Article H1s use 48px/1.08 and 32px/1.1 below 640px. Live header text overlays topic-specific people-free artwork with the prescribed canvas fade. Honest initials, dates and four native summarizer links follow the description. Decorative covers do not repeat in the body. Phone exports and the 1440px artwork cap preserve the equipment within the header crop. These article-specific rules do not change the landing-page geometry above.
+
 ## Elevation & Depth
 
 Depth combines local ambient light, tactile action edges, dark tonal panels, and substantial device shadows. The black footer is a separate closing plane. Text glow is a display treatment; the reader demo relies on contrast and a soft guide band instead.

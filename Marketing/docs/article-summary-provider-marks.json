@@ -1,0 +1,46 @@
+{
+  "copied_from_owned_project": "OpenLocalSEO",
+  "copied": "2026-10-21",
+  "assets": [
+    {
+      "file": "openai.svg",
+      "source_url": "https://aiseotracker.com/_static/icons/openai.svg",
+      "type": "Provider brand mark identifying an external summarizer, not a generic interface icon",
+      "checked": "2026-10-21",
+      "bytes": 1719,
+      "sha256": "dd7dd48fc0c21900c3e4337624d65e3bccadb1b8d4054860b2656ccbce8482f3",
+      "stored_bytes": 1719,
+      "stored_sha256": "dd7dd48fc0c21900c3e4337624d65e3bccadb1b8d4054860b2656ccbce8482f3"
+    },
+    {
+      "file": "perplexity.svg",
+      "source_url": "https://aiseotracker.com/_static/icons/perplexity.svg",
+      "type": "Provider brand mark identifying an external summarizer, not a generic interface icon",
+      "checked": "2026-10-21",
+      "bytes": 751,
+      "sha256": "8657d762a52ed7307d1e566fbb6617e2cc72961e3c60c1f78356993660087f14",
+      "stored_bytes": 751,
+      "stored_sha256": "8657d762a52ed7307d1e566fbb6617e2cc72961e3c60c1f78356993660087f14"
+    },
+    {
+      "file": "anthropic.svg",
+      "source_url": "https://aiseotracker.com/_static/icons/anthropic.svg",
+      "type": "Provider brand mark identifying an external summarizer, not a generic interface icon",
+      "checked": "2026-10-21",
+      "bytes": 1701,
+      "sha256": "b639c29e5df1a840932be8481b6a4b2af5e44abf44cd2db536e0630c5b95df21",
+      "stored_bytes": 1701,
+      "stored_sha256": "b639c29e5df1a840932be8481b6a4b2af5e44abf44cd2db536e0630c5b95df21"
+    },
+    {
+      "file": "grok.png",
+      "source_url": "https://aiseotracker.com/_static/icons/grok.png",
+      "type": "Provider brand mark identifying an external summarizer, not a generic interface icon",
+      "checked": "2026-10-21",
+      "bytes": 971,
+      "sha256": "08b1dc3025ee323902e0ffd58e2d59f9aa2662be8c3b0721a1cad26515376600",
+      "stored_bytes": 1180,
+      "stored_sha256": "5982b6dba6e9f02383b58e61d50096d9cbc8eda9f79e964442c5c4558ddb590e"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "natural-reading-objects-v2",
+  "prompt": "Original photorealistic editorial still life for Teleprompter Pal's dark charcoal website, landscape 16:9. Neutral soft studio daylight with subtle restrained lavender accents, believable matte black equipment, rich real materials, no neon or CGI plastic. Extremely important crop-safe art direction: keep EVERY primary object and its full silhouette together in a compact cluster entirely within the middle 26% of the image width and between 8% and 38% of image height. Zoom out to achieve this. Leave expansive uninterrupted charcoal tabletop and dark neutral room negative space to left, right and below; no significant objects at the edges or lower half. The compact cluster must survive a narrow centered phone crop and a shallow top-aligned desktop crop. No text, logos, brand marks, watermarks, app-specific UI or claims. Absolutely no people, faces, hands, silhouettes, portraits, head-shaped figures, human screen previews, or human reflections. This is a topic still life, not a screenshot or test.\nTopic: reading a script naturally near the camera. One black smartphone held landscape in a simple short tripod clamp, two modest cue cards with abstract line breaks but no readable words, and a small clip-on microphone. Compact upper-center grouping, real glass, paper and rubber. Phone front has one physically correct small front camera and abstract script lines only; no head, face, camera-preview silhouette or recording person.",
+  "original": "original.png",
+  "tool": "image_gen",
+  "created": "2026-10-21",
+  "people_free": true,
+  "alt": "Landscape phone on a tripod beside cue cards and a clip-on microphone.",
+  "source_sha256": "f39c11385c47f4ba99d83454df06a4a955ed6467216317f4815079468e5df62d",
+  "responsive_method": "LANCZOS exports. Phone uses full source at the top of a 900x1600 canvas; thumbnail is a closer central crop. No creative repainting.",
+  "exports": [
+    {
+      "file": "natural-reading-objects-v2-cover-1600.webp",
+      "width": 1600,
+      "height": 901,
+      "bytes": 29364,
+      "sha256": "3dcbe8b180cb642bf7d8e49f99d14b495237cbc9bca44265ccaaa8e793f82f14"
+    },
+    {
+      "file": "natural-reading-objects-v2-cover-1000.webp",
+      "width": 1000,
+      "height": 563,
+      "bytes": 13520,
+      "sha256": "7bef63c4330154978ecff9aabe483410a23988d225f54c047446d882a6d89486"
+    },
+    {
+      "file": "natural-reading-objects-v2-cover-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 6224,
+      "sha256": "a4f2a9ec47daadad9a724698e3b44f4d4d0771d9b7e5911b176b7775bfb9c7aa"
+    },
+    {
+      "file": "natural-reading-objects-v2-thumbnail.webp",
+      "width": 640,
+      "height": 361,
+      "bytes": 9048,
+      "sha256": "3c53c01d2d641e3542dfba195c12b29b84a15e468f8c4cd9631d3b9cd48eae57"
+    },
+    {
+      "file": "natural-reading-objects-v2-social.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 690833,
+      "sha256": "5275dea5dd253fd603700359f2a6f628b006219a57f972cd55c424eb8205c890"
+    },
+    {
+      "file": "natural-reading-objects-v2-cover-mobile.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 12576,
+      "sha256": "3f9fa283a1496852106620bf753fe7babbfbc00aeffb811350c2c0ae57d1af29"
+    }
+  ]
+}
