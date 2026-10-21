@@ -101,6 +101,8 @@ The iPhone listing also advertises voice-assisted scrolling. We have not tested 
 
 **Tradeoff:** longer scripts require an upgrade. The support guide and store expose different price options, so use the purchase confirmation on your phone for the actual offer. This is not a verified current one-time-purchase recommendation.
 
+For longer scripts and reversible retakes, [compare Teleprompter Pal and Teleprompter for Video](/compare/teleprompter-for-video-alternative/), including the different free recording and export boundaries.
+
 ## 3. PromptSmart Pro: speech following
 
 **Consider it for:** English-language delivery with pauses or deliberate departures from the script.
