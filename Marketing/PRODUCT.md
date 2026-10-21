@@ -18,3 +18,7 @@ Always use the full product name **Teleprompter Pal**, including possessives, he
 ## Owner preference: illustration captions · October 21, 2026
 
 Do not add visible AI-generation or provenance credit captions beneath illustrations. The owner explicitly removed the About portrait caption and asked that this kind of caption not be used again. Keep useful descriptive alt text and generation/source records outside the visitor-facing copy.
+
+## Search publishing notifications · October 21, 2026
+
+After a production deployment adds or substantively updates a public page, use the scoped `scripts/submit_indexnow.py` command described in `docs/seo/indexnow.md`. Run its dry-run preflight, then submit only the explicit changed canonical URLs and save the response outside public files. Do not submit private drafts, the noindex reader, unchanged inventory or cosmetic-only edits. This command notifies participating search engines; it does not replace Google Search Console or prove indexing.
