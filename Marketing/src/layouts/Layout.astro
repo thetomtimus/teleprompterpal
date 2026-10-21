@@ -15,6 +15,7 @@ const indexable = import.meta.env.PROD && process.env.VERCEL_ENV !== 'preview';
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0f0f0f" />
     <meta name="robots" content={indexable ? 'index, follow' : 'noindex, nofollow'} />
+    {Astro.url.pathname === '/' && <meta name="msvalidate.01" content="180A676D91C0371476F73D9DA80AB9DD" />}
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content={type} />
     {published && <meta property="article:published_time" content={published} />}
