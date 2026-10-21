@@ -2,14 +2,17 @@
 import Icon from './Icon.astro';
 interface Props { kind: 'scripts' | 'camera' | 'edit'; }
 const { kind } = Astro.props;
+const presenterSources = '/images/presenter-480.webp 480w, /images/presenter-640.webp 640w, /images/presenter.webp 800w';
+// object-fit: cover makes the portrait wider than the narrow phone frame.
+const presenterSizes = '(max-width: 374px) 302px, (max-width: 759px) 334px, (max-width: 959px) 354px, 426px';
 ---
 <div class:list={['phone', `phone-${kind}`]}>
   <div class="phone-island" aria-hidden="true"></div>
   {kind === 'scripts' ? (
-    <img src="/images/scripts.webp" alt="Actual Teleprompter Pal iPhone Scripts screen with a saved script and central Record control" width="640" height="1391" class="native-screen" />
+    <img src="/images/scripts.webp" srcset="/images/scripts-320.webp 320w, /images/scripts-400.webp 400w, /images/scripts-480.webp 480w, /images/scripts.webp 640w" sizes="(max-width: 374px) 145px, (max-width: 759px) 170px, (max-width: 959px) 200px, 242px" alt="Actual Teleprompter Pal iPhone Scripts screen with a saved script and central Record control" width="640" height="1392" class="native-screen" />
   ) : kind === 'camera' ? (
     <div class="camera-screen">
-      <img src="/images/presenter.webp" alt="Fictional presenter used to illustrate reading to camera" width="800" height="1200" class="presenter" fetchpriority="high" />
+      <img src="/images/presenter.webp" srcset={presenterSources} sizes={presenterSizes} alt="Fictional presenter used to illustrate reading to camera" width="800" height="1200" class="presenter" fetchpriority="high" />
       <div class="camera-topline"><span><span class="record-dot"></span> Camera preview</span><Icon name="sliders" size={18} /></div>
       <div class="camera-prompt"><p>Take a breath.<br /><strong>Look into the lens.</strong><br />You’ve got this.</p></div>
       <div class="camera-bottom"><span>1×</span><span class="record-ring" aria-hidden="true"><span></span></span><Icon name="camera" size={23} /></div>
@@ -17,8 +20,8 @@ const { kind } = Astro.props;
   ) : (
     <div class="edit-screen">
       <div class="edit-topline"><span>Your take</span><span class="edit-done">Done</span></div>
-      <div class="crop-preview"><img src="/images/presenter.webp" alt="Illustrative vertical crop of the same take" width="800" height="1200" /><span class="crop-corner corner-tl"></span><span class="crop-corner corner-tr"></span><span class="crop-corner corner-bl"></span><span class="crop-corner corner-br"></span></div>
-      <div class="mini-timeline" aria-hidden="true">{Array.from({length: 7},()=> <img src="/images/presenter.webp" alt="" width="800" height="1200" />)}<span class="timeline-cursor"></span></div>
+      <div class="crop-preview"><img src="/images/presenter.webp" srcset={presenterSources} sizes={presenterSizes} alt="Illustrative vertical crop of the same take" width="800" height="1200" /><span class="crop-corner corner-tl"></span><span class="crop-corner corner-tr"></span><span class="crop-corner corner-bl"></span><span class="crop-corner corner-br"></span></div>
+      <div class="mini-timeline" aria-hidden="true">{Array.from({length: 7},()=> <img src="/images/presenter.webp" srcset={presenterSources} sizes={presenterSizes} alt="" width="800" height="1200" />)}<span class="timeline-cursor"></span></div>
       <div class="edit-actions"><span><Icon name="scissors" size={20} />Trim</span><span class="selected"><Icon name="crop" size={20} />Crop</span><span><Icon name="share" size={20} />Export</span></div>
       <p class="edit-save"><Icon name="check" size={13} /> Your original stays safe</p>
     </div>

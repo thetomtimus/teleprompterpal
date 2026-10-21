@@ -6,8 +6,8 @@
   },
   {
     "path": "public/images/app-icon.webp",
-    "origin": "Owner-approved 66-percent lavender glass ring icon. Source: ../.impeccable/assets/app-icon-master.png. Approval: ../.impeccable/assets/app-icon-selection.json, October 17 2026. Resized to 160px lossless WebP. Artwork unchanged.",
-    "sha256": "fa8950f0a519e7bfd57bd70fa79416e04162263248c6d9ddee83864dc44faae6"
+    "origin": "Owner-approved 66-percent lavender glass ring icon. Source: ../.impeccable/assets/app-icon-master.png. Approval: ../.impeccable/assets/app-icon-selection.json, October 17 2026. Resized to 160px lossless WebP. Artwork unchanged. Recompressed at unchanged 160px dimensions with WebP quality 88 for measured mobile delivery maintenance on 2026-10-21.",
+    "sha256": "0a11af437795b4a4c61cf1cf45b72b10b362abe38e8ab913dc347533611e9114"
   },
   {
     "path": "public/images/scripts.webp",
@@ -28,5 +28,60 @@
     "path": "public/favicon.png",
     "origin": "Owner-approved 66-percent lavender glass ring icon. Source: ../.impeccable/assets/app-icon-master.png. Approval: ../.impeccable/assets/app-icon-selection.json, October 17 2026. Resized to 64px PNG, artwork unchanged.",
     "sha256": "5fe6ffd66880856e342a3a1afb7411cabda7fb8877114f0315aa5fb604af612f"
+  },
+  {
+    "path": "public/images/scripts-320.webp",
+    "origin": "Responsive derivative of public/images/scripts.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "da6546ba3d8f4f0b103ffbbb6a8dffcbe0f64a44ce50a3f09958191177205ca4"
+  },
+  {
+    "path": "public/images/scripts-400.webp",
+    "origin": "Responsive derivative of public/images/scripts.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "9f29c06659049d136c049890024ba4036e9f16bd3ef642ad92044fb79a58277a"
+  },
+  {
+    "path": "public/images/scripts-480.webp",
+    "origin": "Responsive derivative of public/images/scripts.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "4d867aa6afacde44044bbeb2bbfd275e2bf31e31a5b96510b667fe34234afc56"
+  },
+  {
+    "path": "public/images/editor-320.webp",
+    "origin": "Responsive derivative of public/images/editor.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "d4f792ebe4a22a35e10091bbc8bd39295343412acd1059439aa6472d34602d8d"
+  },
+  {
+    "path": "public/images/editor-400.webp",
+    "origin": "Responsive derivative of public/images/editor.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "69273bc43663286c879bdc7cdad80eb0256c76f249e699263be76b52edd60bec"
+  },
+  {
+    "path": "public/images/editor-480.webp",
+    "origin": "Responsive derivative of public/images/editor.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "3d0e31472d82efeb0091de8d6ff98fdc85eba434107de78d4a914d58c58eb6de"
+  },
+  {
+    "path": "public/images/reader-settings-320.webp",
+    "origin": "Responsive derivative of public/images/reader-settings.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "4ddf5a20a5f65822528a4d8a8be2aeaab9b5e42c83b9f33db64dd63b630634c7"
+  },
+  {
+    "path": "public/images/reader-settings-400.webp",
+    "origin": "Responsive derivative of public/images/reader-settings.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "d232bb3eed981f91fee5bb50df1f33ebae80977e912fb8281956fd5d2ab534a8"
+  },
+  {
+    "path": "public/images/reader-settings-480.webp",
+    "origin": "Responsive derivative of public/images/reader-settings.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 90. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "51946582284eae0faae00ae4d8b0ced8ecc1466e0dca839dfed20d36c9fc4737"
+  },
+  {
+    "path": "public/images/presenter-480.webp",
+    "origin": "Responsive derivative of public/images/presenter.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 85. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "9cf4ffe2597dad37e89e958e1f1ebf737b069f0ee00fac6174cfdf3acf7f585c"
+  },
+  {
+    "path": "public/images/presenter-640.webp",
+    "origin": "Responsive derivative of public/images/presenter.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 85. Existing screenshot/artwork content unchanged; no new device-test evidence.",
+    "sha256": "280585e29f1b82699182e67efce713d7116926efb18cc894b71c0772f7688801"
   }
 ]
