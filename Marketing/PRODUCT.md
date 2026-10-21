@@ -14,3 +14,7 @@ The separate ../Website contains the existing published privacy and support sour
 ## Product naming and release wording (owner instruction, 21 October 2026)
 
 Always use the full product name **Teleprompter Pal**, including possessives, headings, metadata, alt text and comparisons. Do not shorten it. Describe Teleprompter Pal as an iPhone app, without private-beta or prerelease positioning. This owner instruction supersedes earlier availability language in this document. Do not invent a price, App Store URL, device-test result or unimplemented feature. Until a real App Store destination is provided, the existing email form is labelled product updates; do not label that form as a download.
+
+## Owner preference: illustration captions · October 21, 2026
+
+Do not add visible AI-generation or provenance credit captions beneath illustrations. The owner explicitly removed the About portrait caption and asked that this kind of caption not be used again. Keep useful descriptive alt text and generation/source records outside the visitor-facing copy.
