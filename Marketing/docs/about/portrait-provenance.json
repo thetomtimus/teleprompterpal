@@ -1,0 +1,29 @@
+{
+  "created": "2026-10-21",
+  "type": "Original AI-generated watercolor portrait",
+  "tool": "Built-in image_gen",
+  "person": "Thomas Lee",
+  "identity_reference": "Owner\u2019s profile photo at https://www.linkedin.com/in/thomas-lee-9733b0343/",
+  "authorization": "Owner requested an image like Vaultaire\u2019s watercolor, depicting himself, and asked to use his LinkedIn for relevant background.",
+  "reference_role": "LinkedIn photo used for identity. Vaultaire About page inspected for broad composition/style only; its artwork was not copied or edited.",
+  "scene": "Illustrated workspace, not evidence of the owner\u2019s real office or a product test.",
+  "prompt_file": "portrait-prompt.txt",
+  "original_sha256": "b45e88c294ed29ca88c3d2413dc91ac378d6ad1dbd256ed61dc4caf38b8bb3b5",
+  "assets": [
+    {
+      "path": "public/images/about/thomas-lee-watercolor-480.webp",
+      "width": 480,
+      "sha256": "f936afb2869f30e6d659344fe442c66d929be58f29bcbc71e4589282cf1b290f"
+    },
+    {
+      "path": "public/images/about/thomas-lee-watercolor-800.webp",
+      "width": 800,
+      "sha256": "78349028e0fa9300763a0dfdc2fcb78ea8f19ed93fc30b7cb197c94db3f5b6b0"
+    },
+    {
+      "path": "public/images/about/thomas-lee-watercolor-1200.webp",
+      "width": 1200,
+      "sha256": "ffeb1535d239d90e823b9437850752d9f118118e070285934af6c1fcb3724ecc"
+    }
+  ]
+}

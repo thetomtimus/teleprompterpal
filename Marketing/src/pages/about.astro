@@ -5,31 +5,39 @@ import SiteFooter from '../components/SiteFooter.astro';
 import { site } from '../data/site';
 import '../styles/about.css';
 ---
-<Layout title="About the Maker & Our Guides | Teleprompter Pal" description="Meet Thomas, maker of Teleprompter Pal and Free Teleprompter Online. Learn about the iPhone app, our guide process, testing notes and corrections.">
+<Layout title="About the Maker & Our Guides | Teleprompter Pal" description="Meet Thomas Lee, maker of Teleprompter Pal and Free Teleprompter Online. Read about his background, the tools he builds and how to get in touch.">
   <SiteHeader />
   <main id="main" tabindex="-1" class="about-page container" itemscope itemtype="https://schema.org/AboutPage">
     <link itemprop="url" href="https://teleprompterpal.com/about/" />
     <nav class="about-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">About</span></nav>
-    <h1 itemprop="name">About Teleprompter Pal</h1>
-    <p class="about-lead" itemprop="description">An iPhone teleprompter for keeping your script, rehearsal and next take together.</p>
-    <section aria-labelledby="maker"><h2 id="maker">Made by Thomas</h2>
-      <p>I build Teleprompter Pal and <a href="https://freeteleprompteronline.com/about/">Free Teleprompter Online</a>. Both products are made by the same team at Second Wind, LLC. Teleprompter Pal brings the script-to-recording workflow to iPhone; the free browser tool is available for rehearsal without an installation.</p>
-      <p>When a Teleprompter Pal guide recommends our browser reader, it is recommending our own product. Our comparison guides explain which setup fits a task and where each option has limits.</p>
+    <header class="about-intro"><h1 itemprop="name">About Teleprompter Pal</h1>
+      <p class="about-lead" itemprop="description">An iPhone teleprompter, made by Thomas Lee.</p>
+      <p>Teleprompter Pal brings your script, recording and basic edit into one workflow. I also make <a href="https://freeteleprompteronline.com/">Free Teleprompter Online</a>, a browser reader you can use without installing an app.</p>
+    </header>
+    <figure class="about-portrait"><img src="/images/about/thomas-lee-watercolor-1200.webp" srcset="/images/about/thomas-lee-watercolor-480.webp 480w, /images/about/thomas-lee-watercolor-800.webp 800w, /images/about/thomas-lee-watercolor-1200.webp 1200w" sizes="(min-width: 960px) 800px, (max-width: 767px) calc(100vw - 48px), 704px" width="1200" height="676" alt="Watercolor illustration of Thomas Lee in glasses and a navy shirt, working at a desk with a laptop." loading="eager" fetchpriority="high" decoding="async" /><figcaption>AI-generated watercolor portrait based on my LinkedIn photo.</figcaption></figure>
+    <section aria-labelledby="maker"><h2 id="maker">Who makes it</h2>
+      <p>I’m <a href="https://www.linkedin.com/in/thomas-lee-9733b0343/" rel="me">Thomas Lee</a>, the maker behind Teleprompter Pal and Free Teleprompter Online. I publish both products through Second Wind, LLC.</p>
+      <p>The two tools serve different recording setups. Teleprompter Pal keeps the script and camera workflow together on an iPhone. Free Teleprompter Online gives you a reader at your computer. When I recommend one from the other, I’m recommending a product I also make.</p>
     </section>
-    <section aria-labelledby="app"><h2 id="app">What you can expect from Teleprompter Pal</h2>
-      <p>Teleprompter Pal is an app for iPhone running iOS 18 or later. Its workflow is to write or import a script, rehearse with adjustable manual scrolling, record while reading, then trim, crop and export an MP4.</p>
-      <p>Scripts and original recordings stay on your iPhone, and this workflow does not require an account. Manual scrolling is the current reading method. Voice following and a Mac app are not available features.</p>
-      <p>You can <a href="/#app-updates">get Teleprompter Pal updates by email</a>. For a tool you can use in your browser today, <a href={site.freeReaderUrl}>open our free online teleprompter</a>.</p>
+    <section aria-labelledby="background"><h2 id="background">My background</h2>
+      <p>I’m also the founder of Georamp, where my work focuses on AI search visibility: how brands are mentioned, cited and recommended across tools such as ChatGPT, Claude, Gemini and Perplexity. You can find that work and my professional background on <a href="https://www.linkedin.com/in/thomas-lee-9733b0343/">LinkedIn</a>.</p>
+      <p>Teleprompter Pal addresses another part of communication: getting words from a script into a video. The focus here is on the practical work of preparing, rehearsing, recording and finishing a take.</p>
     </section>
-    <section id="editorial" aria-labelledby="editorial-title"><h2 id="editorial-title">Who publishes our guides</h2>
-      <p>The “Teleprompter Pal team” byline identifies this site's publisher. Thomas is responsible for the site and its editorial content. We use AI assistance for research, drafting and illustrations; the byline does not imply an independent expert review.</p>
-      <p>Our product instructions are checked against the current build. Guides link to relevant product documentation and original research where they support a claim. Comparisons reflect the stated source-check date and the available product version; another app's price or features may change.</p>
-      <p>Actual app screenshots, illustrative previews and test results have different roles. A generated scene or an explanatory diagram is not evidence of a real recording. Testing notes describe the browser, device or check where available. We do not treat desktop or synthetic browser tests as physical iPhone camera, microphone or saved-video acceptance.</p>
-      <p>Publication dates show when a guide first appeared. We use an updated date for a substantive change to the advice, rather than a new footer or About link.</p>
+    <section aria-labelledby="purpose"><h2 id="purpose">Why this app</h2>
+      <p>A script should help you speak, without pulling all your attention toward reading it. Teleprompter Pal puts the words near the camera, lets you set a comfortable scrolling pace and keeps your retakes with the script.</p>
+      <p>You can write or import your words, rehearse, record while reading, then trim, crop and export an MP4. Your original recording stays in the library when you edit a copy. The <a href="/guides/record-video-with-script-iphone/">iPhone recording guide</a> walks through that whole path, including checking the saved file.</p>
     </section>
-    <section id="corrections" aria-labelledby="contact-title"><h2 id="contact-title">Contact the maker</h2>
-      <p>For a correction, an app question or a product problem, email <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a> or visit <a href={site.supportUrl}>support</a>. Include the page or app version, your device and what happened. Leave private script text and recordings out unless they are necessary and you choose to share them.</p>
-      <p>Read the <a href={site.privacyUrl}>privacy policy</a> for local app data, support correspondence and product-update signups, or browse the <a href="/guides/">recording guides</a>.</p>
+    <section aria-labelledby="building"><h2 id="building">How the tools are built</h2>
+      <p>The app’s writing, rehearsal, recording and editing workflow runs on your iPhone without an account. Scripts and original recordings stay on the device. You decide where an exported copy goes.</p>
+      <p>Teleprompter Pal supports iPhone with iOS 18 or later and uses scrolling controls you set yourself. For a browser setup, <a href="/guides/browser-teleprompter-vs-iphone-app/">compare the two workflows</a> before choosing where to record.</p>
+    </section>
+    <section id="editorial" aria-labelledby="editorial-title"><h2 id="editorial-title">About the guides</h2>
+      <p>The “Teleprompter Pal team” byline identifies this site’s publisher. I’m responsible for its content. I use AI assistance for research, drafting and illustrations, and link to the documentation, original research and testing notes that support the advice.</p>
+      <p>Illustrations explain a setup; they are not evidence of a real recording. Dated test notes distinguish physical-device checks from Simulator, desktop and synthetic tests. Original publication dates stay in place, and substantive changes receive an update note.</p>
+    </section>
+    <section id="corrections" aria-labelledby="contact-title"><h2 id="contact-title">Get in touch</h2>
+      <p>If something is broken, a guide needs correcting or you have a question, email <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>. Include the page or app version and what happened. Please leave private scripts and recordings out unless they are needed and you choose to share them.</p>
+      <p><a href={site.supportUrl}>Get product support</a>, read the <a href={site.privacyUrl}>privacy policy</a> or <a href="/#app-updates">get Teleprompter Pal updates</a>.</p>
     </section>
   </main>
   <SiteFooter />
