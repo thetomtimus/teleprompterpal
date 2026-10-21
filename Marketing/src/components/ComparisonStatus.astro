@@ -1,0 +1,11 @@
+---
+import Icon from './Icon.astro';
+interface Props { state: 'yes' | 'no' | 'unknown'; detail?: string; }
+const { state, detail } = Astro.props;
+const labels = { yes: 'Available', no: 'Not included', unknown: 'Not verified' };
+const glyphs = { yes: 'check', no: 'x', unknown: 'minus' } as const;
+---
+<div class:list={['comparison-status', `comparison-status-${state}`]}>
+  <span class="comparison-status-mark" role="img" aria-label={labels[state]}><Icon name={glyphs[state]} size={28} /></span>
+  {detail && <span class="comparison-status-detail">{detail}</span>}
+</div>

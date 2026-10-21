@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import AccessButton from '../../components/AccessButton.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; bigvu: Status }[] = [
+  { feature: 'Read while recording', note: 'Camera and scrolling script together', pal: { state: 'yes' }, bigvu: { state: 'yes' } },
+  { feature: 'Adjust the reading setup', note: 'Text size, pace and panel position', pal: { state: 'yes' }, bigvu: { state: 'yes' } },
+  { feature: 'No app-imposed recording time cap', note: 'Available storage and device conditions still matter', pal: { state: 'yes' }, bigvu: { state: 'no', detail: '9 min Free; 59 min AI Pro' } },
+  { feature: 'Local workflow without an account', note: 'Keep scripts and originals on your iPhone', pal: { state: 'yes' }, bigvu: { state: 'unknown', detail: 'Not verified' } },
+  { feature: 'Trim and crop', note: 'Refine the take after recording', pal: { state: 'yes' }, bigvu: { state: 'yes' } },
+  { feature: 'Keep the original after editing', note: 'Confirmed in our Teleprompter Pal device check', pal: { state: 'yes' }, bigvu: { state: 'unknown', detail: 'Not verified' } },
+  { feature: 'Save a video copy to your phone', note: 'Export access and output restrictions vary by plan', pal: { state: 'yes', detail: 'Pro' }, bigvu: { state: 'yes', detail: 'Plan limits apply' } },
+  { feature: 'Voice-controlled scrolling', note: 'BIGVU documents scrolling that pauses when you stop speaking', pal: { state: 'no' }, bigvu: { state: 'yes' } },
+  { feature: 'Built-in AI scripts and captions', note: 'AI and caption features depend on the BIGVU plan', pal: { state: 'no' }, bigvu: { state: 'yes' } },
+  { feature: 'Cloud workspace and social publishing', note: 'A connected production and publishing workflow', pal: { state: 'no' }, bigvu: { state: 'yes' } },
+  { feature: 'Free version available', note: 'See the free-plan boundaries below', pal: { state: 'yes' }, bigvu: { state: 'yes' } },
+  { feature: 'Released for iPhone', note: 'Teleprompter Pal requires iOS 18 or later; BIGVU requires iOS 16.6 or later', pal: { state: 'yes' }, bigvu: { state: 'yes' } },
+];
+---
+<Layout title="BIGVU Alternative for iPhone: Teleprompter Pal vs BIGVU" description="Compare Teleprompter Pal and BIGVU: features, free plans and Pro pricing. Record and edit free with Teleprompter Pal; Pro export starts at $59.99/year." type="article" modified="2026-10-21">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/bigvu-alternative/" />
+      <meta itemprop="dateModified" content="2026-10-21" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs BIGVU</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/bigvu-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs BIGVU</h1>
+        <p class="comparison-deck" itemprop="description">Looking for a BIGVU alternative for iPhone? <strong>Choose Teleprompter Pal for focused recording and a lower annual Pro price.</strong> Record and edit for free. Upgrade when you’re ready to export.</p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year. BIGVU’s published annual offers are $149 for Starter and $229 for AI Pro, which includes a broader video toolkit.</p>
+        <div class="comparison-action"><AccessButton /><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-21">21 October 2026</time>. <a href="#evidence">See what we tested.</a></p>
+      </header>
+
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#bigvu-fit">When BIGVU fits</a><a href="#evidence">Tests & sources</a></nav>
+
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal keeps the iPhone recording workflow focused. BIGVU adds a broader AI and publishing suite. Here’s what each includes.</p>
+        <p class="table-help" id="table-help">Scroll sideways on smaller screens. A dash means we haven’t verified the feature. <a href="#evidence">Sources and test details.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and BIGVU feature comparison">
+            <thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">BIGVU</th></tr></thead>
+            <tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus {...row.pal} /></td><td><ComparisonStatus {...row.bigvu} /></td></tr>)}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal Pro costs {offer.yearly}/year for the focused recording and export workflow. BIGVU’s paid annual plans cost more and include additional production tools.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>No app-imposed recording time cap</li><li>Playback, trim, crop and saved edits</li></ul><p class="comparison-plan-note">MP4 export and delivery require Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="bigvu-plan-title">
+            <h3 id="bigvu-plan-title">BIGVU</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Teleprompter recording</li><li>720p output with a watermark</li><li>Up to 9 minutes per video</li></ul></div>
+            <div class="comparison-plan-tier"><h4>Starter, annual</h4><p class="comparison-price">$149<span>/year</span></p><ul><li>1080p export without a watermark</li><li>Captions and a brand kit</li><li>Up to 9 minutes per video</li></ul></div>
+            <div class="comparison-plan-tier"><h4>AI Pro, annual</h4><p class="comparison-price">$229<span>/year</span></p><ul><li>HD and 4K export without a watermark</li><li>Caption editor and AI editing tools</li><li>Up to 59 minutes per video</li></ul></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars. Teleprompter Pal prices are for US in-app subscriptions; the trial depends on eligibility. BIGVU prices are published annual web offers, not month-to-month charges or a verified iPhone checkout quote. Features and regional prices differ. <a href="#evidence">Source details.</a></p>
+      </section>
+
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a focused iPhone workflow</h2>
+          <p>You have a script and want a usable recording. Teleprompter Pal keeps that job together: edit your words, rehearse, record with the text near the lens, then trim, crop and export. You do not need a Teleprompter Pal account for this local workflow. Scripts and original recordings stay on your iPhone. <a href="/support/">Teleprompter Pal’s workflow and support details</a>.</p>
+          <p>That focus is our reason to choose Teleprompter Pal when you already have an editor or a place to publish. You can finish the take in Teleprompter Pal and export an MP4 with Pro for your existing process. If you want a walkthrough first, see <a href="/guides/record-video-with-script-iphone/">how to record a video with a script on iPhone</a>.</p>
+          <p>Font size, pace and panel placement are adjustable, so you can bring the words close to the lens instead of reading across the whole screen. Teleprompter Pal’s current scrolling uses a set pace. It does not automatically follow your speech. For the setup itself, use our <a href="/guides/read-teleprompter-naturally-iphone/">guide to reading naturally on camera</a>.</p>
+        </section>
+
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>A good take can need a shorter opening or a different crop. In our Teleprompter Pal device check, an 11.90-second original became a 7.90-second square export. The original remained available, and we restored its full length and original crop afterward.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>We checked delivery to Photos, Files and Share Copy, then reopened the edit after restarting the app. This is evidence of Teleprompter Pal’s workflow, not proof that it exports faster or looks better than BIGVU. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized device-test record</a>.</p>
+        </section>
+
+        <section id="bigvu-fit" class="comparison-section">
+          <h2>When BIGVU is the better fit</h2>
+          <p>Choose BIGVU if you want automatic captions, AI script generation, branding or a connected cloud/web publishing process. Its iPhone listing describes a wider video-production toolkit than Teleprompter Pal currently offers. <a href="#bigvu-ios">iPhone feature source.</a></p>
+          <p>BIGVU also documents voice-controlled scrolling and script cues. Its description says Voice Control pauses scrolling when you stop talking; we have not tested that behavior or measured speech-tracking accuracy. If this is essential, try it with your pauses and background noise before choosing. <a href="#bigvu-mobile">Mobile control source.</a></p>
+          <p>Teleprompter Pal is our pick when your priority is local iPhone recording, reversible edits and a lower annual price for Pro export. You can rehearse, record and edit before paying for export.</p>
+        </section>
+
+        <section class="comparison-section">
+          <h2>Before you switch, try one complete take</h2>
+          <p>Use the same short script, camera and lighting. Set a readable text size, record through a pause, make one retake, trim the opening and export to the destination you actually use. Watch that exported file with sound. Check whether the original is still recoverable and which steps ask you to pay.</p>
+          <p>Our <a href="/tools/speech-time-calculator/">speech time calculator</a> can help you choose a short sample. If neither workflow fits, the <a href="/guides/best-teleprompter-apps-for-iphone/">iPhone teleprompter app shortlist</a> covers more options.</p>
+        </section>
+
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>This is a comparison by the team that makes Teleprompter Pal. It combines our internal Teleprompter Pal checks with BIGVU’s own documentation. We did not run the same-script task in both apps, so this page does not award comparative scores for speed, image quality or reliability.</p>
+          <ul class="comparison-source-list">
+            <li id="pal-tests"><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. Real camera/microphone probes covered short, 60-second and interrupted takes. Normal app interaction covered trim, crop and delivery. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Sanitized results and method</a>. These checks do not certify a public App Store build or long-session performance.</li>
+            <li id="pal-scope"><strong>Teleprompter Pal’s current offer.</strong> Recording and editing are free. Pro unlocks MP4 export and each delivery to Photos, Files or Share. US prices are $59.99/year with an eligible 3-day trial, $19.99/month and $9.99/week. AI scripts, automatic captions and social scheduling are not included.</li>
+            <li id="bigvu-ios"><strong>BIGVU Teleprompter Captions AI, Apple US listing.</strong> App ID 1124958568, version 2.86.1, checked 21 October 2026. Feature descriptions come from the developer, not our hands-on tests.</li>
+            <li id="bigvu-mobile"><strong>BIGVU Mobile Teleprompter product page.</strong> Checked 21 October 2026. Individual controls and voice behavior were not verified in the app.</li>
+            <li id="bigvu-plans"><strong>BIGVU official pricing page.</strong> Free, Starter and AI Pro web offers checked 21 October 2026. Web offers can differ from App Store billing. We have not verified BIGVU’s offline behavior, local account requirements or original-file retention.</li>
+          </ul>
+        </section>
+
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is Teleprompter Pal a free BIGVU alternative?</summary><p>You can create scripts, rehearse, record, play back, trim and crop for free in Teleprompter Pal. MP4 export and saving a copy to Photos, Files or Share require Pro. The annual Pro plan is $59.99, with a 3-day trial for eligible subscribers.</p></details>
+          <details><summary>Does Teleprompter Pal follow my voice?</summary><p>No. Teleprompter Pal currently scrolls at a pace you set. BIGVU documents Voice Control, but we have not tested it. Choose based on whether you want predictable set-speed prompting or need a voice-controlled mode.</p></details>
+          <details><summary>Can I keep using my existing video editor?</summary><p>Yes. Teleprompter Pal Pro exports an MP4 copy for the next step in your workflow. Our device check confirmed Photos, Files and Share Copy delivery. Try a sample in your chosen editor to check its compatibility.</p></details>
+        </section>
+      </div>
+
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record and edit for free with Teleprompter Pal. Pro adds MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><AccessButton /></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/guides/best-teleprompter-apps-for-iphone/">Explore the iPhone shortlist <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>

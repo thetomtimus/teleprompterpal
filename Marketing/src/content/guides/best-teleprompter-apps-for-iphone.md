@@ -57,18 +57,18 @@ These suggestions are editorial judgments based on the features and limitations 
 “Free to download” does not tell you whether the final clip has a watermark, whether your whole script fits, or which export requires payment.
 
 <table tabindex="0" aria-label="US prices and free limits">
-<caption>US pricing and documented limits checked 19 October 2026. Website offers and App Store purchases may differ.</caption>
+<caption>Prices and limits checked 19 October 2026; Teleprompter Pal and BIGVU updated 21 October. Website offers and App Store purchases may differ.</caption>
 <thead><tr><th scope="col">App</th><th scope="col">Free entry point</th><th scope="col">Paid reference</th></tr></thead>
 <tbody>
-<tr><th scope="row">1. Teleprompter Pal</th><td>iPhone app; <a href="/">see product details</a>.</td><td>Pricing is not listed on the current product page.</td></tr>
+<tr><th scope="row">1. Teleprompter Pal</th><td>Released for iPhone. Scripts, recording, playback and trim/crop are free.</td><td>Pro export: $59.99/year with an eligible 3-day trial, $19.99/month or $9.99/week. <a href="/compare/bigvu-alternative/#pricing">See plans</a>.</td></tr>
 <tr><th scope="row">2. Teleprompter for Video</th><td>Scripts up to 750 characters; listing says no watermark.</td><td>Support guide: $34.99/year or $8.99/month. Store lists multiple offers; check the in-app confirmation.</td></tr>
 <tr><th scope="row">3. PromptSmart Pro</th><td>No free download of this Pro edition.</td><td>$29.99 upfront in the US App Store, with optional in-app purchases.</td></tr>
 <tr><th scope="row">4. Teleprompter Pro</th><td>Free download with upgrades; website also links a separate free Teleprompter edition.</td><td>Website: $59.99/year or $159.99 one-time. Confirm which extras need a subscription.</td></tr>
-<tr><th scope="row">5. BIGVU</th><td>Website: up to 9 minutes per video, 720p and watermarked.</td><td>Website AI Pro: $229/year billed annually. Check the iPhone offer separately.</td></tr>
+<tr><th scope="row">5. BIGVU</th><td>Website: up to 9 minutes per video, 720p and watermarked.</td><td>Website Starter: $149/year; AI Pro: $229/year, billed annually. Check the iPhone offer separately.</td></tr>
 </tbody>
 </table>
 
-Sources: [Teleprompter for Video upgrade guide](https://teleprompterforvideo.com/support/what-upgrades-are-available), its [US App Store listing](https://apps.apple.com/us/app/teleprompter-for-video/id1139307843), [PromptSmart Pro US listing](https://apps.apple.com/us/app/promptsmart-pro-teleprompter/id894811756), [Teleprompter Pro pricing](https://teleprompterpro.com/pricing) and [US listing](https://apps.apple.com/us/app/teleprompter-pro/id941070561), and [BIGVU pricing](https://bigvu.tv/pricing).
+Sources: Teleprompter for Video upgrade guide, its US App Store listing, PromptSmart Pro US listing, Teleprompter Pro pricing and US listing, and BIGVU pricing.
 
 ## 1. Teleprompter Pal: recording and retakes on iPhone
 
@@ -89,15 +89,15 @@ Our internal device checks on **19 October 2026** used **Teleprompter Pal 0.6.17
 
 The capture checks included real camera/audio sessions and independent decoding of the originals. The edit/export check used the ordinary app interface and confirmed the saved file’s dimensions and duration. We have not measured comparative eye contact, speech-tracking accuracy or speed to a finished video. We do not use private camera footage as public review imagery.
 
-**Tradeoff:** these results support a specific recording/editing workflow. They do not justify calling Teleprompter Pal the best overall app. [Explore Teleprompter Pal](/).
+**Tradeoff:** these results support a specific recording/editing workflow. They do not justify calling Teleprompter Pal the best overall app. Recording and editing are free; export and delivery require Pro. [See Teleprompter Pal pricing](/compare/bigvu-alternative/#pricing).
 
 ## 2. Teleprompter for Video: short scripts and editing
 
 **Consider it for:** a brief talking video you want to caption or reframe on the phone.
 
-The developer documents recording, saving/sharing, trimming and resizing in its free tier, with a 750-character script limit. Its App Store description explicitly says these short recordings have no watermark. That makes it a useful first candidate for a short introduction or update. Count characters, including spaces, rather than assuming every one-minute script will fit. [Free-tier details](https://teleprompterforvideo.com/support/what-upgrades-are-available), [App Store description](https://apps.apple.com/us/app/teleprompter-for-video/id1139307843).
+The developer documents recording, saving/sharing, trimming and resizing in its free tier, with a 750-character script limit. Its App Store description explicitly says these short recordings have no watermark. That makes it a useful first candidate for a short introduction or update. Count characters, including spaces, rather than assuming every one-minute script will fit. Free-tier details, App Store description.
 
-The iPhone listing also advertises voice-assisted scrolling. We have not tested its tracking accuracy, microphone behavior or recovery after an ad-lib. Treat that as a feature to try with your own voice, not a guarantee of a clean take. [iPhone feature listing](https://apps.apple.com/us/app/teleprompter-for-video/id1139307843).
+The iPhone listing also advertises voice-assisted scrolling. We have not tested its tracking accuracy, microphone behavior or recovery after an ad-lib. Treat that as a feature to try with your own voice, not a guarantee of a clean take. iPhone feature listing.
 
 **Tradeoff:** longer scripts require an upgrade. The support guide and store expose different price options, so use the purchase confirmation on your phone for the actual offer. This is not a verified current one-time-purchase recommendation.
 
@@ -105,9 +105,9 @@ The iPhone listing also advertises voice-assisted scrolling. We have not tested 
 
 **Consider it for:** English-language delivery with pauses or deliberate departures from the script.
 
-PromptSmart advertises VoiceTrack as following your speech and waiting through pauses or ad-libs. [VoiceTrack overview](https://promptsmart.com/). The exact iPhone/iPad Pro listing specifies **English only**. It also lists Selfie Mode for reading beside the camera while recording HD video. We have not measured its recognition accuracy or latency. [PromptSmart Pro feature and language details](https://apps.apple.com/us/app/promptsmart-pro-teleprompter/id894811756).
+PromptSmart advertises VoiceTrack as following your speech and waiting through pauses or ad-libs. VoiceTrack overview. The exact iPhone/iPad Pro listing specifies **English only**. It also lists Selfie Mode for reading beside the camera while recording HD video. We have not measured its recognition accuracy or latency. PromptSmart Pro feature and language details.
 
-**Tradeoff:** the $29.99 download does not include every optional service. The listing describes an Extended subscription for features such as file sync and remote control. Check that distinction before budgeting for the workflow. PromptSmart’s wider product range should not be assumed to have the same language support, trial or pricing as this edition. [Pro purchase and subscription details](https://apps.apple.com/us/app/promptsmart-pro-teleprompter/id894811756).
+**Tradeoff:** the $29.99 download does not include every optional service. The listing describes an Extended subscription for features such as file sync and remote control. Check that distinction before budgeting for the workflow. PromptSmart’s wider product range should not be assumed to have the same language support, trial or pricing as this edition. Pro purchase and subscription details.
 
 A sensible trial task is a paragraph containing a pause and an unscripted sentence. Check whether the app holds the right place when you return. A feature name alone cannot tell you how it handles your accent, room or microphone.
 
@@ -115,19 +115,21 @@ A sensible trial task is a paragraph containing a pause and an unscripted senten
 
 **Consider it for:** reading from glass, using an external display, or letting someone else control the script.
 
-This is **Teleprompter Pro by Teleprompter Apps Ltd**, formerly Teleprompter Premium. Its official feature pages describe remote controls and a clean script feed over HDMI or AirPlay. Those controls make it a relevant candidate when the iPhone is part of a wider setup. The site also documents timed scrolling, cue points and adjustable margins. [Product features](https://teleprompterpro.com/features).
+This is **Teleprompter Pro by Teleprompter Apps Ltd**, formerly Teleprompter Premium. Its official feature pages describe remote controls and a clean script feed over HDMI or AirPlay. Those controls make it a relevant candidate when the iPhone is part of a wider setup. The site also documents timed scrolling, cue points and adjustable margins. Product features.
 
-**Tradeoff:** check the app and upgrade you are actually choosing. The website links a separate free Teleprompter edition, while the Pro App Store listing places camera recording among upgrade features. We have not verified the entitlement boundary on a fresh installation. The one-time option also should not be read as including every subscription extra: the listing specifically marks automatic SRT captions as requiring a Pro subscription. [Website plans](https://teleprompterpro.com/pricing), [Pro edition and upgrade details](https://apps.apple.com/us/app/teleprompter-pro/id941070561).
+**Tradeoff:** check the app and upgrade you are actually choosing. The website links a separate free Teleprompter edition, while the Pro App Store listing places camera recording among upgrade features. We have not verified the entitlement boundary on a fresh installation. The one-time option also should not be read as including every subscription extra: the listing specifically marks automatic SRT captions as requiring a Pro subscription. Website plans, Pro edition and upgrade details.
 
 ## 5. BIGVU: a broader video publishing workflow
 
 **Consider it for:** making captions, branding clips and publishing as part of the same workflow.
 
-BIGVU combines a teleprompter with video composition and social publishing. Its iPhone listing describes multiple takes, captions, cropping, camera-roll export and a cloud workflow. If you need those stages together, comparing it only as a scrolling reader misses much of what it offers. [BIGVU iPhone features](https://apps.apple.com/us/app/bigvu-teleprompter-captions-ai/id1124958568).
+BIGVU combines a teleprompter with video composition and social publishing. Its iPhone listing describes multiple takes, captions, cropping, camera-roll export and a cloud workflow. If you need those stages together, comparing it only as a scrolling reader misses much of what it offers. BIGVU iPhone features.
 
-**Tradeoff:** the free website plan includes a watermark and 720p output. The AI Pro annual offer lists 4K export without the watermark and a 59-minute recording allowance. The annual amount is $229, not a $19 month-to-month commitment. These are website terms, not a verified iOS purchase quote. [Current web plan details](https://bigvu.tv/pricing).
+**Tradeoff:** the free website plan includes a watermark and 720p output. The AI Pro annual offer lists 4K export without the watermark and a 59-minute recording allowance. The annual amount is $229, not a $19 month-to-month commitment. These are website terms, not a verified iOS purchase quote. Current web plan details.
 
 Before choosing the larger suite, write down which stage you want it to replace. If you already have an editor and publishing process, test whether the extra workflow helps your recording rather than buying on the number of features.
+
+For a closer look at that decision, [compare Teleprompter Pal and BIGVU](/compare/bigvu-alternative/), including the local recording workflow, reversible edits and current plan restrictions.
 
 ## Test your shortlist with the same script
 
@@ -145,6 +147,4 @@ The sample is **83 words and 423 characters**, including spaces. At 140 words pe
 
 Once an app passes those checks, [practice reading naturally on iPhone](/guides/read-teleprompter-naturally-iphone/) with the same setup. Work on the delivery before recording the full script.
 
-Choose the app that handles your real script and recovery steps. If Teleprompter Pal’s set-speed recording and retake workflow fits, [explore Teleprompter Pal](/). If you need voice following or a production rig, start with the relevant candidate above and complete a short export before committing to a plan.
-
-*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*
+Choose the app that handles your real script and recovery steps. If Teleprompter Pal’s set-speed recording and retake workflow fits, [see Teleprompter Pal’s plans](/compare/bigvu-alternative/#pricing). If you need voice following or a production rig, start with the relevant candidate above and complete a short export before committing to a plan.

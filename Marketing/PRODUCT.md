@@ -6,7 +6,7 @@ Prepare a script, rehearse with adjustable scrolling, record while reading, then
 
 The owner confirmed this site should focus on the iPhone app. The Mac app comes later. The website borrows measured design primitives and layout language from https://detail.co/, with original product content, the approved Teleprompter Pal icon and existing project imagery.
 
-Use release-focused iPhone app copy. Do not invent a trial, pricing, testimonials, awards, AI scripting, automatic editing or speech-following. The central CTA and QR code share the product-updates signup destination in src/data/site.ts. The owner requested an email-only signup that saves addresses using the simplest free option. Submissions go directly to the existing Second Wind HubSpot account’s Teleprompter Pal Early Access form, with no separate database or account required. Preserve the site’s existing publication workflow.
+Use release-focused iPhone app copy. Do not invent a trial, pricing, testimonials, awards, AI scripting, automatic editing or speech-following. The central CTA and QR code share the current pricing destination in src/data/site.ts; the existing product-updates email opt-in remains available. The owner requested an email-only signup that saves addresses using the simplest free option. Submissions go directly to the existing Second Wind HubSpot account’s Teleprompter Pal Early Access form, with no separate database or account required. Preserve the site’s existing publication workflow.
 
 The separate ../Website contains the existing published privacy and support sources. Preserve that directory and native app sources. The marketing build links to those existing live policy and support URLs.
 
@@ -22,3 +22,7 @@ Do not add visible AI-generation or provenance credit captions beneath illustrat
 ## Search publishing notifications · October 21, 2026
 
 After a production deployment adds or substantively updates a public page, use the scoped `scripts/submit_indexnow.py` command described in `docs/seo/indexnow.md`. Run its dry-run preflight, then submit only the explicit changed canonical URLs and save the response outside public files. Do not submit private drafts, the noindex reader, unchanged inventory or cosmetic-only edits. This command notifies participating search engines; it does not replace Google Search Console or prove indexing.
+
+## Approved comparison format and offer (21 October 2026)
+
+Follow `docs/comparison-format-contract.md` for future competitor pages. The owner approved publication of the compare hub and Teleprompter Pal vs BIGVU page. Teleprompter Pal is released for iPhone, with free recording/editing and Pro MP4 export/Photos/Files/Share delivery. US Pro prices are $59.99/year (3-day trial for eligible subscribers), $19.99/month and $9.99/week. No introductory trial on monthly/weekly plans. No public store URL is supplied; primary actions and QR show pricing. Do not add outbound competitor links, including nofollow. Use the existing product-updates form and anchors. Future comparisons require their own publication approval.

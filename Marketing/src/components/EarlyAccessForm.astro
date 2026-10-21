@@ -2,7 +2,7 @@
 import { site } from '../data/site';
 import Icon from './Icon.astro';
 ---
-<form class="signup-form" data-signup-form data-endpoint={site.signupEndpoint} aria-label="Teleprompter Pal updates signup" method="post" action={site.signupFallbackUrl}>
+<form class="signup-form" data-signup-form data-endpoint={site.signupEndpoint} aria-label="Teleprompter Pal product updates signup" method="post" action={site.signupFallbackUrl}>
   <fieldset class="signup-fields">
     <legend class="visually-hidden">Get Teleprompter Pal updates</legend>
     <label for="signup-email">Email address</label>
@@ -10,7 +10,7 @@ import Icon from './Icon.astro';
       <input id="signup-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="254" required placeholder="you@example.com" aria-describedby="signup-note signup-status" />
       <button class="button button-primary" type="submit" disabled><span data-submit-label>Join the list</span><Icon name="arrowRight" size={20} /></button>
     </div>
-    <p id="signup-note" class="signup-note">By joining, you agree to receive Teleprompter Pal product updates. Ask us to remove you anytime. <a href={site.privacyUrl + '#app-updates-signups'}>Privacy policy</a></p>
+    <p id="signup-note" class="signup-note">By joining, you agree to receive emails about Teleprompter Pal product updates. Ask us to remove you anytime. <a href={site.privacyUrl + '#app-updates-signups'}>Privacy policy</a></p>
   </fieldset>
   <p id="signup-status" class="signup-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
   <noscript><p class="signup-note">JavaScript is off. <a href={site.signupFallbackUrl}>Use our secure signup form</a> to join the list.</p></noscript>
@@ -74,7 +74,7 @@ import Icon from './Icon.astro';
       form.dataset.state = 'success';
       form.reset();
       fields.hidden = true;
-      status.textContent = 'You’re on the list. You’ll receive Teleprompter Pal product updates by email.';
+      status.textContent = 'You’re on the list. We’ll email you Teleprompter Pal news and updates.';
       status.focus();
     } catch (error) {
       form.dataset.state = 'error';

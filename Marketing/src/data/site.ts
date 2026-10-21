@@ -2,13 +2,14 @@ export const site = {
   name: 'Teleprompter Pal',
   domain: 'teleprompterpal.com',
   title: 'Teleprompter App for iPhone | Teleprompter Pal',
-  description: 'Read your script while recording on iPhone, then trim, crop and export your video with Teleprompter Pal.',
+  description: 'Read your script while recording on iPhone with Teleprompter Pal. Record and edit for free; Pro unlocks MP4 export and saving to Photos, Files or Share.',
   freeReaderUrl: 'https://freeteleprompteronline.com/#script',
   supportEmail: 'contact@teleprompterpal.com',
-  // Product-update links lead to the email signup on this page.
+  // Retain the existing email-updates anchor; primary actions show current plans.
   accessUrl: '#app-updates',
-  accessLabel: 'Get app updates',
-  accessNote: 'For iPhone · iOS 18 or later',
+  pricingUrl: '/compare/bigvu-alternative/#pricing',
+  accessLabel: 'See pricing',
+  accessNote: 'For iPhone · Free recording and editing',
   privacyUrl: 'https://teleprompterpal.com/privacy/',
   supportUrl: 'https://teleprompterpal.com/support/',
   // Public form identifiers, not credentials. Submissions are saved in HubSpot.

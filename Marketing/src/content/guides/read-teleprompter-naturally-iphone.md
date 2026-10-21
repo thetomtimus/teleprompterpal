@@ -46,7 +46,7 @@ Raise or lower the support so the lens is near your eye level. Stay in a positio
 
 The text and lens still occupy different places. A phone app does not make that separation disappear. There is no font size or filming distance that works for every phone, eyesight and framing.
 
-Production company Four Winds Creative also recommends checking eye line, rehearsing aloud and changing wording that trips you up. Our exercise below turns those broad checks into a repeatable phone-recording task. [Read its production guidance](https://fourwindscreative.com/on-camera-101-how-to-use-a-teleprompter-like-a-pro/).
+Production company Four Winds Creative also recommends checking eye line, rehearsing aloud and changing wording that trips you up. Our exercise below turns those broad checks into a repeatable phone-recording task. Read its production guidance.
 
 ## Compare two short takes, changing one thing
 
@@ -122,6 +122,4 @@ Listen for missing words, clipped starts and background sound. Play an exported 
 
 Keep the version that improved the specific problem. Use that setup for the next section of your script, then check again if you change the phone orientation or filming position.
 
-If you want to keep scripts, recording and basic trim/crop work together on iPhone, [explore Teleprompter Pal](/). It is an iPhone app with manual scrolling. You can use the practice exercise above with the app you already have.
-
-*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*
+If you want to keep scripts, recording and basic trim/crop work together on iPhone, [see Teleprompter Pal’s plans](/compare/bigvu-alternative/#pricing). It uses manual scrolling. Recording and editing are free; export requires Pro. You can use the practice exercise above with the app you already have.

@@ -38,7 +38,7 @@ shareImage:
 draft: false
 ---
 
-Teleprompter Pal supports iPhone with iOS 18 or later. [Explore its script-to-recording workflow](/). If you need to record at your computer today, use the [browser camera workflow](https://freeteleprompteronline.com/guides/teleprompter-with-camera/). Both products are made by the Teleprompter Pal team.
+Teleprompter Pal is available for iPhone with iOS 18 or later. Recording and editing are free; Pro unlocks MP4 export and delivery. [See Teleprompter Pal’s plans](/compare/bigvu-alternative/#pricing). If you need to record at your computer today, use the [browser camera workflow](https://freeteleprompteronline.com/guides/teleprompter-with-camera/). Both products are made by the Teleprompter Pal team.
 
 ## Prepare a script you can say aloud
 
@@ -82,7 +82,7 @@ Change one thing at a time if the test is uncomfortable. Moving the text can hel
 
 When you stumble, leave a pause and return to the beginning of the thought. You can repeat that sentence within the same recording, then remove the unwanted lead-in later. For a completely fresh attempt, stop and save the take before recording again.
 
-The text’s Play/Pause and Restart controls operate the prompt. **Restarting the text does not end an active recording.** In Teleprompter Pal they are in the lower-left controls menu. Check the red recording timer and use the camera’s stop control when you want to finish the video.
+The text’s Play/Pause and Restart controls operate the prompt. **Restarting the text does not end an active recording.** The text controls are in the lower-left controls menu. Check the red recording timer and use the camera’s stop control when you want to finish the video.
 
 After an interruption, check the saved recording and the app’s state before continuing. Do not assume that recording resumed. Keep any usable take until you have opened and checked its replacement.
 
@@ -104,6 +104,4 @@ The current controls were subsequently checked in the Simulator for build 0.6.18
 
 Try a short recording on your own device before a time-sensitive shoot. Scripts and recordings stay on the iPhone in this workflow, with no account required. Keep a saved export of footage you need outside the app.
 
-[Explore Teleprompter Pal](/) for the iPhone recording workflow. If you are evaluating several options, [compare iPhone teleprompter apps](/guides/best-teleprompter-apps-for-iphone/) by the recording and export tasks you need.
-
-*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*
+[See Teleprompter Pal’s plans](/compare/bigvu-alternative/#pricing) for free recording and editing, with Pro export. If you are evaluating several options, [compare iPhone teleprompter apps](/guides/best-teleprompter-apps-for-iphone/) by the recording and export tasks you need.

@@ -10,12 +10,14 @@ import crop from '@phosphor-icons/core/assets/regular/crop.svg?raw';
 import share from '@phosphor-icons/core/assets/regular/export.svg?raw';
 import camera from '@phosphor-icons/core/assets/regular/video-camera.svg?raw';
 import check from '@phosphor-icons/core/assets/regular/check.svg?raw';
+import x from '@phosphor-icons/core/assets/regular/x.svg?raw';
+import minus from '@phosphor-icons/core/assets/regular/minus.svg?raw';
 import lock from '@phosphor-icons/core/assets/regular/lock-simple.svg?raw';
 import caret from '@phosphor-icons/core/assets/regular/caret-down.svg?raw';
 import menu from '@phosphor-icons/core/assets/regular/list.svg?raw';
 import iphone from '@phosphor-icons/core/assets/regular/device-mobile.svg?raw';
 import scissors from '@phosphor-icons/core/assets/regular/scissors.svg?raw';
-const icons = { arrowRight, arrowDown, play, pause, restart, text, sliders, crop, share, camera, check, lock, caret, menu, iphone, scissors };
+const icons = { arrowRight, arrowDown, play, pause, restart, text, sliders, crop, share, camera, check, x, minus, lock, caret, menu, iphone, scissors };
 interface Props { name: keyof typeof icons; size?: number; class?: string; }
 const { name, size = 20, class: className = '' } = Astro.props;
 ---

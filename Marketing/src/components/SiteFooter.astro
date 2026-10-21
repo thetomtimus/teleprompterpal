@@ -2,14 +2,14 @@
 import { site } from '../data/site';
 const home = Astro.url.pathname === '/';
 const section = (id: string) => `${home ? '' : '/'}#${id}`;
-const accessUrl = home ? site.accessUrl : `/${site.accessUrl}`;
+const accessUrl = site.pricingUrl;
 ---
 <footer class="site-footer"><div class="container">
   <div class="footer-main">
     <div><a href="/" class="wordmark" aria-label="Teleprompter Pal home"><img src="/images/app-icon.webp" alt="" width="32" height="32" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a><p>Keep your eyes on the lens.<br />Keep your words close.</p></div>
     <nav aria-label="Footer navigation">
-      <div><span>The app</span><a href={section('how-it-works')}>How it works</a><a href={section('demo')}>Try the prompter</a><a href={site.freeReaderUrl}>Free online teleprompter</a><a href={accessUrl}>Get app updates</a></div>
-      <div><span>Here to help</span><a href="/tools/">Free tools</a><a href="/tools/speech-time-calculator/">Speech time calculator</a><a href="/guides/">Guides</a><a href="/about/">About &amp; editorial policy</a><a href={site.supportUrl}>Support</a><a href={`mailto:${site.supportEmail}`}>Contact us</a><a href={site.privacyUrl}>Privacy policy</a></div>
+      <div><span>The app</span><a href={section('how-it-works')}>How it works</a><a href={section('demo')}>Try the prompter</a><a href={site.freeReaderUrl}>Free online teleprompter</a><a href={accessUrl}>Plans and pricing</a></div>
+      <div><span>Here to help</span><a href="/tools/">Free tools</a><a href="/tools/speech-time-calculator/">Speech time calculator</a><a href="/guides/">Guides</a><a href="/compare/">Compare apps</a><a href="/about/">About &amp; editorial policy</a><a href={site.supportUrl}>Support</a><a href={`mailto:${site.supportEmail}`}>Contact us</a><a href={site.privacyUrl}>Privacy policy</a></div>
     </nav>
   </div>
   <div class="footer-bottom"><span>© {new Date().getFullYear()} Second Wind, LLC. All rights reserved.</span><span>Made for your next take.</span></div>

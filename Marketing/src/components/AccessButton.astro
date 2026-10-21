@@ -3,8 +3,8 @@ import { site } from '../data/site';
 import Icon from './Icon.astro';
 interface Props { compact?: boolean; }
 const { compact = false } = Astro.props;
-const accessUrl = Astro.url.pathname === '/' ? site.accessUrl : `/${site.accessUrl}`;
+const accessUrl = site.pricingUrl;
 ---
-<a href={accessUrl} class:list={['button', 'button-primary', { 'button-compact': compact }]} aria-label="Sign up for Teleprompter Pal product updates">
+<a href={accessUrl} class:list={['button', 'button-primary', { 'button-compact': compact }]} aria-label="View Teleprompter Pal pricing">
   {site.accessLabel}<Icon name="arrowRight" size={compact ? 16 : 20} />
 </a>

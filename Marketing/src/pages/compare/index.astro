@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import '../../styles/compare.css';
+---
+<Layout title="Compare iPhone Teleprompter Apps | Teleprompter Pal" description="Compare Teleprompter Pal with BIGVU, explore the iPhone app shortlist, and choose a workflow for prompting, recording and exporting your next video.">
+  <SiteHeader />
+  <main id="main" class="container compare-main compare-index">
+    <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Compare</span></nav>
+    <header class="compare-index-intro">
+      <h1>Compare iPhone<br />teleprompter apps.</h1>
+      <p>Find the workflow that fits your next take. Start with a specific app, or explore the wider iPhone shortlist.</p>
+    </header>
+    <article class="comparison-directory-row" aria-labelledby="bigvu-comparison">
+      <div class="directory-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="64" height="64" alt="" /><span>vs</span><img src="/images/compare/bigvu-app-icon.jpg" width="64" height="64" alt="" /></div>
+      <div>
+        <h2 id="bigvu-comparison"><a href="/compare/bigvu-alternative/">Teleprompter Pal vs BIGVU</a></h2>
+        <p>A focused iPhone recording workflow or a broader video suite? Compare prompting, reversible edits, exports, AI tools and current pricing.</p>
+        <a class="compare-text-link" href="/compare/bigvu-alternative/">Compare Teleprompter Pal and BIGVU <Icon name="arrowRight" size={18} /></a>
+      </div>
+      <p class="directory-scope"><span>Teleprompter Pal device checks</span><span>BIGVU official sources</span><time datetime="2026-10-21">Checked 21 Oct 2026</time></p>
+    </article>
+    <section class="compare-hub-guide" aria-labelledby="shortlist-title">
+      <div><h2 id="shortlist-title">Still making your shortlist?</h2><p>Our numbered guide covers Teleprompter Pal, PromptSmart Pro, Teleprompter Pro, Teleprompter for Video and BIGVU, with the tradeoffs to check before choosing.</p><a class="compare-text-link" href="/guides/best-teleprompter-apps-for-iphone/">Best teleprompter apps for iPhone <Icon name="arrowRight" size={18} /></a></div>
+      <div class="comparison-standard"><h3>How we compare</h3><p>We make Teleprompter Pal. Our comparisons separate internal Teleprompter Pal tests from competitors’ documented features, identify plan restrictions and explain when another app is a better fit.</p><p>Teleprompter Pal is available for iPhone. Record and edit for free; upgrade to Pro when you want to export. <a href="/compare/bigvu-alternative/#pricing">Compare the plans.</a></p></div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>

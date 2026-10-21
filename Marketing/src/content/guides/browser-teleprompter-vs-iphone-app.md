@@ -91,12 +91,10 @@ Write down the actual friction. “Finding my place after a retake” is a bette
 
 ## Where Teleprompter Pal fits today
 
-Teleprompter Pal is an iPhone app. Its workflow includes script storage, camera recording, trim/crop and MP4 export. Scrolling in Teleprompter Pal uses manual controls. Treat voice following as planned functionality when deciding whether the app meets your needs now.
+Teleprompter Pal is an iPhone app. Its workflow includes script storage, camera recording, trim/crop and MP4 export. Scrolling uses manual controls. Treat voice following as planned functionality when deciding whether the app meets your needs now.
 
-If you want to try that iPhone workflow, [explore Teleprompter Pal](https://teleprompterpal.com/). If you need a reader immediately, you can use the browser tool without installing an app.
+If you want to try that iPhone workflow, [see Teleprompter Pal’s plans](/compare/bigvu-alternative/#pricing). Recording and editing are free; MP4 export and delivery require Pro. You can also use the browser tool for scrolling text.
 
 Choose the setup that lets you read from the right place and recover from a mistake with the least fuss. Keep the short test clip: it gives you something concrete to compare when you change the arrangement.
 
 *Teleprompter Pal also makes Free Teleprompter Online. Product availability checked 19 October 2026.*
-
-*Updated 21 October 2026 to use the full Teleprompter Pal name and current product wording. Competitor source-check and internal device-test dates above are unchanged.*

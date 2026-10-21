@@ -95,14 +95,14 @@ const authorInitials = guide.data.author.name.split(/\s+/).map(part => part[0]).
       <p class="guide-editorial">Published by the Teleprompter Pal team. Read <a href="/about/#editorial">how our guides are prepared and checked</a>, including illustration and testing limits. <a href="/about/#corrections">Send a correction</a>.</p>
       <nav class="guide-end" aria-label="More guides"><a href="/guides/">Back to all guides</a></nav>
       </div>
-      <aside class="guide-sidebar" aria-label="Guide navigation and product updates">
+      <aside class="guide-sidebar" aria-label="Guide navigation and product plans">
         <div class="guide-sidebar-inner">
           {sections.length >= 3 && <nav class="guide-contents" aria-labelledby="contents-heading"><h2 id="contents-heading">On this page</h2><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></nav>}
           <section class="guide-sidebar-cta" aria-labelledby="sidebar-cta-heading">
             <h2 id="sidebar-cta-heading">Recording on iPhone?</h2>
             <p>Keep your script, recording and retakes together in Teleprompter Pal.</p>
-            <a href={`/${site.accessUrl}`}>Get app updates <Icon name="arrowRight" size={18} /></a>
-            <p class="guide-sidebar-note">For iPhone. Manual scrolling.</p>
+            <a href={site.pricingUrl}>See pricing <Icon name="arrowRight" size={18} /></a>
+            <p class="guide-sidebar-note">Free recording and editing. Pro export.</p>
           </section>
         </div>
       </aside>

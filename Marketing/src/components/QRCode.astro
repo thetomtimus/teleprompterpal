@@ -3,14 +3,14 @@ import QRCode from 'qrcode';
 import { site } from '../data/site';
 interface Props { floating?: boolean; }
 const { floating = false } = Astro.props;
-const signupUrl = new URL(site.accessUrl, `https://${site.domain}/`).href;
+const signupUrl = new URL(site.pricingUrl, `https://${site.domain}/`).href;
 const qr = await QRCode.toString(signupUrl, { type: 'svg', errorCorrectionLevel: 'M', margin: 3, width: 168, color: { dark: '#0f0f0f', light: '#ffffff' } });
 ---
-<aside class:list={['qr-code', { 'qr-floating': floating }]} aria-label="Scan to get Teleprompter Pal updates">
-  <span class="qr-caption">scan for app updates</span>
+<aside class:list={['qr-code', { 'qr-floating': floating }]} aria-label="Scan to view Teleprompter Pal pricing">
+  <span class="qr-caption">scan for pricing</span>
   <span class="qr-arrow" aria-hidden="true">↓</span>
-  <a class="qr-link" href={site.accessUrl} aria-label="Open the Teleprompter Pal updates signup, same destination as QR code">
-    <span class="qr-art" role="img" aria-label="QR code opening the Teleprompter Pal updates signup form" set:html={qr} />
+  <a class="qr-link" href={site.pricingUrl} aria-label="View Teleprompter Pal pricing, same destination as QR code">
+    <span class="qr-art" role="img" aria-label="QR code opening Teleprompter Pal pricing" set:html={qr} />
   </a>
-  <span class="qr-note">Get Teleprompter Pal updates</span>
+  <span class="qr-note">Free recording. Pro export.</span>
 </aside>
