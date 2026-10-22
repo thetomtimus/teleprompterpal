@@ -54,6 +54,8 @@ Also considering Teleprompter.com? [Compare Teleprompter Pal and Teleprompter.co
 
 Working with a shared script or voice prompting? [Compare Teleprompter Pal and Speakflow](/compare/speakflow-alternative/) for local retakes versus a browser workspace.
 
+Need subtitles and AI post-production? [Compare Teleprompter Pal and Captions](/compare/captions-alternative/) for free prompting, reversible retakes and the different export gates.
+
 These suggestions are editorial judgments based on the features and limitations detailed below. If you are still deciding which device should hold the script, compare a [browser teleprompter or iPhone app](/guides/browser-teleprompter-vs-iphone-app/) first.
 
 ## Free limits and prices to check
