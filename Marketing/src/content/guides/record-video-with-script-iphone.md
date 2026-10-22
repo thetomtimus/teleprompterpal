@@ -42,7 +42,7 @@ Teleprompter Pal is available for iPhone with iOS 18 or later. Recording and edi
 
 ## Prepare a script you can say aloud
 
-Create or open a script in Teleprompter Pal’s Scripts library. Give the take a recognizable name, such as “Introduction, first pass,” so you can find it after recording. Read the wording aloud once before adjusting the reader. A sentence that is difficult to say will remain difficult at a slower scroll speed.
+Create or open a script in Teleprompter Pal’s Scripts library. Give the take a recognizable name, such as “Introduction, first pass,” so you can find it after recording. Read the wording aloud once before adjusting the reader. A sentence that is difficult to say will remain difficult at a slower scroll speed. For a recurring video format, [reuse a master script without overwriting it](/guides/reuse-teleprompter-script-iphone/) rather than adapting the same library entry every time.
 
 Put a paragraph break where you want a breath or a change of thought. Spell out a number if its written form makes you hesitate. Keep filming directions separate from spoken words so you do not accidentally read them.
 

@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-22",
+  "checked": "2026-10-23",
   "assets": [
     {
       "file": "public/images/guides/browser-teleprompter-vs-iphone-app.png",
@@ -738,6 +738,90 @@
       "status": "approved_for_publication",
       "provenance_sidecar": "docs/article-artwork/short-takes-objects-v1/provenance.json",
       "prompt_file": "docs/article-artwork/short-takes-objects-v1/prompt.json"
+    },
+    {
+      "file": "public/images/guides/reusable-script-objects-v1-cover-1600.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        1600,
+        901
+      ],
+      "bytes": 47896,
+      "sha256": "38e5f50125f971c72609fbec8f4baa2c268bcd2b55bef426e5aff6e394e7588c",
+      "origin": "Original built-in image_gen people-free editorial still life generated October 23, 2026. Decorative artwork, not product UI or recording evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/reusable-script-objects-v1/provenance.json",
+      "prompt_file": "docs/article-artwork/reusable-script-objects-v1/prompt.json"
+    },
+    {
+      "file": "public/images/guides/reusable-script-objects-v1-cover-1000.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        1000,
+        563
+      ],
+      "bytes": 19602,
+      "sha256": "e622bf67123ef1c145d8085aec9fba6664614d31b1a0c3adfe82ee32326ebff4",
+      "origin": "Original built-in image_gen people-free editorial still life generated October 23, 2026. Decorative artwork, not product UI or recording evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/reusable-script-objects-v1/provenance.json",
+      "prompt_file": "docs/article-artwork/reusable-script-objects-v1/prompt.json"
+    },
+    {
+      "file": "public/images/guides/reusable-script-objects-v1-cover-640.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        640,
+        360
+      ],
+      "bytes": 8194,
+      "sha256": "bc7b04a5bf963e29310e0d9b36329b71154094d6a4c1ce3816fd73d6cc4a8a4e",
+      "origin": "Original built-in image_gen people-free editorial still life generated October 23, 2026. Decorative artwork, not product UI or recording evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/reusable-script-objects-v1/provenance.json",
+      "prompt_file": "docs/article-artwork/reusable-script-objects-v1/prompt.json"
+    },
+    {
+      "file": "public/images/guides/reusable-script-objects-v1-cover-mobile.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        900,
+        1600
+      ],
+      "bytes": 17436,
+      "sha256": "5501416e7b450b7c3ba1d57f63678e7fca9d8eed32ccb6eee57071a5d40666b9",
+      "origin": "Original built-in image_gen people-free editorial still life generated October 23, 2026. Decorative artwork, not product UI or recording evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/reusable-script-objects-v1/provenance.json",
+      "prompt_file": "docs/article-artwork/reusable-script-objects-v1/prompt.json"
+    },
+    {
+      "file": "public/images/guides/reusable-script-objects-v1-thumbnail.webp",
+      "role": "Article thumbnail",
+      "dimensions": [
+        640,
+        361
+      ],
+      "bytes": 14318,
+      "sha256": "67207310cb7315ed3c847c233c82537ee92278355b1ed54a4d1e86f09b1e4a4f",
+      "origin": "Original built-in image_gen people-free editorial still life generated October 23, 2026. Decorative artwork, not product UI or recording evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/reusable-script-objects-v1/provenance.json",
+      "prompt_file": "docs/article-artwork/reusable-script-objects-v1/prompt.json"
+    },
+    {
+      "file": "public/images/guides/reusable-script-objects-v1-social.png",
+      "role": "Article social image",
+      "dimensions": [
+        1200,
+        630
+      ],
+      "bytes": 745582,
+      "sha256": "f664c1e597be8f78c3aa7029f6141b4a6cf1a874554e846a04de866349e0503a",
+      "origin": "Original built-in image_gen people-free editorial still life generated October 23, 2026. Decorative artwork, not product UI or recording evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/reusable-script-objects-v1/provenance.json",
+      "prompt_file": "docs/article-artwork/reusable-script-objects-v1/prompt.json"
     }
   ],
   "inline_diagram": {

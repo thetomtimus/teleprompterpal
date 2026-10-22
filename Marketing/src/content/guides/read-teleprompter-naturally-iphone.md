@@ -88,7 +88,7 @@ Here is an original editing example.
 >
 > Play it back and listen to the sound.
 
-The rewrite names actions instead of asking you to carry one long sentence. The line breaks show places to finish a thought; you do not have to pause after every line. Keep technical or approved wording when accuracy requires it, and simplify the sentences around it.
+The rewrite names actions instead of asking you to carry one long sentence. The line breaks show places to finish a thought; you do not have to pause after every line. Keep technical or approved wording when accuracy requires it, and simplify the sentences around it. If you reuse that script for another video, [keep the original and edit a working copy](/guides/reuse-teleprompter-script-iphone/) so the earlier wording remains available.
 
 Use emphasis where the meaning needs it. You do not need a gesture or a change of tone on every sentence.
 

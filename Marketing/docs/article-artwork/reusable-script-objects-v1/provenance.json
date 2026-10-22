@@ -1,0 +1,67 @@
+{
+  "tool": "image_gen",
+  "mode": "built-in",
+  "date_local": "2026-10-23",
+  "prompt": "Use case: photorealistic-natural. Asset type: original people-free cover and matching thumbnail for a Teleprompter Pal article about reusing a master script as independent working copies on iPhone. Create a realistic editorial still-life photograph in a wide 16:9 composition, soft directional studio daylight and tactile paper, matte graphite and glass. On a near-black charcoal desk (#0f0f0f), show one closed charcoal notebook with cream page edges, two separate cream script sheets with faint abstract grey horizontal lines and small lavender paperclips, and one unbranded graphite smartphone resting at a low angle on a minimal stand with a plain dark screen. These objects form one SMALL compact group in the upper center, all entirely between 31% and 69% of image width and 5% and 36% of image height. Zoom out substantially; keep the entire notebook, both sheets, paperclips, phone and stand fully visible. The bottom 60% is quiet empty charcoal tabletop; outer left and right quarters are mostly empty. Use restrained soft lavender accents, physically believable materials, subtle shadows and crisp paper edges. The separate notebook and sheets suggest a master and working copies, without any arrows or words. No people, faces, hands, silhouettes, portraits, human reflections, logos, readable text, letters, numbers, watermark, cloud symbols, folders, screenshots or fabricated app interface. No CGI plastic, neon, glowing halo or clutter. Opaque background. This is decorative topic art, not a product screenshot or recording test.",
+  "source": "/Users/thomas/.codex/generated_images/01a15277-ae0d-7da0-aef1-f4eefc027452/exec-a323ff41-690c-444f-89bf-6fa765a68488.png",
+  "original": "original.png",
+  "source_dimensions": [
+    1672,
+    941
+  ],
+  "source_sha256": "23405fa181a8689a8bc180787fb38992cf46bfa83e463dfe0eb109883e8ea9fc",
+  "primary_source_object_bounds": [
+    398,
+    38,
+    1250,
+    465
+  ],
+  "people_free": true,
+  "alt": "Notebook beside two script sheets and an unbranded phone on a dark desk.",
+  "responsive_method": "LANCZOS desktop exports; full source fitted to top of 900x1600 canvas. Thumbnail crop [310,0,1330,575] contains all primary objects. Social full source fitted at1120px, centered on1200x630 canvas.",
+  "exports": [
+    {
+      "file": "reusable-script-objects-v1-cover-1600.webp",
+      "width": 1600,
+      "height": 901,
+      "bytes": 47896,
+      "sha256": "38e5f50125f971c72609fbec8f4baa2c268bcd2b55bef426e5aff6e394e7588c"
+    },
+    {
+      "file": "reusable-script-objects-v1-cover-1000.webp",
+      "width": 1000,
+      "height": 563,
+      "bytes": 19602,
+      "sha256": "e622bf67123ef1c145d8085aec9fba6664614d31b1a0c3adfe82ee32326ebff4"
+    },
+    {
+      "file": "reusable-script-objects-v1-cover-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 8194,
+      "sha256": "bc7b04a5bf963e29310e0d9b36329b71154094d6a4c1ce3816fd73d6cc4a8a4e"
+    },
+    {
+      "file": "reusable-script-objects-v1-cover-mobile.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 17436,
+      "sha256": "5501416e7b450b7c3ba1d57f63678e7fca9d8eed32ccb6eee57071a5d40666b9"
+    },
+    {
+      "file": "reusable-script-objects-v1-thumbnail.webp",
+      "width": 640,
+      "height": 361,
+      "bytes": 14318,
+      "sha256": "67207310cb7315ed3c847c233c82537ee92278355b1ed54a4d1e86f09b1e4a4f"
+    },
+    {
+      "file": "reusable-script-objects-v1-social.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 745582,
+      "sha256": "f664c1e597be8f78c3aa7029f6141b4a6cf1a874554e846a04de866349e0503a"
+    }
+  ],
+  "public_metadata": "Social PNG retains origin metadata; full Prompt text removed for publication. Original prompt remains in private prompt.json/provenance.json. IDAT pixel data unchanged."
+}
