@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Read while recording', note: 'Camera and script together on iPhone', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'yes', detail: 'Check the edition and upgrade' } },
+  { feature: 'Set the pace and text size', note: 'Adjust the reader for your filming position', pal: { state: 'yes' }, competitor: { state: 'yes' } },
+  { feature: 'Trim and crop inside the app', note: 'Refine the take before paying for export', pal: { state: 'yes', detail: 'Free editing' }, competitor: { state: 'unknown', detail: 'Not verified' } },
+  { feature: 'Recover the original after editing', note: 'Confirmed in our saved Teleprompter Pal device check', pal: { state: 'yes' }, competitor: { state: 'unknown', detail: 'Not verified' } },
+  { feature: 'Save or share a recorded video', note: 'Delivery access varies by offer and edition', pal: { state: 'yes', detail: 'Pro' }, competitor: { state: 'yes', detail: 'Save/Share documented' } },
+  { feature: 'Import PDF and Word scripts', note: 'Teleprompter Pal currently imports plain-text files', pal: { state: 'no' }, competitor: { state: 'yes', detail: 'Import limits vary by edition' } },
+  { feature: 'Keyboard and remote prompting', note: 'Advanced controls and key assignments depend on the upgrade', pal: { state: 'no' }, competitor: { state: 'yes' } },
+  { feature: 'Saved cue points', note: 'Jump between marked positions in a script', pal: { state: 'no' }, competitor: { state: 'yes' } },
+  { feature: 'Finish scrolling in a set duration', note: 'Timed scrolling differs from choosing a constant pace', pal: { state: 'no' }, competitor: { state: 'yes' } },
+  { feature: 'Clean script feed over HDMI or AirPlay', note: 'Separate prompting output for a monitor or teleprompter rig', pal: { state: 'no' }, competitor: { state: 'yes', detail: 'Pro output options' } },
+  { feature: 'Generate SRT captions from the script', note: 'Teleprompter Pro records scroll timings; this is not speech transcription', pal: { state: 'no' }, competitor: { state: 'yes', detail: 'Subscription per Pro listing' } },
+  { feature: 'Released for iPhone', note: 'Teleprompter Pal: iOS 18+; this Teleprompter Pro edition: iOS 16+', pal: { state: 'yes' }, competitor: { state: 'yes' } },
+];
+---
+<Layout title="Teleprompter Pal vs Teleprompter Pro | iPhone Comparison" description="Compare Teleprompter Pal and Teleprompter Pro: recording, reversible edits, remotes, document imports and US pricing. See the free-edition distinction." type="article" published="2026-10-22" modified="2026-10-22">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/teleprompter-pro-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-22" />
+      <meta itemprop="dateModified" content="2026-10-22" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs Teleprompter Pro</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/teleprompter-pro-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs Teleprompter Pro</h1>
+        <p class="comparison-deck" itemprop="description">Looking for a Teleprompter Pro alternative for iPhone? <strong>Choose Teleprompter Pal for recording, retakes and reversible edits.</strong> Work on your take for free, keep the original, then use Pro for MP4 export.</p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro export is {offer.yearly}/year. Teleprompter Pro’s website lists $59.99/year or $159.99 forever for a broader prompting toolkit. These are different feature bundles.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-22">22 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When Teleprompter Pro fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for an iPhone take you want to record, review and refine while retaining the original. Teleprompter Pro is worth considering for remote prompting, cue points and a separate display.</p>
+        <p class="table-help" id="table-help">This is Teleprompter Pro by Teleprompter Apps Ltd, formerly Teleprompter Premium. The developer also offers a separate free Teleprompter app. Scroll sideways on smaller screens; a dash means unverified. <a href="#editions">Edition details.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and Teleprompter Pro feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">Teleprompter Pro</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus {...row.pal} /></td><td><ComparisonStatus {...row.competitor} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal offers free recording and editing, then Pro export. The annual price matches Teleprompter Pro’s published web offer; Teleprompter Pro also advertises a one-time purchase.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text-size limit: 1 MB. MP4 export and Photos, Files or Share delivery require Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">Teleprompter Pro</h3>
+            <div class="comparison-plan-tier"><h4>Free download</h4><p class="comparison-price">$0</p><ul><li>Script creation and set-speed prompting</li><li>Cue points and timed scrolling in the Pro listing</li></ul><p class="comparison-plan-note">This Pro app’s listing places camera recording in its upgrade section. The website also links a separate free Teleprompter app that explicitly includes recording and saving videos. Check the exact app and offer.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro: published web offer</h4><p class="comparison-price">$59.99<span>/year</span></p><ul><li>Document imports</li><li>Advanced remote-control options</li><li>Clean script feed over HDMI or AirPlay</li></ul><p class="comparison-plan-note">Same annual headline amount as Teleprompter Pal, with a different bundle. The in-app checkout and trial have not been verified.</p></div>
+            <div class="comparison-plan-tier"><h4>One-time option</h4><p class="comparison-price">$159.99<span> once</span></p><p class="comparison-plan-note">Advertised as “forever” on the website. Confirm the included features before buying: the Pro app listing specifically requires a subscription for Auto Captions. Do not assume every service is included in the one-time purchase.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 22 October 2026. Teleprompter Pal prices are US in-app subscriptions; the annual trial depends on eligibility. Competitor annual/one-time terms come from its website. Apple lists several purchase amounts without clear periods; we do not assign terms to those unlabeled entries. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for recording and retakes</h2>
+          <p>The job is to finish a take you want to keep. Teleprompter Pal brings the script, set-speed reader, camera, playback and saved trim/crop edit into the same iPhone workflow. You can try those stages for free before deciding whether to pay for export.</p>
+          <p>After a stumble, repeat the sentence and save the take. Shorten its opening or change the crop while retaining the original. Reopen the edit later, or return to the original framing and length. That is the specific workflow we have checked in Teleprompter Pal.</p>
+          <p>No Teleprompter Pal account is required for the local recording/editing workflow. We have not verified the competitor’s account requirements or compared privacy/network behavior. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> for the full process, or <a href="/pricing/">Teleprompter Pal’s plans</a> for its export policy.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4. The original remained available. We then restored its full length and original crop.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>Delivery checks covered Photos, Files and Share Copy, plus reopening the edit after restarting the app. This is internal Teleprompter Pal development-build evidence. We have not tested Teleprompter Pro’s trim/crop or original-recovery behavior, and do not claim a comparative speed, image-quality or reliability win. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When Teleprompter Pro is the better fit</h2>
+          <p>A presenter reading from a separate display has a different problem from someone making an iPhone talking video. Teleprompter Pro documents a clean script feed over HDMI or AirPlay, independently mirrored output and advanced remote controls. Those are substantial reasons to choose it for a prompting rig.</p>
+          <p>It also documents document imports, cue points and timed scrolling. Its Auto Captions guide describes generating an SRT file from the script’s scroll timings, without voice recognition or transcription. If you ad-lib, check the resulting captions against what you actually said.</p>
+          <p>The published annual offer is $59.99, matching Teleprompter Pal’s annual amount. The advertised $159.99 one-time option may suit someone avoiding a recurring base purchase, subject to its included features. Teleprompter Pal’s recommendation here rests on its focused recording/editing workflow, not a lower annual price or having more rig controls.</p>
+        </section>
+        <section id="editions" class="comparison-section">
+          <h2>Check which Teleprompter app you’re comparing</h2>
+          <p>Teleprompter Pro, formerly Teleprompter Premium, is Apple app ID 941070561. Its current listing puts camera recording among the upgrade features. The developer’s pricing page also links a separate app named Teleprompter, app ID 941620509, whose listing explicitly includes free camera recording, save/share and five document imports.</p>
+          <p>We keep those offers separate. The free companion edition is a real option for recording and export; Teleprompter Pal is not the only free recorder. We have not completed both in-app purchase flows, so the feature table does not turn a download price into a verified camera or export entitlement.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Test a retake, an edit and your actual setup</h2>
+          <p>Use the same script, phone position and microphone in each app. Record a deliberate pause and restart, save the take, then check the trim/crop options and whether the original is recoverable. Export a sample and play it outside the app with sound.</p>
+          <p>If remote prompting is your reason to upgrade, repeat that task with your actual controller and display. Check focus, start/stop behavior and what happens when the connection drops. For timed prompting, use the <a href="/tools/speech-time-calculator/">speech time calculator</a> to choose a practical target and allow room for pauses. This is a suggested evaluation, not a test we claim to have completed in both apps.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison combines saved internal Teleprompter Pal device checks, current source/offer checks and official competitor documentation. No matched recording/export task or competitor purchase was completed. Unverified items stay neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> states the recording/editing/delivery scope. These checks do not certify a public build or long-session reliability.</li>
+            <li><strong>Teleprompter Pal’s current offer and editor source.</strong> Checked 22 October 2026. Free scripts/recording/editing, Pro export and delivery, approved US subscriptions, and the editor/importer’s 1 MB text-size safeguard. The size limit is a code check, not a new public-build device test.</li>
+            <li><strong>Teleprompter Pro, Apple US listing and lookup.</strong> Teleprompter Apps Ltd, app ID 941070561, version 3.85.0, iOS 16+, checked 22 October 2026. Source for the former name, feature/upgrade descriptions and subscription requirement for Auto Captions. Unlabeled IAP amounts are not assigned billing periods.</li>
+            <li><strong>Teleprompter, separate Apple US listing and lookup.</strong> Same developer, app ID 941620509, checked 22 October 2026. Source for its free recording/save/share and limited document-import offer.</li>
+            <li><strong>Teleprompter Pro Pricing, Features and official user guides.</strong> Checked 22 October 2026. Website prices, remote/display controls and Video Recording, External Display Mode, Auto Captions and billing guidance. The captions guide describes script/scroll timing rather than speech transcription. Checkout, trial terms and matched-device performance remain unverified.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is Teleprompter Pal a free Teleprompter Pro alternative?</summary><p>Teleprompter Pal is free for scripts, rehearsal, recording, playback, trim/crop and saved edits. Pro is required for MP4 export and Photos, Files or Share delivery. The competitor also has a separate free Teleprompter edition with recording and saving, so compare the exact app and feature gate.</p></details>
+          <details><summary>Is Teleprompter Pal cheaper?</summary><p>The annual amounts match: Teleprompter Pal is $59.99/year, and Teleprompter Pro’s published web offer is $59.99/year. Teleprompter Pro also advertises $159.99 once. The bundles differ, and some services may require a subscription. We do not claim a lower annual price for Teleprompter Pal.</p></details>
+          <details><summary>Is Teleprompter Pro the same as Teleprompter Premium?</summary><p>Teleprompter Pro by Teleprompter Apps Ltd was formerly named Teleprompter Premium. This page identifies it by Apple app ID 941070561 and distinguishes the developer’s separate free Teleprompter app.</p></details>
+          <details><summary>Are Auto Captions the same as voice-following?</summary><p>No. The official Auto Captions guide describes producing SRT captions from your script and its scroll timings. It says the feature does not use voice recognition. That does not establish speech-following scrolling or a transcript of ad-libs.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds MP4 export and delivery.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/teleprompter-for-video-alternative/">Teleprompter Pal vs Teleprompter for Video <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
