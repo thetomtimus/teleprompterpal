@@ -50,6 +50,8 @@ draft: false
 </tbody>
 </table>
 
+Also considering Teleprompter.com? [Compare Teleprompter Pal and Teleprompter.com](/compare/teleprompter-com-alternative/) for annual pricing, retakes, voice scrolling and free export.
+
 These suggestions are editorial judgments based on the features and limitations detailed below. If you are still deciding which device should hold the script, compare a [browser teleprompter or iPhone app](/guides/browser-teleprompter-vs-iphone-app/) first.
 
 ## Free limits and prices to check
