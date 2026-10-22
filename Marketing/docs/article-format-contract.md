@@ -8,7 +8,7 @@ Use `src/pages/guides/[...id].astro`, `src/components/ArticleSummarizers.astro`,
 
 ## Header and reading layout
 
-Each article's own image sits behind live HTML breadcrumbs, H1, description, byline/date/read time and summary controls. Do not repeat this decorative cover in the body. Keep the useful opening immediately after the header, followed by useful takeaways, phone contents and body. Original explanatory diagrams and real screenshot labels remain beside the relevant explanation. The app-comparison decision graphic is retained in the body; the separate new still life is the cover.
+Each article's own image sits behind live HTML breadcrumbs, H1, description, byline/date/read time and summary controls. Do not repeat this decorative cover in the body. Place **The short answer** takeaways card directly after the header, before the opening paragraph. The order is header, short-answer card, opening paragraph, phone contents and article body. Use this order for every existing article and future draft. The body shell supplies the gap below the header; the card has no additional top margin. Keep a clear gap between the opening paragraph and the phone contents disclosure. Original explanatory diagrams and real screenshot labels remain beside the relevant explanation. The app-comparison decision graphic is retained in the body; the separate new still life is the cover.
 
 - Shell maximum 1120px including 24px desktop and 16px phone insets. Title/reading measure maximum 704px; desktop rail 304px with 48px CSS grid gap. Below 1024px, one reading column and the existing native contents disclosure.
 - H1: 48px/1.08, weight 700, tracking -0.03em; below 640px, 32px/1.1. Titles wrap naturally and determine header height.
@@ -45,3 +45,7 @@ Maker and editorial context (21 October 2026): retain the Teleprompter Pal team 
 ## Product naming and release wording (owner instruction, 21 October 2026)
 
 Always use the full product name **Teleprompter Pal**, including possessives, headings, metadata, alt text and comparisons. Do not shorten it. Describe Teleprompter Pal as an iPhone app, without private-beta or prerelease positioning. This owner instruction supersedes earlier availability language in this document. Do not invent a price, App Store URL, device-test result or unimplemented feature. Until a real App Store destination is provided, the existing email form is labelled product updates; do not label that form as a download.
+
+## Short-answer placement (owner instruction, 22 October 2026)
+
+The owner requested the short-answer card immediately below the header, matching the summary-first reading order at https://aiseotracker.com/blog/claude-code-for-seo. This changes shared presentation only; it does not rewrite article content, refresh publication dates or authorize publishing pending drafts.

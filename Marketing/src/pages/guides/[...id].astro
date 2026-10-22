@@ -83,8 +83,8 @@ const authorInitials = guide.data.author.name.split(/\s+/).map(part => part[0]).
       <div class="guide-reading-layout">
       <div class="guide-reading-column">
       <div itemprop="articleBody">
-        {guide.data.intro && <p class="guide-opening">{guide.data.intro}</p>}
         {guide.data.takeaways.length > 0 && <section class="guide-takeaways" aria-labelledby="takeaways-heading"><h2 id="takeaways-heading">The short answer</h2><ul>{guide.data.takeaways.map(takeaway => <li>{takeaway}</li>)}</ul></section>}
+        {guide.data.intro && <p class="guide-opening">{guide.data.intro}</p>}
         {sections.length >= 3 && <nav class="guide-contents-mobile" aria-label="Article sections"><details><summary>On this page <Icon name="caret" size={18} /></summary><ul>{sections.map(section => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}</ul></details></nav>}
         <div class="guide-prose"><Content /></div>
       </div>

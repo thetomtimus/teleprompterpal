@@ -13,7 +13,7 @@ THESIS: Each practical article has a compact illustrated header, then an immedia
 
 FIRST VIEWPORT: topic-specific people-free cover behind live HTML breadcrumbs, 48px/700 H1 (32px on phones), description, 36px TP team mark and compact date/read-time row, four native summary links, and a divider. Exact geometry, 70/60/100 canvas fade, source contracts and privacy behavior live in `docs/article-format-contract.md`. Do not restore the obsolete 56px title, body cover repetition or decorative illustration disclaimer.
 
-READING PATH: useful opening, useful takeaways, phone disclosure and article. Maximum 704px reading measure with 304px desktop contents/beta rail and 48px grid gap; 18px/1.7 prose. Keep original meaningful diagrams/screenshot labels, real internal links and existing CTAs. Controls must not send a private draft or local URL to providers.
+READING PATH: short-answer takeaways card immediately below the header, then useful opening, phone disclosure and article. The card has no extra top margin; preserve spacing before the phone contents disclosure. Maximum 704px reading measure with 304px desktop contents/beta rail and 48px grid gap; 18px/1.7 prose. Keep original meaningful diagrams/screenshot labels, real internal links and existing CTAs. Controls must not send a private draft or local URL to providers.
 
 ART: distinct people-free still lifes with responsive phone exports that preserve full object groups, matching thumbnails and social files, versioned filenames, accurate alt text and private exact prompts/provenance. No decorative people, faces, hands, silhouettes or human reflections unless explicitly requested.
 
