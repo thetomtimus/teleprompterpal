@@ -1,0 +1,248 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  {
+    "feature": "Read while recording",
+    "note": "Script and camera together",
+    "pal": {
+      "state": "yes",
+      "detail": "Free recording"
+    },
+    "competitor": {
+      "state": "yes",
+      "detail": "Web workflow documented"
+    }
+  },
+  {
+    "feature": "Set the pace and text size",
+    "note": "Use a fixed scrolling pace",
+    "pal": {
+      "state": "yes"
+    },
+    "competitor": {
+      "state": "yes"
+    }
+  },
+  {
+    "feature": "Save takes in the free teleprompter workflow",
+    "note": "Speakflow’s account-based recording guide requires a paid plan to save",
+    "pal": {
+      "state": "yes",
+      "detail": "Local library"
+    },
+    "competitor": {
+      "state": "no",
+      "detail": "Paid workspace recording"
+    }
+  },
+  {
+    "feature": "Trim and crop inside the app",
+    "note": "Refine the start and framing before export",
+    "pal": {
+      "state": "yes",
+      "detail": "Free editing"
+    },
+    "competitor": {
+      "state": "unknown",
+      "detail": "Not verified"
+    }
+  },
+  {
+    "feature": "Recover the original after editing",
+    "note": "Confirmed in our saved Teleprompter Pal device check",
+    "pal": {
+      "state": "yes"
+    },
+    "competitor": {
+      "state": "unknown",
+      "detail": "Not verified"
+    }
+  },
+  {
+    "feature": "Download a recorded video",
+    "note": "Delivery requires a paid offer in these workflows",
+    "pal": {
+      "state": "yes",
+      "detail": "Pro MP4 delivery"
+    },
+    "competitor": {
+      "state": "yes",
+      "detail": "Paid workspace download"
+    }
+  },
+  {
+    "feature": "Deliver a saved take without cloud processing",
+    "note": "Compare the documented recording and download paths",
+    "pal": {
+      "state": "yes",
+      "detail": "On-device export"
+    },
+    "competitor": {
+      "state": "no",
+      "detail": "Web uploads and processing"
+    }
+  },
+  {
+    "feature": "Voice-following scrolling",
+    "note": "Speakflow calls its voice mode Flow",
+    "pal": {
+      "state": "no",
+      "detail": "Set speed only"
+    },
+    "competitor": {
+      "state": "yes",
+      "detail": "Limited Free; unlimited Plus"
+    }
+  },
+  {
+    "feature": "Keyboard prompting shortcuts",
+    "note": "Control the reader from a connected keyboard",
+    "pal": {
+      "state": "no"
+    },
+    "competitor": {
+      "state": "yes"
+    }
+  },
+  {
+    "feature": "Sync prompting across devices",
+    "note": "Control a second script display with Remote",
+    "pal": {
+      "state": "no"
+    },
+    "competitor": {
+      "state": "yes",
+      "detail": "Plus"
+    }
+  },
+  {
+    "feature": "Collaborate on a shared script",
+    "note": "Real-time collaboration and commenting",
+    "pal": {
+      "state": "no"
+    },
+    "competitor": {
+      "state": "yes",
+      "detail": "Plus"
+    }
+  },
+  {
+    "feature": "Use the prompter on iPhone",
+    "note": "Teleprompter Pal: native app, iOS 18+; Speakflow: reviewed web workflow",
+    "pal": {
+      "state": "yes"
+    },
+    "competitor": {
+      "state": "yes",
+      "detail": "Browser support documented"
+    }
+  }
+];
+---
+<Layout title="Teleprompter Pal vs Speakflow | iPhone Comparison" description="Compare Teleprompter Pal and Speakflow for iPhone recording: local retakes, free saved takes, export, annual pricing, voice scrolling and shared scripts." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/speakflow-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs Speakflow</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/speakflow-mark.png" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs Speakflow</h1>
+        <p class="comparison-deck" itemprop="description">Looking for a Speakflow alternative for iPhone? <strong>Choose Teleprompter Pal for local retakes, reversible edits and a lower annual export price.</strong> Keep working on your take for free, then use Pro for the MP4.</p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year. Speakflow Plus lists $15/month billed yearly, a calculated $180 annual total, for a broader prompting and collaboration workspace.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-22">22 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When Speakflow fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick when the job is recording, saving and refining a take on iPhone. Speakflow fits a different need: voice prompting and scripts shared across people or devices.</p>
+        <p class="table-help" id="table-help">This compares Speakflow’s documented web workspace, including iPhone browser downloads. Its standalone free webcam recorder and desktop beta are separate. Scroll sideways on smaller screens; a dash means unverified. <a href="#free-tools">Free-tool distinction.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and Speakflow feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">Speakflow</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus state={row.pal.state} detail={row.pal.detail} /></td><td><ComparisonStatus state={row.competitor.state} detail={row.competitor.detail} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal’s annual Pro amount is lower than Speakflow Plus’s calculated annual total. Speakflow’s separate monthly offer is $19, slightly below Teleprompter Pal’s $19.99 monthly price. Compare the actual commitment and bundle.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text-size limit: 1 MB. MP4 export and Photos, Files or Share delivery require Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">Speakflow</h3>
+            <div class="comparison-plan-tier"><h4>Free workspace</h4><p class="comparison-price">$0</p><ul><li>Scripts and set-speed prompting</li><li>Limited Flow voice scrolling</li><li>7-day script history</li></ul><p class="comparison-plan-note">No credit card required. Its recording guide says free users cannot save recordings in this workspace. The separate free webcam recorder has a different offer.</p></div>
+            <div class="comparison-plan-tier"><h4>Plus: annual billing</h4><p class="comparison-price">$180<span>/year, calculated</span></p><ul><li>Unlimited Flow</li><li>Record and store 1 hour of video</li><li>Remote, bookmarks and shared-script tools</li></ul><p class="comparison-plan-note">The website displays $15/month billed once yearly. $180 is 12 × $15, not a checkout amount we verified. The one-hour figure is storage, not a one-hour take limit.</p></div>
+            <div class="comparison-plan-tier"><h4>Other access options</h4><dl class="comparison-plan-options"><div><dt>Plus monthly</dt><dd>$19<span>/month</span></dd></div><div><dt>Plus Pass</dt><dd>7–90<span>days</span></dd></div></dl><p class="comparison-plan-note">Monthly is billed monthly. The FAQ also offers 7-, 30- or 90-day passes without a subscription; pass prices were not verified. Studio adds team/workspace capacity.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 22 October 2026. Teleprompter Pal’s annual trial depends on eligibility. Speakflow prices are web references; checkout, trial eligibility and renewal terms were not verified. These offers include different tools. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for iPhone retakes</h2>
+          <p>The script is ready, but the take still needs work. Teleprompter Pal lets you rehearse, record another version, play it back and save trim/crop edits for free. The script and original recording stay on your iPhone; no account is required for that local workflow.</p>
+          <p>Keep the original when you shorten the opening or change the frame. Return to a saved edit later, or restore the full take. Pro adds the finished MP4 and delivery to Photos, Files or Share. The annual plan suits this narrower job at a lower cost than the documented Speakflow Plus annual reference.</p>
+          <p>That recommendation rests on the workflow and annual offer, not a claim that local recording produces better-looking video. Text has a 1 MB safeguard, and scrolling uses a pace you set. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> or <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4. The original remained available. We then restored its full length and original crop.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>Delivery checks covered Photos, Files and Share Copy, plus reopening the edit after restarting the app. This is internal Teleprompter Pal development-build evidence. We have not tested Speakflow’s original-recovery behavior, and do not claim a comparative speed, image-quality or reliability win. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When Speakflow is the better fit</h2>
+          <p>If matching a fixed pace is the hard part, consider Speakflow’s Flow mode. Its documentation says the text follows spoken words; Auto uses a set pace and Manual gives you direct control. Flow is limited on Free and unlimited with Plus. We have not measured recognition, latency or recovery after a repeated sentence.</p>
+          <p>Speakflow’s Remote mode can coordinate a script on more than one device. Keyboard shortcuts, bookmarks, commenting and real-time shared-script work can help when another person operates the prompt or reviews the wording. Teleprompter Pal currently does not offer those shared-script and remote controls.</p>
+          <p>The mobile-download guide describes an upload, processing and account-download workflow. That can be useful when you want a recording available through the workspace. Teleprompter Pal instead exports its saved take on-device. We have not audited either product’s privacy or compared transfer times.</p>
+        </section>
+        <section id="free-tools" class="comparison-section">
+          <h2>Separate the free recorder from the teleprompter workspace</h2>
+          <p>Speakflow has a standalone free webcam-recorder tool that documents recording and downloading without an account. Its account-based teleprompter recording guide separately says free users cannot save recordings. The table and plans here use the latter workflow; they do not claim Speakflow has no free way to record a video.</p>
+          <p>Speakflow also advertises a desktop beta. This page evaluates the documented web workspace on the devices it supports, including iPhone browsers. It does not establish whether every desktop feature has a native iPhone equivalent. Check the exact workflow you intend to use.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try one script from recording to download</h2>
+          <p>Use the same script, phone position and microphone. Include a pause and a repeated sentence, then compare the available prompting modes. For pacing, use the <a href="/tools/speech-time-calculator/">speech time calculator</a> as a starting estimate with room for pauses.</p>
+          <p>Save the take, check the edit controls and original recovery, then deliver a sample and play it with sound outside the app or browser. In Speakflow, include the documented upload/processing/download stages. Its recording guide recommends short sessions around 10 minutes; that is developer guidance, not a comparative reliability test or a verified hard limit.</p>
+          <p>This is a suggested common task. We have not completed it in both products, tested Speakflow’s paid checkout, or timed its processing.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This page combines saved internal device evidence, current source/offer checks and official Speakflow documentation. No fresh matched recording/export task or competitor purchase was completed. Unknown editing behavior stays neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> describes the recording/editing/delivery scope. This does not certify a public App Store binary or establish comparative performance.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Rechecked 22 October 2026: free scripts/recording/editing, Pro export/delivery, approved US subscriptions and the 1 MB text safeguard. Read-only source checks are not a new device test.</li>
+            <li><strong>Speakflow Pricing, yearly and monthly pages.</strong> Checked 22 October 2026. Source for Free, Plus and other access options. Annual totals are calculations from displayed yearly-billed monthly equivalents; checkout and eligibility remain unverified.</li>
+            <li><strong>Speakflow Recording Video, Mobile Video Downloads and General Usage Tips.</strong> Checked 22 October 2026. Sources for paid workspace recording saves, browser/iPhone support, upload/processing and downloads. This is a web-service snapshot, not an App Store edition/version claim.</li>
+            <li><strong>Speakflow Scroll Modes, Remote Mode, Shortcuts and Version History.</strong> Checked 22 October 2026. Sources for prompting and shared-script controls. Script revision history is not evidence that original camera footage can be restored after editing.</li>
+            <li><strong>Speakflow standalone Webcam Recorder and Desktop download page.</strong> Checked 22 October 2026. These are separately scoped offers and do not establish the teleprompter workspace’s free recording-save entitlement or a native iPhone feature set.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is Teleprompter Pal cheaper than Speakflow?</summary><p>Teleprompter Pal Pro is $59.99/year. Speakflow Plus displays $15/month billed yearly, equivalent to $180/year by calculation. The annual reference is higher, with a different bundle. Speakflow’s $19 monthly offer is slightly below Teleprompter Pal’s $19.99/month. Checkout was not tested.</p></details>
+          <details><summary>Can I save recordings for free?</summary><p>Teleprompter Pal saves recordings and trim/crop edits locally for free; MP4 export and every delivery destination require Pro. Speakflow’s teleprompter recording guide says paid users can save takes. Its separate free webcam recorder documents free downloads without an account. Compare the correct workflow.</p></details>
+          <details><summary>Does Teleprompter Pal follow my voice?</summary><p>No. Teleprompter Pal uses a pace you set. Speakflow documents Flow voice scrolling, limited on Free and unlimited with Plus. We have not tested how it handles your language, voice or microphone.</p></details>
+          <details><summary>Can I use Speakflow on iPhone?</summary><p>Speakflow’s device and mobile-download guides support an iPhone browser workflow. This comparison covers that documented web workspace. It does not assert that its desktop beta and every native-app offering have the same features.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds MP4 export and delivery.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/teleprompter-com-alternative/">Teleprompter Pal vs Teleprompter.com <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
