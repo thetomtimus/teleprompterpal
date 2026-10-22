@@ -80,7 +80,7 @@ Change one thing at a time if the test is uncomfortable. Moving the text can hel
 
 ## Recover from a mistake without losing the take
 
-When you stumble, leave a pause and return to the beginning of the thought. You can repeat that sentence within the same recording, then remove the unwanted lead-in later. For a completely fresh attempt, stop and save the take before recording again.
+When you stumble, leave a pause and return to the beginning of the thought. You can repeat that sentence within the same recording, then remove the unwanted lead-in later. For a completely fresh attempt, stop and save the take before recording again. For a longer script, [plan separate usable takes](/guides/record-long-script-iphone/) before filming so a problem in one section does not send you back to the opening.
 
 The text’s Play/Pause and Restart controls operate the prompt. **Restarting the text does not end an active recording.** The text controls are in the lower-left controls menu. Check the red recording timer and use the camera’s stop control when you want to finish the video.
 

@@ -112,7 +112,7 @@ You say, “Save the original before you… before the crop.” Stop speaking. I
 
 Then choose the edit the clip needs. If the clean version is at the end and you no longer need the opening, trimming the start may be enough. If you must keep material both before and after a mistake in the middle, you need a middle cut or separate clips, not just a start/end trim. Apple's Photos instructions describe [trimming a video's beginning and end](https://support.apple.com/guide/iphone/trim-video-length-adjust-speed-and-edit-audio-iph1d1344a2d/ios).
 
-Teleprompter Pal's current editor trims a selected start/end range. Do not plan a recording around an automatic removal of every mistake.
+Teleprompter Pal's current editor trims a selected start/end range. Do not plan a recording around an automatic removal of every mistake. If a longer script needs several attempts, [map the sections and chosen clips](/guides/record-long-script-iphone/) before you start joining them.
 
 ## Review the saved clip before the full script
 

@@ -1,0 +1,61 @@
+{
+  "tool": "image_gen",
+  "mode": "built-in",
+  "created": "2026-10-22",
+  "prompt": "Use case: photorealistic-natural. Create an original photorealistic people-free editorial still life for Teleprompter Pal\u2019s dark charcoal article header about recording a long script as short separate takes on iPhone. Landscape 16:9 composition, realistic matte black equipment, restrained soft lavender accents, soft natural studio light, tactile paper and glass; no CGI plastic, neon or stock-business styling. A single landscape smartphone on a compact short tabletop tripod beside three separate small stacks of cue cards, slightly staggered, with abstract short horizontal script lines. All main objects must be fully visible as one SMALL compact group in the upper center of the very wide scene: entirely between 32% and 68% of the full image width and between 7% and 38% of the full height. Zoom out substantially. The bottom 60% of the composition is quiet empty charcoal tabletop. Leave the outer left and right quarters empty so the scene survives a closer centered thumbnail. Make the three paper stacks clearly separate to suggest recorded sections. The phone has a generic dark screen with abstract script lines only, no readable text or app controls. No people, faces, hands, silhouettes, portraits, human figures or human reflections anywhere. No logos, watermarks, brand names, numbers, labels, arrows or fabricated product UI. The entire phone, stand and all cue-card edges must remain inside the compact object group. This is decorative topic artwork, not a screenshot or recording test.",
+  "original": "original.png",
+  "source_sha256": "302c0f3b0748588891327f9e0a27bc7db0a92e39ea4c3477540f83368a8cab06",
+  "people_free": true,
+  "alt": "Landscape phone on a tabletop tripod beside three separate stacks of script cue cards.",
+  "primary_source_object_bounds": [
+    550,
+    55,
+    1220,
+    360
+  ],
+  "responsive_method": "LANCZOS desktop exports. Full source fitted to top of dark 900x1600 phone canvas. Closer centered thumbnail contains all primary objects.",
+  "exports": [
+    {
+      "file": "short-takes-objects-v1-cover-1600.webp",
+      "width": 1600,
+      "height": 901,
+      "bytes": 31766,
+      "sha256": "8743594014a7026956609d552b8309a58b86bd61f1f677ad253885bde6d29d01"
+    },
+    {
+      "file": "short-takes-objects-v1-cover-1000.webp",
+      "width": 1000,
+      "height": 563,
+      "bytes": 13614,
+      "sha256": "fcff6cfaf9f92c81e269dd5fcb9319ba0a228d2c3a7ee141b58a56444008399b"
+    },
+    {
+      "file": "short-takes-objects-v1-cover-640.webp",
+      "width": 640,
+      "height": 360,
+      "bytes": 5890,
+      "sha256": "42922f6bb34eed48cdbc02b83f024cb73d0a2b309bf1cc1dc19818f902535db2"
+    },
+    {
+      "file": "short-takes-objects-v1-cover-mobile.webp",
+      "width": 900,
+      "height": 1600,
+      "bytes": 12476,
+      "sha256": "a92e7f097ce7cda3e18357ed2cd88c4805dfe32dbecba6f15b467b6fe7fe70ad"
+    },
+    {
+      "file": "short-takes-objects-v1-thumbnail.webp",
+      "width": 640,
+      "height": 361,
+      "bytes": 9150,
+      "sha256": "b0cc04ce3bbc57e7a037b34788f1dd246a2b80b9a3658ba09c5b63e36732f155"
+    },
+    {
+      "file": "short-takes-objects-v1-social.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 724937,
+      "sha256": "b8c12548b5b231add2556e6c5a975c4200600e1ba6fe1a4035b21a3a63eec9b1"
+    }
+  ]
+}
