@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare a script', note: 'Type or paste the words you want to record', pal: { state: 'yes', detail: 'Free scripts and saved library' }, competitor: { state: 'yes', detail: 'Mobile script entry documented' } },
+  { feature: 'Set the scrolling pace', note: 'Choose a reading speed before the take', pal: { state: 'yes', detail: 'Free set-speed reader' }, competitor: { state: 'yes', detail: 'Adjustable speed documented' } },
+  { feature: 'Read while recording on iPhone', note: 'A script over the camera view', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'yes', detail: 'Mobile teleprompter documented' } },
+  { feature: 'Review footage before export', note: 'Play the take or preview the edited clip', pal: { state: 'yes', detail: 'Free playback' }, competitor: { state: 'yes', detail: 'Editor preview documented' } },
+  { feature: 'Trim a clip manually', note: 'Shorten the beginning or end', pal: { state: 'yes', detail: 'Free trim' }, competitor: { state: 'yes', detail: 'Trim and split documented' } },
+  { feature: 'Crop the frame', note: 'Change which part of the picture stays visible', pal: { state: 'yes', detail: 'Free crop' }, competitor: { state: 'yes', detail: 'Mobile crop documented' } },
+  { feature: 'Reopen saved edits', note: 'Continue working on an editable take or project', pal: { state: 'yes', detail: 'Free saved edits' }, competitor: { state: 'yes', detail: 'Projects library documented' } },
+  { feature: 'Restore original length and crop', note: 'The exact saved-edit reset task in our device check', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact reset task untested' } },
+  { feature: 'Export and save or share', note: 'Check the selected tools, format and delivery destination', pal: { state: 'yes', detail: 'Pro MP4 and all delivery' }, competitor: { state: 'unknown', detail: 'Reader delivery and free gate unverified' } },
+  { feature: 'Generate on-screen captions', note: 'Automatic subtitles for the recorded video', pal: { state: 'no', detail: 'Not in reviewed implementation' }, competitor: { state: 'yes', detail: 'Mobile tool documented; gate unverified' } },
+  { feature: 'Use AI script tools', note: 'Rewrite, expand, shorten or translate the script', pal: { state: 'no', detail: 'Not in reviewed implementation' }, competitor: { state: 'yes', detail: 'Reader tools documented; gate unverified' } },
+  { feature: 'Use the local workflow without an account', note: 'Prepare, rehearse, record and save edits on the phone', pal: { state: 'yes' }, competitor: { state: 'unknown', detail: 'Mobile reader requirement unverified' } },
+];
+---
+<Layout title="Teleprompter Pal vs CapCut | iPhone Comparison" description="Compare Teleprompter Pal and CapCut on iPhone: script recording, reversible retakes, export gates, listed subscription prices, captions and timeline editing." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/capcut-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs CapCut</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/capcut-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs CapCut</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free script rehearsal, local iPhone takes and reversible trim/crop edits.</strong></p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year. Every export requires Pro. CapCut documents a mobile teleprompter; free reader and export access remain unverified.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When CapCut fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick when the job is rehearsing, recording and refining a talking video on iPhone. CapCut fits when that take needs a larger timeline edit, automatic captions, effects or music.</p>
+        <p class="table-help" id="table-help">This compares Teleprompter Pal with the mobile iOS edition of CapCut: Photo &amp; Video Editor. CapCut checks are documented capabilities, not hands-on results or confirmed free access. Scroll sideways on smaller screens; a dash means unverified.</p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and CapCut feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">CapCut</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus state={row.pal.state} detail={row.pal.detail} /></td><td><ComparisonStatus state={row.competitor.state} detail={row.competitor.detail} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal has one clear delivery boundary: recording and saved edits are free; every export requires Pro. CapCut’s listed purchases do not establish the price or free gate for your reader-to-export task.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">CapCut</h3>
+            <div class="comparison-plan-tier"><h4>Free download</h4><p class="comparison-price">$0</p><ul><li>iPhone app with in-app purchases</li><li>Mobile teleprompter documented</li><li>Manual editing tools documented</li></ul><p class="comparison-plan-note">Free download and free-tool marketing do not confirm free reader access or a free finished export. Selected tools, assets and settings can change the export gate.</p></div>
+            <div class="comparison-plan-tier"><h4>US App Store listed examples</h4><dl class="comparison-plan-options"><div><dt>Standard monthly</dt><dd>$9.99<span>/month</span></dd></div><div><dt>Pro monthly</dt><dd>$19.99<span>/month</span></dd></div></dl><p class="comparison-plan-note">Listed purchase examples, not verified selectable offers. Current eligible checkout, reader unlock and renewal choice are unverified. We have not established an annual Pro total.</p></div>
+            <div class="comparison-plan-tier"><h4>Eligible Pro trial</h4><p class="comparison-price">7<span>days, if offered</span></p><ul><li>Region, account and version restrictions</li><li>A trial badge must be present</li><li>Mobile help points to a yearly Pro plan</li></ul><p class="comparison-plan-note">Exact US eligibility and the post-trial amount are unverified. An activated trial can charge automatically unless cancelled. Confirm the full billed period, amount and renewal choice on the purchase screen.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 23 October 2026. CapCut says prices vary by region, device and promotions; its in-app membership screen shows current regional offers. These listed examples are not a US mobile checkout verification. Teleprompter Pal’s annual trial depends on eligibility. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>A sentence needs another attempt. The opening runs too long. The frame needs to be square. Teleprompter Pal keeps the script, set-speed rehearsal, camera, playback and saved trim/crop edits together on iPhone. You can work through those stages for free.</p>
+          <p>The script and original recording stay on the phone; no account is required for this local workflow. Keep the original separately from the edit, return to the saved changes later, or restore the full take. Pro adds every MP4 export and Photos, Files or Share delivery.</p>
+          <p>That focused workflow is our reason to recommend Teleprompter Pal for this job. It supports iOS 18 and later, has a 1 MB text safeguard and uses a pace you set. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> and <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. CapCut documents reopening editable projects; we have not performed this exact reset task there. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When CapCut is the better fit</h2>
+          <p>Choose CapCut when the recording is the start of a larger edit. Its app listing describes a multi-track timeline, text, music, effects and transitions. Its mobile help documents automatic captions that you can edit after generation. Teleprompter Pal does not currently generate captions or provide that broader production suite.</p>
+          <p>CapCut also documents a mobile teleprompter, including front/rear camera switching. Its iPhone reader guide describes adjustable speed, text size, color and a movable script box, plus AI tools to improve, expand, shorten or translate a script. Those capabilities deserve credit; their exact free or paid gates have not been verified here.</p>
+          <p>Manual trim, spatial crop and reopening projects are documented too. The decision is which workflow suits the finished video, rather than whether CapCut can record or make a basic edit.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Compare the iPhone reader, not every CapCut edition</h2>
+          <p>CapCut’s current camera help places the teleprompter in the mobile recording screen. Its iPhone guide gives the route All tools → Quick actions → Teleprompter. The same guide describes a 5,000-character script limit. We have not verified that limit or the current interface in an installed iPhone build.</p>
+          <p>CapCut describes Standard as primarily mobile and Pro as spanning mobile, desktop and web. That membership scope does not establish identical reader controls or free gates on every platform. A web recorder or desktop editing guide also does not establish the iPhone teleprompter’s export entitlement.</p>
+          <p>Its watermark guidance discusses removable branded ending clips, while export help describes premium tools and settings that can trigger a paid requirement. Region and version can affect the route. We have not confirmed a free, watermark-free export from the mobile reader, and do not treat every CapCut export as paid.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try one script through recording and export</h2>
+          <p>Use the same short script, camera position and microphone. Include a pause and a repeated sentence. Set a starting pace with the <a href="/tools/speech-time-calculator/">speech time calculator</a>, record a take, review it, trim the opening and choose a square crop.</p>
+          <p>Close and reopen the editable work. Check whether the full length and original framing can be restored. Attempt the delivery destination you need, inspect any payment or watermark step, and play the saved file with sound outside the app. In CapCut, note which tools, assets and export settings you selected.</p>
+          <p>This is a suggested common task. We have not completed a matched CapCut recording/export run, inspected its current iPhone purchase screen or timed either workflow.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison uses saved internal device evidence, current source/offer checks and official CapCut documentation. Developer descriptions are not hands-on results; unknown account, export and restoration behavior stays neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated editing and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for the local workflow, set-speed reader, 1 MB safeguard and Pro delivery gate. This is source inspection, not a new device test.</li>
+            <li><strong>Apple US listing and lookup: CapCut: Photo &amp; Video Editor.</strong> BYTEDANCE PTE. LTD., app ID 1500855883, version 19.8.1, iOS 15+, checked 23 October 2026. Sources for product identity, listed purchase examples and the app’s editing descriptions. The annual item does not identify a Pro edition.</li>
+            <li><strong>CapCut Help Center camera guide, official iPhone teleprompter guide and Teleprompt App page.</strong> Checked 23 October 2026. Sources for the mobile reader, camera controls, script input, described character limit and AI script tools. Guide limits and free-tool marketing were not verified in an installed iPhone app.</li>
+            <li><strong>CapCut Recognise Subtitles, Modify History Task and mobile crop guidance.</strong> Checked 23 October 2026. Sources for automatic captions, reopening projects and spatial crop. A general editor feature does not certify the exact same-script task or original-reset behavior.</li>
+            <li><strong>CapCut pricing, Standard versus Pro, trial, export, watermark and subscription guidance.</strong> Checked 23 October 2026. Sources for variable regional offers, eligible seven-day Pro trials and project-dependent export gates. Current US checkout, trial eligibility and free mobile reader export remain unverified.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Can I export for free?</summary><p>Teleprompter Pal lets you prepare, rehearse, record and save edits for free, but every MP4 and Photos, Files or Share delivery requires Pro. CapCut’s free download and free-tool descriptions do not establish a free mobile reader export. Selected tools, assets, settings and regional offers can affect its gate; we have not tested that route.</p></details>
+          <details><summary>What does CapCut cost on iPhone?</summary><p>The US App Store lists Standard monthly at $9.99 and Pro monthly at $19.99 as purchase examples. We have not verified currently eligible checkout totals, reader unlocks or an annual Pro amount. CapCut says pricing varies by region, device and promotions, so check the actual in-app offer. Teleprompter Pal Pro is $59.99/year, $19.99/month or $9.99/week.</p></details>
+          <details><summary>Does CapCut have an iPhone teleprompter?</summary><p>Yes, its current help and iPhone guide document a mobile reader over the camera view, with script entry and adjustable scrolling. We have not checked the current interface or entitlement on an iPhone. This comparison does not treat web and desktop editors as identical to the mobile reader.</p></details>
+          <details><summary>Can I restore the original after editing?</summary><p>Teleprompter Pal retains the original separately; our saved internal device check restored its full length and crop. CapCut documents reopening editable projects and exporting a separate video file. We have not performed the exact original-length and crop reset there, so its result remains unverified.</p></details>
+          <details><summary>Which plans have a trial?</summary><p>Teleprompter Pal’s yearly plan has a 3-day trial for eligible subscribers; monthly and weekly plans have no introductory trial. CapCut documents an eligible 7-day Pro trial with region, account and version restrictions. Its mobile instructions point to a yearly Pro plan with a trial badge. Exact US eligibility and the post-trial amount are unverified; an activated trial can charge unless cancelled.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/captions-alternative/">Teleprompter Pal vs Captions <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
