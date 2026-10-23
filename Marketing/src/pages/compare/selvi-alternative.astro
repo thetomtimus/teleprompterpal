@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare and rehearse before paying', note: 'Upfront app access differs from the later delivery cost', pal: { state: 'yes', detail: 'Free scripts and rehearsal; 1 MB text safeguard' }, competitor: { state: 'no', detail: '$2.99 US download required in the current listing' } },
+  { feature: 'Read while recording in one iPhone app', note: 'Built-in camera and script display', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'yes', detail: 'Documented in the purchased app' } },
+  { feature: 'Set the scrolling pace', note: 'A steady pace, separate from speech recognition', pal: { state: 'yes', detail: 'Free reader controls' }, competitor: { state: 'yes', detail: 'Timed playback documented' } },
+  { feature: 'Adjust the text size', note: 'Choose readable text for your distance', pal: { state: 'yes', detail: 'Free reader controls' }, competitor: { state: 'yes', detail: 'Text settings documented' } },
+  { feature: 'Move and resize the reading window', note: 'Position the script near the lens', pal: { state: 'yes', detail: 'Reviewed camera panel controls' }, competitor: { state: 'yes', detail: 'Drag and resize controls documented' } },
+  { feature: 'Trim and crop a recorded take', note: 'Saved-video edits, separate from moving the reading window', pal: { state: 'yes', detail: 'Free saved video edits' }, competitor: { state: 'unknown', detail: 'Exact saved trim/crop task unverified' } },
+  { feature: 'Reopen edits and restore the original', note: 'Recover full length and framing after saving changes', pal: { state: 'yes', detail: 'Saved internal device check' }, competitor: { state: 'unknown', detail: 'Exact saved-edit reset task untested' } },
+  { feature: 'Save or share a recorded video', note: 'The two purchase models differ', pal: { state: 'yes', detail: 'Pro for every MP4 and Photos, Files or Share delivery' }, competitor: { state: 'yes', detail: 'Photos and file sharing documented after app purchase' } },
+  { feature: 'Follow speech with voice recognition', note: 'Recognition accuracy was not benchmarked', pal: { state: 'no', detail: 'Set-speed reader in reviewed implementation' }, competitor: { state: 'yes', detail: 'Follow voice documented; model preparation may be needed' } },
+  { feature: 'Read without creating an account', note: 'A shared benefit, not a privacy benchmark', pal: { state: 'yes', detail: 'Local script and recording workflow' }, competitor: { state: 'yes', detail: 'No account documented' } },
+  { feature: 'Run on an iPhone with iOS 17', note: 'Check your device before buying', pal: { state: 'no', detail: 'Requires iOS 18 or later' }, competitor: { state: 'yes', detail: 'Current listing requires iOS 17 or later' } },
+  { feature: 'Keep the reading prompt out of the saved video', note: 'The guide text is separate from video captions', pal: { state: 'yes', detail: 'Camera recording excludes the reading UI' }, competitor: { state: 'yes', detail: 'Support guide explicitly documents this' } },
+];
+---
+<Layout title="Teleprompter Pal vs Selvi | Free Recording & Saved Edits" description="Compare Teleprompter Pal and Selvi for free script rehearsal, saved trim/crop edits, voice following and the difference between Pro delivery and a $2.99 app purchase." type="article" published="2026-10-24" modified="2026-10-24">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/selvi-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-24" />
+      <meta itemprop="dateModified" content="2026-10-24" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs Selvi</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/selvi-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs Selvi</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free iPhone recording and reversible saved edits.</strong></p>
+        <p class="comparison-intro-note">Every Teleprompter Pal export requires Pro. Selvi lists a $2.99 upfront US download, with voice following and video saving documented.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-24">24 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When Selvi fits</a><a href="#evidence">Tests &amp; sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for trying the script-to-saved-edit workflow before paying. Selvi is an inexpensive purchased app with documented voice following, recording and sharing.</p>
+        <p class="table-help" id="table-help">Selvi features below are developer-documented, not a fresh device test. Scroll sideways on smaller screens; a dash means unverified. <a href="#editions">Edition and test scope.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and Selvi feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">Selvi</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus {...row.pal} /></td><td><ComparisonStatus {...row.competitor} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal has the lower entry cost: free rehearsal, recording and saved edits. Selvi’s $2.99 listed app purchase is less expensive than a Teleprompter Pal Pro subscription for someone who wants video delivery.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">Selvi</h3>
+            <div class="comparison-plan-tier"><h4>Upfront app purchase</h4><p class="comparison-price">$2.99<span> US download</span></p><ul><li>Native iPhone and iPad app, iOS 17 or later</li><li>Timed and voice-following scrolling documented</li><li>Recording, in-app playback, Photos saving and file sharing documented</li></ul><p class="comparison-plan-note">This is Apple’s current US app download price. It is not a monthly subscription amount. We did not purchase or inspect checkout.</p></div>
+            <div class="comparison-plan-tier"><h4>Current purchase model</h4><p class="comparison-plan-note">The inspected US listing shows no in-app purchase or recurring subscription offer. Its support guide describes saving and sharing after recording without a separate Pro tier. We have not verified every possible in-app offer or a watermark/export task.</p><p class="comparison-plan-note">No free trial is listed in these sources. Do not treat this download price as a promise of perpetual updates, support or future features.</p></div>
+            <div class="comparison-plan-tier"><h4>Before buying</h4><p class="comparison-plan-note">Voice following can need a speech-model download and preparation. The developer describes an Apple on-device path or a Whisper model of about 150–220 MB, plus preparation files. Confirm the language and available storage you need.</p><p class="comparison-plan-note">The listing supports Family Sharing when enabled. Confirm the current purchase terms and regional price in Apple’s checkout.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 24 October 2026. Teleprompter Pal’s trial is annual and eligibility-dependent; monthly and weekly plans have no introductory trial. Free editing and paid delivery are separate decisions. Selvi is the lower listed purchase cost for recording and saving a video, while Teleprompter Pal lets you rehearse, record and save edits before subscribing. <a href="#evidence">Sources and test limits.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>You want to try the whole preparation and editing routine before deciding whether to pay for delivery. Teleprompter Pal puts scripts, set-speed rehearsal, camera recording, playback and saved trim/crop edits in a free iPhone workflow.</p>
+          <p>The original stays separate from the saved edit. Shorten an opening, choose a square crop, reopen the changes or restore the original length and framing. Pro adds every MP4 export and Photos, Files or Share delivery. That retained-original workflow is the specific reason we recommend Teleprompter Pal here.</p>
+          <p>Teleprompter Pal supports iOS 18 and later and has a 1 MB text safeguard. Follow the <a href="/guides/record-video-with-script-iphone/">iPhone script-recording guide</a>, see the <a href="/help/">user guide</a> or check <a href="/pricing/">Teleprompter Pal’s plans</a>. Selvi’s equivalent saved-edit/reset task remains unverified, rather than assumed absent.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in Selvi. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When Selvi is the better fit</h2>
+          <p>You prefer an inexpensive upfront app purchase and want voice-following prompting. Selvi’s current native app documents that combination, along with recording, playback, Photos saving and sharing. It also supports iPad and iOS 17, while Teleprompter Pal’s approved release scope is iPhone on iOS 18 or later.</p>
+          <p>Selvi’s support guide explains switching between Timed and Follow voice. Recognition needs the required model prepared first; the developer says quality varies with language, accent, noise and device. We have not benchmarked those conditions or compared it with other voice engines.</p>
+          <p>Both apps offer a no-account script and recording workflow. Selvi’s movable reading window and the text staying out of the saved video are shared benefits, not exclusive Teleprompter Pal wins. Its current sources do not establish the saved trim/crop/reset task we checked internally in Teleprompter Pal.</p>
+        </section>
+        <section id="editions" class="comparison-section">
+          <h2>Which Selvi are we comparing?</h2>
+          <p>This is Selvi – Teleprompter Camera by Serhii Halchynskyi, US app ID 1130793067. Apple’s lookup returned version 3.0.1, released 8 September 2026, with iOS 17 or later. The developer’s support instructions cover Selvi 3.0. We are not treating old-version reviews as tests of the current app.</p>
+          <p>Its current support guide describes a saved-video library, keeping the original in the app if Photos saving fails, and sharing the video file. That storage behavior does not verify restoring a full-length, uncropped original after saving an edit. Its Reset window position command resets the reading overlay, not recorded-video edits.</p>
+          <p>Selvi describes local scripts and recognition after model preparation. We have not audited either app’s network behavior, privacy or offline performance. Moving a reading overlay, mirroring a camera preview and reflecting text for a physical rig are also different tasks; no physical rig was tested here.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>The recording task still to test</h2>
+          <p>We inspected official Selvi sources and the relevant Teleprompter Pal implementation. We did not purchase Selvi or complete a fresh recording, export or original-reset task in it. The table distinguishes documented features from the saved Teleprompter Pal device evidence.</p>
+          <p>For a matched trial, use the same original script, device orientation and camera. Rehearse at a set pace, record, save a copy, trim, crop, reopen the edit and try restoring the original length and framing. Record the app version, permissions, purchase state, output format, dimensions and destination. The <a href="/tools/speech-time-calculator/">speech time calculator</a> can help plan the script.</p>
+          <p>Evaluate Selvi’s voice mode separately after its model is ready. Include silence, a correction and a return to an earlier line in a language you use. Those checks would test behavior; a green documented-feature mark does not establish recognition accuracy or export quality. We have not completed this matched task.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. Saved internal device checks, current source inspection and developer documentation have different scopes.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated edit and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 24 October 2026 for creation, reader/window controls, the 1 MB safeguard, saved edits and every-delivery Pro gate. This is not a fresh device test.</li>
+            <li><strong>Selvi US App Store listing and Apple lookup.</strong> Checked 24 October 2026: Serhii Halchynskyi, app ID 1130793067, version 3.0.1, iOS 17+, $2.99 download. No current in-app purchase/subscription row observed. Developer-described features and listing terms are not a purchased-app test.</li>
+            <li><strong>Selvi official homepage and Selvi support, version 3.0 instructions.</strong> Checked 24 October 2026 for script/window controls, playback modes, model setup, language caveats, video-library and save/share behavior. Saved-video trim/crop/reset, recognition quality, watermark policy and a common export task remain unverified.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is Selvi a dedicated teleprompter app?</summary><p>Yes. Selvi by Serhii Halchynskyi combines a script reader and camera for iPhone and iPad. This comparison covers version 3.0.1 and the current version 3.0 support guide.</p></details>
+          <details><summary>Can I try either app before paying?</summary><p>Teleprompter Pal’s scripts, rehearsal, recording, playback, trim/crop and saved edits are free. Every MP4 export and delivery requires Pro. Selvi’s current US listing requires a $2.99 app purchase; the inspected sources list no free trial.</p></details>
+          <details><summary>Is Selvi cheaper than Teleprompter Pal?</summary><p>For the listed purchase cost of recording and saving a video, yes. Selvi is $2.99 upfront in the US listing; Teleprompter Pal Pro is $59.99/year, $19.99/month or $9.99/week. Teleprompter Pal has free preparation and saved editing. Compare that workflow and the purchase terms you actually need.</p></details>
+          <details><summary>Does Teleprompter Pal follow my voice?</summary><p>The reviewed implementation uses a pace you set. Selvi documents Follow voice, with model setup and language/device limitations. We have not run a matched recognition test.</p></details>
+          <details><summary>Can Selvi restore the original after a crop or trim?</summary><p>We have not verified that task. Selvi’s reading-window reset and keeping a video when Photos saving fails do not establish saved-video edit restoration. Our saved internal Teleprompter Pal check covered reopening changes and restoring the original length and crop.</p></details>
+          <details><summary>Does the reading text appear in Selvi’s saved video?</summary><p>Its support guide says the prompt and controls stay out of the saved video; the recording contains camera footage and microphone audio. That is a developer-documented feature, not a fresh export check. Teleprompter Pal also records the camera separately from its reading interface.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/teleo-alternative/">Teleprompter Pal vs Teleo <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
