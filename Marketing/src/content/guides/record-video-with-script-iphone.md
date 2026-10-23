@@ -67,7 +67,7 @@ Rehearse with the text controls first. Teleprompter Pal uses a speed you set; it
 
 ## Record a test and check picture and sound
 
-Start with about 15 seconds of speech, including a natural pause. Use the record control and watch for the recording state and timer. A camera preview alone does not mean a video is being saved. Stop the recording, open the saved take and listen as well as watch.
+Start with about 15 seconds of speech, including a natural pause. Use the record control and watch for the recording state and timer. A camera preview alone does not mean a video is being saved. Stop the recording, open the saved take and listen as well as watch. If the take is silent, [find where the sound disappears](/guides/teleprompter-video-no-sound-iphone/) before recording the full script.
 
 Check these details before recording the full script:
 

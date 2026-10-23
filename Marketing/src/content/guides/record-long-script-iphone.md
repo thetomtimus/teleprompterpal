@@ -74,7 +74,7 @@ A strong opening does not make an incomplete take usable. Play the whole selecte
 
 ## Record and review one complete section
 
-Keep the phone position, framing, lighting and microphone consistent across sections. If you move the chair or change the microphone distance, record another short sample and compare it with the previous section.
+Keep the phone position, framing, lighting and microphone consistent across sections. If you move the chair or change the microphone distance, record another short sample and compare it with the previous section. If that sample is silent, [check the original recording before reshooting](/guides/teleprompter-video-no-sound-iphone/) so you can isolate the problem and preserve usable sections.
 
 Before the first word, settle into your speaking position. Leave a little quiet space at both ends so you can remove the reach toward the phone without cutting into speech. Start the next section with similar energy, rather than restarting every clip at maximum enthusiasm.
 

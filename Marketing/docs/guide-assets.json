@@ -822,6 +822,90 @@
       "status": "approved_for_publication",
       "provenance_sidecar": "docs/article-artwork/reusable-script-objects-v1/provenance.json",
       "prompt_file": "docs/article-artwork/reusable-script-objects-v1/prompt.json"
+    },
+    {
+      "file": "public/images/guides/sound-check-objects-v2-cover-1600.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        1600,
+        901
+      ],
+      "bytes": 38228,
+      "sha256": "6a9ab19e760283b76a30728cdec13764ad6b28b976ca60e614a312b4c94831b8",
+      "origin": "Original built-in image_gen people-free sound-check still life generated October23,2026. Decorative artwork, not product UI or device-test evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/sound-check-objects-v2/provenance.json",
+      "prompt_file": "docs/article-artwork/sound-check-objects-v2/prompt.json"
+    },
+    {
+      "file": "public/images/guides/sound-check-objects-v2-cover-1000.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        1000,
+        563
+      ],
+      "bytes": 15846,
+      "sha256": "2f8c0c49730a660d93270f8a3cd0d8b72f390b0702acfb0c6c4fcb1e4584b6b1",
+      "origin": "Original built-in image_gen people-free sound-check still life generated October23,2026. Decorative artwork, not product UI or device-test evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/sound-check-objects-v2/provenance.json",
+      "prompt_file": "docs/article-artwork/sound-check-objects-v2/prompt.json"
+    },
+    {
+      "file": "public/images/guides/sound-check-objects-v2-cover-640.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        640,
+        360
+      ],
+      "bytes": 6964,
+      "sha256": "6098f7985b9b1c9a37b40d37b76250fb5a8c8dcc277944c02ab36a22d704aa4d",
+      "origin": "Original built-in image_gen people-free sound-check still life generated October23,2026. Decorative artwork, not product UI or device-test evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/sound-check-objects-v2/provenance.json",
+      "prompt_file": "docs/article-artwork/sound-check-objects-v2/prompt.json"
+    },
+    {
+      "file": "public/images/guides/sound-check-objects-v2-cover-mobile.webp",
+      "role": "Article header, responsive variant",
+      "dimensions": [
+        900,
+        1600
+      ],
+      "bytes": 14028,
+      "sha256": "1c06c2e0dfcf67b02589b5ac4d11aca1bd42f5e6566ff6e2c2caeba56baeaa8b",
+      "origin": "Original built-in image_gen people-free sound-check still life generated October23,2026. Decorative artwork, not product UI or device-test evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/sound-check-objects-v2/provenance.json",
+      "prompt_file": "docs/article-artwork/sound-check-objects-v2/prompt.json"
+    },
+    {
+      "file": "public/images/guides/sound-check-objects-v2-thumbnail.webp",
+      "role": "Article thumbnail",
+      "dimensions": [
+        640,
+        361
+      ],
+      "bytes": 7208,
+      "sha256": "4247c7528a5605d34cea885916a36176fb7281142025115dc02719b1228e3802",
+      "origin": "Original built-in image_gen people-free sound-check still life generated October23,2026. Decorative artwork, not product UI or device-test evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/sound-check-objects-v2/provenance.json",
+      "prompt_file": "docs/article-artwork/sound-check-objects-v2/prompt.json"
+    },
+    {
+      "file": "public/images/guides/sound-check-objects-v2-social.png",
+      "role": "Article social image",
+      "dimensions": [
+        1200,
+        630
+      ],
+      "bytes": 633007,
+      "sha256": "0f3b9d187c6454a137cf7ea7f0e400e1ef47f5deb7eacb8f17916813eee489d9",
+      "origin": "Original built-in image_gen people-free sound-check still life generated October23,2026. Decorative artwork, not product UI or device-test evidence.",
+      "status": "approved_for_publication",
+      "provenance_sidecar": "docs/article-artwork/sound-check-objects-v2/provenance.json",
+      "prompt_file": "docs/article-artwork/sound-check-objects-v2/prompt.json"
     }
   ],
   "inline_diagram": {
