@@ -4,6 +4,7 @@ readonly P2_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 readonly P2_SIM_ID="${1:?Pass the UDID of an already booted iPhone Simulator.}"
 readonly P2_DERIVED="${P2_DERIVED:-/tmp/teleprompter-p2-verify}"
 cd "$P2_ROOT"
+python3 Scripts/help_sync.py check
 python3 Scripts/test_iphone_structure.py
 swift test --package-path Packages/TeleprompterCore
 swift test --package-path Packages/PhoneLibrary

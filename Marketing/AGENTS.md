@@ -4,6 +4,8 @@ For competitor comparisons, follow [the owner-approved comparison format](docs/c
 
 ## Website languages
 
+App changes and the help guide are one task; follow the root `AGENTS.md` and `../docs/help-sync.md`. After changing help content, help screenshots, or a translation catalog, refresh the validated review with `python3 ../Scripts/help_sync.py record` using the documented outcome, reason, screenshot assessment, and article list. It runs the website build and help tests before saving the review. Never update the record without reviewing the relevant content. Unrelated catalog updates may need a `no-help-change` review because catalogs are shared with the manual.
+
 The owner approved English, Spanish, German, French, Brazilian Portuguese, Japanese and Korean on October 23, 2026. The homepage, pricing page, and complete `/help/` manual are translated; editorial `/guides/` and the other pages remain English. Help articles come from `src/data/help.mjs`; adding an article automatically requires all six translations. Keep the header chooser and the language links at the very bottom of every public page. Do not change Free Teleprompter Online as part of this workflow.
 
 When editing translated page content or shared navigation, update every non-English catalog registered in `src/i18n/config.mjs` in the same change. Run `npm run translations:extract` to write `.translations/source.json`, which lists the exact missing strings by language. Translate new or changed strings with their surrounding source page for context. Preserve the product name, USD amounts, trial conditions, free/Pro limits and clear labeling of English destinations. Unchanged translations should not be regenerated. Do not populate missing translations with English to bypass a build failure.

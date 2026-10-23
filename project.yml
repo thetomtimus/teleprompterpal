@@ -87,6 +87,13 @@ targets:
     type: application
     platform: iOS
     deploymentTarget: "18.0"
+    preBuildScripts:
+      - name: Verify app and help are in sync
+        path: Scripts/check-help-release.sh
+        inputFiles:
+          - $(SRCROOT)
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
     sources:
       - path: iPhoneApp
       - path: iPhonePrototype/App

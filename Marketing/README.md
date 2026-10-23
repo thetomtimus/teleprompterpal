@@ -8,6 +8,8 @@ The homepage and pricing page ship in English, Spanish, German, French, Brazilia
 
 ## Run
 
+App updates include the help guide at `/help/` in all seven languages. The [app/help maintenance workflow](../docs/help-sync.md) requires a current review before an iPhone Release build. Guide and shared catalog changes must refresh that review after validation.
+
 Use Node **22.22 or later** and npm.
 
 ```sh

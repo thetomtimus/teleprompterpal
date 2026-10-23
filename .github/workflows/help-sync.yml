@@ -1,0 +1,36 @@
+name: App and help stay in sync
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  help-sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Require a current app and help review
+        run: python3 Scripts/help_sync.py check
+      - name: Verify the freshness gate
+        run: python3 Scripts/test_help_sync.py
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: Marketing/package-lock.json
+      - run: npm ci
+        working-directory: Marketing
+      - name: Build and check all seven languages
+        run: npm run build
+        working-directory: Marketing
+      - name: Verify localized help and navigation
+        run: node --test tests/i18n.test.mjs tests/help.test.mjs
+        working-directory: Marketing

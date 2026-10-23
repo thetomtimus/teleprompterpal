@@ -14,6 +14,8 @@ One repository for the Mac app, the iPhone app, shared Swift packages, and the w
 
 ## Native apps
 
+Every iPhone app update includes a review of the public help guide and its seven languages. See [app/help maintenance](docs/help-sync.md). CI and standard iPhone Release builds require a current validated review; Debug builds remain available while editing.
+
 The Mac app targets macOS 14 or later. The iPhone app targets iOS 18 or later. Use Xcode with Swift 6 support and XcodeGen 2.45.4 or later. The current source was built using Xcode 27.0.
 
 Generate the shared Xcode project:
