@@ -95,6 +95,7 @@
 .tool-directory-note h2{font-size:26px}
 .tool-directory-note p{color:var(--color-muted);line-height:1.7;margin-top:16px}
 .tools-index{min-height:70vh}
+.tool-directory-item+.tool-directory-item{border-top:0}
 .desktop-nav a[aria-current]{color:var(--color-lavender)}
 @media(max-width:1199px){.word-planner,.speed-test,.tool-explainer,.tool-questions{gap:40px}.budget-controls{gap:20px}.target-inputs{gap:8px}.target-inputs input{width:72px}.tool-next-step{gap:24px}}
 @media(max-width:959px){.calculator-workspace{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}.script-workspace,.timing-workspace{padding:24px}.pace-label{align-items:flex-start;flex-direction:column}.pace-label>div{width:100%}.word-planner{grid-template-columns:1fr;gap:28px}.budget-controls{max-width:520px;gap:32px}.tool-input-switch span{padding:12px;font-size:14px}.tool-next-step{align-items:flex-start;flex-direction:column}.speed-test,.tool-explainer,.tool-questions{grid-template-columns:1fr;gap:28px}.speed-test-intro p{max-width:65ch}.test-passage{max-width:65ch}.reference-table{max-width:540px}}

@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import '../../styles/tools.css';
+import '../../styles/script-cleaner.css';
+---
+<Layout title="Script Cleaner: Remove Line Breaks & Extra Spaces | Teleprompter Pal" description="Clean up text copied from PDFs, documents and notes. Remove unwanted line breaks, keep paragraphs and copy a script ready to rehearse. Free, with no uploads.">
+  <SiteHeader />
+  <main id="main" class="tools-main cleaner-main container">
+    <nav class="tool-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/tools/">Tools</a><span aria-hidden="true">/</span><span aria-current="page">Script cleaner</span></nav>
+    <header class="tool-intro">
+      <h1>Script cleaner.</h1>
+      <p>Turn messy copy and paste into a script you can read. Remove unwanted line breaks, tidy the spacing, and keep your words.</p>
+    </header>
+
+    <noscript><p class="tool-notice">Enable JavaScript to clean your script. The cleanup examples and guidance below are available without it.</p></noscript>
+    <form id="script-cleaner" aria-label="Script cleaner" novalidate>
+      <fieldset class="calculator-fields" disabled>
+        <legend class="visually-hidden">Your script and cleanup settings</legend>
+        <div class="calculator-workspace cleaner-workspace">
+          <div class="script-workspace cleaner-original">
+            <div class="tool-field-heading"><label for="original-script">Your original script</label><button type="button" id="load-cleaner-example" class="tool-text-button">Try an example</button></div>
+            <textarea id="original-script" rows="9" maxlength="300000" placeholder="Paste text from a document, PDF or notes…" aria-describedby="original-help original-limit input-limit-help" spellcheck="false"></textarea>
+            <div class="script-bottomline"><span id="original-count">0 words</span><button type="button" id="clear-original" class="tool-text-button" disabled>Clear script</button></div>
+            <p id="original-help" class="tool-help">Your original stays here while you adjust the cleanup.</p>
+            <p id="original-limit" class="tool-help cleaner-character-count">0 / 300,000 characters</p>
+            <p id="input-limit-help" class="tool-help" hidden>You’ve reached the 300,000-character limit. Clean a longer script in separate sections.</p>
+          </div>
+          <div class="timing-workspace cleaner-result">
+            <div class="tool-field-heading"><label for="cleaned-script">Cleaned script</label><span class="cleaner-live-note">Live preview</span></div>
+            <textarea id="cleaned-script" rows="9" readonly placeholder="Your cleaned script will appear here…" aria-describedby="cleaner-summary cleaned-count" spellcheck="false"></textarea>
+            <div class="script-bottomline cleaner-result-count"><span id="cleaned-count">0 words · 0 paragraphs</span></div>
+            <p id="cleaner-summary" class="tool-help">Your cleaned script will appear here as you type.</p>
+            <div class="cleaner-actions"><button type="button" id="copy-cleaned" class="button button-primary tool-action" disabled>Copy script</button><button type="button" id="download-cleaned" class="tool-secondary-button" disabled>Download .txt <Icon name="arrowDown" size={18} /></button></div>
+          </div>
+        </div>
+
+        <div class="cleaner-settings">
+          <div>
+            <h2 id="line-break-title">Line breaks</h2>
+            <div class="tool-input-switch" role="group" aria-labelledby="line-break-title" aria-describedby="paragraph-help">
+              <label><input type="radio" name="paragraph-mode" value="keep" checked /><span>Keep paragraphs</span></label>
+              <label><input type="radio" name="paragraph-mode" value="join" /><span>Join all lines</span></label>
+            </div>
+            <p id="paragraph-help" class="tool-help">Blank lines mark paragraphs. Line breaks within them become spaces.</p>
+          </div>
+          <div class="cleaner-options">
+            <label class="cleaner-checkbox"><input id="clean-spaces" type="checkbox" checked /><span><strong>Clean extra spaces</strong><span>Turn repeated spaces and tabs into a single space.</span></span></label>
+            <label class="cleaner-checkbox"><input id="reading-chunks" type="checkbox" /><span><strong>Short reading chunks</strong><span>Add paragraph breaks for easier reading aloud.</span></span></label>
+            <p id="chunk-help" class="tool-help" hidden>Chunks hold up to 32 space-separated words. Long sentences may continue in the next chunk. This also normalizes spaces.</p>
+          </div>
+        </div>
+      </fieldset>
+      <div class="cleaner-feedback"><p class="tool-privacy"><Icon name="lock" size={16} />Your script stays in this browser tab. No uploads or signup.</p><p id="cleaner-status" class="tool-help" role="status" aria-atomic="true"></p></div>
+    </form>
+
+    <section class="tool-explainer tool-section" aria-labelledby="cleanup-title">
+      <div><h2 id="cleanup-title">Fix the breaks.<br />Keep the words.</h2><p>Text copied from a PDF can put a line break at the end of every visible line. This cleaner joins those lines so each thought flows again, while keeping paragraphs separated by blank lines.</p><p>Paste selectable text, choose your settings, then copy or download the result. The cleaner changes spacing and paragraph breaks. It keeps your wording, spelling, punctuation and hyphens.</p><p>It doesn’t read PDF files or scanned pages. If your source has columns, bullet lists or words split by a hyphen, check those parts before rehearsing.</p></div>
+      <div class="cleaner-example"><h3>A small cleanup</h3><p class="tool-help">Example text copied with unwanted line breaks</p><pre>{'Take   a breath,\nlook toward the lens,\nand begin.'}</pre><Icon name="arrowDown" size={20} /><p class="tool-help">With “Keep paragraphs” and “Clean extra spaces”</p><p class="cleaner-example-output">Take a breath, look toward the lens, and begin.</p></div>
+    </section>
+
+    <section class="tool-questions tool-section" aria-labelledby="cleaner-questions-title"><h2 id="cleaner-questions-title">Before you copy.</h2><div class="faq-list">
+      <details><summary>How do I remove line breaks but keep paragraphs?<Icon name="caret" size={18} /></summary><p>Choose “Keep paragraphs.” Single line breaks become spaces, and blank lines keep thoughts apart. If your copied text has no blank lines, the cleaner can’t know where the original paragraphs ended. Add blank lines in the original or try “Short reading chunks.”</p></details>
+      <details><summary>Does this rewrite or shorten my script?<Icon name="caret" size={18} /></summary><p>No. The cleaner changes whitespace. It doesn’t summarize, correct spelling, remove filler words or generate new wording. “Short reading chunks” adds paragraph breaks, with a maximum of 32 space-separated words per chunk.</p></details>
+      <details><summary>Can I clean text from a PDF or Google Docs?<Icon name="caret" size={18} /></summary><p>Yes, if you can select and copy the text. Paste it into the original-script field. For a scanned PDF, extract the text first. After cleanup, check list items, column order and hyphenated line endings against the source.</p></details>
+      <details><summary>Does the cleaner upload or save my script?<Icon name="caret" size={18} /></summary><p>Cleanup happens in this browser tab. Your script isn’t uploaded, stored in browser storage or included in the URL. Copy or download it before closing or reloading the page. The website uses general analytics; your script text isn’t sent with it.</p></details>
+    </div></section>
+
+    <aside class="tool-next-step"><div><h2>Now give it a read.</h2><p>Use the speech time calculator to see how long your cleaned script takes to say. Copy your script above, then paste it into the calculator.</p></div><a href="/tools/speech-time-calculator/" class="button button-primary">Time your script <Icon name="arrowRight" size={20} /></a></aside>
+    <p class="tool-related">Ready for scrolling text? Paste your script into the <a href="https://freeteleprompteronline.com/#script">free online teleprompter</a>, or <a href="/guides/record-video-with-script-iphone/">learn how to record with a script on iPhone</a>.</p>
+  </main>
+  <SiteFooter />
+</Layout>
+<script>
+  import '../../scripts/script-cleaner';
+</script>
