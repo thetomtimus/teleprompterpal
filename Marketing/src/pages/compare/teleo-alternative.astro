@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Keep more than three free scripts', note: 'Script-count limits differ from the size of each script', pal: { state: 'yes', detail: 'No three-script gate in reviewed source; 1 MB text safeguard' }, competitor: { state: 'no', detail: 'Free plan: up to three scripts' } },
+  { feature: 'Record past 60 seconds for free', note: 'Storage and device interruptions still apply', pal: { state: 'yes', detail: 'No 60-second gate in reviewed camera workflow' }, competitor: { state: 'no', detail: 'Pro required beyond the free 60-second cap' } },
+  { feature: 'Set the scrolling pace', note: 'A pace you choose, separate from voice following', pal: { state: 'yes', detail: 'Free reader controls' }, competitor: { state: 'yes', detail: 'Auto and manual modes documented' } },
+  { feature: 'Read while recording in one iPhone app', note: 'Built-in camera and script display', pal: { state: 'yes', detail: 'Free iPhone recording' }, competitor: { state: 'yes', detail: 'Free within script, time and watermark limits' } },
+  { feature: 'Trim and crop a recorded take', note: 'Editing a saved video, separate from redoing a section', pal: { state: 'yes', detail: 'Free saved video edits' }, competitor: { state: 'unknown', detail: 'Retake is documented; this edit task unverified' } },
+  { feature: 'Reopen edits and restore the original', note: 'Recover the full take and framing after saving changes', pal: { state: 'yes', detail: 'Saved internal device check' }, competitor: { state: 'unknown', detail: 'Exact saved-edit reset task untested' } },
+  { feature: 'Save or share a recorded video', note: 'Plan and watermark limits differ', pal: { state: 'yes', detail: 'Pro for every Photos, Files or Share delivery' }, competitor: { state: 'yes', detail: 'Photos and sharing documented; free caps apply' } },
+  { feature: 'Deliver a video on the free plan', note: 'A distinct Teleo advantage for short watermarked takes', pal: { state: 'no', detail: 'Every MP4 export and delivery requires Pro' }, competitor: { state: 'yes', detail: 'Up to 60 seconds, 1080p, small watermark' } },
+  { feature: 'Follow speech with voice recognition', note: 'Recognition accuracy was not benchmarked', pal: { state: 'no', detail: 'Set-speed reader in reviewed implementation' }, competitor: { state: 'yes', detail: 'VoiceTrack documented on Free' } },
+  { feature: 'Import PDF and Word documents', note: 'Typing or pasting text is a separate workflow', pal: { state: 'no', detail: 'Reviewed importer accepts UTF-8 TXT' }, competitor: { state: 'yes', detail: 'PDF, DOCX, RTF and TXT imports on Pro' } },
+  { feature: 'Mirror the script text', note: 'Text reflection differs from a mirrored selfie preview', pal: { state: 'unknown', detail: 'Physical mirror-rig task untested' }, competitor: { state: 'yes', detail: 'Pro feature documented; rig untested' } },
+  { feature: 'Read without creating an account', note: 'A shared benefit, not a comparative privacy test', pal: { state: 'yes', detail: 'Local script and recording workflow' }, competitor: { state: 'yes', detail: 'No-account native workflow documented' } },
+];
+---
+<Layout title="Teleprompter Pal vs Teleo | Free Recording & Saved Edits" description="Compare Teleprompter Pal and Teleo for free iPhone recording limits, saved trim/crop edits, voice scrolling, watermarked delivery and current US prices." type="article" published="2026-10-24" modified="2026-10-24">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/teleo-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-24" />
+      <meta itemprop="dateModified" content="2026-10-24" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs Teleo</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/teleo-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs Teleo</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free iPhone recording and reversible saved edits.</strong></p>
+        <p class="comparison-intro-note">Every Teleprompter Pal export requires Pro. Teleo’s free plan caps scripts at three and takes at 60 seconds, with a watermark.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When Teleo fits</a><a href="#evidence">Tests &amp; sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for recording and refining a scripted take on one iPhone, without Teleo’s three-script and 60-second free gates. Teleo adds voice following and free delivery of short watermarked takes.</p>
+        <p class="table-help" id="table-help">Teleo features below are developer-documented, not a fresh device test. Scroll sideways on smaller screens; a dash means unverified. <a href="#editions">Edition and test scope.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and Teleo feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">Teleo</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus {...row.pal} /></td><td><ComparisonStatus {...row.competitor} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal keeps recording and saved trim/crop edits free; Pro adds every delivery. Teleo offers capped free delivery and lower listed annual and monthly subscription prices.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">Teleo</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Up to three scripts</li><li>Up to 60 seconds per 1080p take, with a small watermark</li><li>VoiceTrack and video saving/sharing documented</li></ul><p class="comparison-plan-note">The free script list includes a banner ad. These are current advertised entitlements, not a completed recording/export check.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">$29.99<span>/year</span></p><ul><li>Removes the free script and recording-time caps, watermark and ads</li><li>Up to 4K/60, camera controls, file imports and mirror mode</li><li>Three-day free trial advertised; check eligibility</li></ul><p class="comparison-plan-note">Billed yearly; auto-renews until cancelled. The website’s rounded $2.50/month figure is an annual-plan equivalent, not a monthly commitment.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Monthly</h4><p class="comparison-price">$4.99<span>/month</span></p><p class="comparison-plan-note">The website advertises $1.99 for the first month, then $4.99/month. That is a paid introduction, not a free trial. We have not verified eligibility or the same introduction in Apple checkout. Renews automatically until cancelled.</p><p class="comparison-plan-note">The US App Store lists $29.99 yearly and $4.99 monthly. The website says Lifetime is no longer sold; its legacy $0.99 store row is not a current purchase recommendation.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 23 October 2026. Store prices can vary by country; confirm the final offer before subscribing. Teleo’s website sells an access key for up to five devices, while Apple bills and restores Store purchases through your Apple Account. We did not buy either offer. Teleprompter Pal is not the cheaper paid plan here. <a href="#evidence">Sources and test limits.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>You want to keep several scripts ready, record a take longer than a minute and decide on the opening and framing afterwards. Teleprompter Pal combines a set-speed reader, camera, playback and saved trim/crop edits. Those stages are free.</p>
+          <p>Its reviewed implementation has no three-script or 60-second recording gate. The editor has a 1 MB text safeguard; available storage, camera interruptions and your device still bound recording. This is a source-based comparison of limits, not a fresh long-recording benchmark.</p>
+          <p>The original stays separate from your saved edit. Reopen the changes or restore the full take and framing, then use Pro for every MP4 export and Photos, Files or Share delivery. Follow our <a href="/guides/record-video-with-script-iphone/">iPhone script-recording guide</a> or check <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in Teleo. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When Teleo is the better fit</h2>
+          <p>Choose Teleo if voice-following scrolling matters more than setting your own pace. Its native listing also describes pausing a take and using Retake to redo a section, Bluetooth clicker/keyboard control and script markers for pauses, emphasis and sections. We have not tested those controls or recognition accuracy.</p>
+          <p>Teleo Pro documents PDF, DOCX, RTF and TXT import, reflected text and camera controls up to 4K/60. Its free watermarked delivery and lower advertised paid prices are practical advantages. The exact saved trim/crop/original-reset task remains unverified, so the table leaves it neutral.</p>
+          <p>Its AI drafting and editing require a supported Apple Intelligence device and iOS 26 or later. That requirement is separate from the app’s iOS 18 minimum. We have not checked generated scripts, AI allowances in use, hardware remotes or a physical mirror rig.</p>
+        </section>
+        <section id="editions" class="comparison-section">
+          <h2>Which Teleo and which offer?</h2>
+          <p>This covers Teleo by Stanum LLC, the native iPhone/iPad app, US listing ID 6778544175. Apple’s lookup returned version 1.4.0 and iOS 18 or later on 23 October 2026. Its separate online reader and Android edition are outside this comparison.</p>
+          <p>Older store history and the legacy Premium price row can conflict with current subscription information. The current official pricing page says the one-time purchase has ended and earlier buyers keep access. We use the current annual/monthly offer, without treating a historical row as an available lifetime deal.</p>
+          <p>Teleo describes local scripts and no account. Its current FAQ and release notes qualify voice recognition: languages without a device offline model may use Apple’s servers with permission. We have not audited privacy, offline operation or language accuracy in either app.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>The recording task still to test</h2>
+          <p>We checked official sources and the current Teleprompter Pal implementation. No fresh Teleo recording, export or reset test was completed. The green checks for Teleo describe documented features.</p>
+          <p>For a matched trial, prepare four original scripts, including a take longer than 60 seconds. Read the same script at your usual distance, then record, save, trim, crop, reopen and try restoring its full length and framing. Note the plan, watermark, output dimensions and delivery destination in each app. Use our <a href="/tools/speech-time-calculator/">speech time calculator</a> to plan the duration.</p>
+          <p>Test Teleo’s voice mode separately with pauses, a correction and a language you use. A feature being listed does not establish how well it follows speech. None of this proposed matched task has been completed; our saved Teleprompter Pal check is a different, shorter internal test.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. Saved internal checks, current source inspection and developer claims have different scopes.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated edit and delivery task. It does not certify the current public binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for script creation, the 1 MB text safeguard, camera limits, saved edits and every-delivery Pro gate. Source inspection is not a new device test.</li>
+            <li><strong>Teleo official Pricing and homepage FAQ.</strong> Checked 23 October 2026 for current Free/Pro gates, USD prices, introductions, store-versus-web differences, ended lifetime sales and conditional online recognition. No checkout or functional recording test.</li>
+            <li><strong>Teleo US App Store listing and Apple lookup.</strong> Checked 23 October 2026: Stanum LLC, app ID 6778544175, version 1.4.0, iOS 18+. Sources for current listed monthly/yearly amounts and developer-described recording, Retake, voice, remote and script-marker tools. Legacy Premium row does not verify a new purchase.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is Teleo a dedicated teleprompter app?</summary><p>Yes. Teleo by Stanum LLC is a native iPhone/iPad teleprompter with built-in recording and documented auto, manual and voice scrolling. This page compares that app, not its separate browser reader.</p></details>
+          <details><summary>Which app is better for free recording?</summary><p>Teleprompter Pal is our pick for keeping more scripts, recording beyond a minute and saving reversible trim/crop edits. Its reviewed source has no three-script or 60-second gate; the 1 MB text safeguard and device/storage limits apply. Every delivery requires Pro. Teleo advertises free delivery of up-to-60-second 1080p takes with a watermark.</p></details>
+          <details><summary>Is Teleprompter Pal cheaper than Teleo?</summary><p>No, not on the listed paid annual or monthly plans. Teleprompter Pal is $59.99/year or $19.99/month; Teleo lists $29.99/year or $4.99/month in the US. Teleo’s website introductory $1.99 month is not its ongoing monthly price. Check final offer eligibility and region.</p></details>
+          <details><summary>Does Teleprompter Pal follow my voice?</summary><p>The reviewed implementation uses set-speed scrolling. Teleo documents VoiceTrack on Free. We have not run a matched voice-recognition test or checked every supported language.</p></details>
+          <details><summary>Can both apps restore the original after an edit?</summary><p>Our saved internal Teleprompter Pal check covered reopening edits and restoring length and crop. Teleo documents Retake during recording, which is a different task. We have not tested its saved-video trim/crop/reset behavior and leave that unverified.</p></details>
+          <details><summary>Is Teleo’s lifetime purchase still available?</summary><p>The current official pricing page says it is no longer sold and existing buyers retain access. We do not treat the legacy $0.99 Premium row in Apple’s listing as proof of a currently purchasable lifetime offer.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/promptsmart-pro-alternative/">Teleprompter Pal vs PromptSmart Pro <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
