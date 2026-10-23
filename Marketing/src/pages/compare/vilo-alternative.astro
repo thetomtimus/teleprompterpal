@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare a script', note: 'Write and save the words you want to record', pal: { state: 'yes', detail: 'Free scripts and saved library' }, competitor: { state: 'yes', detail: 'Documented; subscription advertised' } },
+  { feature: 'Set the scrolling pace', note: 'Choose the speed for reading', pal: { state: 'yes', detail: 'Free set-speed reader' }, competitor: { state: 'yes', detail: 'Adjustable pace documented' } },
+  { feature: 'Read while recording on iPhone', note: 'Keep the script by the camera view', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'yes', detail: 'Documented; free gate unverified' } },
+  { feature: 'Trim a clip manually', note: 'Shorten the beginning or end of the video', pal: { state: 'yes', detail: 'Free trim' }, competitor: { state: 'unknown', detail: 'Exact trim controls unverified' } },
+  { feature: 'Crop the frame', note: 'Choose which part of the picture stays visible', pal: { state: 'yes', detail: 'Free crop' }, competitor: { state: 'unknown', detail: 'Resizing listed; spatial crop unverified' } },
+  { feature: 'Reopen saved video edits', note: 'Return to editable video after closing the app', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact saved-edit task untested' } },
+  { feature: 'Restore original video length and crop', note: 'The reset task in our saved device check', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact reset task untested' } },
+  { feature: 'Save or share the finished video', note: 'Check the format, destination and payment step', pal: { state: 'yes', detail: 'Pro MP4 and all delivery' }, competitor: { state: 'yes', detail: 'Delivery documented; free gate unverified' } },
+  { feature: 'Generate automatic captions', note: 'Create subtitles for the recorded speech', pal: { state: 'no', detail: 'Not in reviewed implementation' }, competitor: { state: 'yes', detail: 'Automatic captions documented' } },
+  { feature: 'Generate a script with AI', note: 'Use writing assistance before recording', pal: { state: 'no', detail: 'Not in reviewed implementation' }, competitor: { state: 'yes', detail: 'AI script generator documented' } },
+  { feature: 'Control recording with Apple Watch', note: 'Start, pause or stop from the watch', pal: { state: 'unknown', detail: 'Watch workflow unverified' }, competitor: { state: 'yes', detail: 'Watch controls documented; untested' } },
+  { feature: 'Use the local workflow without an account', note: 'Prepare, rehearse, record and save edits on the phone', pal: { state: 'yes' }, competitor: { state: 'unknown', detail: 'Current account requirement unverified' } },
+];
+---
+<Layout title="Teleprompter Pal vs VILO | iPhone Comparison" description="Compare Teleprompter Pal and VILO on iPhone: free recording, reversible edits, export gates, listed subscription prices, automatic captions, AI scripts and Watch controls." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/vilo-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs VILO</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/vilo-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs VILO</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free iPhone recording and reversible saved edits.</strong></p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year; every export requires Pro. VILO advertises subscription access and a $69.99 yearly listing. Eligible offers may differ.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When VILO fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for preparing, recording and revising a scripted take for free. VILO combines prompting with documented captions, AI script generation and Apple Watch controls.</p>
+        <p class="table-help" id="table-help">This covers Teleprompter - VILO by Salix on iPhone. Its checks reflect documented capabilities, not hands-on results or confirmed free access. Scroll sideways on smaller screens; a dash means unverified.</p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and VILO feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">VILO</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus state={row.pal.state} detail={row.pal.detail} /></td><td><ComparisonStatus state={row.competitor.state} detail={row.competitor.detail} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal’s creation and saved edits are free; every export requires Pro. VILO’s description says features require a subscription. Its listed purchases are examples, not a verified checkout or a guarantee of equivalent features.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">VILO</h3>
+            <div class="comparison-plan-tier"><h4>Free download</h4><p class="comparison-price">$0</p><ul><li>iPhone and iPad app</li><li>In-app purchases listed</li></ul><p class="comparison-plan-note">Free download does not establish free recording or delivery. The description advertises subscription access; exact free allowances, watermark behavior and current gates remain untested.</p></div>
+            <div class="comparison-plan-tier"><h4>Named US teleprompter examples</h4><dl class="comparison-plan-options"><div><dt>Yearly</dt><dd>$69.99<span>/year</span></dd></div><div><dt>Weekly</dt><dd>$9.99<span>/week</span></dd></div></dl><p class="comparison-plan-note">Another named weekly item is $11.99. These labelled purchases do not prove which offer is selectable for your account, which tools it unlocks or whether a trial is available.</p></div>
+            <div class="comparison-plan-tier"><h4>Named caption-plan examples</h4><dl class="comparison-plan-options"><div><dt>Annual</dt><dd>$79.99<span>/year</span></dd></div><div><dt>Weekly</dt><dd>$11.99<span>/week</span></dd></div></dl><p class="comparison-plan-note">These use caption-plan labels. Their relation to the teleprompter plans is unverified; do not add the amounts together. Other entries have no stated period. No monthly price or current trial is established.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 23 October 2026. Teleprompter Pal’s $59.99 yearly amount is below VILO’s named annual examples. Its $9.99 weekly amount matches VILO’s lower named weekly example. Eligible offers and bundles may differ; confirm the billed period, access, trial and renewal before subscribing. Teleprompter Pal’s annual trial depends on eligibility. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>A sentence needs another attempt. The opening runs too long. The frame needs to be square. Teleprompter Pal keeps the script, set-speed rehearsal, camera, playback and saved trim/crop edits together on iPhone. You can work through those stages for free.</p>
+          <p>The script and original recording stay on the phone; no account is required for this local workflow. Keep the original separately from the edit, return to the saved changes later, or restore the full take. Pro adds every MP4 export and Photos, Files or Share delivery.</p>
+          <p>That focused workflow is our reason to recommend Teleprompter Pal for this job. It supports iOS 18 and later, has a 1 MB text safeguard and uses a pace you set. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> and <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in VILO. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When VILO is the better fit</h2>
+          <p>Consider VILO when automatic captions, AI script generation or Apple Watch controls are central to your recording setup. Its listing documents those tools. Teleprompter Pal does not currently generate captions or AI scripts in the reviewed implementation; its Watch workflow is unverified here.</p>
+          <p>VILO also advertises background replacement, beauty adjustments and a dedicated prompter mode with reflected text. Those are useful reasons to investigate it. We have not tested their results, current entitlement or exact hardware behavior. VILO lists iPad support and iOS 15+, while Teleprompter Pal is an iPhone app for iOS 18 and later.</p>
+          <p>Teleprompter Pal’s supported advantage for this reader is its free creation workflow and verified reversible saved edits. The choice depends on whether you need those broader production tools for the finished video.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Check VILO’s exact plan and editing task</h2>
+          <p>This comparison covers Teleprompter - VILO by Salix Dijital Pazarlama Anonim Sirketi, app ID 1590820344. Its subtitle uses “Teleprompter for Video,” but it is a separate product from the app in our <a href="/compare/teleprompter-for-video-alternative/">Teleprompter Pal vs Teleprompter for Video comparison</a>.</p>
+          <p>VILO documents scripts, recording and delivery. Its social-format resizing claim does not establish the exact spatial crop task. Saving scripts is also different from reopening editable video or restoring the original recording. Those video-editing details stay unverified rather than receiving a false cross.</p>
+          <p>The store contains several purchase names and amounts. Unlabelled items and older customer reviews do not establish a current monthly period, trial or eligible renewal offer. We have not opened the app’s purchase sheet or established its exact script limit and account requirement.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try one script through recording and export</h2>
+          <p>Use the same short script, camera position and microphone. Include a pause and a repeated sentence. Set a starting pace with the <a href="/tools/speech-time-calculator/">speech time calculator</a>, record a take, review it, trim the opening and choose a square crop.</p>
+          <p>Close and reopen the editable work. Check whether the full length and original framing can be restored. Try the delivery destination you need, note any payment or watermark step, and play the saved file with sound outside the app. If you need VILO’s captions or Watch controls, test a name, a corrected sentence and the exact paired watch too.</p>
+          <p>This is a suggested common task. We have not completed a matched VILO recording/export run, inspected its iPhone purchase sheet or timed either workflow. Source research is not a device test.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison uses saved internal device evidence, current source/offer checks and official VILO sources. Developer descriptions are not hands-on results; untested checkout, account and original-restoration behavior stays neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated editing and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for the local workflow, set-speed reader, 1 MB safeguard and Pro delivery gate. This is source inspection, not a new device test.</li>
+            <li><strong>Apple US listing and lookup: Teleprompter - VILO.</strong> Salix Dijital Pazarlama Anonim Sirketi, app ID 1590820344, version 2.4.20, iOS 15+, checked 23 October 2026. Sources for identity, documented recording/caption/script/Watch features and the description’s subscription disclosure. These are developer claims; no installed app, watch or eligible checkout was tested.</li>
+            <li><strong>Labelled Apple US in-app purchases for VILO.</strong> Checked 23 October 2026. Named annual/weekly teleprompter and caption examples are kept separate. Unlabelled periods, monthly pricing, current trial eligibility and feature-bundle equivalence remain unverified. Customer reviews are not used as current price, trial or performance evidence.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Can I export for free?</summary><p>Every Teleprompter Pal MP4 and Photos, Files or Share delivery requires Pro. Recording, playback and saved trim/crop edits are free. VILO is free to download and advertises subscription access. Its exact free recording/export allowances and watermark behavior are unverified here.</p></details>
+          <details><summary>Which app is cheaper?</summary><p>Teleprompter Pal is $59.99/year, $19.99/month or $9.99/week. VILO lists a teleprompter annual item at $69.99 and weekly items at $9.99 and $11.99, plus differently named caption plans. Teleprompter Pal’s annual amount is below those named annual examples; its weekly amount matches VILO’s lower weekly example. Selectable offers and included features may differ.</p></details>
+          <details><summary>Does VILO have automatic captions and AI scripts?</summary><p>Its official listing documents both. We have not tested their output or the plan required for your task. Teleprompter Pal does not currently generate captions or AI scripts in the reviewed implementation.</p></details>
+          <details><summary>Can I restore the original after editing?</summary><p>Teleprompter Pal keeps the original separately; our saved internal device check restored its full length and crop and reopened saved edits. VILO’s exact original-reset task is untested, so we leave it unverified.</p></details>
+          <details><summary>Which plans have a trial?</summary><p>Teleprompter Pal’s yearly plan has a 3-day trial for eligible subscribers; monthly and weekly plans have no introductory trial. VILO’s current trial eligibility and post-trial offer have not been verified in its purchase sheet. Do not infer them from older reviews or unlabelled purchase names.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/teleprompterpad-alternative/">Teleprompter Pal vs TeleprompterPAD <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
