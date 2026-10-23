@@ -62,6 +62,8 @@ For a free reader with optional camera hardware, see [Teleprompter Pal vs Parrot
 
 Considering StoriesStudio, now listed as Teleprompter App Record Videos? [Compare Teleprompter Pal and StoriesStudio](/compare/storiesstudio-alternative/) for reversible edits, captions, listed subscription prices and the distinction between its iPhone app and free browser tool.
 
+Considering the separate camera-focused Video Teleprompter app? [Compare Teleprompter Pal and Video Teleprompter](/compare/video-teleprompter-alternative/) for saved reversible edits, advertised free watermarked saving, cue points, remotes and annual or one-time pricing.
+
 These suggestions are editorial judgments based on the features and limitations detailed below. If you are still deciding which device should hold the script, compare a [browser teleprompter or iPhone app](/guides/browser-teleprompter-vs-iphone-app/) first.
 
 ## Free limits and prices to check
