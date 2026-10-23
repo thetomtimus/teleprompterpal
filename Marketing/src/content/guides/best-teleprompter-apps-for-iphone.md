@@ -64,6 +64,8 @@ Considering StoriesStudio, now listed as Teleprompter App Record Videos? [Compar
 
 Considering the separate camera-focused Video Teleprompter app? [Compare Teleprompter Pal and Video Teleprompter](/compare/video-teleprompter-alternative/) for saved reversible edits, advertised free watermarked saving, cue points, remotes and annual or one-time pricing.
 
+Choosing a voice-following reader for presentations or a mirror rig? [Compare Teleprompter Pal and Prompt+](/compare/prompt-plus-alternative/) for one-iPhone recording, free script limits, reversible edits, remote controls and the one-time reader upgrade.
+
 These suggestions are editorial judgments based on the features and limitations detailed below. If you are still deciding which device should hold the script, compare a [browser teleprompter or iPhone app](/guides/browser-teleprompter-vs-iphone-app/) first.
 
 ## Free limits and prices to check
