@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare a script', note: 'Write the words you want to record', pal: { state: 'yes', detail: 'Free scripts and saved library' }, competitor: { state: 'yes', detail: 'Documented; free gate unverified' } },
+  { feature: 'Set the scrolling pace', note: 'Choose a speed for reading', pal: { state: 'yes', detail: 'Free set-speed reader' }, competitor: { state: 'yes', detail: 'Adjustable scrolling documented' } },
+  { feature: 'Read while recording on iPhone', note: 'Keep the script by the camera view', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'yes', detail: 'Documented; free gate unverified' } },
+  { feature: 'Trim a clip manually', note: 'Shorten the beginning or end', pal: { state: 'yes', detail: 'Free trim' }, competitor: { state: 'yes', detail: 'Manual trim documented' } },
+  { feature: 'Crop the frame', note: 'Change which part of the picture stays visible', pal: { state: 'yes', detail: 'Free crop' }, competitor: { state: 'yes', detail: 'Spatial crop documented' } },
+  { feature: 'Reopen saved edits', note: 'Return to the editable work later', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact saved-edit task untested' } },
+  { feature: 'Restore original length and crop', note: 'The reset task in our saved device check', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact reset task untested' } },
+  { feature: 'Save or share the finished video', note: 'Check the format, destination and payment step', pal: { state: 'yes', detail: 'Pro MP4 and all delivery' }, competitor: { state: 'yes', detail: 'Sharing documented; gate unverified' } },
+  { feature: 'Import a TXT script', note: 'Start with a plain-text document', pal: { state: 'yes', detail: 'Plain-text import' }, competitor: { state: 'yes', detail: 'TXT import documented' } },
+  { feature: 'Import DOCX, PDF or images directly', note: 'Bring in documents beyond plain text', pal: { state: 'no', detail: 'Reviewed importer is plain text' }, competitor: { state: 'yes', detail: 'Formats documented; untested' } },
+  { feature: 'Add captions or subtitles', note: 'A caption feature, not proof of automatic generation', pal: { state: 'no', detail: 'Not in reviewed implementation' }, competitor: { state: 'yes', detail: 'Advertised in title; workflow unverified' } },
+  { feature: 'Use the local workflow without an account', note: 'Prepare, rehearse, record and save edits on the phone', pal: { state: 'yes' }, competitor: { state: 'unknown', detail: 'Current requirement unverified' } },
+];
+---
+<Layout title="Teleprompter Pal vs OnTake | iPhone Comparison" description="Compare Teleprompter Pal and OnTake on iPhone: free recording, reversible edits, document imports, export gates, subscriptions and a listed lifetime option." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/ontake-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs OnTake</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/ontake-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs OnTake</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free rehearsal, recording and reversible iPhone edits.</strong></p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year; every export requires Pro. OnTake lists a cheaper monthly plan and a lifetime option. Its free access is unverified.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When OnTake fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for free rehearsal, recording and saved retake edits. OnTake also documents prompting, recording, trim and crop, with broader document imports and recording controls.</p>
+        <p class="table-help" id="table-help">This compares the iPhone workflow with OnTake Teleprompter &amp; Captions by Dasas Digital. OnTake checks are developer claims, not hands-on results or confirmed free access. Scroll sideways on smaller screens; a dash means unverified.</p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and OnTake feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">OnTake</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus state={row.pal.state} detail={row.pal.detail} /></td><td><ComparisonStatus state={row.competitor.state} detail={row.competitor.detail} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Recording and saved edits are free in Teleprompter Pal; every export requires Pro. OnTake lists cheaper monthly and weekly examples, plus a one-time option. Its free recording and delivery gates remain unverified.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">OnTake</h3>
+            <div class="comparison-plan-tier"><h4>Free download</h4><p class="comparison-price">$0</p><ul><li>iPhone and iPad app</li><li>In-app purchases listed</li></ul><p class="comparison-plan-note">A free download does not establish free recording, watermark-free delivery or export. The current payment gates have not been tested.</p></div>
+            <div class="comparison-plan-tier"><h4>US subscription examples</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>$8.99<span>/month</span></dd></div><div><dt>Yearly</dt><dd>$69.99<span>/year</span></dd></div></dl><p class="comparison-plan-note">The list also names $4.99 and $9.99 weekly items and $89.99 yearly variants. These are listed purchases, not verified eligible offers. Trial availability and renewal terms need checking in the purchase sheet.</p></div>
+            <div class="comparison-plan-tier"><h4>Listed lifetime access</h4><p class="comparison-price">$119.99<span>one-time listing</span></p><ul><li>Named “Premium Lifetime Access”</li><li>No matching Teleprompter Pal lifetime plan</li></ul><p class="comparison-plan-note">Current availability and included features have not been verified at checkout. A listed lifetime item does not establish that every account can select it.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 23 October 2026. Teleprompter Pal’s yearly price is below the named OnTake annual examples; OnTake’s listed monthly price is lower. Compare the actual bundle, billed period and renewal terms. Teleprompter Pal’s annual trial depends on eligibility. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>A sentence needs another attempt. The opening runs too long. The frame needs to be square. Teleprompter Pal keeps the script, set-speed rehearsal, camera, playback and saved trim/crop edits together on iPhone. You can work through those stages for free.</p>
+          <p>The script and original recording stay on the phone; no account is required for this local workflow. Keep the original separately from the edit, return to the saved changes later, or restore the full take. Pro adds every MP4 export and Photos, Files or Share delivery.</p>
+          <p>That focused workflow is our reason to recommend Teleprompter Pal for this job. It supports iOS 18 and later, has a 1 MB text safeguard and uses a pace you set. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> and <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in OnTake. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When OnTake is the better fit</h2>
+          <p>Consider OnTake if you need DOCX, PDF or image imports, recording pause/resume, 4K capture, intros/outros or green-screen replacement. Its listing documents these capabilities; their current payment gates and results are untested here. Teleprompter Pal’s reviewed importer accepts plain text.</p>
+          <p>OnTake’s name advertises captions and subtitles. We have not established automatic generation, the editing workflow or its entitlement. Its listed monthly price and lifetime option may also suit you better. The app supports iPad and iOS 14+, while Teleprompter Pal is an iPhone app for iOS 18 and later.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Check the exact app and offer</h2>
+          <p>This page covers OnTake Teleprompter &amp; Captions by Dasas Digital, app ID 1626361311. Its linked legal pages use the older Teleprompter PRO+ name. It is a different product from the Teleprompter Pro app in our <a href="/compare/teleprompter-pro-alternative/">separate comparison</a>.</p>
+          <p>The source packet does not establish OnTake’s exact script limit, current account requirement, saved-edit reopening or original-reset behavior. Purchase names containing “3D” or “7D” do not verify a trial. Check the current purchase sheet rather than inferring eligibility from those labels.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try one script through recording and export</h2>
+          <p>Use the same short script, camera position and microphone. Include a pause and a repeated sentence. Set a starting pace with the <a href="/tools/speech-time-calculator/">speech time calculator</a>, record a take, review it, trim the opening and choose a square crop.</p>
+          <p>Close and reopen the editable work. Check whether the full length and original framing can be restored. Try the delivery destination you need, note any payment or watermark step, and play the saved file with sound outside the app. If you need imported documents or captions, check those routes too.</p>
+          <p>This is a suggested common task. We have not completed a matched OnTake recording/export run, inspected its iPhone purchase sheet or timed either workflow. Source research is not a device test.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison uses saved internal device evidence, current source/offer checks and official OnTake sources. Developer descriptions are not hands-on results; unknown account, export and restoration behavior stays neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated editing and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for the local workflow, set-speed reader, 1 MB safeguard and Pro delivery gate. This is source inspection, not a new device test.</li>
+            <li><strong>Apple US listing and lookup: OnTake Teleprompter &amp; Captions.</strong> Dasas Digital, app ID 1626361311, version 1.3.7, iOS 14+, checked 23 October 2026. Sources for product identity, listed purchase amounts and documented recording, import and editing features. The caption title does not establish automatic transcription. The installed app and eligible checkout were not tested.</li>
+            <li><strong>OnTake’s linked developer site and legal pages.</strong> Checked 23 October 2026. The legal pages use the legacy Teleprompter PRO+ identity; the terms are dated 7 November 2022. They do not establish current feature gates or trial eligibility. No comparative privacy or performance claim is made.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Can I export for free?</summary><p>Every Teleprompter Pal MP4 and Photos, Files or Share delivery requires Pro. Recording, playback and saved trim/crop edits are free. OnTake is free to download, but its current free recording/export gates and watermark behavior are unverified here.</p></details>
+          <details><summary>Which app is cheaper?</summary><p>Teleprompter Pal is $59.99/year, $19.99/month or $9.99/week. OnTake lists $8.99/month, $69.99/year and other subscription variants. Its monthly example is cheaper; Teleprompter Pal’s yearly price is below its named annual examples. These comparisons do not guarantee the same features or selectable offers.</p></details>
+          <details><summary>Does OnTake have a lifetime option?</summary><p>The US listing names Premium Lifetime Access at $119.99. Availability and included features need checking in the app. Teleprompter Pal has no approved lifetime plan.</p></details>
+          <details><summary>Can I restore the original after editing?</summary><p>Teleprompter Pal keeps the original separately; our saved internal device check restored its full length and crop and reopened saved edits. OnTake’s exact original-reset task is untested, so we leave it unverified.</p></details>
+          <details><summary>Which plans have a trial?</summary><p>Teleprompter Pal’s yearly plan has a 3-day trial for eligible subscribers; monthly and weekly plans have no introductory trial. OnTake’s current eligible trial and renewal terms have not been inspected in the purchase sheet. Labels such as 3D or 7D do not establish those terms.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/capcut-alternative/">Teleprompter Pal vs CapCut <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
