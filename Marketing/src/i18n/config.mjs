@@ -5,6 +5,8 @@ export const locales = [
   { code: 'de', path: 'de', name: 'Deutsch', short: 'DE', language: 'Sprache' },
   { code: 'fr', path: 'fr', name: 'Français', short: 'FR', language: 'Langue' },
   { code: 'pt-BR', path: 'pt-br', name: 'Português (Brasil)', short: 'PT', language: 'Idioma' },
+  { code: 'ja', path: 'ja', name: '日本語', short: 'JA', language: '言語' },
+  { code: 'ko', path: 'ko', name: '한국어', short: 'KO', language: '언어' },
 ];
 // Only complete, reviewed pages belong here. Never create English fallback URLs.
 export const translatedRoutes = ['/', '/pricing/'];

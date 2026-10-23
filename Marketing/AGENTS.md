@@ -4,9 +4,9 @@ For competitor comparisons, follow [the owner-approved comparison format](docs/c
 
 ## Website languages
 
-The owner approved English, Spanish, German, French and Brazilian Portuguese on October 23, 2026. The homepage and pricing page are translated; the other pages remain English. Keep the header chooser and the language links at the very bottom of every public page. Do not change Free Teleprompter Online as part of this workflow.
+The owner approved English, Spanish, German, French, Brazilian Portuguese, Japanese and Korean on October 23, 2026. The homepage and pricing page are translated; the other pages remain English. Keep the header chooser and the language links at the very bottom of every public page. Do not change Free Teleprompter Online as part of this workflow.
 
-When editing translated page content or shared navigation, update all four saved translation catalogs in `src/i18n/` in the same change. Run `npm run translations:extract` to write `.translations/source.json`, which lists the exact missing strings by language. Translate new or changed strings with their surrounding source page for context. Preserve the product name, USD amounts, trial conditions, free/Pro limits and clear labeling of English destinations. Unchanged translations should not be regenerated. Do not populate missing translations with English to bypass a build failure.
+When editing translated page content or shared navigation, update every non-English catalog registered in `src/i18n/config.mjs` in the same change. Run `npm run translations:extract` to write `.translations/source.json`, which lists the exact missing strings by language. Translate new or changed strings with their surrounding source page for context. Preserve the product name, USD amounts, trial conditions, free/Pro limits and clear labeling of English destinations. Unchanged translations should not be regenerated. Do not populate missing translations with English to bypass a build failure.
 
 Client-facing dynamic messages on translated pages must call `translatedMessage` as `t('English message')`, using a single-quoted literal; the build extracts those messages. Add new interactive components to `dynamicMessages()` in `scripts/localize.mjs`. Keep scripts as separate assets for the CSP.
 

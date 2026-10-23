@@ -4,7 +4,7 @@ A complete local marketing site for the iPhone app, adapted from the measured de
 
 ## Website languages (October 23, 2026)
 
-The homepage and pricing page ship in English, Spanish, German, French and Brazilian Portuguese, with a header language menu and language links at the very bottom of every public page. [Language publishing](docs/languages.md) explains coverage, source files and the update workflow. Translations reuse the English layout at build time. Copy changes require updated saved translations in the same commit; the build rejects missing translations. Run `npm run translations:extract` for the changed-string list and `npm run test:i18n` after the build. No background translation service is configured. Preview the generated language URLs with `npm run preview`.
+The homepage and pricing page ship in English, Spanish, German, French, Brazilian Portuguese, Japanese and Korean, with a header language menu and language links at the very bottom of every public page. [Language publishing](docs/languages.md) explains coverage, source files and the update workflow. Translations reuse the English layout at build time. Copy changes require updated saved translations in the same commit; the build rejects missing translations. Run `npm run translations:extract` for the changed-string list and `npm run test:i18n` after the build. No background translation service is configured. Preview the generated language URLs with `npm run preview`.
 
 ## Run
 
