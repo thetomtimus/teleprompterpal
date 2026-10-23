@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare a script', note: 'Write or paste the words you want to read', pal: { state: 'yes', detail: 'Free scripts and saved library' }, competitor: { state: 'yes', detail: 'Free reader; documented' } },
+  { feature: 'Set the scrolling pace', note: 'Choose the speed before reading', pal: { state: 'yes', detail: 'Free set-speed reader' }, competitor: { state: 'yes', detail: 'Speed controls documented' } },
+  { feature: 'Record video while reading in the app', note: 'Use one iPhone for the script and camera take', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'no', detail: 'Listing explicitly says no video recording' } },
+  { feature: 'Trim and crop a video take', note: 'Shorten a clip and change its framing', pal: { state: 'yes', detail: 'Free saved edits' }, competitor: { state: 'unknown', detail: 'Video editing not documented' } },
+  { feature: 'Restore original video length and crop', note: 'The exact task in our saved device check', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Video reset not established' } },
+  { feature: 'Import a TXT script', note: 'Start with a plain-text document', pal: { state: 'yes', detail: 'Plain-text import' }, competitor: { state: 'yes', detail: 'TXT import documented' } },
+  { feature: 'Import Word, PDF or RTF directly', note: 'Open formatted documents without converting to TXT', pal: { state: 'no', detail: 'Reviewed importer is plain text' }, competitor: { state: 'yes', detail: 'Document formats listed' } },
+  { feature: 'Keep bold or coloured passages in a script', note: 'Rich text within the script, beyond a global font setting', pal: { state: 'no', detail: 'Reviewed editor stores plain text' }, competitor: { state: 'yes', detail: 'Rich-text formatting documented' } },
+  { feature: 'Mirror text for a physical teleprompter', note: 'Text reflection, not a mirrored front-camera preview', pal: { state: 'unknown', detail: 'Mirror-rig setup untested' }, competitor: { state: 'yes', detail: 'Mirror mode documented' } },
+  { feature: 'Use mapped remotes, pedals or keyboard controls', note: 'Check the exact iOS hardware and button mapping', pal: { state: 'unknown', detail: 'Compatibility untested' }, competitor: { state: 'yes', detail: 'iOS controls documented; pairing untested' } },
+  { feature: 'Jump between script markers', note: 'Navigate to marked sections during prompting', pal: { state: 'unknown', detail: 'Marker workflow unverified' }, competitor: { state: 'yes', detail: '### markers documented' } },
+  { feature: 'Read a script without an account', note: 'The prompting workflow, not a cloud-service login', pal: { state: 'yes' }, competitor: { state: 'yes', detail: 'Developer says no registration' } },
+];
+---
+<Layout title="Teleprompter Pal vs TeleprompterPAD | iPhone Comparison" description="Compare Teleprompter Pal and TeleprompterPAD: recording on one iPhone, reversible edits, free prompting, mirror rigs, remotes, imports and the actual costs." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/teleprompterpad-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs TeleprompterPAD</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/teleprompterpad-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs TeleprompterPAD</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal to read, record and revise a take on one iPhone.</strong></p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year; every export requires Pro. TeleprompterPAD is a free reader for a separate camera setup, with no built-in video recording.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When TeleprompterPAD fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Choose Teleprompter Pal when the same iPhone must show the script, record the take and retain editable video. Choose TeleprompterPAD when you need a free reader for a separate camera or mirror rig.</p>
+        <p class="table-help" id="table-help">TeleprompterPAD checks reflect its official iOS listing and guidance, not a hands-on rig test. A remembered script is different from a saved video edit. Scroll sideways on smaller screens; a dash means unverified.</p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and TeleprompterPAD feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">TeleprompterPAD</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus state={row.pal.state} detail={row.pal.detail} /></td><td><ComparisonStatus state={row.competitor.state} detail={row.competitor.detail} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Both apps offer free prompting. Teleprompter Pal also includes free recording and saved edits; every export requires Pro. TeleprompterPAD’s free reader does not include a video recorder, so a camera and editing workflow sit outside the app.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">TeleprompterPAD</h3>
+            <div class="comparison-plan-tier"><h4>Free prompter app</h4><p class="comparison-price">$0</p><ul><li>Free iPhone and iPad reader</li><li>Developer says no fees or registration</li><li>Touchscreen controls available</li></ul><p class="comparison-plan-note">The US store lists the app as Free. There is no software subscription price to compare here. We have not tested an installed iPhone build.</p></div>
+            <div class="comparison-plan-tier"><h4>Recording and editing</h4><p class="comparison-price">Separate<span>camera workflow</span></p><ul><li>No built-in video recording</li><li>Use another camera or recording setup</li><li>Choose an editor for the resulting file</li></ul><p class="comparison-plan-note">These are setup requirements, not a TeleprompterPAD subscription or an app export fee. Your existing equipment and editor determine any additional cost.</p></div>
+            <div class="comparison-plan-tier"><h4>Optional hardware</h4><p class="comparison-price">Sold<span>separately</span></p><ul><li>Remote or pedal is optional for app use</li><li>Mirror hardware is a separate product</li></ul><p class="comparison-plan-note">We do not quote one hardware total: the controller, rig, camera and local taxes depend on the setup. Hardware bundles are not a lifetime app plan.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">Software offer checked 23 October 2026. Both readers are free. TeleprompterPAD has no app subscription; Teleprompter Pal’s paid boundary is delivering the video recorded and edited in the app. Teleprompter Pal prices are US dollars; its annual trial depends on eligibility. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>A sentence needs another attempt. The opening runs too long. The frame needs to be square. Teleprompter Pal keeps the script, set-speed rehearsal, camera, playback and saved trim/crop edits together on iPhone. You can work through those stages for free.</p>
+          <p>The script and original recording stay on the phone; no account is required for this local workflow. Keep the original separately from the edit, return to the saved changes later, or restore the full take. Pro adds every MP4 export and Photos, Files or Share delivery.</p>
+          <p>That focused workflow is our reason to recommend Teleprompter Pal for this job. It supports iOS 18 and later, has a 1 MB text safeguard and uses a pace you set. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> and <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. TeleprompterPAD documents remembering its script and settings. That is not a claim about restoring video; we have not run a matched setup test. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When TeleprompterPAD is the better fit</h2>
+          <p>Use TeleprompterPAD when your camera is already separate from the screen holding the script. Its free reader supports reflected text and document imports. That can suit an iPad in a mirror rig or an iPhone used as a dedicated prompt screen.</p>
+          <p>Its iOS guidance documents remote button mapping and keyboard controls; the listing also names compatible pedals. Those tools can help you adjust text while your hands stay near the presentation. Exact hardware pairing is untested here. The iOS help distinguishes keyboard support from mouse mode on other platforms, so we do not claim iPhone mouse control.</p>
+          <p>Teleprompter Pal is our recommendation for the one-iPhone camera-and-editing job. TeleprompterPAD is the stronger documented fit for the free dedicated-reader setup. Do not pay for recording features if your separate camera already covers that need.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>A free reader and a video recorder do different jobs</h2>
+          <p>The TeleprompterPAD App Store description explicitly says the app does not record video. Its references to a recording session describe the surrounding camera setup. The optional remote controls prompting; it does not turn the reader into a recorder.</p>
+          <p>TeleprompterPAD can remember script/settings and save script documents. Those are text workflows. Teleprompter Pal’s original-retention evidence concerns the recorded video’s length and crop. We keep these distinctions visible instead of treating a script reset as a video-editing result.</p>
+          <p>This comparison covers the native iOS TeleprompterPAD app, ID 1507218595, rather than assuming every feature in the web Lite, Android or desktop editions is identical. It is also separate from other apps called Prompter Pad or PrompterPal.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try one script through recording and export</h2>
+          <p>Use one short script with a pause and a repeated sentence. Set a starting pace with the <a href="/tools/speech-time-calculator/">speech time calculator</a>. In Teleprompter Pal, record while reading, review the take, trim the opening and choose a square crop. Reopen the edit and restore the original framing and length.</p>
+          <p>For TeleprompterPAD, put the script device in the position your rig needs and record with the separate camera. Test the exact remote or pedal, import a formatted document and try its markers. Then move the video through your chosen editor and delivery route. Include equipment, transfer and export steps in the comparison.</p>
+          <p>This is a suggested setup comparison. We have not completed a matched TeleprompterPAD rig, controller or recording task, and have not timed either workflow. Source inspection is not a hands-on result.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison uses saved internal device evidence, current source/offer checks and official TeleprompterPAD sources. Developer descriptions are not hands-on results; untested hardware compatibility and undocumented video-editing behavior stay neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated editing and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for the local workflow, set-speed reader, 1 MB safeguard and Pro delivery gate. This is source inspection, not a new device test.</li>
+            <li><strong>Apple US listing and lookup: TeleprompterPAD.</strong> PROYECTOS SEVENE SOCIEDAD LIMITADA, app ID 1507218595, version 2.0.7, iOS 11+, checked 23 October 2026. Sources for product identity, free listing, document/rich-text/marker features and the explicit no-video-recording notice. No installed app or hardware test was performed.</li>
+            <li><strong>TeleprompterPAD official app page and FAQ.</strong> Checked 23 October 2026. Sources for free use without fees or registration, script-file workflows and the optional nature of its remote/pedal. Hardware and software costs are kept separate.</li>
+            <li><strong>TeleprompterPAD official iOS remote-control guide.</strong> Checked 23 October 2026 through the web reader; a direct HTML fetch was blocked. Source for iOS button mapping, prompting controls and platform distinctions. This is documentation, not a pairing or compatibility test.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Can I export for free?</summary><p>Every Teleprompter Pal MP4 and Photos, Files or Share delivery requires Pro. Recording, playback and saved edits are free. TeleprompterPAD is a free reader, but does not record video. Your separate camera and editor determine the video delivery route and any cost.</p></details>
+          <details><summary>Does TeleprompterPAD record video on iPhone?</summary><p>No. Its official iOS listing explicitly says it does not record video. Use it as a script screen for a separate recording setup. Teleprompter Pal records while displaying the script on the same iPhone.</p></details>
+          <details><summary>Which app is cheaper?</summary><p>TeleprompterPAD is free for prompting; its developer says there are no fees or registration requirements. Teleprompter Pal offers free prompting, recording and saved edits, with Pro for every export: $59.99/year, $19.99/month or $9.99/week. Optional hardware and a separate recording/editing setup are different costs.</p></details>
+          <details><summary>Do I need to buy TeleprompterPAD hardware?</summary><p>A remote or pedal is optional for app use; touchscreen controls are available. A mirror rig can suit a separate-camera setup. We have not tested controller compatibility in either app and do not quote a universal equipment total.</p></details>
+          <details><summary>Which Teleprompter Pal plan has a trial?</summary><p>The yearly plan has a 3-day trial for eligible subscribers. Monthly and weekly plans have no introductory trial. All subscriptions renew automatically until cancelled. TeleprompterPAD’s free reader is not a paid trial.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/ontake-alternative/">Teleprompter Pal vs OnTake <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
