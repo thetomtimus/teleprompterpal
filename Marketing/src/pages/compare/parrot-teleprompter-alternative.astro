@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare a script', note: 'Write and save the words you want to read', pal: { state: 'yes', detail: 'Free scripts and saved library' }, competitor: { state: 'yes', detail: 'Free reader; script editing documented' } },
+  { feature: 'Set the scrolling pace', note: 'Choose the speed before reading', pal: { state: 'yes', detail: 'Free set-speed reader' }, competitor: { state: 'yes', detail: 'Speed controls documented' } },
+  { feature: 'Read while recording in the app', note: 'Use the script and camera together on one iPhone', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'unknown', detail: 'Built-in recording not established' } },
+  { feature: 'Trim a clip manually', note: 'Shorten the beginning or end of a video', pal: { state: 'yes', detail: 'Free trim' }, competitor: { state: 'unknown', detail: 'Video trim not established' } },
+  { feature: 'Crop the video frame', note: 'Choose which part of the picture stays visible', pal: { state: 'yes', detail: 'Free crop' }, competitor: { state: 'unknown', detail: 'Video crop not established' } },
+  { feature: 'Reopen saved video edits', note: 'Return to editable video after closing the app', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact saved-edit task untested' } },
+  { feature: 'Restore original video length and crop', note: 'The reset task in our saved device check', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact reset task untested' } },
+  { feature: 'Save or share a finished MP4', note: 'Deliver the video to Photos, Files or Share', pal: { state: 'yes', detail: 'Pro MP4 and all delivery' }, competitor: { state: 'unknown', detail: 'Built-in video delivery not established' } },
+  { feature: 'Import a TXT script', note: 'Start with a plain-text document', pal: { state: 'yes', detail: 'Plain-text import' }, competitor: { state: 'yes', detail: 'Dropbox .txt support documented' } },
+  { feature: 'Mirror text for a physical teleprompter', note: 'Text reflection, rather than a mirrored camera preview', pal: { state: 'unknown', detail: 'Mirror-rig task untested' }, competitor: { state: 'yes', detail: 'Reader mirror mode documented' } },
+  { feature: 'Control the script with a Bluetooth remote', note: 'Check the exact remote and button mapping', pal: { state: 'unknown', detail: 'Compatibility untested' }, competitor: { state: 'yes', detail: 'Parrot remote documented; pairing untested' } },
+  { feature: 'Connect Dropbox inside the app', note: 'Direct integration, beyond opening a file from Files', pal: { state: 'unknown', detail: 'Direct integration unverified' }, competitor: { state: 'yes', detail: 'Dropbox connection documented; untested' } },
+];
+---
+<Layout title="Teleprompter Pal vs Parrot Teleprompter | iPhone Comparison" description="Compare Teleprompter Pal and Parrot Teleprompter: one-iPhone recording, reversible edits, free reader tools, mirror mode, Dropbox, remote controls and hardware costs." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/parrot-teleprompter-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs Parrot Teleprompter</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/parrot-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs Parrot Teleprompter</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal to read, record and revise on one iPhone.</strong></p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year; every export requires Pro. Parrot Teleprompter is a free reader; optional hardware is priced separately.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When Parrot Teleprompter fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for recording and revising a scripted take on one iPhone. Parrot Teleprompter documents a free reader with mirror mode, Dropbox text support and an optional remote.</p>
+        <p class="table-help" id="table-help">This covers Parrot Teleprompter by The Padcaster on iPhone. Its checks reflect documented reader capabilities, not hands-on or hardware-pairing results. Scroll sideways on smaller screens; a dash means unverified.</p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and Parrot Teleprompter feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">Parrot Teleprompter</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus state={row.pal.state} detail={row.pal.detail} /></td><td><ComparisonStatus state={row.competitor.state} detail={row.competitor.detail} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal’s creation and saved edits are free; every export requires Pro. Parrot Teleprompter’s reader is advertised as free. Its optional remote and camera-mounted kit are hardware purchases, separate from the app and from Teleprompter Pal’s Pro subscription.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">Parrot Teleprompter</h3>
+            <div class="comparison-plan-tier"><h4>Free reader</h4><p class="comparison-price">$0</p><ul><li>Script editing and set-speed reading</li><li>Mirror mode, text size and colour controls</li><li>Dropbox .txt support and script looping documented</li></ul><p class="comparison-plan-note">Padcaster advertises a free app with no extra hardware required to run the reader. The checked US listing shows no in-app purchases. This does not establish a built-in camera or free video export.</p></div>
+            <div class="comparison-plan-tier"><h4>Optional Parrot remote</h4><p class="comparison-price">$30<span>listed hardware price</span></p><ul><li>Documented Bluetooth script controls</li><li>Play/pause, scroll speed and text size</li></ul><p class="comparison-plan-note">The standalone Parrot Remote Control was listed with an Add to Cart action. Pairing and compatibility are untested. A compatible kit may already include a remote; do not add it twice.</p></div>
+            <div class="comparison-plan-tier"><h4>Parrot Teleprompter Kit example</h4><p class="comparison-price">$99<span>listed hardware price</span></p><ul><li>Camera-mounted glass and phone tray</li><li>Listing includes a Bluetooth remote and mounting rings</li></ul><p class="comparison-plan-note">This specific kit was marked temporarily out of stock. It is not the newer Parrot Pro kit. Camera, phone, shipping, taxes and compatibility costs are separate; this is not a complete production-system total.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 23 October 2026. The free Parrot reader has no verified recurring app charge in these sources. Hardware prices and stock can change; confirm the exact model and checkout. Optional equipment is not required simply to read a script. Teleprompter Pal’s subscriptions renew automatically until cancelled; its annual trial depends on eligibility. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>A sentence needs another attempt. The opening runs too long. The frame needs to be square. Teleprompter Pal keeps the script, set-speed rehearsal, camera, playback and saved trim/crop edits together on iPhone. You can work through those stages for free.</p>
+          <p>The script and original recording stay on the phone; no account is required for this local workflow. Keep the original separately from the edit, return to the saved changes later, or restore the full take. Pro adds every MP4 export and Photos, Files or Share delivery.</p>
+          <p>That focused workflow is our reason to recommend Teleprompter Pal for this job. It supports iOS 18 and later, has a 1 MB text safeguard and uses a pace you set. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> and <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in Parrot Teleprompter. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When Parrot Teleprompter is the better fit</h2>
+          <p>Consider Parrot Teleprompter when you want a free reader for rehearsal or an existing camera-and-glass setup. Its official sources document landscape, portrait and mirror modes, pace and text controls, script looping and Dropbox .txt support. The app can run without buying Padcaster hardware.</p>
+          <p>If you use a compatible Parrot Bluetooth remote, the official instructions map buttons to text size, scroll speed, play/pause and returning to the previous screen. That may help when the phone is mounted beyond reach. We have not paired that remote or verified Teleprompter Pal’s compatibility with it.</p>
+          <p>Parrot Teleprompter lists iPhone and iPad support with iOS 12+. Teleprompter Pal is an iPhone app for iOS 18 and later. Choose Teleprompter Pal when you want its documented camera, playback and reversible-edit workflow on the recording phone. Parrot’s equivalent video workflow stays unverified here.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>The reader, the camera and the hardware are separate decisions</h2>
+          <p>This comparison covers Parrot Teleprompter by The Padcaster, LLC, app ID 1010384663. Padcaster Producer is a separate app. Producer’s camera, effects and livestreaming claims do not establish those features in Parrot Teleprompter.</p>
+          <p>Padcaster describes mounting a phone running the free reader in front of a separate camera. Its free-app page also says extra hardware is optional. That setup does not prove a built-in recording, trimming or MP4-delivery feature in the reader, so those table entries remain unverified.</p>
+          <p>Keeping scripts is different from reopening editable video or restoring its original framing. Reader mirror mode is also different from mirroring a front-camera preview. The Parrot Remote Control, the quoted Parrot Teleprompter Kit and the newer Parrot Pro kit are distinct purchases; check the exact hardware already in your setup.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try one script through recording and export</h2>
+          <p>Use the same short script, camera position and microphone. Include a pause and a repeated sentence. Set a starting pace with the <a href="/tools/speech-time-calculator/">speech time calculator</a>, record a take, review it, trim the opening and choose a square crop.</p>
+          <p>Close and reopen the editable work. Check whether the full length and original framing can be restored. Try the delivery destination you need, note any payment or watermark step, and play the saved file with sound outside the app. For a Parrot rig, also check reflected-text direction, the actual camera recording, Dropbox import and each remote button. A successfully scrolled script is not yet a checked finished video.</p>
+          <p>This is a suggested common task. We have not installed Parrot Teleprompter for this comparison, paired its remote, assembled the kit or completed a matched recording/export run. Source research is not a device or hardware test.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison uses saved internal device evidence, current source/offer checks and official Parrot Teleprompter sources. Developer descriptions are not hands-on results; unverified built-in recording, delivery and original-restoration behavior stays neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated editing and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for the local workflow, set-speed reader, 1 MB safeguard and Pro delivery gate. This is source inspection, not a new device test.</li>
+            <li><strong>Apple US listing and lookup: Parrot Teleprompter.</strong> The Padcaster, LLC, app ID 1010384663, version 3.0.12, iOS 12+, checked 23 October 2026. Sources for identity, platform and documented script, mirror, Dropbox and remote features. The listing shows a free app without an in-app-purchase section. Developer claims are not installed-app results.</li>
+            <li><strong>Padcaster free-app page and product instructions.</strong> Checked 23 October 2026. The free-app page says no extra hardware is required to run the reader. The Parrot Remote Control page documents the button mappings and $30 standalone price. No remote pairing was tested.</li>
+            <li><strong>Padcaster Parrot Teleprompter Kit listing.</strong> Checked 23 October 2026: $99 and temporarily out of stock, including a remote. This is that named hardware edition, not the newer Parrot Pro kit or a universal equipment total. Padcaster’s FAQ identifies Producer as separate software; its features are not transferred to Parrot.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Can I export for free?</summary><p>Every Teleprompter Pal MP4 and Photos, Files or Share delivery requires Pro. Recording, playback and saved trim/crop edits are free. Parrot Teleprompter is advertised as a free reader; its built-in video recording and export are unverified in this comparison.</p></details>
+          <details><summary>Does Parrot Teleprompter need a hardware purchase?</summary><p>No extra hardware is required to run the reader, according to Padcaster’s free-app page. A camera-mounted glass setup or remote is optional equipment. The checked standalone remote is $30; the named $99 kit includes a remote but was marked temporarily out of stock. Check the exact model, compatibility, shipping and taxes.</p></details>
+          <details><summary>Can Parrot Teleprompter record video in the same app?</summary><p>The reviewed sources document reading scripts and using a phone with separate camera hardware. They do not establish built-in video recording in this exact app. We leave it unverified. Teleprompter Pal supports reading while recording on the same iPhone.</p></details>
+          <details><summary>Can I restore the original after editing?</summary><p>Teleprompter Pal keeps the original separately; our saved internal device check restored its full length and crop and reopened saved edits. Parrot Teleprompter’s equivalent video-editing task is untested. Saving a script does not establish that behavior.</p></details>
+          <details><summary>Which Teleprompter Pal plan has a trial?</summary><p>The yearly plan has a 3-day trial for eligible subscribers. Monthly and weekly plans have no introductory trial. All subscriptions renew automatically until cancelled. Parrot Teleprompter’s free reader is not a paid trial.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/teleprompterpad-alternative/">Teleprompter Pal vs TeleprompterPAD <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
