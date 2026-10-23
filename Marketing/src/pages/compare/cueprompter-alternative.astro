@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare and read a script for free', note: 'Reading access, separate from video export', pal: { state: 'yes', detail: 'Within the 1 MB text safeguard' }, competitor: { state: 'yes', detail: '1,294-character browser script checked' } },
+  { feature: 'Set the scrolling pace', note: 'Choose a manual speed for reading', pal: { state: 'yes', detail: 'Free reader' }, competitor: { state: 'yes', detail: 'Play, pause and speed control checked on Mac' } },
+  { feature: 'Adjust the text size', note: 'Make the script easier to read at your distance', pal: { state: 'yes', detail: 'Free reader controls' }, competitor: { state: 'yes', detail: '58px to 106px checked in the browser' } },
+  { feature: 'Read while recording in one iPhone app', note: 'A built-in camera differs from reading beside another camera', pal: { state: 'yes', detail: 'Free iPhone recording' }, competitor: { state: 'unknown', detail: 'Separate recorder handoff; iPhone capture untested' } },
+  { feature: 'Trim and crop the recorded take', note: 'Video editing, separate from editing script text', pal: { state: 'yes', detail: 'Free saved video edits' }, competitor: { state: 'unknown', detail: 'Recorded-video editing unverified' } },
+  { feature: 'Reopen edits and restore the original', note: 'Recover full length and framing after saving an edit', pal: { state: 'yes', detail: 'Saved internal device check' }, competitor: { state: 'unknown', detail: 'Exact video reset task untested' } },
+  { feature: 'Export and deliver an MP4', note: 'Video delivery, separate from displaying a script', pal: { state: 'yes', detail: 'Pro; every delivery requires Pro' }, competitor: { state: 'unknown', detail: 'Free reader is not verified free video export' } },
+  { feature: 'Mirror the script text', note: 'Text reflection, not a mirrored selfie-camera preview', pal: { state: 'unknown', detail: 'Mirror-rig task untested' }, competitor: { state: 'yes', detail: 'Horizontal and vertical flips checked on Mac' } },
+  { feature: 'Read without signing in', note: 'No account needed for the checked reading workflow', pal: { state: 'yes', detail: 'Local scripts and takes' }, competitor: { state: 'yes', detail: 'Opened and read without an account' } },
+  { feature: 'Use this product in a browser without installation', note: 'Teleprompter Pal is a native app; its separate web reader is linked below', pal: { state: 'no', detail: 'Install the iPhone app' }, competitor: { state: 'yes', detail: 'Browser reader checked on Mac' } },
+  { feature: 'Follow speech with voice recognition', note: 'Different from a pace you set manually', pal: { state: 'no', detail: 'Set-speed reader in reviewed implementation' }, competitor: { state: 'unknown', detail: 'Manual reader tested; voice mode unverified' } },
+  { feature: 'Native iPhone app in this comparison', note: 'The free CuePrompter web edition is separate from Teleprompter.com’s app', pal: { state: 'yes', detail: 'Released for iPhone, iOS 18+' }, competitor: { state: 'no', detail: 'Named edition is a browser tool' } },
+];
+---
+<Layout title="Teleprompter Pal vs CuePrompter | App or Browser Reader" description="Compare Teleprompter Pal and CuePrompter: free iPhone recording and reversible edits versus a free browser reader, mirror controls, tested features and export pricing." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/cueprompter-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs CuePrompter</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/cueprompter-site-mark.png" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs CuePrompter</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free iPhone recording and reversible edits.</strong></p>
+        <p class="comparison-intro-note">Every Teleprompter Pal export requires Pro. CuePrompter is a free browser reader for displaying a script beside your camera.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When CuePrompter fits</a><a href="#evidence">Tests &amp; sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for a scripted take you record and refine on one iPhone. CuePrompter suits quick browser reading, including a screen beside a separate camera.</p>
+        <p class="table-help" id="table-help">This covers CuePrompter’s current new browser reader, made by Teleprompter.com. Scroll sideways on smaller screens; a dash means unverified. <a href="#editions">Product and test scope.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and CuePrompter feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">CuePrompter</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus {...row.pal} /></td><td><ComparisonStatus {...row.competitor} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Both offer free reading. CuePrompter’s browser reader costs $0. Teleprompter Pal adds free recording and saved video edits; its MP4 delivery requires a Pro subscription.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">CuePrompter</h3>
+            <div class="comparison-plan-tier"><h4>Free browser reader</h4><p class="comparison-price">$0</p><ul><li>Paste a script and read without an account</li><li>Manual speed and text-size controls checked</li><li>Horizontal and vertical text flips checked</li></ul><p class="comparison-plan-note">No reader purchase or app installation was needed in our Mac browser check. The website also permits commercial use. We did not stress-test a maximum script length.</p></div>
+            <div class="comparison-plan-tier"><h4>Recording is a separate check</h4><p class="comparison-plan-note">The reader’s Record Video form points to a separate Teleprompter.com web recorder. We did not establish capture or export through that handoff. A free text reader does not establish free MP4 delivery, a video watermark policy or a recording allowance.</p><p class="comparison-plan-note">Teleprompter.com’s paid app has its own plans and capabilities. Those do not become free CuePrompter entitlements. See our <a href="/compare/teleprompter-com-alternative/">separate Teleprompter.com comparison</a>.</p></div>
+            <div class="comparison-plan-tier"><h4>Your camera setup</h4><p class="comparison-plan-note">CuePrompter’s YouTube guide describes starting the camera separately and placing the reader screen close to the lens. Any camera, stand or mirror rig is outside the $0 browser-reader offer. We have not priced a hardware bundle or tested a physical rig.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars for Teleprompter Pal, checked 23 October 2026. The annual trial depends on eligibility. Free browser reading and paid video delivery are different jobs; Teleprompter Pal is not the lower-cost claim here. <a href="#evidence">Sources and test limits.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>You have one iPhone and a take that needs a shorter opening or a square frame. Teleprompter Pal puts the script, set-speed rehearsal, camera, playback and saved trim/crop edits in that workflow. Those stages are free.</p>
+          <p>The original recording stays separate from the saved edit. Reopen the changes later or restore the full take and framing. Pro adds every MP4 export and Photos, Files or Share delivery. No account is needed for this local script and recording workflow.</p>
+          <p>That is the job we recommend Teleprompter Pal for. It supports iOS 18 and later and has a 1 MB text safeguard. Follow our <a href="/guides/record-video-with-script-iphone/">iPhone script-recording guide</a> or check <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in CuePrompter. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When CuePrompter is the better fit</h2>
+          <p>You already have a camera or a presentation to deliver, and only need the words on a screen. In our Mac browser check, CuePrompter accepted a pasted script and started without an account or an installed app. Its text-size, manual speed and mirror controls worked in that check.</p>
+          <p>The presentation guide describes a tablet or laptop beside the speaker. Its YouTube guide describes the reader near a separate camera. Those setups can suit someone who wants to choose their camera independently. We did not test eye contact, physical glass or a hardware remote.</p>
+          <p>The website advertises use in modern phone, tablet and desktop browsers and permits commercial reading. Our functional check was on Mac, so it does not certify the same behavior on an iPhone. If browser-only reading is your priority, our separate <a href="https://freeteleprompteronline.com/#script">Free Teleprompter Online reader</a> is another option. It is separate from the Teleprompter Pal iPhone app.</p>
+        </section>
+        <section id="editions" class="comparison-section">
+          <h2>CuePrompter and Teleprompter.com are separate choices</h2>
+          <p>CuePrompter identifies itself as made by Teleprompter.com. This page covers the current new free browser reader. Its App Store promotion points to Teleprompter.com’s separate app, ID 1420515755; that is not a native CuePrompter edition tested here. We did not test the old reader.</p>
+          <p>The new reader shows a Record Video button. Its form targets the separate Teleprompter.com web recorder, and our clicks did not establish a capture flow in this browser. That leaves recording, recorded-video edits, MP4 delivery and original restoration unverified. It does not prove the button fails for everyone.</p>
+          <p>CuePrompter’s guides promote voice scrolling, cloud sync and other tools under the separate Teleprompter.com offer. We have not verified voice following in the free reader. Teleprompter Pal uses set-speed scrolling; its physical mirror-rig task remains untested. A mirrored selfie preview does not establish reflected script text.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>What we checked in the browser</h2>
+          <p>On 23 October 2026, we opened the new CuePrompter reader in the Mac in-app browser at 1280 × 720. We pasted an original 1,294-character script across twelve paragraphs. Play moved the text; Pause returned the control to its stopped state. Both horizontal and vertical text flips changed the displayed script, and resetting them removed the transform.</p>
+          <p>Visible slider clicks changed the speed display from 10 to 26 and the text size from 58px to 106px. These are observations of controls, not a speed, accessibility or recognition benchmark. No camera or microphone permission was granted, and we completed no recording or export.</p>
+          <p>For your own trial, use the same short script in both products and pick a starting pace with our <a href="/tools/speech-time-calculator/">speech time calculator</a>. Check reading at your actual distance. Then record, trim, crop, reopen and restore a take in Teleprompter Pal, noting the Pro delivery boundary. If you use CuePrompter beside a camera, check that separate setup and its recording destination. We have not completed this matched video task.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. Saved internal device evidence, fresh browser observations, current source inspection and developer claims have different scopes.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated edit and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for local creation, reader controls, the 1 MB text safeguard and every-delivery Pro gate. Source inspection is not a new device test.</li>
+            <li><strong>CuePrompter new reader, browser check, 23 October 2026.</strong> Mac in-app browser, 1280 × 720, original 1,294-character script. Checked reading, play/pause, both mirror axes and visible speed/font changes. Recording handoff did not establish capture; no purchase, iPhone device, offline, privacy or maximum-length test.</li>
+            <li><strong>CuePrompter official homepage and current reader form.</strong> Inspected 23 October 2026 for free browser access, advertised devices, commercial permission, product identity and the separate recorder destination. No native app version applies to this browser edition.</li>
+            <li><strong>CuePrompter guides: Teleprompter for Presentations; Teleprompter for YouTube.</strong> Checked 23 October 2026. Sources for the suggested separate-screen/camera setup and the distinction between the free reader and promoted Teleprompter.com features. Hardware and those paid features were not tested.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is CuePrompter free?</summary><p>The browser reader is $0. We pasted and read a script without signing in or buying an upgrade. That does not establish free recording, MP4 export or every feature of the separate Teleprompter.com app. Teleprompter Pal’s reading, recording and saved edits are free; every delivery requires Pro.</p></details>
+          <details><summary>Can CuePrompter record video?</summary><p>The new reader includes a Record Video form targeting a separate Teleprompter.com recorder. We did not establish capture through it, so recording and export remain unverified here. Its YouTube guide also describes using a separate camera. Teleprompter Pal has free built-in iPhone recording.</p></details>
+          <details><summary>Does CuePrompter work on an iPhone?</summary><p>The website advertises modern phone browsers. Our functional check used a Mac browser, not an iPhone. The free browser edition and promoted Teleprompter.com iPhone app are separate. Teleprompter Pal is released for iPhone with iOS 18 or later.</p></details>
+          <details><summary>Can I mirror the text for a rig?</summary><p>We checked CuePrompter’s horizontal and vertical script flips in the Mac browser. We did not test physical glass or an iPhone rig. Teleprompter Pal’s mirror-rig task remains unverified; a mirrored selfie preview is a different feature.</p></details>
+          <details><summary>Can I restore the original after editing?</summary><p>Teleprompter Pal retains its original separately. Our saved internal check restored full length and crop and reopened saved edits. The equivalent recorded-video editing/reset task in CuePrompter or its separate recorder handoff is untested.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/teleprompter-com-alternative/">Teleprompter Pal vs Teleprompter.com <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>

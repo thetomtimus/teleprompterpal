@@ -66,6 +66,8 @@ Considering the separate camera-focused Video Teleprompter app? [Compare Telepro
 
 Choosing a voice-following reader for presentations or a mirror rig? [Compare Teleprompter Pal and Prompt+](/compare/prompt-plus-alternative/) for one-iPhone recording, free script limits, reversible edits, remote controls and the one-time reader upgrade.
 
+Need a free browser reader beside a separate camera? [Compare Teleprompter Pal and CuePrompter](/compare/cueprompter-alternative/) for one-iPhone recording and reversible edits versus tested desktop reading and mirror controls. CuePrompter’s free reader is separate from the promoted Teleprompter.com app.
+
 These suggestions are editorial judgments based on the features and limitations detailed below. If you are still deciding which device should hold the script, compare a [browser teleprompter or iPhone app](/guides/browser-teleprompter-vs-iphone-app/) first.
 
 ## Free limits and prices to check
