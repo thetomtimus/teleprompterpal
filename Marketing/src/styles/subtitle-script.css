@@ -1,0 +1,11 @@
+.subtitle-import{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-bottom:22px}
+.subtitle-import .tool-secondary-button{margin:0;gap:10px}
+#subtitle-file-name{overflow-wrap:anywhere;max-width:100%}
+.subtitle-main textarea[aria-invalid=true]{border-color:#ffb0c7}
+.subtitle-main .subtitle-error{color:#ffb0c7;margin-top:14px}
+.subtitle-main .tool-input-switch span{padding-inline:16px}
+.subtitle-main .script-bottomline{font-size:13px}
+.subtitle-main .cleaner-example pre{font-size:16px}
+@media(max-width:959px){.subtitle-main .tool-input-switch span{padding-inline:12px;font-size:14px}}
+@media(max-width:767px){.subtitle-import{gap:10px 16px}.subtitle-main .tool-input-switch span{padding-inline:12px;font-size:13px}}
+@media(max-width:374px){.subtitle-main .tool-input-switch{width:100%;border-radius:20px;flex-direction:column}.subtitle-main .tool-input-switch span{padding-block:10px;text-align:center}.subtitle-main .script-bottomline{align-items:flex-start;gap:8px}.subtitle-main #subtitle-source-count{padding-block:11px}}

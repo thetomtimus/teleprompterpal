@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import { subtitleExample } from '../../lib/subtitle-script';
+import '../../styles/tools.css';
+import '../../styles/script-cleaner.css';
+import '../../styles/subtitle-script.css';
+---
+<Layout title="Subtitle to Script Converter: SRT & VTT to Text | Teleprompter Pal" description="Turn SRT or VTT subtitles into an editable script. Remove timestamps and cue numbers, then copy or download plain text. Free, with no uploads or signup.">
+  <SiteHeader />
+  <main id="main" class="tools-main cleaner-main subtitle-main container">
+    <nav class="tool-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/tools/">Tools</a><span aria-hidden="true">/</span><span aria-current="page">Subtitle to script</span></nav>
+    <header class="tool-intro"><h1>Subtitle to script.</h1><p>Give your captions a second take. Turn an SRT or VTT file into editable text, without the timestamps and cue numbers.</p></header>
+    <noscript><p class="tool-notice">Enable JavaScript to convert subtitles. The example and format guidance below are available without it.</p></noscript>
+    <form id="subtitle-converter" aria-label="Subtitle to script converter" novalidate>
+      <fieldset class="calculator-fields" disabled>
+        <legend class="visually-hidden">Your subtitles and conversion settings</legend>
+        <div class="subtitle-import"><button type="button" id="choose-subtitle-file" class="tool-secondary-button">Choose a subtitle file <Icon name="arrowRight" size={18} /></button><input id="subtitle-file" type="file" accept=".srt,.vtt" class="visually-hidden" tabindex="-1" aria-label="Subtitle file" /><span class="tool-help">SRT or VTT · Up to 2 MB</span><span id="subtitle-file-name" class="tool-help"></span></div>
+        <div class="calculator-workspace cleaner-workspace">
+          <div class="script-workspace cleaner-original">
+            <div class="tool-field-heading"><label for="subtitle-source">Your subtitles</label><button type="button" id="load-subtitle-example" class="tool-text-button">Try an example</button></div>
+            <textarea id="subtitle-source" rows="9" maxlength="300000" placeholder="Paste SRT or VTT captions here, or choose a file above…" aria-describedby="subtitle-input-help subtitle-source-count subtitle-error" spellcheck="false"></textarea>
+            <div class="script-bottomline"><span id="subtitle-source-count">0 / 300,000 characters</span><button type="button" id="clear-subtitles" class="tool-text-button" disabled>Clear</button></div>
+            <p id="subtitle-input-help" class="tool-help">Keep the time ranges and blank lines between captions. Your original subtitles stay here.</p>
+            <p id="subtitle-error" class="tool-help subtitle-error" hidden></p>
+          </div>
+          <div class="timing-workspace cleaner-result">
+            <div class="tool-field-heading"><label for="subtitle-result">Your script</label><span class="cleaner-live-note">Live preview</span></div>
+            <textarea id="subtitle-result" rows="9" readonly placeholder="Your script will appear here…" aria-describedby="subtitle-summary subtitle-result-count" spellcheck="false"></textarea>
+            <div class="script-bottomline cleaner-result-count"><span id="subtitle-result-count">0 words</span></div>
+            <p id="subtitle-summary" class="tool-help">Your script will appear here when captions are added.</p>
+            <div class="cleaner-actions"><button type="button" id="copy-subtitle-script" class="button button-primary tool-action" disabled>Copy script</button><button type="button" id="download-subtitle-script" class="tool-secondary-button" disabled>Download .txt <Icon name="arrowDown" size={18} /></button></div>
+          </div>
+        </div>
+        <div class="cleaner-settings">
+          <div><h2 id="caption-layout-title">Script layout</h2><div class="tool-input-switch" role="group" aria-labelledby="caption-layout-title" aria-describedby="caption-layout-help"><label><input type="radio" name="caption-layout" value="joined" checked /><span>Join captions</span></label><label><input type="radio" name="caption-layout" value="captions" /><span>Keep caption breaks</span></label></div><p id="caption-layout-help" class="tool-help">Join captions into one paragraph, or keep each caption in its own paragraph.</p></div>
+          <div class="cleaner-options"><label class="cleaner-checkbox"><input id="speaker-names" type="checkbox" /><span><strong>Keep speaker names</strong><span>Include names provided in WebVTT voice tags.</span></span></label><p class="tool-help">Repeated captions and sound descriptions are kept. Review them before using the text as a spoken script.</p></div>
+        </div>
+      </fieldset>
+      <div class="cleaner-feedback"><p class="tool-privacy"><Icon name="lock" size={16} />Your subtitles stay in this browser tab. No uploads or signup.</p><p id="subtitle-status" class="tool-help" role="status" aria-atomic="true"></p></div>
+    </form>
+    <section class="tool-explainer tool-section" aria-labelledby="subtitle-explainer-title"><div><h2 id="subtitle-explainer-title">Keep the words.<br />Leave the timecodes.</h2><p>A subtitle file divides dialogue into timed captions. This converter removes the time ranges, cue numbers and common caption formatting so you can work with the text again.</p><p>Choose an existing SRT or VTT file, or paste its contents. Review the script, then copy it or download a plain-text file. File order, wording, punctuation, repeated captions and sound descriptions are preserved.</p><p>This converts existing subtitles. It doesn’t transcribe a video, translate dialogue or rewrite a script. For shorter reading chunks after conversion, use the <a href="/tools/script-cleaner/">script cleaner</a>.</p></div><div class="cleaner-example"><h3>From captions to a script</h3><p class="tool-help">Example SRT caption</p><pre>{subtitleExample.split('\n\n')[0]}</pre><Icon name="arrowDown" size={20} /><p class="tool-help">With “Join captions”</p><p class="cleaner-example-output">Before you press record, choose one idea.</p></div></section>
+    <section class="tool-questions tool-section" aria-labelledby="subtitle-faq-title"><h2 id="subtitle-faq-title">Before your next take.</h2><div class="faq-list">
+      <details><summary>Can I convert SRT and VTT to a text file?<Icon name="caret" size={18} /></summary><p>Yes. Choose a subtitle file or paste its contents, then select “Download .txt.” Time ranges and cue numbers are removed. “Keep caption breaks” places each caption in a separate paragraph; “Join captions” produces one paragraph.</p></details>
+      <details><summary>What happens to repeated captions or speaker names?<Icon name="caret" size={18} /></summary><p>Repeated captions are kept, including overlapping captions from rolling automatic transcripts. Review those repetitions before filming. Names inside WebVTT voice tags are optional; turn on “Keep speaker names” to include them. Names already written in the dialogue stay in the script.</p></details>
+      <details><summary>Why isn’t my subtitle file converting?<Icon name="caret" size={18} /></summary><p>Each caption needs a valid start and end time, dialogue and a blank line separating it from the next caption. WebVTT also needs a blank line after its header. Fix the highlighted input before exporting. For unreadable characters, save the file as UTF-8 and try again. Files can be up to 2 MB and contain no more than 300,000 characters.</p></details>
+      <details><summary>Are my subtitle files uploaded or saved?<Icon name="caret" size={18} /></summary><p>No. The file is read and converted in this browser tab. Subtitle text and filenames aren’t uploaded, saved in browser storage or placed in URLs. Copy or download the result before closing or reloading. The website uses general analytics; subtitle content isn’t sent with it.</p></details>
+    </div></section>
+    <aside class="tool-next-step"><div><h2>Give the script your pace.</h2><p>Check how long the converted words take to say. Copy your script, then paste it into the speech time calculator.</p></div><a href="/tools/speech-time-calculator/" class="button button-primary">Time your script <Icon name="arrowRight" size={20} /></a></aside>
+    <p class="tool-related">Ready to rehearse? Paste your script into the <a href="https://freeteleprompteronline.com/#script">free online teleprompter</a>, or <a href="/guides/record-video-with-script-iphone/">record with a script on iPhone</a>.</p>
+  </main><SiteFooter />
+</Layout>
+<script>
+  import '../../scripts/subtitle-script';
+</script>

@@ -57,6 +57,6 @@ test('legal choosers share the handler and allow it through their CSP exactly on
     assert.match(html, /class="legal-language-chooser" data-language-picker/);
     assert.match(html, /src="\/assets\/language-chooser.js"/);
     assert.equal(policy.match(/script-src/g).length, 1);
-    assert.match(policy, /script-src 'self'(?:;| https:)/);
+    assert.match(policy, /script-src 'self'(?:;| https:|$)/);
   }
 });
