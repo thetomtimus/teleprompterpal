@@ -10,7 +10,7 @@ const qr = await QRCode.toString(signupUrl, { type: 'svg', errorCorrectionLevel:
   <span class="qr-caption">scan for pricing</span>
   <span class="qr-arrow" aria-hidden="true">↓</span>
   <a class="qr-link" href={site.pricingUrl} aria-label="View Teleprompter Pal pricing, same destination as QR code">
-    <span class="qr-art" role="img" aria-label="QR code opening Teleprompter Pal pricing" set:html={qr} />
+    <span class="qr-art" data-localized-qr role="img" aria-label="QR code opening Teleprompter Pal pricing" set:html={qr} />
   </a>
   <span class="qr-note">Free recording. Pro export.</span>
 </aside>

@@ -36,7 +36,7 @@ const faqs: Array<{ q: string; a: string; href?: string; linkLabel?: string }> =
           <div class="phone-wrap wrap-camera"><span class="phone-label"><span class="record-dot"></span> Your moment</span><PhonePreview kind="camera" /></div>
           <div class="phone-wrap wrap-edit"><span class="phone-label"><Icon name="crop" size={16} /> Your best take</span><PhonePreview kind="edit" /></div>
         </div>
-        <p class="preview-caption">Actual Scripts screen alongside illustrative camera and editing previews.</p>
+        <p class="preview-caption">Actual Scripts screen in English alongside illustrative camera and editing previews.</p>
       </div>
     </section>
 
@@ -78,6 +78,8 @@ const faqs: Array<{ q: string; a: string; href?: string; linkLabel?: string }> =
   <QRCode floating />
 
   <script>
+  import { translatedMessage as t } from '../lib/translated-message';
+
     const track = document.querySelector<HTMLElement>('#reader-track')!;
     const viewport = document.querySelector<HTMLElement>('#reader-viewport')!;
     const play = document.querySelector<HTMLButtonElement>('#demo-play')!;
@@ -94,7 +96,7 @@ const faqs: Array<{ q: string; a: string; href?: string; linkLabel?: string }> =
     function setPlaying(value: boolean) {
       playing = value;
       play.setAttribute('aria-pressed', String(value));
-      playLabel.textContent = value ? 'Pause text' : 'Play text';
+      playLabel.textContent = value ? t('Pause text') : t('Play text');
       document.querySelector<HTMLElement>('.play-icon')!.hidden = value;
       document.querySelector<HTMLElement>('.pause-icon')!.hidden = !value;
       previousTime = 0;
@@ -109,7 +111,7 @@ const faqs: Array<{ q: string; a: string; href?: string; linkLabel?: string }> =
       const end = Math.max(0, track.scrollHeight - viewport.clientHeight + 130);
       offset = Math.min(offset, end);
       track.style.transform = `translateY(-${offset}px)`;
-      if (offset >= end) { setPlaying(false); status.textContent = 'Nice take. Restart whenever you’re ready.'; return; }
+      if (offset >= end) { setPlaying(false); status.textContent = t('Nice take. Restart whenever you’re ready.'); return; }
       frame = requestAnimationFrame(tick);
     }
 
@@ -117,21 +119,21 @@ const faqs: Array<{ q: string; a: string; href?: string; linkLabel?: string }> =
       setPlaying(false);
       offset = 0;
       track.style.transform = 'translateY(0)';
-      status.textContent = 'Back to the start. Find your own pace.';
+      status.textContent = t('Back to the start. Find your own pace.');
     }
 
     play.addEventListener('click', () => {
       if (!playing && offset >= Math.max(0, track.scrollHeight - viewport.clientHeight + 130)) restart();
       setPlaying(!playing);
-      status.textContent = playing ? 'Reading your sample script. Pause whenever you like.' : 'Paused. Take a breath.';
+      status.textContent = playing ? t('Reading your sample script. Pause whenever you like.') : t('Paused. Take a breath.');
     });
     document.querySelector('#demo-restart')!.addEventListener('click', restart);
     pace.addEventListener('input', () => { document.querySelector('#pace-value')!.textContent = pace.value; });
     size.addEventListener('input', () => { document.querySelector('#size-value')!.textContent = size.value; track.style.setProperty('--reader-size', `${size.value}px`); });
     viewport.addEventListener('keydown', (event) => { if (event.key === ' ') { event.preventDefault(); play.click(); } });
-    document.addEventListener('visibilitychange', () => { if (document.hidden && playing) { setPlaying(false); status.textContent = 'Paused while you were away.'; } });
-    new IntersectionObserver(([entry]) => { if (!entry.isIntersecting && playing) { setPlaying(false); status.textContent = 'Paused. Ready when you are.'; } }, { threshold: 0 }).observe(viewport);
-    if (reducedMotion.matches) status.textContent = 'Text stays still until you press Play. Your camera stays off.';
+    document.addEventListener('visibilitychange', () => { if (document.hidden && playing) { setPlaying(false); status.textContent = t('Paused while you were away.'); } });
+    new IntersectionObserver(([entry]) => { if (!entry.isIntersecting && playing) { setPlaying(false); status.textContent = t('Paused. Ready when you are.'); } }, { threshold: 0 }).observe(viewport);
+    if (reducedMotion.matches) status.textContent = t('Text stays still until you press Play. Your camera stays off.');
 
     document.querySelectorAll<HTMLButtonElement>('[data-ratio]').forEach(button => button.addEventListener('click', () => {
       document.querySelectorAll('[data-ratio]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));

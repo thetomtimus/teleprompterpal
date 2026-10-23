@@ -1,3 +1,5 @@
+import { buildTranslations } from './localize.mjs';
+import { locales, localizedPath } from '../src/i18n/config.mjs';
 import { execFileSync } from 'node:child_process';
 import { cp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -15,6 +17,20 @@ for (const entry of ['privacy', 'support', 'assets', '404.html']) {
   await cp(resolve(website, 'release', entry), resolve(output, entry), { recursive: true });
 }
 
+// Keep legal/support prose authoritative, while offering the same language exits.
+for (const route of ['privacy', 'support']) {
+  const path = resolve(output, route, 'index.html');
+  let html = await readFile(path, 'utf8');
+  const links = locales.map(locale => `<a href="${locale.code === 'en' ? `/${route}/` : localizedPath('/', locale)}" lang="${locale.code}"${locale.code === 'en' ? ' aria-current="true"' : ''}>${locale.name}</a>`).join('');
+  const label = 'Homepages in other languages';
+  html = html.replace('</head>', '<link rel="stylesheet" href="/assets/legal-languages.css"><script defer src="/assets/language-chooser.js"></script></head>');
+  html = html.replace(/(<meta http-equiv="Content-Security-Policy" content=")([^"]+)(")/,
+    (_, start, policy, end) => `${start}${policy}; script-src 'self'${end}`);
+  html = html.replace('</header>', `<details class="legal-language-chooser" data-language-picker translate="no"><summary aria-label="Language: English">EN <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><nav aria-label="Language"><p>${label}</p>${links}</nav></details></header>`);
+  html = html.replace('</footer>', `<nav class="legal-language-footer" aria-label="Language" translate="no"><span>${label}</span><div>${links}</div></nav></footer>`);
+  await writeFile(path, html);
+}
+
 // Provenance stays in the repository; only runtime assets are served.
 for (const name of await readdir(resolve(output, 'images'))) {
   if (name.endsWith('.json')) await rm(resolve(output, 'images', name));
@@ -30,6 +46,7 @@ async function htmlPages(directory, prefix = '') {
   }
   return pages.sort();
 }
+await buildTranslations();
 const pages = await htmlPages(output);
 const routes = pages.filter(page => page === 'index.html' || page.endsWith('/index.html'))
   .map(page => page.slice(0, -'index.html'.length));
@@ -58,13 +75,16 @@ for (const page of pages) {
 // the standalone legal-page review bundle do not send visitor measurements.
 if (!preview) {
   const beacon = '<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token":"f7d3f127b85d4b23a0b7ed63cb31b62c"}\'></script>';
-  const analyticsPolicy = "script-src https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com";
   for (const page of pages) {
     const path = resolve(output, page);
     let content = await readFile(path, 'utf8');
     // Copied legal pages also enforce a meta CSP, in addition to Vercel headers.
     content = content.replace(/(<meta http-equiv="Content-Security-Policy" content=")([^"]+)(")/,
-      (_, start, policy, end) => `${start}${policy}; ${analyticsPolicy}${end}`);
+      (_, start, policy, end) => {
+        const scripts = /(?:^|;\s*)script-src ([^;]+)/.exec(policy)?.[1] ?? '';
+        const base = policy.replace(/;\s*script-src[^;]*/g, '');
+        return `${start}${base}; script-src ${scripts ? `${scripts} ` : ''}https://static.cloudflareinsights.com; connect-src https://cloudflareinsights.com${end}`;
+      });
     content = content.replace('</body>', `${beacon}</body>`);
     await writeFile(path, content);
   }

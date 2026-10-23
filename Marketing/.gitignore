@@ -9,3 +9,5 @@ dist/
 # Local browser captures, verification output, and design-tool cache
 .impeccable/review/
 .impeccable/hook.cache.json
+
+.translations/

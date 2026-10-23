@@ -1,4 +1,5 @@
 ---
+import LanguageChooser from './LanguageChooser.astro';
 import { site } from '../data/site';
 import AccessButton from './AccessButton.astro';
 import Icon from './Icon.astro';
@@ -20,6 +21,7 @@ const links = [
     {links.map(link => <a href={link.href} aria-current={['/pricing/', '/guides/', '/tools/', '/compare/'].includes(link.href) && Astro.url.pathname.startsWith(link.href) ? 'location' : undefined}>{link.label}</a>)}
   </nav>
   <AccessButton compact />
+  <LanguageChooser />
   <details class="mobile-menu">
     <summary aria-label="Open navigation"><Icon name="menu" size={24} /></summary>
     <nav aria-label="Mobile navigation">{links.map(link => <a href={link.href}>{link.label}</a>)}</nav>

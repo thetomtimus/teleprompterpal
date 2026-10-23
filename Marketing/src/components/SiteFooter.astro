@@ -1,4 +1,5 @@
 ---
+import LanguageChooser from './LanguageChooser.astro';
 import { site } from '../data/site';
 const home = Astro.url.pathname === '/';
 const section = (id: string) => `${home ? '' : '/'}#${id}`;
@@ -13,4 +14,5 @@ const accessUrl = site.pricingUrl;
     </nav>
   </div>
   <div class="footer-bottom"><span>© {new Date().getFullYear()} Second Wind, LLC. All rights reserved.</span><span>Made for your next take.</span></div>
+  <LanguageChooser placement="footer" />
 </div></footer>

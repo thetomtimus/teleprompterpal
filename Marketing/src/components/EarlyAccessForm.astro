@@ -18,6 +18,8 @@ import Icon from './Icon.astro';
 </form>
 
 <script>
+  import { translatedMessage as t } from '../lib/translated-message';
+
   import { signupPageContext } from '../lib/signup-context';
 
   let referralStorage: Storage | undefined;
@@ -38,11 +40,11 @@ import Icon from './Icon.astro';
     if (!form.reportValidity()) return;
 
     button.disabled = true;
-    label.textContent = 'Joining…';
+    label.textContent = t('Joining…');
     form.setAttribute('aria-busy', 'true');
     delete form.dataset.state;
     email.removeAttribute('aria-invalid');
-    status.textContent = 'Saving your email…';
+    status.textContent = t('Saving your email…');
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 15000);
 
@@ -63,30 +65,30 @@ import Icon from './Icon.astro';
       });
 
       if (!response.ok) {
-        if (response.status === 429) throw new Error('Please wait a moment, then try joining again.');
+        if (response.status === 429) throw new Error(t('Please wait a moment, then try joining again.'));
         if (response.status === 400) {
           email.setAttribute('aria-invalid', 'true');
-          throw new Error('We couldn’t save that email address. Check it or try another address.');
+          throw new Error(t('We couldn’t save that email address. Check it or try another address.'));
         }
-        throw new Error('We couldn’t save your email right now. Please try again or contact us below.');
+        throw new Error(t('We couldn’t save your email right now. Please try again or contact us below.'));
       }
 
       form.dataset.state = 'success';
       form.reset();
       fields.hidden = true;
-      status.textContent = 'You’re on the list. We’ll email you Teleprompter Pal news and updates.';
+      status.textContent = t('You’re on the list. We’ll email you Teleprompter Pal news and updates.');
       status.focus();
     } catch (error) {
       form.dataset.state = 'error';
       status.textContent = error instanceof Error && error.name !== 'AbortError'
-        ? (error instanceof TypeError ? 'We couldn’t reach the signup service. Please try again or contact us below.' : error.message)
-        : 'Saving took too long. Please try again or contact us below.';
+        ? (error instanceof TypeError ? t('We couldn’t reach the signup service. Please try again or contact us below.') : error.message)
+        : t('Saving took too long. Please try again or contact us below.');
       status.focus();
     } finally {
       window.clearTimeout(timeout);
       form.removeAttribute('aria-busy');
       button.disabled = false;
-      label.textContent = 'Join the list';
+      label.textContent = t('Join the list');
     }
   });
 

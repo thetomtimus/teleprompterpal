@@ -1,0 +1,23 @@
+---
+import { locales, translatedRoutes, localizedPath } from '../i18n/config.mjs';
+import Icon from './Icon.astro';
+interface Props { placement?: 'header' | 'footer'; }
+const { placement = 'header' } = Astro.props;
+const equivalent = translatedRoutes.includes(Astro.url.pathname);
+const route = equivalent ? Astro.url.pathname : '/';
+---
+{placement === 'header' ? (
+  <details class="language-chooser" data-language-picker translate="no">
+    <summary aria-label="Language: English" data-language-summary><Icon name="globe" size={18} /><span data-language-short>EN</span><Icon name="caret" size={12} /></summary>
+    <nav class="language-menu" aria-label="Language" data-language-nav>
+      {!equivalent && <p class="language-fallback">Homepages in other languages</p>}
+      {locales.map(locale => <a href={locale.code === 'en' ? Astro.url.pathname : localizedPath(route, locale)} lang={locale.code} data-language-code={locale.code} aria-current={locale.code === 'en' ? 'true' : undefined}>{locale.name}<span class="language-selected" aria-hidden="true">{locale.code === 'en' && <Icon name="check" size={16} />}</span></a>)}
+    </nav>
+  </details>
+) : (
+  <nav class="footer-languages" aria-label="Language" data-language-picker data-language-nav translate="no">
+    <span class="language-footer-label" data-language-label>{equivalent ? 'Language' : 'Homepages in other languages'}</span>
+    <div>{locales.map(locale => <a href={locale.code === 'en' ? Astro.url.pathname : localizedPath(route, locale)} lang={locale.code} data-language-code={locale.code} aria-current={locale.code === 'en' ? 'true' : undefined}>{locale.name}</a>)}</div>
+  </nav>
+)}
+{placement === 'header' && <script is:inline src="/assets/language-chooser.js" defer></script>}

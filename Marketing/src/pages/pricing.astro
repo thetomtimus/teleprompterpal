@@ -65,7 +65,7 @@ const proFeatures = [
 
       <div class="pricing-action">
         <a class="button button-primary" href={`/${site.accessUrl}`}>Get app updates <Icon name="arrowRight" size={22} /></a>
-        <p>Currently in private beta. Subscriptions are purchased in the iPhone app.</p>
+        <p>Subscriptions are purchased in the iPhone app.</p>
       </div>
       <div class="pricing-notes">
         <p>*Yearly saves 75% compared with 12 months at $19.99/month. The $5.00 monthly equivalent is rounded; the yearly charge is $59.99.</p>
@@ -89,10 +89,12 @@ const proFeatures = [
 </Layout>
 
 <script>
+  import { translatedMessage as t } from '../lib/translated-message';
+
   const plans = {
-    yearly: { price: '$5.00', unit: 'per month', billing: '$59.99 billed yearly', offer: '3 days free with yearly', detail: 'For eligible new subscribers.\nThen $59.99 per year.' },
-    monthly: { price: '$19.99', unit: 'per month', billing: '$19.99 billed monthly', offer: 'Pro, month by month', detail: 'Renews at $19.99 per month.\nNo free trial on this plan.' },
-    weekly: { price: '$9.99', unit: 'per week', billing: '$9.99 billed weekly', offer: 'Pro for your next project', detail: 'Renews at $9.99 per week.\nNo free trial on this plan.' },
+    yearly: { price: '$5.00', unit: t('per month'), billing: t('$59.99 billed yearly'), offer: t('3 days free with yearly'), detail: t('For eligible new subscribers.\nThen $59.99 per year.') },
+    monthly: { price: '$19.99', unit: t('per month'), billing: t('$19.99 billed monthly'), offer: t('Pro, month by month'), detail: t('Renews at $19.99 per month.\nNo free trial on this plan.') },
+    weekly: { price: '$9.99', unit: t('per week'), billing: t('$9.99 billed weekly'), offer: t('Pro for your next project'), detail: t('Renews at $9.99 per week.\nNo free trial on this plan.') },
   };
   document.querySelectorAll<HTMLInputElement>('input[name="billing"]').forEach(input => {
     input.addEventListener('change', () => {
