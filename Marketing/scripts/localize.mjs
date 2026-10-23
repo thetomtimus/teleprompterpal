@@ -93,6 +93,8 @@ export async function localizeHtml(html, route, locale, catalog, messages = []) 
       const href = attr(node, 'href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:')) return;
       const url = new URL(href, origin);
+      // Screenshot links open shared media, not an English-only document.
+      if (url.origin === origin && url.pathname.startsWith('/images/')) return;
       if (url.origin === origin && translatedRoutes.includes(url.pathname)) set(node, 'href', localizedPath(url.pathname, locale) + url.search + url.hash);
       else if (url.origin === origin || url.hostname === 'freeteleprompteronline.com') {
         set(node, 'hreflang', 'en');

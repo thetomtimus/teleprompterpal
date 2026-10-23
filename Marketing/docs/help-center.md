@@ -1,0 +1,25 @@
+# Teleprompter Pal help center
+
+October 23, 2026. Official task documentation at `/help/`, with eight articles and a getting-started page in English, Spanish, German, French, Brazilian Portuguese, Japanese, and Korean. This is separate from the existing editorial `/guides/` section.
+
+Completion record, October 24, 2026: the local build received a **ship** disposition with no material fixes in [the finish review](../.impeccable/review/help/finish-review.md). The help center has not been published. The October 23 source-review date remains the date of the original content work. Finished composition, responsive behavior, system preservation, and evidence limits are recorded in [the help surface brief](../.impeccable/surfaces/help.md).
+
+## Content and source evidence
+
+`src/data/help.mjs` is the English content source. `HelpLayout.astro` supplies the shared sidebar, full-text local search, section navigation, contact link, and header/footer language navigation. The article route derives its static paths from the same data. The locale configuration imports this article list, so adding an article automatically requires all six translations before a release can succeed.
+
+Instructions were checked against the current native source at repository revision a6312ea: `iPhoneApp/PhoneRootView.swift` (create, import, search, duplicate, restore, opening Camera); `ScriptEditorView.swift` (autosave and reader settings); `AppSettingsView.swift` (Getting Started instructions and support); `ReaderStudioView.swift`, `CameraStudioView.swift`, `TakeLibraryView.swift`, `VideoEditorView.swift`, `MP4ExportView.swift`, and `MP4DeliveryControls.swift`. Product boundaries follow `PRODUCT.md`: recording/editing are free; export requires Pro; scripts and originals are local; there is no voice-following claim. No competitor-specific features were copied from the layout reference.
+
+Screenshots are existing actual app captures, not generated interfaces. The script library, editor, and Reader Settings reuse the published WebP assets documented in `asset-provenance.json`. The new trim and export PNGs are byte-for-byte copies of October 16 simulator captures from `docs/screenshots/2026-10-16-p6c/large-p6c-trim-editor.png` and `large-p6c-mp4-delivery.png` in the original project checkout. Their colorful video is a test clip, explicitly identified in the translated captions. These screenshots demonstrate controls, not recording quality or fresh physical-device verification. The illustrated camera preview was deliberately not used. Visible screenshot text remains English, with a translated explanation and matching English control names in instructions.
+
+## Updating the guide
+
+Update the English article in `src/data/help.mjs`, run `npm run translations:extract`, and translate the affected exact source strings in all six catalogs. The existing missing-string check blocks release if English instructions change without corresponding translations. Layout-only changes reuse translations. Follow `docs/languages.md`; there is no background translation service.
+
+When the app changes, verify its current labels and behavior, update the affected guide and screenshots, and record new screenshot provenance. Website translation checks cannot detect changes made only in native app code. Keep claims and screenshots aligned as part of app release review. Do not claim that screenshots are localized or that app language support follows website coverage.
+
+Search runs in the browser against translated titles, summaries, headings and instructions already rendered in the page. It sends no search queries to a service. Navigation and articles are usable without JavaScript. Search result pages do not create extra URLs. Every locale has a self-canonical, reciprocal language alternatives, sitemap entry, localized metadata and same-topic language switching.
+
+Verification: `npm run build`, `npm run test:i18n`, and `node --test tests/help.test.mjs`; local browser checks cover search, no results, keyboard operation, mobile navigation, section links, image loading, horizontal overflow and same-topic switching. After production is live, submit only the 63 new help URLs with `scripts/submit_indexnow.py` (dry run, then one submission), keeping receipts private. Submission does not establish indexing or rankings.
+
+The saved verification under `.impeccable/review/help/` reports zero build diagnostics, all nine tests passing, and 5,812 local references across 109 generated HTML pages with no errors. The finish reviewer inspected all 12 supplied captures; page captures cover English, German, Japanese, and Korean at desktop and phone widths, with additional narrow and landscape language-menu states. Spanish, French, and Brazilian Portuguese are covered by saved translation/search checks rather than dedicated visual captures. This is not an independent linguistic review of every translation or a new physical-device test. The documentation pass did not rerun verification, and the prepared build explicitly reports that it is not deployed.

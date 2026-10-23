@@ -1,0 +1,79 @@
+---
+import Layout from './Layout.astro';
+import LanguageChooser from '../components/LanguageChooser.astro';
+import { helpArticles, helpGroups, helpPath } from '../data/help.mjs';
+import '../styles/help.css';
+interface Props { title: string; description: string; slug?: string; sections: {id: string; title: string}[]; }
+const { title, description, slug, sections } = Astro.props;
+---
+<Layout title={`${title} | Teleprompter Pal`} description={description} type={slug ? 'article' : 'website'} modified={slug ? '2026-10-23' : undefined}>
+  <div class="help-shell">
+    <header class="help-header">
+      <a href="/" class="wordmark" aria-label="Teleprompter Pal home"><img src="/images/app-icon.webp" alt="" width="32" height="32" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a>
+      <div class="help-search" data-help-search>
+        <label for="help-search-input">Search the guide</label>
+        <input id="help-search-input" type="search" placeholder="Search scripts, recording, export…" autocomplete="off" aria-controls="help-search-results" />
+        <div id="help-search-results" class="help-search-results" hidden>
+          <p data-search-status role="status"><span data-search-matches>Matching articles</span><span data-search-empty hidden>No matching articles. Try another word.</span></p>
+          <nav aria-label="Search results">
+            {helpArticles.map(article => <a href={helpPath(article.slug)} data-search-result><strong>{article.title}</strong><span>{article.description}</span><span hidden data-search-body>{article.sections.map(section => <span>{section.title}{' '}{[...(section.steps ?? []), ...(section.paragraphs ?? [])].map(text => <span>{text}{' '}</span>)}</span>)}</span></a>)}
+          </nav>
+        </div>
+      </div>
+      <a class="help-website" href="/">Visit website</a>
+      <LanguageChooser />
+    </header>
+    <div class="help-grid">
+      <aside class="help-sidebar">
+        <details class="help-browse" open>
+          <summary>Browse the guide</summary>
+          <nav aria-label="Guide navigation">
+            <a class="help-overview-link" href="/help/" aria-current={!slug ? 'page' : undefined}>Getting started</a>
+            {helpGroups.map(group => <div class="help-nav-group"><p>{group}</p>{helpArticles.filter(article => article.group === group).map(article => <a href={helpPath(article.slug)} aria-current={article.slug === slug ? 'page' : undefined}>{article.title}</a>)}</div>)}
+          </nav>
+        </details>
+      </aside>
+      <main id="main" class="help-main">
+        <nav class="help-breadcrumbs" aria-label="Breadcrumb"><a href="/help/">User guide</a>{slug && <><span aria-hidden="true">/</span><span>{helpArticles.find(article => article.slug === slug)?.group}</span></>}</nav>
+        <h1>{title}</h1>
+        <p class="help-lead">{description}</p>
+        <details class="help-mobile-toc"><summary>On this page</summary><nav aria-label="Article sections">{sections.map(section => <a href={`#${section.id}`}>{section.title}</a>)}</nav></details>
+        <slot />
+        <div class="help-contact"><p>Still need a hand?</p><a href="/support/">Contact support</a></div>
+      </main>
+      <aside class="help-toc"><nav aria-label="On this page"><p>On this page</p>{sections.map(section => <a href={`#${section.id}`}>{section.title}</a>)}</nav></aside>
+    </div>
+    <footer class="help-footer">
+      <div class="help-footer-meta"><span>Teleprompter Pal user guide</span><a href="/pricing/">Plans and pricing</a><a href="/privacy/">Privacy policy</a></div>
+      <LanguageChooser placement="footer" />
+    </footer>
+  </div>
+  <script>
+    import { matchesHelpSearch } from '../lib/help-search.mjs';
+    const browse = document.querySelector<HTMLDetailsElement>('.help-browse');
+    const wide = window.matchMedia('(min-width: 801px)');
+    const setBrowse = () => { if (browse) browse.open = wide.matches; };
+    setBrowse();
+    wide.addEventListener('change', setBrowse);
+    const search = document.querySelector<HTMLElement>('[data-help-search]');
+    const input = search?.querySelector<HTMLInputElement>('input');
+    const results = search?.querySelector<HTMLElement>('.help-search-results');
+    const links = [...(search?.querySelectorAll<HTMLElement>('[data-search-result]') ?? [])];
+    const update = () => {
+      if (!input || !results) return;
+      const query = input.value.trim();
+      results.hidden = !query;
+      let count = 0;
+      links.forEach(link => { link.hidden = !matchesHelpSearch(link.textContent ?? '', query); if (!link.hidden) count++; });
+      search!.querySelector<HTMLElement>('[data-search-matches]')!.hidden = !count;
+      search!.querySelector<HTMLElement>('[data-search-empty]')!.hidden = count > 0;
+    };
+    input?.addEventListener('input', update);
+    input?.addEventListener('focus', update);
+    search?.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && results) { results.hidden = true; input?.focus(); results.hidden = true; }
+      if (event.key === 'ArrowDown' && event.target === input && results && !results.hidden) { event.preventDefault(); links.find(link => !link.hidden)?.focus(); }
+    });
+    document.addEventListener('click', event => { if (results && event.target instanceof Node && !search?.contains(event.target)) results.hidden = true; });
+  </script>
+</Layout>

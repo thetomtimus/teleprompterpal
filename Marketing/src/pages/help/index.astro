@@ -1,0 +1,21 @@
+---
+import HelpLayout from '../../layouts/HelpLayout.astro';
+import { helpArticles, helpGroups, helpPath } from '../../data/help.mjs';
+const sections = [{id:'first-take',title:'Your first take'}, {id:'browse',title:'Explore the guide'}, {id:'about',title:'About this guide'}];
+---
+<HelpLayout title="Teleprompter Pal user guide" description="From your first script to a finished video. Find the controls, follow the steps, and keep your words close." sections={sections}>
+  <section id="first-take" class="help-section">
+    <h2>Your first take</h2>
+    <div class="help-start">
+      <ol class="help-start-steps">
+        <li><a href="/help/create-a-script/">Create a script</a><p>Type, paste, or import the words you want to say.</p></li>
+        <li><a href="/help/rehearse-and-scroll/">Find your pace</a><p>Choose a comfortable text size and rehearse aloud.</p></li>
+        <li><a href="/help/record-a-video/">Record your take</a><p>Open Camera mode, check your framing, and press Record.</p></li>
+        <li><a href="/help/export-and-share/">Finish and share</a><p>Trim and crop for free. Export a separate MP4 with Pro.</p></li>
+      </ol>
+      <figure class="help-figure"><a href="/images/scripts.webp" aria-label="Open full-size screenshot" target="_blank" rel="noopener"><img src="/images/scripts.webp" width="640" height="1392" alt="Teleprompter Pal script library with a plus tile and a saved script" fetchpriority="high" /></a><figcaption>Your scripts, on your iPhone.</figcaption></figure>
+    </div>
+  </section>
+  <section id="browse" class="help-section"><h2>Explore the guide</h2><div class="help-topic-groups">{helpGroups.map(group => <div><h3>{group}</h3>{helpArticles.filter(article => article.group === group).map(article => <a class="help-topic" href={helpPath(article.slug)}><strong>{article.title}</strong><span>{article.description}</span></a>)}</div>)}</div></section>
+  <section id="about" class="help-section"><h2>About this guide</h2><p>Written for Teleprompter Pal on iPhone. Screenshots show the actual app in English; button names in the instructions match the app.</p><p>Choose a language at the top or bottom of any page. You will stay on the same topic.</p><p>Maintained by the Teleprompter Pal team.</p></section>
+</HelpLayout>

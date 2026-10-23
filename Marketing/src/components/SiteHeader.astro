@@ -1,6 +1,5 @@
 ---
 import LanguageChooser from './LanguageChooser.astro';
-import { site } from '../data/site';
 import AccessButton from './AccessButton.astro';
 import Icon from './Icon.astro';
 const home = Astro.url.pathname === '/';
@@ -12,7 +11,7 @@ const links = [
   { href: '/compare/', label: 'Compare' },
   { href: '/guides/', label: 'Guides' },
   { href: '/tools/', label: 'Tools' },
-  { href: site.supportUrl, label: 'Support' },
+  { href: '/help/', label: 'User guide' },
 ];
 ---
 <header class="site-header container">

@@ -83,5 +83,15 @@
     "path": "public/images/presenter-640.webp",
     "origin": "Responsive derivative of public/images/presenter.webp from production commit 598f84a4a260cf3af78f804ac7ffa1fa6f15ec7b. Sharp resize with preserved aspect ratio, WebP quality 85. Existing screenshot/artwork content unchanged; no new device-test evidence.",
     "sha256": "280585e29f1b82699182e67efce713d7116926efb18cc894b71c0772f7688801"
+  },
+  {
+    "path": "public/images/help/trim.png",
+    "origin": "Unmodified actual Teleprompter Pal iPhone Simulator screenshot captured October 16, 2026. Source: ../docs/screenshots/2026-10-16-p6c/large-p6c-trim-editor.png in original checkout. Byte-for-byte copy, no generated or redrawn UI. Video content is a sample test clip, identified in visible help captions. Does not claim physical-camera recording evidence.",
+    "sha256": "541370d3b42dc37926fe9e604b872b6cbcdde0fab828ae73ca9d65f66c128d69"
+  },
+  {
+    "path": "public/images/help/export.png",
+    "origin": "Unmodified actual Teleprompter Pal iPhone Simulator screenshot captured October 16, 2026. Source: ../docs/screenshots/2026-10-16-p6c/large-p6c-mp4-delivery.png in original checkout. Byte-for-byte copy, no generated or redrawn UI. Video content is a sample test clip, identified in visible help captions. Does not claim physical-camera recording evidence.",
+    "sha256": "4a25b03a0846e32786c265c828639213bb48afa549aac51bad0c95ff40d0c2c5"
   }
 ]

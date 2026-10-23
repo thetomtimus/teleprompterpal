@@ -26,6 +26,12 @@ test('localizes equivalent links, preserves untranslated routes and escaped text
   assert.match(result, /name="robots" content="noindex, nofollow"/);
   assert.match(result, /hreflang="pt-BR" href="https:\/\/teleprompterpal.com\/pt-br\/"/);
 });
+test('shared screenshot links retain localized accessibility without an English-page suffix', async () => {
+  const html = '<html><head><title>Hello</title></head><body><a href="/images/editor.webp" aria-label="Open image"><img alt="Editor"></a></body></html>';
+  const result = await localizeHtml(html, '/help/', locales[1], { Hello: 'Hola', 'Open image': 'Abrir imagen', Editor: 'Editor', 'in English': 'en inglés' });
+  assert.match(result, /aria-label="Abrir imagen"/);
+  assert.doesNotMatch(result, /\(en inglés\)/);
+});
 test('all built locales have reciprocal equivalents, their own canonical, sitemap entry and both choosers', async () => {
   const sitemap = await readFile(new URL('../dist/sitemap.xml', import.meta.url), 'utf8');
   for (const route of translatedRoutes) for (const locale of locales) {
