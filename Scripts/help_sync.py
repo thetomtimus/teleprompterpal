@@ -24,6 +24,7 @@ APP_FILES = (
 )
 GUIDE_TREES = ('Marketing/src/i18n', 'Marketing/src/pages/help', 'Marketing/public/images/help')
 GUIDE_FILES = (
+    'Marketing/src/components/HelpMedia.astro',
     'Marketing/src/data/help.mjs', 'Marketing/src/layouts/HelpLayout.astro',
     'Marketing/src/lib/help-search.mjs', 'Marketing/src/styles/help.css',
     'Marketing/public/images/scripts.webp', 'Marketing/public/images/editor.webp',

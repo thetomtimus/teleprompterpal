@@ -1,17 +1,21 @@
 ---
 import HelpLayout from '../../layouts/HelpLayout.astro';
+import HelpMedia from '../../components/HelpMedia.astro';
 import { helpArticles, helpPath } from '../../data/help.mjs';
 export function getStaticPaths() { return helpArticles.map((article, index) => ({ params: { slug: article.slug }, props: { article, index } })); }
 const { article, index } = Astro.props;
 const previous = helpArticles[index - 1], next = helpArticles[index + 1];
 ---
 <HelpLayout title={article.title} description={article.description} slug={article.slug} sections={article.sections}>
-  {article.image && <p class="help-screen-note">Screenshots show the app in English. Button names below match the screen.</p>}
-  <div class:list={['help-article-body', { 'help-with-image': article.image }]} style={`--help-section-count: ${article.sections.length}`}>
-    {article.sections.map((section, sectionIndex) => <>
-      <section id={section.id} class="help-section"><h2>{section.title}</h2>{section.steps && <ol class="help-steps">{section.steps.map(step => <li>{step}</li>)}</ol>}{section.paragraphs?.map(text => <p>{text}</p>)}</section>
-      {article.image && sectionIndex === 0 && <figure class="help-figure"><a href={article.image} aria-label="Open full-size screenshot" target="_blank" rel="noopener"><img src={article.image} width={article.image.endsWith('.png') ? 1206 : 640} height={article.image.endsWith('.png') ? 2622 : 1392} alt={article.caption} /></a><figcaption>{article.caption}</figcaption></figure>}
-    </>)}
+  {(article.image || article.sections.some(section => section.media)) && <p class="help-screen-note">Screenshots and silent demonstrations show the app in English. Follow the translated steps alongside them.</p>}
+  <div class="help-article-body">
+    {article.sections.map((section, sectionIndex) => {
+      const media = section.media ?? (sectionIndex === 0 && article.image ? { image: article.image, caption: article.caption ?? article.title, width: 640, height: 1392 } : undefined);
+      return <section id={section.id} class:list={['help-section', { 'help-illustrated-section': media }]}>
+        <div class="help-instructions"><h2>{section.title}</h2>{section.steps && <ol class="help-steps">{section.steps.map(step => <li>{step}</li>)}</ol>}{section.paragraphs?.map(text => <p>{text}</p>)}</div>
+        {media && <HelpMedia media={media} />}
+      </section>;
+    })}
   </div>
   {article.slug === 'plans-and-billing' && <p class="help-pricing-link"><a href="/pricing/">View current plans and pricing</a></p>}
   <nav class="help-pagination" aria-label="More guide articles">{previous ? <a href={helpPath(previous.slug)}><span>Previous</span><strong>{previous.title}</strong></a> : <a href="/help/"><span>Previous</span><strong>Getting started</strong></a>}{next && <a href={helpPath(next.slug)}><span>Next</span><strong>{next.title}</strong></a>}</nav>

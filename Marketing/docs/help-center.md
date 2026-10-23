@@ -1,25 +1,59 @@
 # Teleprompter Pal help center
 
-October 23, 2026. Official task documentation at `/help/`, with eight articles and a getting-started page in English, Spanish, German, French, Brazilian Portuguese, Japanese, and Korean. This is separate from the existing editorial `/guides/` section.
+Updated October 24, 2026. Official task documentation at `/help/`: eight articles and a getting-started page in English, Spanish, German, French, Brazilian Portuguese, Japanese, and Korean. These 63 pages are separate from editorial `/guides/`.
 
-Completion record, October 24, 2026: the local build received a **ship** disposition with no material fixes in [the finish review](../.impeccable/review/help/finish-review.md). The help center was published at https://teleprompterpal.com/help/ on October 24 from commit `bb4c8486ad7ded6e1f418c32723e662519af9e14`. Vercel production deployment `dpl_DT8pAyeLrbqWpo9eQHUQEqQegFHU` reached READY. Live verification covered all 63 help URLs, their canonical and reciprocal language tags, sitemap inclusion, image loading, search in all seven languages, CSP, and same-topic language switching. A single IndexNow submission of those 63 new URLs returned HTTP 200; this confirms receipt, not crawling or indexing. Private receipts are in `.impeccable/review/help/`. The October 23 source-review date remains the date of the original content work. Finished composition, responsive behavior, system preservation, and evidence limits are recorded in [the help surface brief](../.impeccable/surfaces/help.md).
+The finalization adds 14 current native app screenshots and four silent demonstrations beside their relevant instructions. Clips show rehearsal, recording controls, trimming, and cropping. The export article now shows preparation, all three delivery destinations, and the Photos success state. The old colored test-clip images are removed. Both language choosers preserve the current article.
 
-## Content and source evidence
+## Content and evidence
 
-`src/data/help.mjs` is the English content source. `HelpLayout.astro` supplies the shared sidebar, full-text local search, section navigation, contact link, and header/footer language navigation. The article route derives its static paths from the same data. The locale configuration imports this article list, so adding an article automatically requires all six translations before a release can succeed.
+`src/data/help.mjs` is the English source. `HelpLayout.astro` supplies navigation and local search. `HelpMedia.astro` renders proportional screenshots and native video players with controls, inline playback, no autoplay, `preload="none"`, and a full-size link. Written steps and captions describe each silent demonstration. Images link to full-size originals. New or changed text requires all six translations before release.
 
-Instructions were checked against the current native source at repository revision a6312ea: `iPhoneApp/PhoneRootView.swift` (create, import, search, duplicate, restore, opening Camera); `ScriptEditorView.swift` (autosave and reader settings); `AppSettingsView.swift` (Getting Started instructions and support); `ReaderStudioView.swift`, `CameraStudioView.swift`, `TakeLibraryView.swift`, `VideoEditorView.swift`, `MP4ExportView.swift`, and `MP4DeliveryControls.swift`. Product boundaries follow `PRODUCT.md`: recording/editing are free; export requires Pro; scripts and originals are local; there is no voice-following claim. No competitor-specific features were copied from the layout reference.
+Instructions and captures use shipping native source at revision `c7d74775d7eec16c1953f631d7c4528ed77d6929`, app version 0.6.12 (32). No shipping app behavior was changed. The opt-in `iPhoneUITests/HelpGuideCaptureTests.swift` suite exercises the actual app on a dedicated iPhone 17 / iOS 27 Simulator. All three tests passed: import/rehearsal, recording, and trim/crop/delivery. The last test saved to Photos and Files and opened the system share sheet.
 
-Screenshots are existing actual app captures, not generated interfaces. The script library, editor, and Reader Settings reuse the published WebP assets documented in `asset-provenance.json`. The new trim and export PNGs are byte-for-byte copies of October 16 simulator captures from `docs/screenshots/2026-10-16-p6c/large-p6c-trim-editor.png` and `large-p6c-mp4-delivery.png` in the original project checkout. Their colorful video is a test clip, explicitly identified in the translated captions. These screenshots demonstrate controls, not recording quality or fresh physical-device verification. The illustrated camera preview was deliberately not used. Visible screenshot text remains English, with a translated explanation and matching English control names in instructions.
+These are real native UI captures, not generated or composited interfaces. Camera recording uses the existing `SimulatorCaptureController`: the preview is blank and the take simulated. Every language explains this limitation. This is not a physical-device or recording-quality test. Screen labels remain English; instructions, captions, media labels, and links are translated. Website coverage does not claim seven-language native app support.
 
-## Updating the guide
+The editing example is an 18-second excerpt of [Bees on flowers by J. M. Pearson](https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm), CC0 1.0. It was loaded into isolated test data, not filmed with the app. A silent AAC track makes it compatible with the media pipeline. Asset origins, attachment names, time intervals, and hashes are in `docs/asset-provenance.json`; every new WebP also embeds its origin. The overview retains the previously documented real script-library screenshot.
 
-Update the English article in `src/data/help.mjs`, run `npm run translations:extract`, and translate the affected exact source strings in all six catalogs. The existing missing-string check blocks release if English instructions change without corresponding translations. Layout-only changes reuse translations. Follow `docs/languages.md`; there is no background translation service.
+## Keeping all languages current
 
-When the app changes, verify its current labels and behavior, update the affected guide and screenshots, and record new screenshot provenance. The [app/help freshness gate](../../docs/help-sync.md), added October 24, detects native source changes and requires a new validated review in the same task. CI and standard iPhone Release builds fail if that review is stale. The implementing agent must do the content review and update all six translations; the hash check does not infer app behavior. Do not claim that screenshots are localized or that app language support follows website coverage.
+Follow root `AGENTS.md` and [the app/help freshness gate](../../docs/help-sync.md). App changes, help updates, screenshots, and translations are one task. Update affected English instructions, run `npm run translations:extract`, translate new or changed keys in every catalog, and replace media whose controls changed. From the repository root run `python3 Scripts/help_sync.py record` with the affected articles and a specific screenshot assessment. It builds every locale, runs help/i18n tests, and saves the review. CI and standard iPhone Release builds reject a stale review.
 
-Search runs in the browser against translated titles, summaries, headings and instructions already rendered in the page. It sends no search queries to a service. Navigation and articles are usable without JavaScript. Search result pages do not create extra URLs. Every locale has a self-canonical, reciprocal language alternatives, sitemap entry, localized metadata and same-topic language switching.
+The gate includes `HelpMedia.astro`, all help assets including MP4s, and all six catalogs. Tests verify localized descriptions, asset existence, accessible full-size links, and user-controlled video playback. This is agent-maintained work with automated checks, not an unattended translation or documentation service. The implementing agent must review changes; matching hashes cannot prove semantic accuracy. The owner should not need to request help updates or translations separately when requesting app changes.
 
-Verification: `npm run build`, `npm run test:i18n`, and `node --test tests/help.test.mjs`; local browser checks cover search, no results, keyboard operation, mobile navigation, section links, image loading, horizontal overflow and same-topic switching. After production is live, submit only the 63 new help URLs with `scripts/submit_indexnow.py` (dry run, then one submission), keeping receipts private. Submission does not establish indexing or rankings.
+## Refreshing native captures
 
-The saved verification under `.impeccable/review/help/` reports zero build diagnostics, all nine tests passing, and 5,812 local references across 109 generated HTML pages with no errors. The finish reviewer inspected all 12 supplied captures; page captures cover English, German, Japanese, and Korean at desktop and phone widths, with additional narrow and landscape language-menu states. Spanish, French, and Brazilian Portuguese are covered by saved translation/search checks rather than dedicated visual captures. This is not an independent linguistic review of every translation or a new physical-device test. The documentation pass did not rerun verification, and the prepared build explicitly reports that it is not deployed.
+Use a dedicated simulator with disposable fixtures, built from the revision being documented. Never seed a personal simulator or capture another branch's unreleased UI. The capture suite skips unless `TEST_RUNNER_PAL_HELP_CAPTURE=1` reaches the test runner.
+
+Fixture identifiers:
+
+- Root: `8D47F5E6-3E86-4C8C-9503-87E4ACB12345`
+- Script: `F8C1B54D-B22D-4A43-986D-8E8F4D109123`
+- Sample take: `C40B0001-1111-4444-8888-123456789012`
+
+After installing the Debug app, resolve its current data container using `xcrun simctl get_app_container DEVICE_ID com.secondwind.teleprompter.prototype data`. Prepare a normal schema-1 script library at `Library/Application Support/PhoneScripts/UITests/ROOT_ID/library.json`, with an authored short sample titled `Garden update`, and the same text in `Documents/Garden update.txt`. Seed a schema-2 catalog at `Library/Caches/PhoneCaptureTests/ROOT_ID/Takes/takes.json`, referencing `TAKE_ID.mov` in that directory: ready state, 18 seconds, 1280×720, H.264/AAC. Use the IDs above. Reset only this dedicated fixture's saved edit/delivery state before a repeat run. Check current storage models before reseeding if schemas changed. The October 24 fixture contains no user data.
+
+Generate the Xcode project with `xcodegen generate`, then run:
+
+```sh
+TEST_RUNNER_PAL_HELP_CAPTURE=1 xcodebuild \
+  -project PrivatePresenter.xcodeproj -scheme TeleprompterPhone \
+  -configuration Debug -destination 'platform=iOS Simulator,id=DEVICE_ID' \
+  -derivedDataPath /tmp/pal-help-capture-build \
+  -resultBundlePath /tmp/pal-help-capture.xcresult \
+  -parallel-testing-enabled NO \
+  -only-testing:TeleprompterPhoneUITests/HelpGuideCaptureTests \
+  CODE_SIGNING_ALLOWED=NO test
+xcrun xcresulttool export attachments \
+  --path /tmp/pal-help-capture.xcresult \
+  --output-path /tmp/pal-help-attachments --filter '*.png'
+```
+
+For demonstrations, start `xcrun simctl io DEVICE_ID recordVideo --codec=h264 /tmp/pal-help-walkthrough.mov` before the suite and stop it cleanly with SIGINT. Logs include `HELP_MARK` timestamps to locate actions. Verify actual frames: simulator video has variable timing, so wall-clock offsets alone are insufficient. Keep complete actions and outcomes. Encode with FFmpeg `trim=start=START:end=END,setpts=PTS-STARTPTS,scale=720:-2,fps=30`, H.264/yuv420p, no audio, and `+faststart`. Inspect clips from beginning to end. Resize screenshots proportionally to 720px WebP without redrawing controls. Update captions, embedded origins, hashes, and translations together.
+
+Raw captures, XCTest results, attachment manifest, and clip intervals are retained privately under the repository root's `.impeccable/review/help-final/`. Browser evidence is under `Marketing/.impeccable/review/help-final/`. Large raw recordings and test bundles are not deployed.
+
+## Verification and publication
+
+The final design review returned **ship**, with no material fixes after refreshing three captures taken during initial media loading. All seven languages were visually checked at 1440px desktop and 390px phone widths. The build checks 379 source strings across seven locales. All ten help/i18n tests and ten freshness-gate tests passed. This is not an independent native-speaker audit of every translation.
+
+For each release, run the validated review, verify playback/navigation in the browser, and check deployed pages, media, canonical/hreflang tags, and sitemap. Submit only substantively changed help URLs to IndexNow once after deployment. Receipt does not establish indexing or rankings. The initial guide was published October 24 from `bb4c8486ad7ded6e1f418c32723e662519af9e14`; this finalization's production receipt is recorded after deployment.

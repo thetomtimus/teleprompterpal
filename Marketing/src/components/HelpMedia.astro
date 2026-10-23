@@ -1,0 +1,15 @@
+---
+interface Props {
+  media: { image: string; caption: string; video?: string; width?: number; height?: number };
+}
+const { media } = Astro.props;
+---
+<figure class:list={['help-figure', { 'help-demonstration': media.video }]}>
+  {media.video ? <video controls playsinline preload="none" poster={media.image} width={media.width ?? 720} height={media.height ?? 1566} aria-label={media.caption}>
+    <source src={media.video} type="video/mp4" />
+    <a href={media.video}>Open the demonstration video</a>
+  </video> : <a href={media.image} aria-label="Open full-size screenshot" target="_blank" rel="noopener">
+    <img src={media.image} width={media.width ?? 720} height={media.height ?? 1566} alt={media.caption} loading="lazy" decoding="async" />
+  </a>}
+  <figcaption>{media.caption}{media.video && <a class="help-video-link" href={media.video} target="_blank" rel="noopener">Open the demonstration video</a>}</figcaption>
+</figure>

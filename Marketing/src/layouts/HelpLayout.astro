@@ -6,7 +6,7 @@ import '../styles/help.css';
 interface Props { title: string; description: string; slug?: string; sections: {id: string; title: string}[]; }
 const { title, description, slug, sections } = Astro.props;
 ---
-<Layout title={`${title} | Teleprompter Pal`} description={description} type={slug ? 'article' : 'website'} modified={slug ? '2026-10-23' : undefined}>
+<Layout title={`${title} | Teleprompter Pal`} description={description} type={slug ? 'article' : 'website'} modified={slug ? '2026-10-24' : undefined}>
   <div class="help-shell">
     <header class="help-header">
       <a href="/" class="wordmark" aria-label="Teleprompter Pal home"><img src="/images/app-icon.webp" alt="" width="32" height="32" /><span>teleprompter<span class="wordmark-pal">pal</span><span class="wordmark-period">.</span></span></a>

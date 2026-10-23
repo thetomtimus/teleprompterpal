@@ -68,7 +68,9 @@ class HelpSyncTests(unittest.TestCase):
         for name in ['iPhonePrototype/Support/Sources/example.swift',
                      'Packages/PhoneLibrary/Sources/example.swift',
                      'Marketing/src/data/help.mjs', 'Marketing/src/i18n/ko.json',
-                     'Marketing/public/images/help/new-control.png']:
+                     'Marketing/src/components/HelpMedia.astro',
+                     'Marketing/public/images/help/new-control.png',
+                     'Marketing/public/images/help/new-demonstration.mp4']:
             with self.subTest(path=name):
                 path = self.root / name
                 old = path.read_text() if path.exists() else None

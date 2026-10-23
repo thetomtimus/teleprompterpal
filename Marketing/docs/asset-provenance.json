@@ -85,13 +85,93 @@
     "sha256": "280585e29f1b82699182e67efce713d7116926efb18cc894b71c0772f7688801"
   },
   {
-    "path": "public/images/help/trim.png",
-    "origin": "Unmodified actual Teleprompter Pal iPhone Simulator screenshot captured October 16, 2026. Source: ../docs/screenshots/2026-10-16-p6c/large-p6c-trim-editor.png in original checkout. Byte-for-byte copy, no generated or redrawn UI. Video content is a sample test clip, identified in visible help captions. Does not claim physical-camera recording evidence.",
-    "sha256": "541370d3b42dc37926fe9e604b872b6cbcdde0fab828ae73ca9d65f66c128d69"
+    "path": "public/images/help/editor.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 41B386C8-50E1-468F-93F3-3C61E373636E.png; source SHA-256 be7a7245fe4034abfbe21f627b1ae0705fb218230478b8f3ded9e66c0b1b2a4f. Resized proportionally to 720px WebP; no UI redrawn or composited.",
+    "sha256": "68d9d7fece9db9f16f711877336d84e73dfa3ba66a6c366eb66cdc70abe224e9"
   },
   {
-    "path": "public/images/help/export.png",
-    "origin": "Unmodified actual Teleprompter Pal iPhone Simulator screenshot captured October 16, 2026. Source: ../docs/screenshots/2026-10-16-p6c/large-p6c-mp4-delivery.png in original checkout. Byte-for-byte copy, no generated or redrawn UI. Video content is a sample test clip, identified in visible help captions. Does not claim physical-camera recording evidence.",
-    "sha256": "4a25b03a0846e32786c265c828639213bb48afa549aac51bad0c95ff40d0c2c5"
+    "path": "public/images/help/script-actions.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 2B8D531D-D646-4E78-B6AC-3B78C88F3D09.png; source SHA-256 f923b4f15ef0c9a694e6f1d46d52f78c01e40dc8e8c86d3e106dd7916661c136. Resized proportionally to 720px WebP; no UI redrawn or composited.",
+    "sha256": "d40351b3b671b1a4aa74aedd42134cd3426a07c641cf9d0c073d466f94fe4a05"
+  },
+  {
+    "path": "public/images/help/import-menu.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 86BF36CB-9347-4FA7-9BEB-B370F349E90E.png; source SHA-256 dfbc729a90a5273fbfe058a3227704942f3862f609f6b1f622c3cf8f5450b368. Resized proportionally to 720px WebP; no UI redrawn or composited.",
+    "sha256": "442b2f87d645d8b77ac700ed5e084e07063908d6b3fca7e845f70c3963a2488a"
+  },
+  {
+    "path": "public/images/help/import-picker.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 48FAC36D-5A50-4D41-A6AD-E6263E44BED4.png; source SHA-256 e099eaea26946e51947739896e71108f124007df49466da5b569c5ccaaf1f484. Resized proportionally to 720px WebP; no UI redrawn or composited.",
+    "sha256": "06b380d1a5e4d226910e08826701fc62aa5b3794c96df8855e8edf02de114515"
+  },
+  {
+    "path": "public/images/help/rehearsal.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 125F9139-A89C-4908-BA3E-E7EF99D5BAA2.png; source SHA-256 71d2f9ec11bc2f595f313208ac7ccb2fd648f12f6cb4a13d886cea729ee62cca. Resized proportionally to 720px WebP; no UI redrawn or composited.",
+    "sha256": "3ecbb53f066e2586da0d9e764e4ef574b74b65a77e730e4684bcc9b963ce4f56"
+  },
+  {
+    "path": "public/images/help/rehearsal-controls.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 10FE3110-D7D4-4435-8E13-241B5956F105.png; source SHA-256 43e5a1f4ff90fa296ea539d9482c508bef77ef9cc3a1dd1c3d6103c3710ee0df. Resized proportionally to 720px WebP; no UI redrawn or composited.",
+    "sha256": "d9b0ad1a6e3cdfe4a78c991cf89e0152e58a1851f3b1899f284c1a9242aa9937"
+  },
+  {
+    "path": "public/images/help/camera.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment BA372935-3339-4C7D-ABA7-705265116287.png; source SHA-256 b17fb1f17f43eec497bfb38509c969b2958d8d73a82043dabcbcf6170f6f55f6. Resized proportionally to 720px WebP; no UI redrawn or composited. Actual camera controls with the existing SimulatorCaptureController test fixture; blank camera preview and simulated take. The visible guide explains this; not physical camera evidence.",
+    "sha256": "044c3e7a691da27d3b83454fb0f08223bc3f98dca4545fd1eb52020f88b896b1"
+  },
+  {
+    "path": "public/images/help/recording.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 3E598426-187B-49E6-8BAD-3ABCE8F71568.png; source SHA-256 a5a6e2abfe4559d8153c52eebc2cfda104e8995cd74b297c85b291609be2b4cb. Resized proportionally to 720px WebP; no UI redrawn or composited. Actual camera controls with the existing SimulatorCaptureController test fixture; blank camera preview and simulated take. The visible guide explains this; not physical camera evidence.",
+    "sha256": "ad05c3c264428cde3b9c38cd5b5048d00efaa5a543064031b65181e17703f0df"
+  },
+  {
+    "path": "public/images/help/trim.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 4E516F3E-3CDB-48F8-8458-2ABF217F8C5F.png; source SHA-256 22815e546fd7cd206125ad36813e5e0cf0e749ca1f4954f7e90780bc9a2b0e62. Resized proportionally to 720px WebP; no UI redrawn or composited. Sample footage is an 18-second excerpt of Bees on flowers by J. M. Pearson, CC0 1.0: https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm. Loaded into isolated test data, not recorded with the app camera. Silent AAC track added for the native media pipeline.",
+    "sha256": "c6cd468130ef6a43ad37d300df3b0d5e6122af8561869273817f14deddff1146"
+  },
+  {
+    "path": "public/images/help/crop.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 30707C95-516A-4704-ABCD-0E22FE59CA93.png; source SHA-256 d2753ec2574aacc951a877220b561ce0cf91db6fad947dd68757a40ad650cba1. Resized proportionally to 720px WebP; no UI redrawn or composited. Sample footage is an 18-second excerpt of Bees on flowers by J. M. Pearson, CC0 1.0: https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm. Loaded into isolated test data, not recorded with the app camera. Silent AAC track added for the native media pipeline.",
+    "sha256": "72c051b5103a0a4732688f9c8ec277a8996e72e0a4846697c2f7debe71a2188a"
+  },
+  {
+    "path": "public/images/help/cropped-video.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 0BA6DDBB-FD5E-4D64-987B-789B19348716.png; source SHA-256 b8b781278f06b0fa36ff127c998b49200140bf94adb5c5080c7f114743727f2c. Resized proportionally to 720px WebP; no UI redrawn or composited. Sample footage is an 18-second excerpt of Bees on flowers by J. M. Pearson, CC0 1.0: https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm. Loaded into isolated test data, not recorded with the app camera. Silent AAC track added for the native media pipeline.",
+    "sha256": "4b5d220323fc1265fe9118cb3de8169b3acef50d360df76519d91bcd371103c3"
+  },
+  {
+    "path": "public/images/help/export-ready.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment A57637C9-D949-4BCE-A4B8-13D3285FF922.png; source SHA-256 dc836db2ba2870b188dac47d161ca4a65839b4385c40cec170c5345caeba666c. Resized proportionally to 720px WebP; no UI redrawn or composited. Sample footage is an 18-second excerpt of Bees on flowers by J. M. Pearson, CC0 1.0: https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm. Loaded into isolated test data, not recorded with the app camera. Silent AAC track added for the native media pipeline.",
+    "sha256": "6482700a29d6db1654f7eda1f7ec153954360ce6570b468265941d450fc26b81"
+  },
+  {
+    "path": "public/images/help/destinations.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment 24F210B4-39FB-439C-A7E7-7B24E60A7405.png; source SHA-256 9d60f3d0ad92436bc6d746fa38c64f3bc6db938ba4850b4e693dfdcf57399fb1. Resized proportionally to 720px WebP; no UI redrawn or composited. Sample footage is an 18-second excerpt of Bees on flowers by J. M. Pearson, CC0 1.0: https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm. Loaded into isolated test data, not recorded with the app camera. Silent AAC track added for the native media pipeline.",
+    "sha256": "fc8ea7f61d0f18c666644a25489265e48aede2362b1a44482e556f6f7e97d0ab"
+  },
+  {
+    "path": "public/images/help/photos-saved.webp",
+    "origin": "Actual Teleprompter Pal 0.6.12 (32) app screenshot, captured October 24, 2026 by HelpGuideCaptureTests on a dedicated iPhone 17 iOS 27 Simulator. XCTest attachment CDBE5A74-C679-4067-BF78-762C948C999F.png; source SHA-256 cea11d67494cf581b6b47f283dd5f23a19873bb42e973865ff9a3ffa75a088ec. Resized proportionally to 720px WebP; no UI redrawn or composited. Sample footage is an 18-second excerpt of Bees on flowers by J. M. Pearson, CC0 1.0: https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm. Loaded into isolated test data, not recorded with the app camera. Silent AAC track added for the native media pipeline.",
+    "sha256": "b154f9bcf0f45153281ac49c2bbc6df5cef1e8d0af4003ccec9a76bca10d6a9f"
+  },
+  {
+    "path": "public/images/help/rehearsal.mp4",
+    "origin": "Continuous real app screen recording from HelpGuideCaptureTests on October 24, 2026. Visually checked source timeline interval 54.000s to 66.000s; trimmed only in time with timestamps reset to zero. Scaled proportionally to 720px H.264, silent, 30fps; no fabricated gestures, UI or transitions. Actual rehearsal scrolling, drag to pause, and restart.",
+    "sha256": "f0faf6d71e8be853e19251f14cb19302163f2f68ffdfcb996ac89293e5b7dfa3"
+  },
+  {
+    "path": "public/images/help/recording.mp4",
+    "origin": "Continuous real app screen recording from HelpGuideCaptureTests on October 24, 2026. Visually checked source timeline interval 80.000s to 96.500s; trimmed only in time with timestamps reset to zero. Scaled proportionally to 720px H.264, silent, 30fps; no fabricated gestures, UI or transitions. Recording is simulated and camera preview blank, explicitly disclosed in the article.",
+    "sha256": "5ab6058e1096453b7248ead8d33ed1d8cae8cfcba89aa4bc4f452fca270178f7"
+  },
+  {
+    "path": "public/images/help/trim.mp4",
+    "origin": "Continuous real app screen recording from HelpGuideCaptureTests on October 24, 2026. Visually checked source timeline interval 110.900s to 129.000s; trimmed only in time with timestamps reset to zero. Scaled proportionally to 720px H.264, silent, 30fps; no fabricated gestures, UI or transitions. Trim/crop sample footage: J. M. Pearson, Bees on flowers, CC0 1.0, https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm.",
+    "sha256": "77b7a82695914b02179504759f36b2d7d9705db394600b66000c8212786d5a7c"
+  },
+  {
+    "path": "public/images/help/crop.mp4",
+    "origin": "Continuous real app screen recording from HelpGuideCaptureTests on October 24, 2026. Visually checked source timeline interval 128.000s to 137.500s; trimmed only in time with timestamps reset to zero. Scaled proportionally to 720px H.264, silent, 30fps; no fabricated gestures, UI or transitions. Trim/crop sample footage: J. M. Pearson, Bees on flowers, CC0 1.0, https://commons.wikimedia.org/wiki/File:Bees_on_flowers.webm.",
+    "sha256": "bb443aeadcd8d29fb6d1761045e14b44a5a74cda5b1ed3cdf0602cbbcc4bd1f7"
   }
 ]
