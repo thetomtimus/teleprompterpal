@@ -2,7 +2,7 @@
 
 October 23, 2026. Official task documentation at `/help/`, with eight articles and a getting-started page in English, Spanish, German, French, Brazilian Portuguese, Japanese, and Korean. This is separate from the existing editorial `/guides/` section.
 
-Completion record, October 24, 2026: the local build received a **ship** disposition with no material fixes in [the finish review](../.impeccable/review/help/finish-review.md). The help center has not been published. The October 23 source-review date remains the date of the original content work. Finished composition, responsive behavior, system preservation, and evidence limits are recorded in [the help surface brief](../.impeccable/surfaces/help.md).
+Completion record, October 24, 2026: the local build received a **ship** disposition with no material fixes in [the finish review](../.impeccable/review/help/finish-review.md). The help center was published at https://teleprompterpal.com/help/ on October 24 from commit `bb4c8486ad7ded6e1f418c32723e662519af9e14`. Vercel production deployment `dpl_DT8pAyeLrbqWpo9eQHUQEqQegFHU` reached READY. Live verification covered all 63 help URLs, their canonical and reciprocal language tags, sitemap inclusion, image loading, search in all seven languages, CSP, and same-topic language switching. A single IndexNow submission of those 63 new URLs returned HTTP 200; this confirms receipt, not crawling or indexing. Private receipts are in `.impeccable/review/help/`. The October 23 source-review date remains the date of the original content work. Finished composition, responsive behavior, system preservation, and evidence limits are recorded in [the help surface brief](../.impeccable/surfaces/help.md).
 
 ## Content and source evidence
 
