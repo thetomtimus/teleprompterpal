@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Prepare a script', note: 'Write and save the words you want to record', pal: { state: 'yes', detail: 'Free scripts and saved library' }, competitor: { state: 'yes', detail: 'Documented script tools; free gate unverified' } },
+  { feature: 'Set the scrolling pace', note: 'Choose the speed for reading', pal: { state: 'yes', detail: 'Free set-speed reader' }, competitor: { state: 'yes', detail: 'Adjustable pace documented' } },
+  { feature: 'Read while recording on iPhone', note: 'Keep the script by the camera view', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'yes', detail: 'Documented; free gate unverified' } },
+  { feature: 'Trim a clip manually', note: 'Shorten the beginning or end of the video', pal: { state: 'yes', detail: 'Free trim' }, competitor: { state: 'unknown', detail: 'Exact trim controls unverified' } },
+  { feature: 'Crop the frame', note: 'Choose which part of the picture stays visible', pal: { state: 'yes', detail: 'Free crop' }, competitor: { state: 'unknown', detail: 'Exact spatial crop unverified' } },
+  { feature: 'Reopen saved video edits', note: 'Return to editable video after closing the app', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact saved-edit task untested' } },
+  { feature: 'Restore original video length and crop', note: 'The reset task in our saved device check', pal: { state: 'yes', detail: 'Saved internal check' }, competitor: { state: 'unknown', detail: 'Exact reset task untested' } },
+  { feature: 'Save or share the finished video', note: 'Check the format, destination and payment step', pal: { state: 'yes', detail: 'Pro MP4 and all delivery' }, competitor: { state: 'yes', detail: 'Delivery documented; free gate unverified' } },
+  { feature: 'Generate automatic captions', note: 'Create subtitles for the recorded speech', pal: { state: 'no', detail: 'Not in reviewed implementation' }, competitor: { state: 'yes', detail: 'Automatic captions documented' } },
+  { feature: 'Generate a script with AI', note: 'Use writing assistance before recording', pal: { state: 'no', detail: 'Not in reviewed implementation' }, competitor: { state: 'yes', detail: 'AI script generator documented' } },
+  { feature: 'Scroll with your voice', note: 'Follow speech rather than a fixed pace', pal: { state: 'no', detail: 'Set-speed reader in reviewed implementation' }, competitor: { state: 'yes', detail: 'Voice-to-Scroll in release history; untested' } },
+  { feature: 'Use the local workflow without an account', note: 'Prepare, rehearse, record and save edits on the phone', pal: { state: 'yes' }, competitor: { state: 'unknown', detail: 'Current account requirement unverified' } },
+];
+---
+<Layout title="Teleprompter Pal vs FoxCue | iPhone Comparison" description="Compare Teleprompter Pal and FoxCue on iPhone: free recording, reversible edits, export gates, listed subscription prices, automatic captions, AI scripts and voice scrolling." type="article" published="2026-10-23" modified="2026-10-23">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/foxcue-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-23" />
+      <meta itemprop="dateModified" content="2026-10-23" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs FoxCue</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/foxcue-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs FoxCue</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free iPhone recording and reversible saved edits.</strong></p>
+        <p class="comparison-intro-note">Teleprompter Pal Pro is {offer.yearly}/year; every export requires Pro. FoxCue lists lower weekly, monthly and yearly prices; eligible offers and features may differ.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-23">23 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When FoxCue fits</a><a href="#evidence">Tests & sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for preparing, recording and revising a scripted take for free. FoxCue documents voice scrolling, captions and AI scripts, with lower named subscription examples.</p>
+        <p class="table-help" id="table-help">This covers Teleprompter For Video -FoxCue by vBridge on iPhone. Its checks reflect documented capabilities, not hands-on results or confirmed free access. Scroll sideways on smaller screens; a dash means unverified.</p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and FoxCue feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">FoxCue</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus state={row.pal.state} detail={row.pal.detail} /></td><td><ComparisonStatus state={row.competitor.state} detail={row.competitor.detail} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal’s creation and saved edits are free; every export requires Pro. FoxCue lists lower weekly, monthly and yearly amounts. These are named purchases, not a verified checkout or a guarantee of equivalent features.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">FoxCue</h3>
+            <div class="comparison-plan-tier"><h4>Free download</h4><p class="comparison-price">$0</p><ul><li>iPhone and iPad app</li><li>In-app purchases listed</li></ul><p class="comparison-plan-note">Free download does not establish free recording or delivery. Exact free allowances, watermark behavior and feature gates remain untested.</p></div>
+            <div class="comparison-plan-tier"><h4>Named US subscription examples</h4><dl class="comparison-plan-options"><div><dt>Yearly</dt><dd>$49.99<span>/year</span></dd></div><div><dt>Monthly</dt><dd>$9.99<span>/month</span></dd></div><div><dt>Weekly</dt><dd>$2.99<span>/week</span></dd></div></dl><p class="comparison-plan-note">Each is below Teleprompter Pal’s amount for the same period. The listed purchase names establish the period, not your eligible offer or included tools.</p></div>
+            <div class="comparison-plan-tier"><h4>Other listed offers</h4><dl class="comparison-plan-options"><div><dt>Other yearly entries</dt><dd>$79.99<span>/year</span></dd></div><div><dt>“Daily Pass” item</dt><dd>$3.99</dd></div></dl><p class="comparison-plan-note">The store also labels a $3.99 “Daily Plan.” We have not verified those items’ access, renewal or relation to the subscriptions. Current trial terms and selectable bundles are unverified.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 23 October 2026. FoxCue’s $49.99 yearly, $9.99 monthly and $2.99 weekly examples are lower than Teleprompter Pal’s $59.99, $19.99 and $9.99 for those periods. We do not claim a price win. Confirm the actual billed period, included features, trial and renewal in the purchase sheet. Teleprompter Pal’s annual trial depends on eligibility. <a href="#evidence">Source details.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>A sentence needs another attempt. The opening runs too long. The frame needs to be square. Teleprompter Pal keeps the script, set-speed rehearsal, camera, playback and saved trim/crop edits together on iPhone. You can work through those stages for free.</p>
+          <p>The script and original recording stay on the phone; no account is required for this local workflow. Keep the original separately from the edit, return to the saved changes later, or restore the full take. Pro adds every MP4 export and Photos, Files or Share delivery.</p>
+          <p>That focused workflow is our reason to recommend Teleprompter Pal for this job. It supports iOS 18 and later, has a 1 MB text safeguard and uses a pace you set. See <a href="/guides/record-video-with-script-iphone/">recording video with a script on iPhone</a> and <a href="/pricing/">Teleprompter Pal’s plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in FoxCue. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When FoxCue is the better fit</h2>
+          <p>Consider FoxCue when voice scrolling, automatic captions or AI script generation are central to your recording setup. Its App Store release history documents Voice-to-Scroll; its description covers captioning and script assistance. Teleprompter Pal uses a pace you set and does not currently generate captions or AI scripts in the reviewed implementation.</p>
+          <p>FoxCue also lists branding, intros/outros, green-screen replacement, manual exposure and audio monitoring. Those tools may suit a more produced video. We have not tested their output, current entitlement or recognition accuracy. Its listing supports iPad and iOS 15+; Teleprompter Pal is an iPhone app for iOS 18 and later.</p>
+          <p>FoxCue’s lower named weekly, monthly and yearly prices deserve consideration. Teleprompter Pal’s recommendation here rests on its free creation workflow and verified reversible saved edits. It does not establish that FoxCue lacks reversible editing.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Check the exact FoxCue app and editing task</h2>
+          <p>This comparison covers Teleprompter For Video -FoxCue by vBridge Technologies Inc., app ID 1465706025. It is separate from the app in our <a href="/compare/teleprompter-for-video-alternative/">Teleprompter Pal vs Teleprompter for Video comparison</a>. We have not transferred claims from the newer FoxCue web platform into this iPhone comparison.</p>
+          <p>FoxCue’s general editing claim does not establish its exact manual trim, spatial crop, saved-video reopening or original-reset behavior. Those tasks stay unverified. Voice scrolling is documented in its release history, but we have not checked it in the installed version or across languages.</p>
+          <p>The store contains multiple purchase names and amounts. We have not opened the app’s purchase sheet or established its exact free allowance, script limit, account requirement or current trial. Older customer reviews and developer replies do not establish today’s offer.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Try one script through recording and export</h2>
+          <p>Use the same short script, camera position and microphone. Include a pause and a repeated sentence. Set a starting pace with the <a href="/tools/speech-time-calculator/">speech time calculator</a>, record a take, review it, trim the opening and choose a square crop.</p>
+          <p>Close and reopen the editable work. Check whether the full length and original framing can be restored. Try the delivery destination you need, note any payment or watermark step, and play the saved file with sound outside the app. If you need FoxCue’s voice scrolling or captions, test a pause, an ad-lib, a name and a corrected sentence too.</p>
+          <p>This is a suggested common task. We have not completed a matched FoxCue recording/export run, inspected its iPhone purchase sheet or timed either workflow. Source research is not a device test.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. This comparison uses saved internal device evidence, current source/offer checks and official FoxCue sources. Developer descriptions are not hands-on results; untested checkout, account and original-restoration behavior stays neutral.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated editing and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 23 October 2026 for the local workflow, set-speed reader, 1 MB safeguard and Pro delivery gate. This is source inspection, not a new device test.</li>
+            <li><strong>Apple US listing and lookup: Teleprompter For Video -FoxCue.</strong> vBridge Technologies Inc., app ID 1465706025, version 6.8.1, iOS 15+, checked 23 October 2026. The description documents script, recording, sharing and caption tools; release history documents Voice-to-Scroll. These are developer claims, with no installed app or eligible checkout tested.</li>
+            <li><strong>Labelled Apple US in-app purchases for FoxCue.</strong> Checked 23 October 2026. The named weekly, monthly and yearly examples are shown with their periods. Other yearly and Daily Pass/Plan labels do not establish eligible access, renewal or bundle equivalence. Current trial terms remain unverified. Customer reviews are not current price, trial or performance evidence.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Can I export for free?</summary><p>Every Teleprompter Pal MP4 and Photos, Files or Share delivery requires Pro. Recording, playback and saved trim/crop edits are free. FoxCue is free to download with in-app purchases. Its exact free recording/export allowances and watermark behavior are unverified here.</p></details>
+          <details><summary>Which app is cheaper?</summary><p>FoxCue lists lower examples for all three subscription periods: $49.99/year, $9.99/month and $2.99/week. Teleprompter Pal is $59.99/year, $19.99/month or $9.99/week. FoxCue also lists other annual amounts. Eligible offers and included features may differ; its current purchase sheet is untested.</p></details>
+          <details><summary>Does FoxCue have voice scrolling, captions and AI scripts?</summary><p>Its App Store release history documents Voice-to-Scroll, and its description documents captions and AI script tools. We have not tested them or verified the required plan. Teleprompter Pal uses set-speed scrolling and does not currently generate captions or AI scripts in the reviewed implementation.</p></details>
+          <details><summary>Can I restore the original after editing?</summary><p>Teleprompter Pal keeps the original separately; our saved internal device check restored its full length and crop and reopened saved edits. FoxCue’s exact original-reset task is untested, so we leave it unverified.</p></details>
+          <details><summary>Which plans have a trial?</summary><p>Teleprompter Pal’s yearly plan has a 3-day trial for eligible subscribers; monthly and weekly plans have no introductory trial. FoxCue’s current trial eligibility and post-trial offer have not been verified in its purchase sheet. Do not infer them from older reviews, developer replies or purchase names.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/vilo-alternative/">Teleprompter Pal vs VILO <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>

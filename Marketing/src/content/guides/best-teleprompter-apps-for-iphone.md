@@ -56,6 +56,8 @@ Working with a shared script or voice prompting? [Compare Teleprompter Pal and S
 
 For subtitles and AI post-production, [compare Teleprompter Pal and Captions](/compare/captions-alternative/) for free prompting, reversible retakes and the different export gates. For a mobile teleprompter inside a larger timeline editor, see [Teleprompter Pal vs CapCut](/compare/capcut-alternative/). Considering OnTake? [Compare Teleprompter Pal and OnTake](/compare/ontake-alternative/) for reversible edits, document imports and listed prices. For a dedicated reader with a separate camera, see [Teleprompter Pal vs TeleprompterPAD](/compare/teleprompterpad-alternative/). For captions, AI scripts and Watch controls, see [Teleprompter Pal vs VILO](/compare/vilo-alternative/).
 
+For voice scrolling and lower listed subscription examples, see [Teleprompter Pal vs FoxCue](/compare/foxcue-alternative/). The comparison keeps vBridge’s iPhone app separate from the newer FoxCue web platform.
+
 These suggestions are editorial judgments based on the features and limitations detailed below. If you are still deciding which device should hold the script, compare a [browser teleprompter or iPhone app](/guides/browser-teleprompter-vs-iphone-app/) first.
 
 ## Free limits and prices to check
