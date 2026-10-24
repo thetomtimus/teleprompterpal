@@ -74,6 +74,8 @@ For another dedicated iPhone app, see [Teleprompter Pal vs Teleo](/compare/teleo
 
 Prefer an upfront app purchase? [Teleprompter Pal vs Selvi](/compare/selvi-alternative/) compares free rehearsal and reversible saved edits with Selvi’s $2.99 US download, documented voice following and video saving.
 
+For free scrolling during camera recording, see [Teleprompter Pal vs Teleprompterly](/compare/teleprompterly-alternative/). It compares free set-speed recording and reversible saved edits with Teleprompterly’s listed five-item allowance, Premium auto-scroll, watermarked export and documented AI/voice tools.
+
 ## Free limits and prices to check
 
 “Free to download” does not tell you whether the final clip has a watermark, whether your whole script fits, or which export requires payment.

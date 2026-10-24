@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import ComparisonStatus from '../../components/ComparisonStatus.astro';
+import { offer } from '../../data/offer';
+import '../../styles/compare.css';
+type Status = { state: 'yes' | 'no' | 'unknown'; detail?: string };
+const rows: { feature: string; note: string; pal: Status; competitor: Status }[] = [
+  { feature: 'Keep more than five free scripts and takes', note: 'Quantity limits differ from script size and available storage', pal: { state: 'yes', detail: 'No five-item gate in reviewed source; 1 MB text safeguard' }, competitor: { state: 'no', detail: 'Listing caps Free at five scripts and recordings' } },
+  { feature: 'Auto-scroll while recording for free', note: 'A fixed pace, separate from speech following', pal: { state: 'yes', detail: 'Free set-speed camera reader' }, competitor: { state: 'no', detail: 'Listed under Premium in the App Store' } },
+  { feature: 'Set the scrolling pace', note: 'Feature availability is separate from its free-plan gate', pal: { state: 'yes', detail: 'Free reader controls' }, competitor: { state: 'yes', detail: 'Speed controls documented; recording auto-scroll is Premium-listed' } },
+  { feature: 'Read while recording in one iPhone app', note: 'Built-in camera and script display', pal: { state: 'yes', detail: 'Free recording' }, competitor: { state: 'yes', detail: 'Free within the listed allowance' } },
+  { feature: 'Move and resize the reading window', note: 'Position words near the lens', pal: { state: 'yes', detail: 'Reviewed camera panel controls' }, competitor: { state: 'yes', detail: 'Position, scale and text controls documented' } },
+  { feature: 'Trim and crop recorded video', note: 'Editing the take differs from moving the prompt', pal: { state: 'yes', detail: 'Free saved video edits' }, competitor: { state: 'yes', detail: 'Trim on website; crop in listing; plan gates unverified' } },
+  { feature: 'Reopen edits and restore the original', note: 'Recover full length and framing after saving an edit', pal: { state: 'yes', detail: 'Saved internal device check' }, competitor: { state: 'unknown', detail: 'Exact saved-edit reset task untested' } },
+  { feature: 'Save a recorded video', note: 'Output format and plan limits differ', pal: { state: 'yes', detail: 'Pro for every MP4 and Photos, Files or Share delivery' }, competitor: { state: 'yes', detail: 'Photos saving documented; format untested' } },
+  { feature: 'Export a video on the free plan', note: 'The website and App Store differ on watermark wording', pal: { state: 'no', detail: 'Every export and delivery requires Pro' }, competitor: { state: 'yes', detail: 'Watermarked export per listing; no fresh export test' } },
+  { feature: 'Generate a script with AI', note: 'Generation quality, quotas and plan gate unverified', pal: { state: 'no', detail: 'Not in the reviewed iPhone workflow' }, competitor: { state: 'yes', detail: 'Current listing documents AI scripts' } },
+  { feature: 'Follow speech with voice recognition', note: 'A documented mode is not an accuracy benchmark', pal: { state: 'no', detail: 'Set-speed reader in reviewed implementation' }, competitor: { state: 'yes', detail: 'Developer website describes it; plan gate unverified' } },
+  { feature: 'Mirror script text for a physical rig', note: 'Text reflection differs from a mirrored selfie preview', pal: { state: 'unknown', detail: 'Physical mirror-rig task untested' }, competitor: { state: 'yes', detail: 'Developer website documents it; rig and plan untested' } },
+];
+---
+<Layout title="Teleprompter Pal vs Teleprompterly | Free Recording & Saved Edits" description="Compare Teleprompter Pal and Teleprompterly for free script limits, scrolling while recording, reversible edits, AI, voice tools, watermark rules and listed US prices." type="article" published="2026-10-24" modified="2026-10-24">
+  <SiteHeader />
+  <main id="main" class="container compare-main">
+    <article itemscope itemtype="https://schema.org/Article">
+      <link itemprop="mainEntityOfPage" href="https://teleprompterpal.com/compare/teleprompterly-alternative/" />
+      <meta itemprop="datePublished" content="2026-10-24" />
+      <meta itemprop="dateModified" content="2026-10-24" />
+      <nav class="compare-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/compare/">Compare</a><span aria-hidden="true">/</span><span aria-current="page">Teleprompter Pal vs Teleprompterly</span></nav>
+      <header class="comparison-intro">
+        <div class="comparison-apps" aria-hidden="true"><img src="/images/app-icon.webp" width="76" height="76" alt="" /><span>vs</span><img src="/images/compare/teleprompterly-app-icon.jpg" width="76" height="76" alt="" /></div>
+        <h1 itemprop="headline">Teleprompter Pal vs Teleprompterly</h1>
+        <p class="comparison-deck" itemprop="description"><strong>Choose Teleprompter Pal for free iPhone recording and reversible saved edits.</strong></p>
+        <p class="comparison-intro-note">Every Teleprompter Pal export requires Pro. Teleprompterly lists five free scripts and recordings; auto-scroll while recording is Premium.</p>
+        <div class="comparison-action"><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a><p>Available for iPhone · Free recording and editing</p></div>
+        <p class="comparison-disclosure">By the <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">Teleprompter Pal team</span><link itemprop="url" href="https://teleprompterpal.com/about/" /></span>. We build Teleprompter Pal. Sources checked <time datetime="2026-10-24">24 October 2026</time>. <a href="#evidence">See the evidence.</a></p>
+      </header>
+      <nav class="comparison-jumps" aria-label="On this page"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#why-pal">Why choose Teleprompter Pal</a><a href="#competitor-fit">When Teleprompterly fits</a><a href="#evidence">Tests &amp; sources</a></nav>
+      <section id="features" class="comparison-section" aria-labelledby="features-title">
+        <h2 id="features-title">Feature comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal is our pick for free set-speed recording beyond Teleprompterly’s listed five-item allowance and for saved edits that retain the original. Teleprompterly documents free watermarked delivery and additional script and prompting tools.</p>
+        <p class="table-help" id="table-help">Competitor features below are developer-documented, not a fresh device test. Scroll sideways on smaller screens; a dash means unverified. <a href="#editions">Edition, plan and source differences.</a></p>
+        <div class="comparison-table-wrap" role="region" aria-labelledby="features-title" aria-describedby="table-help" tabindex="0">
+          <table class="comparison-table" aria-label="Teleprompter Pal and Teleprompterly feature comparison"><thead><tr><th scope="col">Feature</th><th scope="col">Teleprompter Pal</th><th scope="col">Teleprompterly</th></tr></thead><tbody>{rows.map(row => <tr><th scope="row">{row.feature}<span class="comparison-feature-note">{row.note}</span></th><td><ComparisonStatus {...row.pal} /></td><td><ComparisonStatus {...row.competitor} /></td></tr>)}</tbody></table>
+        </div>
+      </section>
+      <section id="pricing" class="comparison-section comparison-pricing" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">Pricing comparison</h2>
+        <p class="comparison-section-lead">Teleprompter Pal keeps set-speed recording and saved trim/crop free; every delivery requires Pro. Teleprompterly lists capped free recording and watermarked export, with lower annual and monthly paid examples.</p>
+        <div class="comparison-plan-grid">
+          <section class="comparison-plan comparison-plan-primary" aria-labelledby="teleprompter-plan-title">
+            <h3 id="teleprompter-plan-title">Teleprompter Pal</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Scripts, rehearsal and camera recording</li><li>Playback, trim, crop and saved edits</li><li>Original retained separately from the edit</li></ul><p class="comparison-plan-note">Text safeguard: 1 MB. Every MP4 export and Photos, Files or Share delivery requires Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Pro Yearly</h4><p class="comparison-price">{offer.yearly}<span>/year</span></p><ul><li>MP4 export</li><li>Save to Photos, Files or Share</li><li>{offer.annualTrial}</li></ul><p class="comparison-plan-note">Billed annually. Renews automatically until cancelled.</p></div>
+            <div class="comparison-plan-tier"><h4>Other Pro options</h4><dl class="comparison-plan-options"><div><dt>Monthly</dt><dd>{offer.monthly}<span>/month</span></dd></div><div><dt>Weekly</dt><dd>{offer.weekly}<span>/week</span></dd></div></dl><p class="comparison-plan-note">Same Pro export and delivery features. No introductory trial on these plans. Subscriptions renew automatically until cancelled.</p></div>
+          </section>
+          <section class="comparison-plan" aria-labelledby="competitor-plan-title">
+            <h3 id="competitor-plan-title">Teleprompterly</h3>
+            <div class="comparison-plan-tier"><h4>Free</h4><p class="comparison-price">$0</p><ul><li>Up to five scripts and recordings, per the App Store description</li><li>Video export with the app watermark, per that listing</li><li>Auto-scroll while recording and watermark removal listed under Premium</li></ul><p class="comparison-plan-note">We have not checked how deleting an item affects the allowance. The website’s blanket no-watermark wording differs from the listing; free watermark-free output is not verified.</p></div>
+            <div class="comparison-plan-tier"><h4>Listed annual offers</h4><p class="comparison-price">$39.99<span>/year listing</span></p><ul><li>A $49.99/year entry is also listed</li><li>Several $39.99 entries share the Yearly Pro label</li><li>Availability and trial eligibility were not verified in checkout</li></ul><p class="comparison-plan-note">These are current US listing entries, not a promise that every user gets the lowest amount. The paid feature description calls the upgrade Premium; the purchase rows use Pro.</p></div>
+            <div class="comparison-plan-tier"><h4>Other listed offers</h4><ul><li>Monthly Pro: $9.99/month</li><li>Weekly Pro: $4.99/week and $9.99/week entries</li></ul><p class="comparison-plan-note">No trial length was verified. North Studio’s terms say subscriptions renew unless cancelled at least 24 hours before the period ends; manage Apple subscriptions in account settings. Confirm the specific offer and renewal amount before buying.</p></div>
+          </section>
+        </div>
+        <p class="comparison-pricing-note">US dollars, checked 24 October 2026. Teleprompterly’s listed annual and monthly amounts are lower than Teleprompter Pal’s; its weekly entries include a lower example and an equal-price example. We did not inspect a paywall, start a trial or buy either app’s offer. Region, eligibility and checkout can change the choice shown. <a href="#evidence">Sources and testing limits.</a></p>
+      </section>
+      <div class="comparison-reading">
+        <section id="why-pal" class="comparison-section">
+          <h2>Why we’d choose Teleprompter Pal for a scripted take</h2>
+          <p>You want to keep several scripts ready and use a steady scrolling pace while recording, then shorten the opening or change the framing. Teleprompter Pal combines those stages with free playback and saved trim/crop edits.</p>
+          <p>The reviewed implementation has no five-script or five-take gate. Its 1 MB text safeguard, available storage and device interruptions still apply. That is a source-based comparison of access limits, not a maximum-capacity or recording-performance benchmark.</p>
+          <p>The original remains separate from your saved edit. Reopen the changes or restore full length and framing. Pro adds every MP4 export and Photos, Files or Share delivery. Read the <a href="/help/">Teleprompter Pal user guide</a>, follow the <a href="/guides/record-video-with-script-iphone/">script-recording walkthrough</a> or check <a href="/pricing/">current plans</a>.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>Refine the take. Keep the original.</h2>
+          <p>In our saved Teleprompter Pal device check, we shortened an 11.90-second original to a 7.90-second square MP4, then restored the original length and crop. The original remained available.</p>
+          <dl class="comparison-proof"><div><dt>Original retained</dt><dd>11.90 seconds</dd></div><div><dt>Trimmed copy</dt><dd>7.90 seconds</dd></div><div><dt>Export checked</dt><dd>1080 × 1080 MP4</dd></div></dl>
+          <p>The check also covered Photos, Files, Share Copy and reopening the edit after restarting the app. It used an internal development build. We have not performed this exact reset task in Teleprompterly. This evidence does not establish a comparative speed, quality or reliability advantage. <a href="/evidence/pal-device-test-summary-2026-10-19.json">Read the sanitized test record</a>.</p>
+        </section>
+        <section id="competitor-fit" class="comparison-section">
+          <h2>When Teleprompterly is the better fit</h2>
+          <p>You want to try a short free export with a watermark, generate a script with AI, or explore the voice-following and mirror tools described on the developer’s website. Teleprompterly also lists lower annual and monthly paid amounts. We have not verified AI quotas, recognition behavior or the plans that include voice and mirror modes.</p>
+          <p>Its website documents trimming, while the App Store description documents cropping for common social formats. Those editing features deserve credit. They do not establish whether you can reopen a saved edit and restore its original length and framing; that exact task remains untested here.</p>
+          <p>Moving the reading window, changing text size and keeping the guide text out of the video are shared benefits. Teleprompterly supports iPhone and iPad on iOS 17 or later; Teleprompter Pal’s approved release scope is iPhone on iOS 18 or later. No camera-quality, eye-contact or recognition advantage was benchmarked.</p>
+        </section>
+        <section id="editions" class="comparison-section">
+          <h2>Which Teleprompterly and which claims?</h2>
+          <p>This is Teleprompterly – Teleprompter by North Studio, seller NORTH STUDIO LLC, US Apple app ID 6771409020. Apple’s lookup returned version 1.3.7 and iOS 17 or later on 24 October 2026. The developer’s Teleprompterly product page links to that same app ID.</p>
+          <p>The App Store description says Free includes five scripts and recordings with watermarked export; Premium adds auto-scroll while recording and watermark removal. The developer website describes speech following, mirror mode, trimming and a saved video without a watermark, but does not assign those claims to a free or paid tier. We do not turn that blanket wording into a free watermark-free promise.</p>
+          <p>Voice following is a documented website feature, rather than an absence inferred from the shorter store description. Its plan gate and behavior in version 1.3.7 remain unverified. The same applies to mirror-rig use and AI quotas. We have not tested whether deletion resets the free allowance or whether saved edits preserve an original.</p>
+        </section>
+        <section class="comparison-section">
+          <h2>The recording task still to test</h2>
+          <p>We inspected official sources and relevant Teleprompter Pal code. No fresh Teleprompterly device, paywall, recording, export or original-reset task was completed. Its green feature marks describe documentation, not a functional benchmark.</p>
+          <p>For a matched trial, prepare six original short scripts and use the same device orientation and camera. Note the allowance and whether a steady pace can scroll during free recording. Record a take, trim, crop, save, reopen and try restoring its full length and framing. Log the version, purchase state, watermark, output format and destination. Use the <a href="/tools/speech-time-calculator/">speech time calculator</a> to plan a consistent script.</p>
+          <p>Test voice following and reflected text separately after confirming the relevant plan. A feature description does not establish accuracy, offline behavior, physical-rig compatibility or export quality. We have not completed this common task; the saved Teleprompter Pal check is a separate internal test.</p>
+        </section>
+        <section id="evidence" class="comparison-section comparison-evidence">
+          <h2>Sources and testing</h2>
+          <p>We make Teleprompter Pal. Saved device checks, current source inspection and developer claims have different scopes.</p>
+          <ul class="comparison-source-list">
+            <li><strong>Teleprompter Pal device checks, 19 October 2026.</strong> iPhone 17 Pro, iOS 27.0, Teleprompter Pal 0.6.17 (37), development-signed builds. The <a href="/evidence/pal-device-test-summary-2026-10-19.json">sanitized record</a> covers the stated edit and delivery task. It does not certify a current public App Store binary.</li>
+            <li><strong>Teleprompter Pal offer and relevant iPhone source.</strong> Inspected 24 October 2026 for script/take creation, set-speed recording, the 1 MB safeguard, saved edits and every-delivery Pro gate. This is not a new device test.</li>
+            <li><strong>Teleprompterly US App Store listing and Apple lookup.</strong> Checked 24 October 2026: North Studio, app ID 6771409020, version 1.3.7, iOS 17+. Sources for the free allowance, Premium-listed recording auto-scroll, watermarked export, AI/crop features and labelled US purchase rows. No checkout eligibility or actual export verified.</li>
+            <li><strong>North Studio Teleprompterly product page and studio homepage.</strong> Checked 24 October 2026 for same-app identity, voice following, reflection, trim and Photos saving. Feature plan gates and blanket watermark wording remain qualified against the store description.</li>
+            <li><strong>North Studio Terms of Use.</strong> Checked 24 October 2026 for the studio’s stated auto-renewal and cancellation terms. It does not confirm a particular in-app offer, trial or feature entitlement.</li>
+          </ul>
+        </section>
+        <section class="comparison-section comparison-questions" aria-labelledby="questions-title">
+          <h2 id="questions-title">Questions before choosing</h2>
+          <details><summary>Is Teleprompterly a dedicated teleprompter app?</summary><p>Yes. This page covers North Studio’s iPhone/iPad app ID 6771409020, version 1.3.7. It combines a camera and script overlay. The developer’s product page links to the same listing.</p></details>
+          <details><summary>Which app is better for free scrolling while recording?</summary><p>Teleprompter Pal includes its set-speed camera reader for free. Teleprompterly’s App Store description places auto-scroll while recording under Premium and caps Free at five scripts and recordings. This is a source-based access comparison, not a fresh in-app test. Every Teleprompter Pal delivery requires Pro.</p></details>
+          <details><summary>Does Teleprompterly export without a watermark for free?</summary><p>That is not verified. Its App Store listing says free exports have a watermark and Premium removes it. Its website describes watermark-free output without a plan label. We keep the store’s explicit free restriction visible and have not tested an export.</p></details>
+          <details><summary>Is Teleprompter Pal cheaper than Teleprompterly?</summary><p>Not on the listed annual and monthly paid examples. Teleprompterly lists $39.99 and $49.99 yearly, and $9.99 monthly; Teleprompter Pal is $59.99 yearly or $19.99 monthly. Weekly entries and eligibility vary. Teleprompter Pal includes free set-speed recording and reversible saved editing, with every delivery on Pro.</p></details>
+          <details><summary>Does Teleprompterly follow my voice?</summary><p>The developer website documents speech-following scrolling and says recognition runs on the device. We have not tested it, confirmed its plan gate or benchmarked languages and accuracy. Teleprompter Pal’s reviewed reader uses a set pace.</p></details>
+          <details><summary>Can both apps restore a saved edit to the original?</summary><p>The saved internal Teleprompter Pal test covered reopening edits and restoring length and crop. Teleprompterly documents trim/crop, but we have not verified that exact saved-original reset task. It remains neutral in the table.</p></details>
+        </section>
+      </div>
+      <section class="comparison-close" aria-labelledby="pal-next-take"><div><h2 id="pal-next-take">Your script.<br />Your next take.</h2><p>Record, review and save reversible edits for free with Teleprompter Pal. Pro adds every MP4 export and delivery to Photos, Files or Share.</p><p class="comparison-close-note">Available for iPhone · Pro from {offer.yearly}/year</p></div><a href="#pricing" class="button button-primary" aria-label="View Teleprompter Pal pricing">See pricing <Icon name="arrowRight" size={20} /></a></section>
+      <nav class="comparison-related" aria-label="Related comparisons"><a href="/compare/"><Icon name="arrowRight" size={18} /> All comparisons</a><a href="/compare/selvi-alternative/">Teleprompter Pal vs Selvi <Icon name="arrowRight" size={18} /></a></nav>
+    </article>
+  </main>
+  <SiteFooter />
+</Layout>
