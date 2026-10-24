@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Icon from '../../components/Icon.astro';
+import '../../styles/tools.css';
+import '../../styles/rehearsal-timer.css';
+---
+<Layout title="Speech Rehearsal Timer: Fullscreen & Overtime | Teleprompter Pal" description="Time your actual speech or video rehearsal. Set a target, see a wrap-up warning and track overtime. Free speech timer with pause, fullscreen and no signup.">
+  <SiteHeader />
+  <main id="main" class="tools-main rehearsal-main container">
+    <nav class="tool-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/tools/">Tools</a><span aria-hidden="true">/</span><span aria-current="page">Speech rehearsal timer</span></nav>
+    <header class="tool-intro"><h1>Make time for a rehearsal.</h1><p>Set your limit. Say it out loud. See when to wrap up, and how far your delivery runs over.</p></header>
+    <noscript><p class="tool-notice">Enable JavaScript to run the rehearsal timer. The guidance below is available without it.</p></noscript>
+    <form id="rehearsal-timer" aria-label="Speech rehearsal timer" novalidate>
+      <div class="calculator-workspace rehearsal-workspace">
+        <div class="script-workspace rehearsal-setup">
+          <fieldset id="rehearsal-settings" class="calculator-fields" disabled>
+            <legend>Your time limit</legend>
+            <div class="target-inputs"><div><label for="rehearsal-minutes">Minutes</label><input id="rehearsal-minutes" type="number" min="0" max="180" step="1" value="5" required aria-describedby="target-limit-help timer-error" /></div><div><label for="rehearsal-seconds">Seconds</label><input id="rehearsal-seconds" type="number" min="0" max="59" step="1" value="0" required aria-describedby="target-limit-help timer-error" /></div></div>
+            <p id="target-limit-help" class="tool-help">From 1 second to 3 hours.</p>
+            <div class="pace-presets rehearsal-presets" aria-label="Time limit presets">{[1, 3, 5, 10].map(value => <button type="button" data-rehearsal-preset={value * 60} aria-pressed={value === 5}>{value} min</button>)}</div>
+            <div class="rehearsal-warning"><label for="rehearsal-warning">Warn with this many seconds left</label><input id="rehearsal-warning" type="number" min="0" max="10799" step="1" value="60" required aria-describedby="warning-help timer-error" /><p id="warning-help" class="tool-help">Use less than your time limit. Set 0 to switch the warning off.</p></div>
+          </fieldset>
+          <p id="timer-error" class="tool-help timer-error" hidden></p>
+          <p id="timer-settings-note" class="tool-help">Set your limit, then start speaking.</p>
+          <p class="tool-privacy"><Icon name="lock" size={16} />No microphone, recording or signup. Your timing stays in this tab.</p>
+        </div>
+        <section id="rehearsal-screen" class="timing-workspace rehearsal-screen" data-signal="safe" role="region" aria-labelledby="timer-screen-title" tabindex="0">
+          <div class="timer-screen-heading"><h2 id="timer-screen-title">Your rehearsal</h2><button type="button" id="timer-fullscreen" class="tool-text-button" aria-pressed="false" disabled>Fullscreen</button></div>
+          <div class="timer-reading"><p id="timer-cue" class="timer-cue">Ready</p><p id="clock-label" class="timer-clock-label">Time remaining</p><output id="rehearsal-clock" class="rehearsal-clock" aria-live="off">5:00</output></div>
+          <dl class="timer-facts"><div><dt>Elapsed</dt><dd id="elapsed-time">0:00</dd></div><div><dt>Target</dt><dd id="target-time">5:00</dd></div><div><dt>Warning</dt><dd id="warning-time">1:00 left</dd></div></dl>
+          <div class="timer-actions"><button type="button" id="timer-start" class="button button-primary tool-action" disabled>Start timer</button><button type="button" id="timer-finish" class="tool-secondary-button" disabled>Finish</button><button type="button" id="timer-reset" class="tool-text-button" disabled>Reset</button></div>
+          <p id="timer-summary" class="tool-help">Press Start timer when you begin your delivery.</p>
+          <p class="timer-keyboard tool-help">Focus the timer and press Space to pause or resume. Esc leaves fullscreen or focus view.</p>
+          <p id="timer-status" class="visually-hidden" role="status" aria-atomic="true"></p>
+        </section>
+      </div>
+    </form>
+    <section class="tool-explainer tool-section" aria-labelledby="timer-explainer-title"><div><h2 id="timer-explainer-title">Rehearse the whole take.</h2><p>A word-count estimate is a starting point. Your pauses, examples and delivery decide the actual time. Start this timer as you begin speaking and choose Finish when you’re done.</p><p>Use Pause for a break you don’t want counted. At zero, the timer keeps going so you can see the overrun. Reset clears the attempt and lets you change the settings.</p><p>For an estimate before you speak, use the <a href="/tools/speech-time-calculator/">speech time calculator</a>. To tidy your reading copy first, use the <a href="/tools/script-cleaner/">script cleaner</a>.</p></div><div class="timer-signal-guide"><h3>Keep one eye on your time.</h3><ul><li><span class="timer-swatch timer-swatch-safe" aria-hidden="true"></span><div><strong>On time</strong><p>Keep your pace while time remains.</p></div></li><li><span class="timer-swatch timer-swatch-warning" aria-hidden="true"></span><div><strong>Wrap up</strong><p>Your chosen warning time has been reached.</p></div></li><li><span class="timer-swatch timer-swatch-over" aria-hidden="true"></span><div><strong>Time is up</strong><p>The clock shows time beyond your target.</p></div></li></ul><p class="tool-help">Each color has a written cue. There’s no alarm or microphone to interrupt your take.</p></div></section>
+    <section class="tool-questions tool-section" aria-labelledby="timer-faq-title"><h2 id="timer-faq-title">Before you press Start.</h2><div class="faq-list">
+      <details><summary>How do I time a speech or video rehearsal?<Icon name="caret" size={18} /></summary><p>Choose a preset or enter minutes and seconds. Set how many seconds should remain when the wrap-up warning appears, then select Start timer. Speak your full script, including planned pauses. Finish freezes your result and shows how far under or over the target you landed.</p></details>
+      <details><summary>What happens when I run out of time?<Icon name="caret" size={18} /></summary><p>The cue changes to “Time is up,” and the clock counts upward from zero. The timer continues until you pause, finish or reset it. A warning of 0 turns off the earlier wrap-up cue; it doesn’t stop overtime tracking.</p></details>
+      <details><summary>Can I use fullscreen on my phone?<Icon name="caret" size={18} /></summary><p>Choose Fullscreen to put just the clock and its controls in view. If the browser doesn’t support fullscreen or rejects the request, the timer uses a focus view inside the browser. Use the exit button or Esc to return. A phone’s screen can still dim or lock according to its settings.</p></details>
+      <details><summary>Does it keep timing if I switch tabs?<Icon name="caret" size={18} /></summary><p>Yes, while this page remains open. The display catches up when you return, even if background updates were delayed. Pause explicitly to exclude a break. Closing or reloading the page clears the attempt and settings. Changing your device’s clock during a run can affect the measurement.</p></details>
+      <details><summary>Is my speech recorded or saved?<Icon name="caret" size={18} /></summary><p>No. The timer doesn’t request a microphone or camera, record audio, or save attempts in browser storage. It only measures elapsed time in this tab. The website’s general analytics don’t receive your timer settings or results.</p></details>
+    </div></section>
+    <aside class="tool-next-step"><div><h2>Bring the words into view.</h2><p>Ready for another take? Open your script in the free online teleprompter and rehearse with scrolling text.</p></div><a href="https://freeteleprompteronline.com/#script" class="button button-primary">Open the teleprompter <Icon name="arrowRight" size={20} /></a></aside>
+    <p class="tool-related">Preparing captions for a new take? Use the <a href="/tools/subtitle-to-script/">subtitle-to-script converter</a>, or <a href="/guides/read-teleprompter-naturally-iphone/">practice reading naturally on camera</a>.</p>
+  </main><SiteFooter />
+  <script>import '../../scripts/rehearsal-timer';</script>
+</Layout>

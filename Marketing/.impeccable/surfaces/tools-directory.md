@@ -7,7 +7,7 @@ related_targets: ["src/styles/tool-cards.css", "src/styles/compare.css", "src/st
 
 # Teleprompter Pal tools directory
 
-Mode: Operate. Status: **APPROVED FOR PUBLICATION**, 24 October 2026. Scope: `/tools/`, changing the existing tool entries into cards and adding the subtitle-to-script converter. The owner explicitly requested cards like the comparison page cards, plus a preview before publication. The independent finish reviewer returned **ship** with no material fixes. The owner reviewed the local preview and explicitly approved publication of this directory and the converter on 24 October 2026. Release verification is recorded separately after deployment.
+Mode: Operate. Current baseline: **PUBLISHED (three tools)**. Fourth-card extension: **APPROVED FOR PUBLICATION**, 24 October 2026. The original card directory and subtitle-to-script converter received explicit owner publication approval on 24 October; the calculator, cleaner and converter remain published. The current local extension adds the speech rehearsal timer in the same design, with preview requested before publication. Independent finish review returned **SHIP** with no material fixes for the local preview only. The owner has reviewed the preview and approved the timer and fourth-card release, with sitemap inclusion and no sitemap submission or indexing notification. The direction and composition below preserve the original three-card release record; current inventory and extension evidence are recorded separately below.
 
 ## Direction contract
 
@@ -37,15 +37,22 @@ Below the cards, the quiet lock/privacy line says the tools are free with no sig
 
 ## Tool inventory
 
-- **Speech time calculator** → `/tools/speech-time-calculator/`: estimate duration, measure pace and find a word budget. Category: “Timing and rehearsal.” Action: “Time your script.”
-- **Script cleaner** → `/tools/script-cleaner/`: remove unwanted line breaks and spaces or form reading chunks. Category: “Script preparation.” Action: “Clean your script.”
-- **Subtitle to script** → `/tools/subtitle-to-script/`: remove caption timecodes, then copy or download plain text. Category: “SRT and VTT to text.” Action: “Convert your subtitles.”
+- **Speech time calculator — PUBLISHED** → `/tools/speech-time-calculator/`: estimate duration, measure pace and find a word budget. Category: “Timing and rehearsal.” Action: “Time your script.”
+- **Script cleaner — PUBLISHED** → `/tools/script-cleaner/`: remove unwanted line breaks and spaces or form reading chunks. Category: “Script preparation.” Action: “Clean your script.”
+- **Subtitle to script — PUBLISHED** → `/tools/subtitle-to-script/`: remove caption timecodes, then copy or download plain text. Category: “SRT and VTT to text.” Action: “Convert your subtitles.”
+- **Speech rehearsal timer — APPROVED FOR PUBLICATION** → `/tools/speech-rehearsal-timer/`: time actual delivery, show a wrap-up warning, exclude pauses and track overtime. Category: “Live delivery practice.” Action: “Start a rehearsal.” It reuses the installed play icon and existing linked-card treatment.
 
 The directory is static and works without a page-specific script. The tools themselves retain their separately documented local behavior and JavaScript requirements.
 
 ## Evidence and validation
 
-This documentation pass read the page, comparison/tool-card styles, shared tokens, icon component, existing tool briefs, `PRODUCT.md`, `DESIGN.md` and the completion receipts. It inspected the desktop tools preview and 320px directory capture directly. It did not rerun tests or browser checks.
+Current local extension (24 October 2026): the fourth card reuses the unchanged comparison grid and tool-card styles. Reviewed desktop shows a three-plus-one arrangement, accepted by the independent reviewer; 390px and 320px remain one column. The first three entries retain their published destinations. Current preview: `http://127.0.0.1:64136/tools/`.
+
+The rehearsal-timer handoff records 72 Astro files with zero errors/warnings/hints, all 43 tests passing (six timer tests), 113 routes, a passing `git diff --check`, resolving card navigation/assets/canonicals, no horizontal overflow and no console errors or warnings. Both local routes return 200; the preview is noindex with analytics disabled. The timer occurs once in the generated sitemap and is unpublished. Automatic page/CSS design hooks found zero deterministic findings. Independent finish review inspected all 15 captures and returned **SHIP** with persistence, fidelity and ceiling passing and no material fixes, covering the local preview only.
+
+Current directory evidence in `.impeccable/review/rehearsal-timer/`: `tools-desktop.png` (1280 × 2017), `tools-mobile.png` (390 × 2724) and `tools-narrow-mobile.png` (320 × 2766). Files contain JPEG bytes despite the suffix. Receipts are in `/Users/thomas/Desktop/Projects/Teleprompter/output/rehearsal-timer-preview-2026-10-24/`: `verification.json`, `sources.json`, `static-verification.json`, `build.log`, `prepare.log` and `tests.log`. Base: `fb97db5632be0a9a8705fbb56cbc0b4a09b30ae5`. Timer behavior and the remaining captures are recorded in `speech-rehearsal-timer.md`. This documentation update read source and receipts without rerunning UI, tests or polish.
+
+The following paragraphs preserve the original converter/card preview evidence. That documentation pass read the page, comparison/tool-card styles, shared tokens, icon component, existing tool briefs, `PRODUCT.md`, `DESIGN.md` and the completion receipts. It inspected the desktop tools preview and 320px directory capture directly. It did not rerun tests or browser checks.
 
 The completed handoff records a successful 110-route preview build, strict Astro diagnostics over 66 files with zero errors/warnings/hints, all 35 tests passing, and `git diff --check` passing. Browser review verified all card destinations and the converter workflow, with no console errors or warnings. Both local routes returned 200, and no horizontal overflow occurred at 1280px, 390px or 320px.
 
@@ -53,7 +60,7 @@ Independent finish review returned **ship**, found no material fixes, accepted t
 
 Visual evidence in `.impeccable/review/subtitle-converter/`: `tools-desktop.png` (1280 × 1712), `tools-mobile.png` (390 × 2401), `tools-narrow-mobile.png` (320 × 2440) and `tools-preview.png` (desktop directory clip). The capture files contain JPEG bytes despite the `.png` suffix. The independent reviewer inspected all nine directory/converter captures; converter evidence is detailed in `subtitle-to-script.md`.
 
-Receipts are outside the worktree at `/Users/thomas/Desktop/Projects/Teleprompter/output/subtitle-converter-preview-2026-10-24/`: `verification.json`, `sources.json`, `design-scan.json` and `static-verification.json`. Base commit: `bb4c8486ad7ded6e1f418c32723e662519af9e14`. The local review build has noindex meta/header and analytics disabled. The converter appears in the generated sitemap but has not been published.
+Receipts are outside the worktree at `/Users/thomas/Desktop/Projects/Teleprompter/output/subtitle-converter-preview-2026-10-24/`: `verification.json`, `sources.json`, `design-scan.json` and `static-verification.json`. Base commit: `bb4c8486ad7ded6e1f418c32723e662519af9e14`. That local review build had noindex meta/header and analytics disabled; the converter appeared in its sitemap before the subsequent published release.
 
 ## Incumbent comparison and preserved drift
 
